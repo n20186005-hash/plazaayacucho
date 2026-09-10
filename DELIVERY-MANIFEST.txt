@@ -1,0 +1,20 @@
+Plaza Mayor de Huamanga / Plaza de Armas de Ayacucho
+
+INCLUIDO
+- Astro + Tailwind CSS + TypeScript source
+- Configuración Cloudflare Workers Static Assets
+- GA4 G-HXM22WWPKP con consentimiento previo
+- JSON-LD TouristAttraction + LocalBusiness + FAQPage
+- Google Maps localizado es/PE
+- Logo SVG y favicon SVG/16/32/180
+- Diseño español de Perú de una sola página
+- Lista exacta de fotos reales y licencias
+- Verificación estática y logs de CI
+- Sugerencias de dominio
+
+ESTADO CI
+- verify:source: PASS
+- node --check scripts/config: PASS
+- CI=1 corepack pnpm install --frozen-lockfile: BLOQUEADO por EAI_AGAIN registry.npmjs.org
+- pnpm check/build: no ejecutables después del bloqueo anterior
+- pnpm-lock.yaml: no fabricado; debe generarse con pnpm real en un entorno con acceso al registro

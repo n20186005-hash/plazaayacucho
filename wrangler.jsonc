@@ -1,0 +1,7 @@
+{
+  "name": "plaza-mayor-ayacucho-guide",
+  "compatibility_date": "2026-09-10",
+  "assets": {
+    "directory": "./dist"
+  }
+}
