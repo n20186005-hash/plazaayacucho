@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#5f2923"/>
+  <path d="M0 520C210 430 350 565 555 500s350-35 645 30v100H0z" fill="#2f5544"/>
+  <g transform="translate(92 95) scale(2.7)">
+    <rect x="0" y="0" width="76" height="76" rx="18" fill="#f4eadb"/>
+    <path fill="#8b3c2f" d="M10 58h56v7H10zM15 28h12v30H15zm34 0h12v30H49zM19 16h4v12h-4zm34 0h4v12h-4zM16 13h10l-5-7zm34 0h10l-5-7z"/>
+    <path d="M29 58V40c0-8 4-14 9-14s9 6 9 14v18" fill="#c9974f"/>
+    <path d="M35 58V41c0-3.2 1.4-6 3-6s3 2.8 3 6v17" fill="#f4eadb"/>
+  </g>
+  <text x="370" y="240" fill="#f4eadb" font-family="Georgia,serif" font-size="82" font-weight="700">Plaza Mayor</text>
+  <text x="372" y="322" fill="#f4eadb" font-family="Georgia,serif" font-size="72">de Huamanga</text>
+  <text x="375" y="382" fill="#d9b673" font-family="Arial,sans-serif" font-size="25" font-weight="700" letter-spacing="7">AYACUCHO · PERÚ</text>
+  <path d="M375 430h510" stroke="#c9974f" stroke-width="4"/>
+  <text x="375" y="480" fill="#e7d9c7" font-family="Arial,sans-serif" font-size="25">Piedra, portales y memoria en el corazón de la ciudad.</text>
+</svg>

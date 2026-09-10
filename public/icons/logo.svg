@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 94" role="img" aria-label="Plaza Mayor de Huamanga">
+  <g transform="translate(2 9)">
+    <rect x="0" y="0" width="76" height="76" rx="18" fill="#f4eadb"/>
+    <path fill="#8b3c2f" d="M10 58h56v7H10zM15 28h12v30H15zm34 0h12v30H49zM19 16h4v12h-4zm34 0h4v12h-4zM16 13h10l-5-7zm34 0h10l-5-7z"/>
+    <path d="M29 58V40c0-8 4-14 9-14s9 6 9 14v18" fill="#c9974f"/>
+    <path d="M35 58V41c0-3.2 1.4-6 3-6s3 2.8 3 6v17" fill="#f4eadb"/>
+    <circle cx="21" cy="35" r="2.5" fill="#c9974f"/><circle cx="55" cy="35" r="2.5" fill="#c9974f"/>
+  </g>
+  <g fill="currentColor">
+    <text x="94" y="39" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700">Plaza Mayor</text>
+    <text x="95" y="64" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2.3">HUAMANGA · AYACUCHO</text>
+  </g>
+</svg>

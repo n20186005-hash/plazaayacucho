@@ -1,0 +1,449 @@
+---
+import '../styles/global.css';
+
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : undefined;
+const ogImage = Astro.site ? new URL('/icons/social-card.svg', Astro.site).toString() : '/icons/social-card.svg';
+const mapUrl = 'https://maps.app.goo.gl/LoXftb7yUhBJUgCr9';
+const minceturUrl = 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=386';
+const promperuUrl = 'https://target2.promperu.gob.pe/destinos/ayacucho/ciudad-de-ayacucho/plaza-mayor-de-la-ciudad-de-ayacucho';
+
+const photos = {
+  hero: 'https://upload.wikimedia.org/wikipedia/commons/8/86/PLAZA_MAYOR_DE_AYACUCHO.jpg',
+  plaza: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Plaza_Mayor_de_Huamanga_%2825646832758%29.jpg',
+  cathedral: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Catedral_de_Ayacucho_%2825646655978%29.jpg',
+  monument: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Plaza_de_Armas_-_Ayacucho.JPG'
+};
+
+const faq = [
+  {
+    q: '¿La Plaza Mayor de Huamanga cobra entrada?',
+    a: 'No. La ficha de inventario turístico de MINCETUR registra el ingreso como libre. Las iglesias, museos o actividades cercanas pueden tener condiciones propias.'
+  },
+  {
+    q: '¿Cuál es el mejor horario para visitar la plaza?',
+    a: 'MINCETUR recomienda la visita entre las 06:00 y las 21:00 durante todo el año. Para fotografía y una caminata más tranquila, la primera hora de la mañana y el final de la tarde suelen ser las franjas más agradables.'
+  },
+  {
+    q: '¿Cuánto tiempo conviene quedarse?',
+    a: 'Para recorrer la plaza, observar sus portales y hacer fotografías, reserve aproximadamente 45–90 minutos. Si añade la Catedral, Santo Domingo, museos y una comida en el centro histórico, conviene dedicar 2–3 horas o más.'
+  },
+  {
+    q: '¿Cómo llego desde el aeropuerto de Ayacucho?',
+    a: 'La ficha oficial de MINCETUR indica aproximadamente 2,8 km desde el Aeropuerto Coronel FAP Alfredo Mendívil Duarte, con una referencia de unos 7 minutos en taxi en condiciones favorables.'
+  },
+  {
+    q: '¿Hay estacionamiento dentro de la Plaza Mayor?',
+    a: 'No se recomienda contar con estacionamiento en el perímetro inmediato de la plaza. Hay cocheras privadas en calles cercanas; confirme tarifa, horario y disponibilidad antes de dejar el vehículo.'
+  },
+  {
+    q: '¿Por qué también se llama Plaza Mayor de Huamanga?',
+    a: 'Ayacucho conserva el nombre histórico de Huamanga en numerosos referentes patrimoniales. Por eso el mismo espacio aparece como Plaza de Armas de Ayacucho y Plaza Mayor de Huamanga en fuentes turísticas y cartográficas.'
+  }
+];
+
+const openingHours = [
+  'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
+].map((day) => ({ day, opens: '06:00', closes: '21:00' }));
+
+const attractionLd = {
+  '@context': 'https://schema.org',
+  '@type': ['TouristAttraction', 'LocalBusiness'],
+  name: 'Plaza Mayor de Huamanga, Ayacucho',
+  alternateName: ['Plaza de Armas of Ayacucho', 'Plaza de Armas de Ayacucho'],
+  description: 'Plaza histórica del centro de Ayacucho, rodeada por portales coloniales y edificios patrimoniales, con el monumento ecuestre a Antonio José de Sucre en su centro.',
+  ...(canonical ? { url: canonical } : {}),
+  telephone: '+51 985 928 260',
+  image: [photos.hero, photos.plaza, photos.cathedral],
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Ayacucho',
+    addressRegion: 'Ayacucho',
+    postalCode: '05003',
+    addressCountry: 'PE'
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: -13.160367,
+    longitude: -74.225767
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.5',
+    reviewCount: '19773',
+    bestRating: '5'
+  },
+  openingHoursSpecification: openingHours.map((item) => ({
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: `https://schema.org/${item.day}`,
+    opens: item.opens,
+    closes: item.closes
+  })),
+  priceRange: 'Ingreso libre',
+  sameAs: [mapUrl, minceturUrl]
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a
+    }
+  }))
+};
+---
+<!doctype html>
+<html lang="es-PE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Plaza Mayor de Huamanga | Guía de la Plaza de Armas de Ayacucho</title>
+    <meta name="description" content="Guía local de la Plaza Mayor de Huamanga en Ayacucho: historia, portales, entrada, mejor hora, transporte, estacionamiento, comida, lugares cercanos, mapa y preguntas frecuentes." />
+    <meta name="theme-color" content="#6f2e25" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icons/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:title" content="Plaza Mayor de Huamanga | Corazón de Ayacucho" />
+    <meta property="og:description" content="Una guía visual y práctica para recorrer la Plaza de Armas de Ayacucho y su centro histórico." />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a href="#inicio" class="brand" aria-label="Ir al inicio">
+          <img src="/icons/logo.svg" alt="Plaza Mayor de Huamanga" width="186" height="52" />
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="#historia">Historia</a>
+          <a href="#planifica">Planifica</a>
+          <a href="#alrededores">Alrededores</a>
+          <a href="#mapa">Mapa</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a class="map-button" href={mapUrl} target="_blank" rel="noreferrer">Cómo llegar ↗</a>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section id="inicio" class="hero" style={`--hero-image: url('${photos.hero}')`}>
+        <div class="hero-overlay"></div>
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <div class="eyebrow-row">
+              <span>Ayacucho · Perú</span>
+              <span>2.752 m s. n. m.</span>
+              <span>★ 4,5 · 19.773 reseñas</span>
+            </div>
+            <p class="hero-kicker">Plaza Mayor de Huamanga</p>
+            <h1>El corazón de piedra, arcos y memoria de Ayacucho</h1>
+            <p class="hero-lead">Una plaza monumental rodeada de portales coloniales, balcones y tejados de arcilla; punto de partida natural para leer la historia de Huamanga a pie.</p>
+            <div class="hero-actions">
+              <a class="button button-gold" href="#planifica">Planificar visita</a>
+              <a class="button button-ghost" href={mapUrl} target="_blank" rel="noreferrer">Abrir Google Maps</a>
+            </div>
+          </div>
+
+          <aside class="fact-card" aria-label="Datos rápidos">
+            <p class="card-label">Antes de ir</p>
+            <div class="fact-grid">
+              <div><span>Entrada</span><strong>Libre</strong></div>
+              <div><span>Visita recomendada</span><strong>06:00–21:00</strong></div>
+              <div><span>Tiempo sugerido</span><strong>45–90 min</strong></div>
+              <div><span>Clima</span><strong>Altura andina</strong></div>
+            </div>
+            <p class="fine-print">El horario 06:00–21:00 corresponde a la franja de visita recomendada por MINCETUR, no a un cierre físico del espacio público.</p>
+          </aside>
+        </div>
+        <div class="hero-credit">Foto real: Pollinhhsano · Wikimedia Commons · CC BY-SA 4.0</div>
+      </section>
+
+      <section class="intro-strip">
+        <div class="shell intro-grid">
+          <div class="intro-number"><span>111</span><small>arcos alrededor de la plaza</small></div>
+          <p>Los cuatro frentes —Unión, Constitución, Independencia y Municipal— forman una secuencia de piedra que define la imagen del centro histórico. En el centro, el monumento ecuestre a Antonio José de Sucre articula jardines y fuentes simétricas.</p>
+          <a href={minceturUrl} target="_blank" rel="noreferrer">Ver ficha de MINCETUR ↗</a>
+        </div>
+      </section>
+
+      <section id="historia" class="section section-stone">
+        <div class="shell story-layout">
+          <div class="story-copy">
+            <p class="section-kicker">Huamanga en una sola plaza</p>
+            <h2>Una plaza construida para mirar en cuatro direcciones</h2>
+            <p class="large-copy">La actual Ayacucho fue fundada como ciudad española en 1540. Con el tiempo, la plaza se consolidó como escenario cívico, religioso y cotidiano, enmarcado por arquitectura de los siglos XVI y XVII.</p>
+            <p>Los portales de piedra en el primer nivel, los balcones de madera y los techos de teja roja crean una continuidad muy reconocible. La Catedral, la Municipalidad, la sede regional, la Corte y espacios universitarios refuerzan el papel de la plaza como centro institucional de la ciudad.</p>
+            <div class="story-pills">
+              <span>Arquitectura virreinal</span><span>Centro cívico</span><span>Semana Santa</span><span>Carnavales</span>
+            </div>
+          </div>
+          <div class="photo-stack">
+            <figure class="photo-main">
+              <img src={photos.plaza} alt="Vista amplia de la Plaza Mayor de Huamanga con sus portales" loading="lazy" />
+              <figcaption>Plaza Mayor y portales · EduardoZambrano · CC BY-SA 2.0</figcaption>
+            </figure>
+            <figure class="photo-small">
+              <img src={photos.monument} alt="Monumento ecuestre en la Plaza de Armas de Ayacucho" loading="lazy" />
+              <figcaption>Monumento a Sucre · Fer121 · CC BY-SA</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section arch-section">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-kicker">Cómo vivirla</p>
+              <h2>Tres momentos, tres plazas distintas</h2>
+            </div>
+            <p>La luz cambia la lectura de los arcos: piedra fría al amanecer, fachadas cálidas por la tarde y un centro cívico más animado al caer la noche.</p>
+          </div>
+          <div class="moment-grid">
+            <article><span class="moment-time">06:00–09:00</span><h3>Primera luz</h3><p>Ideal para fotografías limpias, caminar bajo los portales y escuchar el centro antes de que aumente el tránsito peatonal.</p></article>
+            <article><span class="moment-time">15:30–18:00</span><h3>Piedra dorada</h3><p>La luz lateral realza balcones, arcos y la fachada de la Catedral. Es una buena franja para combinar plaza, café y museo.</p></article>
+            <article><span class="moment-time">18:00–21:00</span><h3>Plaza nocturna</h3><p>El centro gana ambiente local y las fachadas iluminadas cambian la escala del conjunto. Manténgase atento a eventos y cierres temporales.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="planifica" class="section section-dark">
+        <div class="shell">
+          <div class="section-heading light-heading">
+            <p class="section-kicker">Planifica sin sorpresas</p>
+            <h2>Lo práctico, antes de caminar por los portales</h2>
+          </div>
+          <div class="planning-grid">
+            <article class="planning-card">
+              <span class="icon-badge">S/</span>
+              <h3>Entrada / costo</h3>
+              <p><strong>Ingreso libre.</strong> La plaza no exige entrada según el inventario turístico oficial. Museos, templos con visitas especiales o actividades privadas pueden cobrar por separado.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">◷</span>
+              <h3>Horario</h3>
+              <p>MINCETUR registra la <strong>visita recomendada de 06:00 a 21:00</strong> durante todo el año. Algunas fichas cartográficas del punto de interés muestran horarios más restringidos; conviene distinguirlos del acceso físico al espacio público.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">☀</span>
+              <h3>Mejor época</h3>
+              <p>Se puede visitar todo el año. En altura, el sol puede sentirse fuerte al mediodía y la temperatura bajar rápido por la tarde; lleve protección solar y una capa ligera.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">↔</span>
+              <h3>Duración</h3>
+              <p><strong>45–90 minutos</strong> para la plaza sola. Reserve 2–3 horas si suma Catedral, Santo Domingo, arte popular y una comida en el casco histórico.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="transporte" class="section section-paper">
+        <div class="shell transport-layout">
+          <div>
+            <p class="section-kicker">Transporte detallado</p>
+            <h2>El centro histórico es el destino, no solo una parada</h2>
+            <p class="large-copy">Al llegar al centro, lo más cómodo es terminar el trayecto a pie. Varias calles alrededor de la plaza pueden tener control vehicular durante celebraciones, desfiles o montajes.</p>
+          </div>
+          <div class="route-list">
+            <article>
+              <span class="route-index">01</span>
+              <div><h3>Desde el aeropuerto</h3><p>Aeropuerto Coronel FAP Alfredo Mendívil Duarte → Plaza Mayor: <strong>aprox. 2,8 km</strong>. MINCETUR usa una referencia de <strong>7 min en taxi</strong> en condiciones favorables.</p></div>
+            </article>
+            <article>
+              <span class="route-index">02</span>
+              <div><h3>Desde el terminal terrestre</h3><p>Terminal Terrestre Los Libertadores → Plaza Mayor: <strong>aprox. 3,6 km</strong>, con referencia oficial de <strong>12 min en taxi</strong>. El tráfico puede ampliar el tiempo.</p></div>
+            </article>
+            <article>
+              <span class="route-index">03</span>
+              <div><h3>Desde el centro</h3><p>Si ya está en el casco histórico, priorice caminar. La plaza funciona como punto de orientación para restaurantes, templos, agencias y comercios tradicionales.</p></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="estacionamiento" class="section parking-section">
+        <div class="shell parking-layout">
+          <div class="parking-copy">
+            <p class="section-kicker">Estacionamiento</p>
+            <h2>Deje el auto fuera del corazón peatonal</h2>
+            <p>El perímetro de la Plaza Mayor puede tener restricciones y alta demanda. Estas cocheras cercanas sirven como referencias prácticas; <strong>confirme precio, horario y cupo el mismo día</strong>.</p>
+          </div>
+          <div class="parking-cards">
+            <article><h3>Cochera Grau</h3><p>Miguel Grau 158</p><span>Opción céntrica · horario variable</span></article>
+            <article><h3>Sumaq Plaza</h3><p>Jr. 9 de Diciembre 133</p><span>Muy cerca del centro · verificar disponibilidad</span></article>
+            <article><h3>Garaje Dos de Mayo</h3><p>Dos de Mayo 463</p><span>Alternativa para dejar el vehículo y caminar</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="alrededores" class="section section-green">
+        <div class="shell">
+          <div class="section-heading light-heading split-heading">
+            <div><p class="section-kicker">Alrededores</p><h2>Qué ver sin alejarse de la plaza</h2></div>
+            <p>El valor del centro está en la proximidad: arquitectura religiosa, arte popular y calles históricas caben en una ruta a pie.</p>
+          </div>
+          <div class="nearby-grid">
+            <article><span>En la plaza</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Observe su relación con los portales y la escala abierta de la plaza.</p></article>
+            <article><span>≈ 1 cuadra</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles del centro, asociado al paisaje religioso de Huamanga.</p></article>
+            <article><span>Pocos minutos a pie</span><h3>Arco del Triunfo</h3><p>Hito urbano sobre Jr. 28 de Julio y parada fácil para extender el paseo por las calles del casco antiguo.</p></article>
+            <article><span>Portal Independencia</span><h3>Museo de Arte Popular Joaquín López Antay</h3><p>Una buena introducción al retablo ayacuchano y a la tradición artesanal local. Verifique el horario antes de ir.</p></article>
+          </div>
+
+          <div class="food-heading">
+            <p class="section-kicker">Comer alrededor</p>
+            <h2>Sabores con dirección concreta</h2>
+          </div>
+          <div class="food-grid">
+            <article class="food-card featured-food"><div><span>Portal Constitución 4</span><h3>La Plaza · Casa Andina</h3></div><p>Opción directa frente al entorno monumental, útil para desayuno, almuerzo o una pausa larga con cocina peruana.</p></article>
+            <article class="food-card"><div><span>Portal Constitución 8</span><h3>Sukre Restaurant</h3></div><p>Cocina peruana y ubicación privilegiada para continuar la caminata sin salir del núcleo histórico.</p></article>
+            <article class="food-card"><div><span>Jr. 28 de Julio 540</span><h3>ViaVia Café Ayacucho</h3></div><p>Café y cocina fusión en su ubicación actual del centro. Buena parada antes o después del Arco del Triunfo.</p></article>
+          </div>
+          <p class="data-note">Los horarios, menús, precios y disponibilidad de restaurantes cambian; confirme directamente con cada establecimiento.</p>
+        </div>
+      </section>
+
+      <section class="section photo-section">
+        <div class="shell photo-layout">
+          <figure class="cathedral-photo">
+            <img src={photos.cathedral} alt="Catedral y tejados vistos desde la Plaza Mayor de Huamanga" loading="lazy" />
+            <figcaption>Catedral de Ayacucho · EduardoZambrano · CC BY-SA 2.0</figcaption>
+          </figure>
+          <div class="photo-copy">
+            <p class="section-kicker">Detalle que vale la pena buscar</p>
+            <h2>Suba la mirada: balcones, tejas y torres</h2>
+            <p>La plaza se entiende mejor cuando no se mira solo el jardín. Recorra los portales, observe el encuentro entre piedra y madera y use la Catedral como referencia para leer la composición urbana.</p>
+            <blockquote>“La visita funciona mejor como una caminata lenta: cuatro lados, cuatro perspectivas y muchas capas de historia.”</blockquote>
+          </div>
+        </div>
+      </section>
+
+      <section id="mapa" class="section map-section">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div><p class="section-kicker">Ubicación</p><h2>Plaza Mayor de Huamanga, Ayacucho 05003</h2></div>
+            <a class="text-link" href={mapUrl} target="_blank" rel="noreferrer">Abrir mapa completo ↗</a>
+          </div>
+          <div class="map-frame">
+            <iframe
+              title="Mapa de la Plaza Mayor de Huamanga en Ayacucho"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766507.3027094477!2d-73.79336433217397!3d-13.323280372800665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df3a774ab1f%3A0xa8754afd6ff9a870!2sPlaza%20de%20Armas%20of%20Ayacucho!5e1!3m2!1ses!2spe!4v1789008230750!5m2!1ses!2spe"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="shell faq-layout">
+          <div class="faq-intro">
+            <p class="section-kicker">Preguntas frecuentes</p>
+            <h2>Lo esencial, en respuestas cortas</h2>
+            <p>Para horarios sujetos a cambio, cierres por eventos y servicios privados, confirme la información antes de desplazarse.</p>
+          </div>
+          <div class="faq-list">
+            {faq.map((item) => (
+              <details>
+                <summary><span>{item.q}</span><b>+</b></summary>
+                <p>{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="source-band">
+        <div class="shell source-grid">
+          <div><p class="section-kicker">Fuentes principales</p><h2>Información con rastro verificable</h2></div>
+          <div class="source-links">
+            <a href={minceturUrl} target="_blank" rel="noreferrer"><strong>MINCETUR</strong><span>Inventario de recursos turísticos</span></a>
+            <a href={promperuUrl} target="_blank" rel="noreferrer"><strong>Perú Travel / PROMPERÚ</strong><span>Contexto turístico de Ayacucho</span></a>
+            <a href={mapUrl} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Ubicación y ficha facilitada para este proyecto</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <img src="/icons/logo.svg" alt="Plaza Mayor de Huamanga" width="186" height="52" />
+          <p>Guía independiente para comprender y recorrer la Plaza Mayor de Huamanga.</p>
+        </div>
+        <div>
+          <strong>Créditos fotográficos</strong>
+          <p>Pollinhhsano · CC BY-SA 4.0 · EduardoZambrano · CC BY-SA 2.0 · Fer121 · CC BY-SA. Detalles y enlaces originales en <code>public/images/IMAGE-SOURCES.md</code>.</p>
+        </div>
+        <div>
+          <strong>Privacidad</strong>
+          <p>Google Analytics se carga únicamente si aceptas analítica. Google Maps se carga como contenido externo al visualizar el mapa.</p>
+          <button id="cookie-settings" class="footer-button" type="button">Configurar analítica</button>
+        </div>
+      </div>
+      <div class="shell disclaimer">Sitio informativo independiente y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ ni a ninguna entidad pública.</div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner" hidden>
+      <div>
+        <strong>Analítica opcional</strong>
+        <p>Podemos usar Google Analytics 4 (G-HXM22WWPKP) para medir visitas. No se carga hasta que aceptes.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-reject" type="button">Solo necesarias</button>
+        <button id="cookie-accept" type="button">Aceptar analítica</button>
+      </div>
+    </div>
+
+    <script is:inline>
+      // @ts-nocheck
+      (() => {
+        const KEY = 'ayacucho-analytics-consent';
+        const ID = 'G-HXM22WWPKP';
+        const banner = document.getElementById('cookie-banner');
+        const accept = document.getElementById('cookie-accept');
+        const reject = document.getElementById('cookie-reject');
+        const settings = document.getElementById('cookie-settings');
+
+        function loadAnalytics() {
+          if (document.getElementById('ga4-loader')) return;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){ window.dataLayer.push(arguments); };
+          window.gtag('js', new Date());
+          window.gtag('config', ID, { anonymize_ip: true });
+          const script = document.createElement('script');
+          script.id = 'ga4-loader';
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+          document.head.appendChild(script);
+        }
+
+        function setChoice(value) {
+          localStorage.setItem(KEY, value);
+          banner.hidden = true;
+          if (value === 'accepted') loadAnalytics();
+        }
+
+        const saved = localStorage.getItem(KEY);
+        if (saved === 'accepted') loadAnalytics();
+        else if (saved !== 'rejected') banner.hidden = false;
+
+        accept?.addEventListener('click', () => setChoice('accepted'));
+        reject?.addEventListener('click', () => setChoice('rejected'));
+        settings?.addEventListener('click', () => { banner.hidden = false; });
+      })();
+    </script>
+  </body>
+</html>

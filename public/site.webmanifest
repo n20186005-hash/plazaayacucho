@@ -1,0 +1,13 @@
+{
+  "name": "Plaza Mayor de Huamanga",
+  "short_name": "Plaza Huamanga",
+  "lang": "es-PE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4eadb",
+  "theme_color": "#6f2e25",
+  "icons": [
+    {"src":"/icons/favicon-32.png","sizes":"32x32","type":"image/png"},
+    {"src":"/icons/apple-touch-icon.png","sizes":"180x180","type":"image/png"}
+  ]
+}
