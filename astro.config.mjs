@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // ÚNICO punto para configurar el dominio de producción.
-// Déjelo vacío hasta tener un dominio real.
-const SITE = '';
+// Dominio real en uso para esta entrega.
+const SITE = 'https://plazaayacucho.com';
 
 export default defineConfig({
   site: SITE || undefined,

@@ -9,6 +9,7 @@ if (!fs.existsSync(dist)) {
 const forbidden = [/example\.com/i, /localhost/i, /chrome-extension:\/\//i];
 let failures = [];
 let sitemapFiles = [];
+/** @param {string} dir */
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, entry.name);
@@ -28,8 +29,15 @@ walk(dist);
 const config = fs.readFileSync('astro.config.mjs', 'utf8');
 const siteEmpty = /const SITE = ''/.test(config);
 if (siteEmpty && sitemapFiles.length) failures.push('SITE está vacío pero se generó sitemap.');
+if (!siteEmpty && !sitemapFiles.length) failures.push('SITE configurado pero no se generó sitemap.');
+for (const required of ['robots.txt', 'sw.js', 'site.webmanifest', 'index.html']) {
+  if (!fs.existsSync(path.join(dist, required))) failures.push(`dist/${required} no se generó.`);
+}
+const indexHtml = fs.existsSync(path.join(dist, 'index.html')) ? fs.readFileSync(path.join(dist, 'index.html'), 'utf8') : '';
+if (indexHtml && !indexHtml.includes('https://plazaayacucho.com')) failures.push('dist/index.html no referencia el dominio de producción.');
+if (indexHtml && !indexHtml.includes('rel="manifest"')) failures.push('dist/index.html no incluye el manifest PWA.');
 if (failures.length) {
   console.error(failures.join('\n'));
   process.exit(1);
 }
-console.log(`verify:dist OK${siteEmpty ? ' — SITE vacío, sitemap correctamente ausente' : ''}`);
+console.log(`verify:dist OK${siteEmpty ? ' — SITE vacío, sitemap correctamente ausente' : ' — dominio, sitemap y PWA presentes'}`);

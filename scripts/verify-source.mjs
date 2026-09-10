@@ -17,6 +17,7 @@ if (pkg.packageManager !== 'pnpm@12.3.4') failures.push('packageManager no coinc
 if (pkg.engines?.node !== '24.21.0') failures.push('engines.node no coincide con 24.21.0');
 if (fs.existsSync(path.join(root, 'pnpm-workspace.yaml'))) failures.push('No se requiere pnpm-workspace.yaml en este proyecto de un solo paquete.');
 
+/** @param {string} dir */
 function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     if (skip.has(entry.name) || entry.name === 'verify-source.mjs' || entry.name === 'verify-dist.mjs') continue;
@@ -30,12 +31,30 @@ function walk(dir) {
 }
 walk(root);
 
+const EXPECTED_SITE = 'https://plazaayacucho.com';
 const config = fs.readFileSync(path.join(root, 'astro.config.mjs'), 'utf8');
-if (!/const SITE = ''/.test(config)) failures.push('El único SITE no está vacío como se espera antes de configurar dominio.');
+if (!config.includes(`const SITE = '${EXPECTED_SITE}'`)) failures.push(`El único SITE debe ser ${EXPECTED_SITE}.`);
 if (!/SITE \? \[sitemap\(\)\] : \[\]/.test(config)) failures.push('Sitemap no está condicionado por SITE.');
 const page = fs.readFileSync(path.join(root, 'src/pages/index.astro'), 'utf8');
 if (!page.includes('!1ses!2spe') || !page.includes('!5m2!1ses!2spe')) failures.push('El iframe de Google Maps no está localizado a es/PE.');
 if (page.includes('<lastmod>') || /lastmod\s*[:=]/i.test(page)) failures.push('Se encontró lastmod manual.');
+
+// Enlace de entidad: dominio, nombre oficial, ciudad y jerarquía geográfica.
+if (!page.includes('"@id"') || !page.includes('/#attraction')) failures.push('El JSON-LD no define @id anclado al dominio.');
+if (!page.includes('Plaza de Armas of Ayacucho')) failures.push('Falta el nombre oficial del atractivo en la página.');
+if (!page.includes('"hasMap"') || !page.includes('"isAccessibleForFree"')) failures.push('El JSON-LD no incluye hasMap/isAccessibleForFree.');
+if (!page.includes('"@type": \'BreadcrumbList\'') && !page.includes('"@type": "BreadcrumbList"')) failures.push('Falta el BreadcrumbList de jerarquía geográfica.');
+if (!page.includes('application/ld+json')) failures.push('No hay datos estructurados JSON-LD.');
+if (!page.includes('FAQPage')) failures.push('Falta el FAQPage de datos estructurados.');
+// TDK, Open Graph y PWA.
+if (!page.includes('rel="canonical"')) failures.push('Falta el canonical.');
+if (!page.includes('og:image')) failures.push('Falta og:image.');
+if (!page.includes('rel="manifest"')) failures.push('Falta el enlace al manifest PWA.');
+if (!page.includes("serviceWorker")) failures.push('Falta el registro del service worker.');
+if (!fs.existsSync(path.join(root, 'public/sw.js'))) failures.push('Falta public/sw.js para el soporte PWA.');
+if (!fs.existsSync(path.join(root, 'public/robots.txt'))) failures.push('Falta public/robots.txt.');
+const robots = fs.existsSync(path.join(root, 'public/robots.txt')) ? fs.readFileSync(path.join(root, 'public/robots.txt'), 'utf8') : '';
+if (/Disallow:\s*\/\s*$/m.test(robots)) failures.push('robots.txt bloquea el rastreo global.');
 
 if (failures.length) {
   console.error(failures.join('\n'));

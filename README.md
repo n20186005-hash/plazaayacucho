@@ -19,14 +19,13 @@ El proyecto es de un solo paquete y no incluye `pnpm-workspace.yaml`.
 
 El dominio público se define solamente en `astro.config.mjs`, constante `SITE`.
 
-Mientras `SITE` esté vacío:
-- el proyecto está diseñado para construir sin dominio;
-- no se emite canonical absoluto ni `og:url`;
-- `og:image` usa una ruta relativa;
-- JSON-LD omite la URL propia del sitio;
-- `@astrojs/sitemap` no se habilita.
+Dominio en uso: `https://plazaayacucho.com`.
 
-Cuando se disponga del dominio real, complete únicamente `SITE` y vuelva a construir.
+Con `SITE` configurado:
+- canonical, `og:url`, `og:image` y JSON-LD usan URLs absolutas del dominio;
+- `@astrojs/sitemap` genera `sitemap-index.xml`;
+- se despliega `robots.txt` con la URL del sitemap;
+- el registro `site.webmanifest` convierte la guía en una PWA instalable.
 
 ## Cloudflare Workers Static Assets
 
@@ -55,3 +54,16 @@ Las cuatro fotografías documentales son fotografías reales verificadas de Wiki
 - PROMPERÚ / Y tú qué planes — Plaza Mayor de la Ciudad de Ayacucho.
 - Google Maps — ficha, valoración, teléfono y mapa facilitados para este proyecto.
 - Wikimedia Commons — documentación fotográfica y licencias.
+
+## Optimizaciones de entidad SEO y PWA
+
+- JSON-LD `TouristAttraction` + `LocalBusiness` con `@id`, `image`, `geo`, `hasMap`, `isAccessibleForFree`, `aggregateRating`, `openingHoursSpecification` y `containedInPlace`.
+- JSON-LD `FAQPage` con 8 preguntas y respuestas.
+- JSON-LD `BreadcrumbList` de jerarquía geográfica (Plaza → Ciudad → Región → País).
+- TDK completo (title, description, robots), canonical absoluto, Open Graph y Twitter Cards con imagen local.
+- H1/H2 con el nombre oficial y la ubicación.
+- NAP del atractivo visible en el header y el footer; coincide con la ficha de Google Maps.
+- Enlaces de autoridad `.gob.pe` (MINCETUR, PROMPERÚ) y `.org` (Wikimedia Commons) en Sources.
+- Mapa de Google Maps incrustado y localizado a `es/PE`.
+- `robots.txt` con `Allow: /` y sitemap.
+- PWA: `site.webmanifest`, service worker `/sw.js`, iconos 192/512 generados, registro en el cliente.

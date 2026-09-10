@@ -1,0 +1,7 @@
+# Plaza de Armas of Ayacucho / Plaza Mayor de Huamanga — https://plazaayacucho.com
+# Rastreo abierto: el sitio es de una sola página y debe ser indexable globalmente.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://plazaayacucho.com/sitemap-index.xml

@@ -1,12 +1,18 @@
-Plaza Mayor de Huamanga / Plaza de Armas de Ayacucho
+Plaza de Armas of Ayacucho / Plaza Mayor de Huamanga — plazaayacucho.com
 
 INCLUIDO
 - Astro + Tailwind CSS + TypeScript source
 - Configuración Cloudflare Workers Static Assets
+- Dominio de producción configurado: https://plazaayacucho.com (astro.config.mjs → SITE)
 - GA4 G-HXM22WWPKP con consentimiento previo
-- JSON-LD TouristAttraction + LocalBusiness + FAQPage
-- Google Maps localizado es/PE
-- Logo SVG y favicon SVG/16/32/180
+- JSON-LD TouristAttraction + LocalBusiness con @id, image, geo, hasMap, isAccessibleForFree, containedInPlace
+- JSON-LD FAQPage (8 preguntas) y BreadcrumbList geográfico
+- TDK completo, canonical, Open Graph, Twitter Cards y robots meta
+- NAP visible en header/footer (nombre oficial, dirección, teléfono)
+- Google Maps localizado es/PE + enlaces de autoridad MINCETUR, PROMPERÚ y Wikimedia Commons
+- Logo SVG, favicon SVG/16/32/180 e iconos PWA 192/512
+- PWA: site.webmanifest + service worker /sw.js + registro en cliente
+- robots.txt con Allow: / y sitemap-index.xml
 - Diseño español de Perú de una sola página
 - Lista exacta de fotos reales y licencias
 - Verificación estática y logs de CI
@@ -14,7 +20,7 @@ INCLUIDO
 
 ESTADO CI
 - verify:source: PASS
-- node --check scripts/config: PASS
-- CI=1 corepack pnpm install --frozen-lockfile: BLOQUEADO por EAI_AGAIN registry.npmjs.org
-- pnpm check/build: no ejecutables después del bloqueo anterior
-- pnpm-lock.yaml: no fabricado; debe generarse con pnpm real en un entorno con acceso al registro
+- astro check: PASS (0 errores)
+- astro build: PASS
+- verify:dist: PASS (dominio, sitemap y PWA presentes)
+- pnpm-lock.yaml: generado con pnpm real
