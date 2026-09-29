@@ -30,6 +30,9 @@ const localCathedral = `${origin}/images/catedral-ayacucho.jpg`;
 const ogImage = localHero;
 const ogImageAlt = `${attractionFullName} (${attractionLocalName}) — vista principal en ${cityName}, ${countryName}`;
 
+const pageTitle = `Plaza de Armas de Ayacucho (Plaza Mayor de Huamanga): qué hacer, cómo llegar e historia`;
+const pageDescription = `Guía de ${attractionShortName} (${attractionLocalName}), el hito central de ${cityName}, ${stateProvince}, ${countryName}. Entrada libre, horarios 06:00–21:00, cómo llegar desde el aeropuerto o terminal, qué hacer, lugares turísticos cercanos (Catedral, Templo de Santo Domingo) y la Semana Santa de Ayacucho.`;
+
 const photos = {
   hero: 'https://upload.wikimedia.org/wikipedia/commons/8/86/PLAZA_MAYOR_DE_AYACUCHO.jpg',
   plaza: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Plaza_Mayor_de_Huamanga_%2825646832758%29.jpg',
@@ -69,6 +72,26 @@ const faq = [
   {
     q: `¿Qué relación tiene plazaayacucho.com con ${attractionShortName}?`,
     a: `plazaayacucho.com es una guía informativa e independiente dedicada a ${attractionFullName} (${attractionLocalName}). El dominio refiere directamente al uso local «Plaza Ayacucho» de este espacio público, reforzando la identidad digital del atractivo.`
+  },
+  {
+    q: `¿Qué hacer en la ${attractionShortName}?`,
+    a: `Camine bajo los cuatro portales (Unión, Constitución, Independencia y Municipal), fotografíe los balcones de madera y la fachada de la Catedral, recorra los jardines y el monumento a Sucre, y visite el Templo de Santo Domingo y el Museo de Arte Popular Joaquín López Antay (retablos ayacuchanos). Los portales también concentran cafés y restaurantes para una pausa con vista al conjunto.`
+  },
+  {
+    q: `¿Qué lugares turísticos hay cerca de la plaza en ${cityName}?`,
+    a: `Desde la ${attractionShortName} se llega a pie a la Basílica Catedral de Ayacucho, el Templo de Santo Domingo, el Arco del Triunfo y el Barrio de Santa Ana. Un poco más lejos, en la ciudad, destacan el Mirador de Ayacucho, el Complejo Arqueológico de Wari y el pueblo alfarero de Quinua. Todos se integran bien en una ruta a pie desde el centro histórico.`
+  },
+  {
+    q: `¿Cuándo se celebra la Semana Santa de ${cityName}?`,
+    a: `Ayacucho es reconocida por su Semana Santa, una de las más famosas del Perú, que se celebra en marzo o abril (fechas móviles según el calendario litúrgico). Las procesiones suelen partir de la Catedral y recorrer el centro histórico. Si visita la plaza en esas fechas, espere mayor afluencia, controles de tránsito y horarios especiales; conviene confirmar el programa oficial antes de ir.`
+  },
+  {
+    q: `¿Cómo llegar a la ${attractionShortName}?`,
+    a: `En taxi desde el Aeropuerto Coronel FAP Alfredo Mendívil Duarte son aprox. 2,8 km (unos 7 min en condiciones favorables, según MINCETUR); desde el Terminal Terrestre Los Libertadores, aprox. 3,6 km (unos 12 min). Si ya está en el casco histórico, lo mejor es caminar: la plaza funciona como punto de orientación para templos, restaurantes y comercios.`
+  },
+  {
+    q: `¿Qué es la ${attractionLocalName}?`,
+    a: `${attractionLocalName} es el nombre histórico con el que también se conoce a la ${attractionShortName}. Huamanga fue el nombre de la ciudad antes de denominarse Ayacucho, por eso el mismo espacio aparece como ${attractionLocalName}, ${attractionShortName} y, en fuentes turísticas, ${attractionFullName}.`
   }
 ];
 
@@ -157,8 +180,8 @@ const breadcrumbLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Plaza de Armas of Ayacucho (Plaza Mayor de Huamanga) — Guía en Ayacucho, Perú</title>
-    <meta name="description" content={`Guía del visitante de ${attractionFullName} (${attractionLocalName}), el hito central de ${cityName}, región ${stateProvince}, ${countryName}: ubicación y mapa, entrada libre, horarios, qué ver cerca (Basílica Catedral, Templo de Santo Domingo), comida, estacionamiento y preguntas frecuentes.`} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
     <meta name="theme-color" content="#6f2e25" />
     <link rel="canonical" href={canonical} />
     <link rel="manifest" href="/site.webmanifest" />
@@ -174,14 +197,14 @@ const breadcrumbLd = {
     <meta property="og:site_name" content="Plaza Ayacucho" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_PE" />
-    <meta property="og:title" content={`${attractionFullName} — Guía de viaje en ${cityName}, ${countryName}`} />
-    <meta property="og:description" content={`Guía del visitante de ${attractionFullName} (${attractionLocalName}) en ${cityName}, región ${stateProvince}, ${countryName}.`} />
+    <meta property="og:title" content={`${attractionShortName} (${attractionLocalName}) — qué hacer, cómo llegar e historia en ${cityName}`} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:alt" content={ogImageAlt} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={`${attractionFullName} — Guía de viaje en ${cityName}, ${countryName}`} />
-    <meta name="twitter:description" content={`Guía del visitante de ${attractionFullName} (${attractionLocalName}) en ${cityName}, región ${stateProvince}, ${countryName}.`} />
+    <meta name="twitter:title" content={`${attractionShortName} (${attractionLocalName}) — guía en ${cityName}, ${countryName}`} />
+    <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
     <script type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
@@ -201,7 +224,9 @@ const breadcrumbLd = {
           <a href="#sobre">Sobre</a>
           <a href="#historia">Historia</a>
           <a href="#planifica">Planifica</a>
+          <a href="#que-hacer">Qué hacer</a>
           <a href="#alrededores">Alrededores</a>
+          <a href="#lugares">Lugares</a>
           <a href="#mapa">Mapa</a>
           <a href="#faq">FAQ</a>
         </nav>
@@ -413,6 +438,57 @@ const breadcrumbLd = {
             <article class="food-card"><div><span>Jr. 28 de Julio 540</span><h3>ViaVia Café Ayacucho</h3></div><p>Café y cocina fusión en su ubicación actual del centro. Buena parada antes o después del Arco del Triunfo.</p></article>
           </div>
           <p class="data-note">Los horarios, menús, precios y disponibilidad de restaurantes cambian; confirme directamente con cada establecimiento.</p>
+        </div>
+      </section>
+
+      <section id="que-hacer" class="section section-dark">
+        <div class="shell">
+          <div class="section-heading light-heading">
+            <p class="section-kicker">Cómo vivirla</p>
+            <h2>Qué hacer en la {attractionShortName}</h2>
+            <p>La plaza se disfruta mejor como una caminata lenta. Estas sugerencias caben en 45–90 minutos o en una mañana completa si suma los templos y museos vecinos.</p>
+          </div>
+          <div class="planning-grid">
+            <article class="planning-card">
+              <span class="icon-badge">▣</span>
+              <h3>Fotografiar los portales</h3>
+              <p>Los cuatro frentes —Unión, Constitución, Independencia y Municipal— ofrecen arcos, balcones de madera y teja roja. La luz dorada de la tarde realza la piedra y la fachada de la Catedral.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">⛪</span>
+              <h3>Visitar la Catedral y Santo Domingo</h3>
+              <p>La Basílica Catedral de Ayacucho y el Templo de Santo Domingo están a pocos pasos. Combinarlos con la plaza da una lectura completa del centro histórico de Huamanga.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">◫</span>
+              <h3>Retablos y arte popular</h3>
+              <p>El Museo de Arte Popular Joaquín López Antay, en el Portal Independencia, introduce el retablo ayacuchano y la tradición artesanal local. Verifique el horario antes de ir.</p>
+            </article>
+            <article class="planning-card">
+              <span class="icon-badge">☕</span>
+              <h3>Café y gastronomía en los portales</h3>
+              <p>Los portales concentran restaurantes y cafeterías con vista al conjunto monumental. Es una pausa cómoda entre la caminata y la visita a los templos.</p>
+            </article>
+          </div>
+          <p class="data-note">Durante la Semana Santa de Ayacucho (marzo/abril) la plaza y el centro histórico reciben procesiones y mayor afluencia; espere controles de tránsito y horarios especiales.</p>
+        </div>
+      </section>
+
+      <section id="lugares" class="section section-green">
+        <div class="shell">
+          <div class="section-heading light-heading split-heading">
+            <div><p class="section-kicker">Más allá de la plaza</p><h2>Lugares turísticos en {cityName}</h2></div>
+            <p>La {attractionShortName} es el punto de partida ideal para recorrer la ciudad. Estos atractivos se integran en una ruta a pie o en pocos minutos de traslado.</p>
+          </div>
+          <div class="nearby-grid">
+            <article><span>Centro histórico</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Escenario principal de la Semana Santa y referencia para leer la plaza.</p></article>
+            <article><span>≈ 1 cuadra</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles de Huamanga, asociado al paisaje religioso del centro.</p></article>
+            <article><span>Pocos minutos a pie</span><h3>Arco del Triunfo</h3><p>Hito urbano sobre Jr. 28 de Julio, parada fácil para extender el paseo por el casco antiguo.</p></article>
+            <article><span>Mirador</span><h3>Mirador de Ayacucho</h3><p>Punto panorámico para ver la ciudad y el contorno de cerros que rodea la plaza y el centro.</p></article>
+            <article><span>≈ 22 km</span><h3>Complejo Arqueológico de Wari</h3><p>Capital del imperio preincaico Wari, una de las zonas arqueológicas más importantes cerca de Ayacucho.</p></article>
+            <article><span>≈ 37 km</span><h3>Pueblo de Quinua</h3><p>Centro alfarero famoso por los retablos y la cercanía a la Pampa de Ayacucho, escenario de la batalla de Ayacucho.</p></article>
+          </div>
+          <p class="data-note">Las distancias son referenciales desde el centro de {cityName}; el tiempo de traslado varía con el tráfico y el medio de transporte.</p>
         </div>
       </section>
 
