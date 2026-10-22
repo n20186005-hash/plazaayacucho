@@ -6,16 +6,19 @@ const pathname = Astro.url.pathname;
 const canonical = Astro.site ? new URL(pathname, Astro.site).toString() : `${origin}${pathname}`;
 
 const siteDomain = 'plazaayacucho.com';
-const attractionFullName = 'Plaza de Armas of Ayacucho';
-const attractionShortName = 'Plaza de Armas de Ayacucho';
+const attractionFullName = 'Plaza Mayor de Ayacucho';
+const attractionShortName = 'Plaza Mayor de Ayacucho';
 const attractionLocalName = 'Plaza Mayor de Huamanga';
 const cityName = 'Ayacucho';
 const stateProvince = 'Ayacucho';
 const countryName = 'Perú';
 const countryCode = 'PE';
 const postalCode = '05003';
-const telephone = '+51 985 928 260';
-const telephoneHref = '+51985928260';
+const municipalityPhone = '(066) 492035';
+const municipalityPhoneHref = '066492035';
+const municipalityEmail = 'atencionalciudadano@munihuamanga.gob.pe';
+const promperuImageEmail = 'flopez@promperu.gob.pe';
+const iperuGuideUrl = 'https://cdn.www.gob.pe/uploads/document/file/5565235/4950571-ayacucho-gppv-espanol_web_2023-1.pdf?v=1702914452';
 const latitude = -13.160367;
 const longitude = -74.225767;
 
@@ -30,8 +33,8 @@ const localCathedral = `${origin}/images/catedral-ayacucho.jpg`;
 const ogImage = localHero;
 const ogImageAlt = `${attractionFullName} (${attractionLocalName}) — vista principal en ${cityName}, ${countryName}`;
 
-const pageTitle = `Plaza de Armas de Ayacucho (Plaza Mayor de Huamanga): qué hacer, cómo llegar e historia`;
-const pageDescription = `Guía de ${attractionShortName} (${attractionLocalName}), el hito central de ${cityName}, ${stateProvince}, ${countryName}. Entrada libre, horarios 06:00–21:00, cómo llegar desde el aeropuerto o terminal, qué hacer, lugares turísticos cercanos (Catedral, Templo de Santo Domingo) y la Semana Santa de Ayacucho.`;
+const pageTitle = `Plaza Mayor de Ayacucho, Ayacucho: guía turística`;
+const pageDescription = `Guía independiente de ${attractionShortName} (${attractionLocalName}) en ${cityName}, ${stateProvince}, ${countryName}. Incluye cómo llegar, horarios de visita recomendados, lugares cercanos, contactos institucionales sugeridos, referencia de IPERÚ y orientación para solicitar material fotográfico oficial.`;
 
 const photos = {
   hero: 'https://upload.wikimedia.org/wikipedia/commons/8/86/PLAZA_MAYOR_DE_AYACUCHO.jpg',
@@ -63,7 +66,7 @@ const faq = [
   },
   {
     q: '¿Por qué también se llama Plaza Mayor de Huamanga?',
-    a: 'Ayacucho conserva el nombre histórico de Huamanga en numerosos referentes patrimoniales. Por eso el mismo espacio aparece como Plaza de Armas de Ayacucho y Plaza Mayor de Huamanga en fuentes turísticas y cartográficas.'
+    a: 'Huamanga es el nombre histórico de la ciudad y por eso sigue apareciendo en referencias patrimoniales. Según la orientación recibida de IPERÚ, la denominación correcta para este espacio es Plaza Mayor; Plaza Mayor de Huamanga funciona como referencia histórica y en algunos canales todavía puede aparecer la mención informal Plaza de Armas.'
   },
   {
     q: `¿Dónde se ubica exactamente ${attractionFullName}?`,
@@ -71,7 +74,7 @@ const faq = [
   },
   {
     q: `¿Qué relación tiene plazaayacucho.com con ${attractionShortName}?`,
-    a: `plazaayacucho.com es una guía informativa e independiente dedicada a ${attractionFullName} (${attractionLocalName}). El dominio refiere directamente al uso local «Plaza Ayacucho» de este espacio público, reforzando la identidad digital del atractivo.`
+    a: `plazaayacucho.com es una guía informativa e independiente dedicada a ${attractionFullName} (${attractionLocalName}). IPERÚ indicó que no valida contenidos de páginas de terceros; por eso esta web presenta material de referencia pública y remite a entidades oficiales cuando se necesita validación institucional o histórica.`
   },
   {
     q: `¿Qué hacer en la ${attractionShortName}?`,
@@ -91,7 +94,15 @@ const faq = [
   },
   {
     q: `¿Qué es la ${attractionLocalName}?`,
-    a: `${attractionLocalName} es el nombre histórico con el que también se conoce a la ${attractionShortName}. Huamanga fue el nombre de la ciudad antes de denominarse Ayacucho, por eso el mismo espacio aparece como ${attractionLocalName}, ${attractionShortName} y, en fuentes turísticas, ${attractionFullName}.`
+    a: `${attractionLocalName} es la forma histórica con la que también se identifica a la ${attractionShortName}. Huamanga fue el nombre histórico de la ciudad antes de denominarse Ayacucho, de modo que ambas expresiones pueden aparecer juntas en material turístico y patrimonial.`
+  },
+  {
+    q: '¿Quién puede validar la información histórica o institucional del sitio?',
+    a: 'IPERÚ señaló que no valida contenidos publicados por terceros. Para revisión o validación se sugiere contactar a la Dirección Regional de Comercio Exterior y Turismo de Ayacucho (Sr. Raúl Sayas, 999 042 541) o al Colegio de Historiadores del Perú – Ayacucho (Sra. Gaby Apcho, 966 653 011).'
+  },
+  {
+    q: '¿Cómo se solicita material fotográfico oficial?',
+    a: `Para solicitar material fotográfico oficial de PROMPERÚ, IPERÚ recomienda comunicarse con el Banco de Imágenes de la institución o escribir a ${promperuImageEmail}.`
   }
 ];
 
@@ -101,20 +112,19 @@ const openingHours = [
 
 const attractionLd = {
   '@context': 'https://schema.org',
-  "@type": ['TouristAttraction', 'LocalBusiness'],
+  "@type": 'TouristAttraction',
   "@id": `${origin}/#attraction`,
   name: attractionFullName,
-  alternateName: [attractionShortName, attractionLocalName, `${cityName} ${attractionFullName}`],
+  alternateName: [attractionLocalName, 'Plaza de Armas de Ayacucho', `${cityName} ${attractionFullName}`],
   description: `Guía completa del visitante de ${attractionFullName} (${attractionLocalName}) en ${cityName}, ${stateProvince}, ${countryName}.`,
   url: canonical || origin,
   mainEntityOfPage: { "@type": 'WebPage', "@id": canonical || origin },
   image: [localHero, localPlaza, localCathedral],
   "isAccessibleForFree": true,
   priceRange: 'Ingreso libre',
-  telephone,
   address: {
     "@type": 'PostalAddress',
-    streetAddress: attractionLocalName,
+    streetAddress: attractionFullName,
     addressLocality: cityName,
     addressRegion: stateProvince,
     postalCode,
@@ -126,13 +136,7 @@ const attractionLd = {
     longitude
   },
   "hasMap": mapUrl,
-  sameAs: [mapUrl, minceturUrl, promperuUrl, commonsUrl],
-  aggregateRating: {
-    "@type": 'AggregateRating',
-    ratingValue: '4.5',
-    reviewCount: '19773',
-    bestRating: '5'
-  },
+  sameAs: [mapUrl, minceturUrl, promperuUrl, iperuGuideUrl, commonsUrl],
   openingHoursSpecification: openingHours.map((item) => ({
     "@type": 'OpeningHoursSpecification',
     dayOfWeek: `https://schema.org/${item.day}`,
@@ -242,15 +246,15 @@ const breadcrumbLd = {
             <div class="eyebrow-row">
               <span>Ayacucho · Perú</span>
               <span>2.752 m s. n. m.</span>
-              <span>★ 4,5 · 19.773 reseñas</span>
+              <span>Centro histórico de Huamanga</span>
             </div>
             <p class="hero-kicker">{attractionFullName}</p>
             <h1>{attractionFullName} <span class="h1-sub">({attractionLocalName}, {cityName})</span></h1>
             <p class="hero-tagline">El corazón de piedra, arcos y memoria de Ayacucho</p>
-            <p class="hero-lead">Bienvenido a <strong>{attractionFullName}</strong>, reconocida ampliamente como la <strong>{attractionShortName}</strong> y conocida históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
+            <p class="hero-lead">Bienvenido a <strong>{attractionFullName}</strong>, también identificada históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
             <div class="hero-actions">
               <a class="button button-gold" href="#planifica">Planificar visita</a>
-              <a class="button button-ghost" href={mapUrl} target="_blank" rel="noreferrer">Abrir Google Maps</a>
+              <a class="button button-ghost" href="#fuentes">Ver fuentes y contactos</a>
             </div>
           </div>
 
@@ -281,8 +285,9 @@ const breadcrumbLd = {
           <div class="entity-copy">
             <p class="section-kicker">Sobre el atractivo</p>
             <h2 id="sobre-titulo">Sobre la {attractionFullName}</h2>
-            <p class="large-copy entity-equalizer">Bienvenido a <strong>{attractionFullName}</strong>, reconocida ampliamente como la <strong>{attractionShortName}</strong> y conocida históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
-            <p>Esta guía, publicada en <strong>{siteDomain}</strong>, reúne la información práctica y verificable para visitar el espacio: ubicación exacta, mapa, horarios, acceso libre, transporte desde el aeropuerto o terminal terrestre, estacionamiento, comida, puntos de interés cercanos y contexto histórico.</p>
+            <p class="large-copy entity-equalizer">Bienvenido a <strong>{attractionFullName}</strong>, conocida históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
+            <p>Esta guía, publicada en <strong>{siteDomain}</strong>, reúne información práctica de referencia para visitar el espacio: ubicación, mapa, horarios de visita recomendados, acceso libre, transporte desde el aeropuerto o terminal terrestre, servicios cercanos y contexto histórico básico.</p>
+            <p>IPERÚ indicó expresamente que no valida el contenido de páginas web de terceros. Cuando se requiere revisión institucional o validación histórica, esta web remite a las entidades sugeridas en su respuesta oficial.</p>
             <nav class="geo-breadcrumb" aria-label="Jerarquía geográfica del atractivo">
               <ol>
                 <li><span>{attractionFullName}</span></li>
@@ -429,15 +434,15 @@ const breadcrumbLd = {
           </div>
 
           <div class="food-heading">
-            <p class="section-kicker">Comer alrededor</p>
-            <h2>Sabores con dirección concreta</h2>
+            <p class="section-kicker">Servicios alrededor</p>
+            <h2>Qué tipo de servicios buscar en el entorno</h2>
           </div>
           <div class="food-grid">
-            <article class="food-card featured-food"><div><span>Portal Constitución 4</span><h3>La Plaza · Casa Andina</h3></div><p>Opción directa frente al entorno monumental, útil para desayuno, almuerzo o una pausa larga con cocina peruana.</p></article>
-            <article class="food-card"><div><span>Portal Constitución 8</span><h3>Sukre Restaurant</h3></div><p>Cocina peruana y ubicación privilegiada para continuar la caminata sin salir del núcleo histórico.</p></article>
-            <article class="food-card"><div><span>Jr. 28 de Julio 540</span><h3>ViaVia Café Ayacucho</h3></div><p>Café y cocina fusión en su ubicación actual del centro. Buena parada antes o después del Arco del Triunfo.</p></article>
+            <article class="food-card featured-food"><div><span>Portales de la plaza</span><h3>Cafeterías y desayunos</h3></div><p>En los portales y calles inmediatas suele haber opciones para desayunar, tomar café o hacer una pausa corta con vista al conjunto monumental.</p></article>
+            <article class="food-card"><div><span>Centro histórico</span><h3>Restaurantes de cocina regional</h3></div><p>En el entorno de la plaza es posible encontrar restaurantes y menús de comida ayacuchana. Conviene revisar carta, horario y afluencia el mismo día.</p></article>
+            <article class="food-card"><div><span>Calles cercanas</span><h3>Hoteles y servicios turísticos</h3></div><p>El casco histórico concentra hospedajes, agencias y comercios de apoyo para continuar la visita a pie sin alejarse demasiado del centro.</p></article>
           </div>
-          <p class="data-note">Los horarios, menús, precios y disponibilidad de restaurantes cambian; confirme directamente con cada establecimiento.</p>
+          <p class="data-note">Siguiendo un criterio informativo e independiente, esta web describe tipos de servicios y no recomienda comercios concretos.</p>
         </div>
       </section>
 
@@ -516,15 +521,16 @@ const breadcrumbLd = {
           <div class="map-frame">
             <iframe
               title={`Mapa de ${attractionFullName} en ${cityName}`}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766507.3027094477!2d-73.79336433217397!3d-13.323280372800665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df3a774ab1f%3A0xa8754afd6ff9a870!2sPlaza%20de%20Armas%20of%20Ayacucho!5e1!3m2!1ses!2spe!4v1789008230750!5m2!1ses!2spe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766507.3027094477!2d-73.79336433217397!3d-13.323280372800665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df3a774ab1f%3A0xa8754afd6ff9a870!2sPlaza%20Mayor%20de%20Ayacucho!5e1!3m2!1ses!2spe!4v1789008230750!5m2!1ses!2spe"
               allowfullscreen
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
           <p class="official-note">
-            Para información turística oficial y actualizaciones regionales, visita{' '}
-            <a href={minceturUrl} target="_blank" rel="noopener noreferrer">Perú / {stateProvince} — MINCETUR ↗</a>{' '}o{' '}
-            <a href={promperuUrl} target="_blank" rel="noopener noreferrer">Perú Travel / PROMPERÚ ↗</a>.
+            Para información turística de referencia y material institucional, consulta{' '}
+            <a href={minceturUrl} target="_blank" rel="noopener noreferrer">MINCETUR ↗</a>,{' '}
+            <a href={promperuUrl} target="_blank" rel="noopener noreferrer">Perú Travel / PROMPERÚ ↗</a>{' '}y el{' '}
+            <a href={iperuGuideUrl} target="_blank" rel="noopener noreferrer">material promocional compartido por IPERÚ ↗</a>.
           </p>
         </div>
       </section>
@@ -547,16 +553,16 @@ const breadcrumbLd = {
         </div>
       </section>
 
-      <section class="source-band">
+      <section id="fuentes" class="source-band">
         <div class="shell source-grid">
-          <div><p class="section-kicker">Fuentes principales</p><h2>Información con rastro verificable</h2></div>
+          <div><p class="section-kicker">Fuentes y orientación</p><h2>Referencias públicas y contactos sugeridos por IPERÚ</h2></div>
           <div class="source-links">
             <a href={minceturUrl} target="_blank" rel="noreferrer"><strong>MINCETUR</strong><span>Inventario de recursos turísticos</span></a>
             <a href={promperuUrl} target="_blank" rel="noreferrer"><strong>Perú Travel / PROMPERÚ</strong><span>Contexto turístico de Ayacucho</span></a>
-            <a href={mapUrl} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Ubicación y ficha facilitada para este proyecto</span></a>
+            <a href={iperuGuideUrl} target="_blank" rel="noreferrer"><strong>IPERÚ Ayacucho</strong><span>PDF promocional regional compartido como referencia</span></a>
             <a href={commonsUrl} target="_blank" rel="noreferrer"><strong>Wikimedia Commons</strong><span>Fotografías documentales con licencia libre</span></a>
           </div>
-          <p class="source-review">Revisión editorial: septiembre de 2026. Los datos de contacto y dirección coinciden con la ficha de Google Maps para {attractionFullName}.</p>
+          <p class="source-review">IPERÚ indicó que no valida contenidos de terceros. Para validación de información: DIRCETUR Ayacucho (Sr. Raúl Sayas, 999 042 541) y Colegio de Historiadores del Perú – Ayacucho (Sra. Gaby Apcho, 966 653 011). Para la gestión y conservación del entorno, la referencia institucional es la Municipalidad Provincial de Huamanga.</p>
         </div>
       </section>
     </main>
@@ -566,16 +572,19 @@ const breadcrumbLd = {
         <div class="footer-brand">
           <img src="/icons/logo.svg" alt={`${attractionFullName} (${attractionLocalName})`} width="186" height="52" />
           <p><strong>{attractionFullName}</strong><br />{attractionLocalName}</p>
-          <address>
-            {attractionLocalName}<br />
-            {cityName} {postalCode}, {countryName}<br />
-            <a href={`tel:${telephoneHref}`}>{telephone}</a>
-          </address>
-          <p class="footer-domain">{siteDomain}</p>
+          <p class="footer-domain">Guía independiente en {siteDomain}</p>
         </div>
         <div>
-          <strong>Créditos fotográficos</strong>
-          <p>Pollinhhsano · CC BY-SA 4.0 · EduardoZambrano · CC BY-SA 2.0 · Fer121 · CC BY-SA. Detalles y enlaces originales en <code>public/images/IMAGE-SOURCES.md</code>.</p>
+          <strong>Contacto institucional sugerido</strong>
+          <address>
+            Municipalidad Provincial de Huamanga<br />
+            <a href={`tel:${municipalityPhoneHref}`}>{municipalityPhone}</a><br />
+            <a href={`mailto:${municipalityEmail}`}>{municipalityEmail}</a>
+          </address>
+        </div>
+        <div>
+          <strong>Material fotográfico oficial</strong>
+          <p>Para solicitar imágenes oficiales de PROMPERÚ, IPERÚ sugirió contactar al Banco de Imágenes o escribir a <a href={`mailto:${promperuImageEmail}`}>{promperuImageEmail}</a>.</p>
         </div>
         <div>
           <strong>Privacidad</strong>
@@ -583,7 +592,7 @@ const breadcrumbLd = {
           <button id="cookie-settings" class="footer-button" type="button">Configurar analítica</button>
         </div>
       </div>
-      <div class="shell disclaimer">Sitio informativo independiente y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ ni a ninguna entidad pública. NAP: {attractionFullName} · {attractionLocalName} · {cityName} {postalCode} · {telephone}</div>
+      <div class="shell disclaimer">Sitio informativo independiente y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni a ninguna entidad pública. Según la orientación recibida, la denominación preferente es Plaza Mayor y la validación de contenidos debe solicitarse a las entidades competentes.</div>
     </footer>
 
     <div id="cookie-banner" class="cookie-banner" hidden>

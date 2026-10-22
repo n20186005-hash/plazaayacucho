@@ -1,6 +1,6 @@
 // @ts-nocheck
 /*
- * Service worker del sitio Plaza de Armas of Ayacucho (plazaayacucho.com).
+ * Service worker del sitio Plaza Mayor de Ayacucho (plazaayacucho.com).
  * Estrategia: documento en red con respaldo en caché; activos estáticos en caché primero.
  * No se precargan recursos externos (Google Maps, Analytics) para no romper el consentimiento.
  */
