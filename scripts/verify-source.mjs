@@ -15,7 +15,7 @@ for (const group of ['dependencies', 'devDependencies']) {
 }
 if (pkg.packageManager !== 'pnpm@12.3.4') failures.push('packageManager no coincide con pnpm@12.3.4');
 if (pkg.engines?.node !== '24.21.0') failures.push('engines.node no coincide con 24.21.0');
-if (fs.existsSync(path.join(root, 'pnpm-workspace.yaml'))) failures.push('No se requiere pnpm-workspace.yaml en este proyecto de un solo paquete.');
+if (!fs.existsSync(path.join(root, 'pnpm-workspace.yaml'))) failures.push('Falta la política de scripts nativos.');
 
 /** @param {string} dir */
 function walk(dir) {
@@ -34,14 +34,14 @@ walk(root);
 const EXPECTED_SITE = 'https://plazaayacucho.com';
 const config = fs.readFileSync(path.join(root, 'astro.config.mjs'), 'utf8');
 if (!config.includes(`const SITE = '${EXPECTED_SITE}'`)) failures.push(`El único SITE debe ser ${EXPECTED_SITE}.`);
-if (!/SITE \? \[sitemap\(\)\] : \[\]/.test(config)) failures.push('Sitemap no está condicionado por SITE.');
+if (!config.includes('sitemap({ filter:')) failures.push('Falta el filtro de páginas de error en sitemap.');
 const page = fs.readFileSync(path.join(root, 'src/pages/index.astro'), 'utf8');
-if (!page.includes('!1ses!2spe') || !page.includes('!5m2!1ses!2spe')) failures.push('El iframe de Google Maps no está localizado a es/PE.');
+if (!page.includes('hl=es')) failures.push('El iframe de Google Maps no está localizado a es/PE.');
 if (page.includes('<lastmod>') || /lastmod\s*[:=]/i.test(page)) failures.push('Se encontró lastmod manual.');
 
 // Enlace de entidad: dominio, nombre oficial, ciudad y jerarquía geográfica.
 if (!page.includes('"@id"') || !page.includes('/#attraction')) failures.push('El JSON-LD no define @id anclado al dominio.');
-if (!page.includes('Plaza de Armas of Ayacucho')) failures.push('Falta el nombre oficial del atractivo en la página.');
+if (!page.includes('Plaza Mayor de Ayacucho')) failures.push('Falta el nombre oficial del atractivo en la página.');
 if (!page.includes('"hasMap"') || !page.includes('"isAccessibleForFree"')) failures.push('El JSON-LD no incluye hasMap/isAccessibleForFree.');
 if (!page.includes('"@type": \'BreadcrumbList\'') && !page.includes('"@type": "BreadcrumbList"')) failures.push('Falta el BreadcrumbList de jerarquía geográfica.');
 if (!page.includes('application/ld+json')) failures.push('No hay datos estructurados JSON-LD.');

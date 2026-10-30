@@ -14,33 +14,30 @@ const stateProvince = 'Ayacucho';
 const countryName = 'Perú';
 const countryCode = 'PE';
 const postalCode = '05003';
-const municipalityPhone = '(066) 492035';
-const municipalityPhoneHref = '066492035';
-const municipalityEmail = 'atencionalciudadano@munihuamanga.gob.pe';
-const promperuImageEmail = 'flopez@promperu.gob.pe';
-const iperuGuideUrl = 'https://cdn.www.gob.pe/uploads/document/file/5565235/4950571-ayacucho-gppv-espanol_web_2023-1.pdf?v=1702914452';
-const latitude = -13.160367;
-const longitude = -74.225767;
+const mapsPhone = '+51 985 928 260';
+const mapsPhoneHref = '+51985928260';
+const latitude = -13.1603789;
+const longitude = -74.2257816;
 
 const mapUrl = 'https://maps.app.goo.gl/LoXftb7yUhBJUgCr9';
 const minceturUrl = 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=386';
 const promperuUrl = 'https://target2.promperu.gob.pe/destinos/ayacucho/ciudad-de-ayacucho/plaza-mayor-de-la-ciudad-de-ayacucho';
 const commonsUrl = 'https://commons.wikimedia.org/wiki/Ayacucho';
 
-const localHero = `${origin}/images/plaza-mayor-ayacucho-hero.jpg`;
+const localHero = `${origin}/images/plaza-mayor-huamanga-wide.jpg`;
 const localPlaza = `${origin}/images/plaza-mayor-huamanga-wide.jpg`;
 const localCathedral = `${origin}/images/catedral-ayacucho.jpg`;
 const ogImage = localHero;
 const ogImageAlt = `${attractionFullName} (${attractionLocalName}) — vista principal en ${cityName}, ${countryName}`;
 
-const pageTitle = `Plaza Mayor de Ayacucho, Ayacucho: guía turística`;
-const pageDescription = `Guía independiente de ${attractionShortName} (${attractionLocalName}) en ${cityName}, ${stateProvince}, ${countryName}. Incluye cómo llegar, horarios de visita recomendados, lugares cercanos, contactos institucionales sugeridos, referencia de IPERÚ y orientación para solicitar material fotográfico oficial.`;
+const pageTitle = 'Plaza de Armas de Ayacucho: Plaza Mayor, ubicación y visita';
+const pageDescription = 'Visita la Plaza Mayor de Ayacucho o Plaza de Armas: ubicación, portales, monumento a Sucre, horarios atribuidos y cómo distinguir los paseos urbanos de Wari y Quinua.';
 
 const photos = {
-  hero: 'https://upload.wikimedia.org/wikipedia/commons/8/86/PLAZA_MAYOR_DE_AYACUCHO.jpg',
-  plaza: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Plaza_Mayor_de_Huamanga_%2825646832758%29.jpg',
-  cathedral: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Catedral_de_Ayacucho_%2825646655978%29.jpg',
-  monument: 'https://upload.wikimedia.org/wikipedia/commons/3/3a/Plaza_de_Armas_-_Ayacucho.JPG'
+  hero: '/images/plaza-mayor-huamanga-wide.jpg',
+  plaza: '/images/plaza-mayor-huamanga-wide.jpg',
+  cathedral: '/images/catedral-ayacucho.jpg',
+  monument: '/images/plaza-armas-monumento.jpg'
 };
 
 const faq = [
@@ -58,15 +55,15 @@ const faq = [
   },
   {
     q: '¿Cómo llego desde el aeropuerto de Ayacucho?',
-    a: 'La ficha oficial de MINCETUR indica aproximadamente 2,8 km desde el Aeropuerto Coronel FAP Alfredo Mendívil Duarte, con una referencia de unos 7 minutos en taxi en condiciones favorables.'
+    a: 'La ficha oficial de MINCETUR indica aproximadamente 2,8 km desde el Aeropuerto Coronel FAP Alfredo Mendívil Duarte, con una referencia de unos 7 minutos en taxi, una estimación de la ficha y no una duración garantizada.'
   },
   {
     q: '¿Hay estacionamiento dentro de la Plaza Mayor?',
-    a: 'No se recomienda contar con estacionamiento en el perímetro inmediato de la plaza. Hay cocheras privadas en calles cercanas; confirme tarifa, horario y disponibilidad antes de dejar el vehículo.'
+    a: 'No cuente con un cupo junto a la plaza sin confirmarlo. MINCETUR registra estacionamiento en la ciudad; no se ha verificado aquí una cochera concreta, sus tarifas ni disponibilidad.'
   },
   {
     q: '¿Por qué también se llama Plaza Mayor de Huamanga?',
-    a: 'Huamanga es el nombre histórico de la ciudad y por eso sigue apareciendo en referencias patrimoniales. Según la orientación recibida de IPERÚ, la denominación correcta para este espacio es Plaza Mayor; Plaza Mayor de Huamanga funciona como referencia histórica y en algunos canales todavía puede aparecer la mención informal Plaza de Armas.'
+    a: 'MINCETUR denomina al recurso Plaza Mayor de Ayacucho y explica sus nombres históricos Plaza Mayor de Huamanga y Plaza de Armas. Las tres expresiones ayudan a identificar el mismo espacio, no tres plazas distintas.'
   },
   {
     q: `¿Dónde se ubica exactamente ${attractionFullName}?`,
@@ -74,7 +71,7 @@ const faq = [
   },
   {
     q: `¿Qué relación tiene plazaayacucho.com con ${attractionShortName}?`,
-    a: `plazaayacucho.com es una guía informativa e independiente dedicada a ${attractionFullName} (${attractionLocalName}). IPERÚ indicó que no valida contenidos de páginas de terceros; por eso esta web presenta material de referencia pública y remite a entidades oficiales cuando se necesita validación institucional o histórica.`
+    a: `plazaayacucho.com es una guía informativa e independiente dedicada a ${attractionFullName} (${attractionLocalName}). Esta web no representa a ninguna entidad pública y atribuye sus datos a las fuentes consultadas; para condiciones actuales remite a los canales oficiales.`
   },
   {
     q: `¿Qué hacer en la ${attractionShortName}?`,
@@ -82,7 +79,7 @@ const faq = [
   },
   {
     q: `¿Qué lugares turísticos hay cerca de la plaza en ${cityName}?`,
-    a: `Desde la ${attractionShortName} se llega a pie a la Basílica Catedral de Ayacucho, el Templo de Santo Domingo, el Arco del Triunfo y el Barrio de Santa Ana. Un poco más lejos, en la ciudad, destacan el Mirador de Ayacucho, el Complejo Arqueológico de Wari y el pueblo alfarero de Quinua. Todos se integran bien en una ruta a pie desde el centro histórico.`
+    a: `La Catedral está junto a la plaza y Santo Domingo y el Arco del Triunfo son visitas urbanas separadas. Wari y Quinua corresponden a excursiones regionales: organiza transporte y tiempo por separado, sin presentarlas como un paseo a pie desde la plaza.`
   },
   {
     q: `¿Cuándo se celebra la Semana Santa de ${cityName}?`,
@@ -96,19 +93,8 @@ const faq = [
     q: `¿Qué es la ${attractionLocalName}?`,
     a: `${attractionLocalName} es la forma histórica con la que también se identifica a la ${attractionShortName}. Huamanga fue el nombre histórico de la ciudad antes de denominarse Ayacucho, de modo que ambas expresiones pueden aparecer juntas en material turístico y patrimonial.`
   },
-  {
-    q: '¿Quién puede validar la información histórica o institucional del sitio?',
-    a: 'IPERÚ señaló que no valida contenidos publicados por terceros. Para revisión o validación se sugiere contactar a la Dirección Regional de Comercio Exterior y Turismo de Ayacucho (Sr. Raúl Sayas, 999 042 541) o al Colegio de Historiadores del Perú – Ayacucho (Sra. Gaby Apcho, 966 653 011).'
-  },
-  {
-    q: '¿Cómo se solicita material fotográfico oficial?',
-    a: `Para solicitar material fotográfico oficial de PROMPERÚ, IPERÚ recomienda comunicarse con el Banco de Imágenes de la institución o escribir a ${promperuImageEmail}.`
-  }
+  { q: '¿Qué horarios y contacto muestra Google Maps?', a: 'Consulta del 29 de octubre de 2026: 4,5/5 y 19.802 reseñas de terceros; la ficha muestra apertura el viernes a las 08:00 y el teléfono +51 985 928 260. No se ha confirmado que ese teléfono sea de la administración de la plaza ni que ese horario regule todo el espacio público. MINCETUR publica una franja de visita de 06:00 a 21:00; confirma tu fecha y los recintos que quieres visitar.' }
 ];
-
-const openingHours = [
-  'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'
-].map((day) => ({ day, opens: '06:00', closes: '21:00' }));
 
 const attractionLd = {
   '@context': 'https://schema.org',
@@ -136,13 +122,7 @@ const attractionLd = {
     longitude
   },
   "hasMap": mapUrl,
-  sameAs: [mapUrl, minceturUrl, promperuUrl, iperuGuideUrl, commonsUrl],
-  openingHoursSpecification: openingHours.map((item) => ({
-    "@type": 'OpeningHoursSpecification',
-    dayOfWeek: `https://schema.org/${item.day}`,
-    opens: item.opens,
-    closes: item.closes
-  })),
+  sameAs: [mapUrl, minceturUrl, promperuUrl],
   containedInPlace: {
     "@type": 'City',
     name: cityName,
@@ -170,24 +150,20 @@ const faqLd = {
 const breadcrumbLd = {
   '@context': 'https://schema.org',
   "@type": 'BreadcrumbList',
-  itemListElement: [
-    { "@type": 'ListItem', position: 1, name: 'Inicio', item: origin },
-    { "@type": 'ListItem', position: 2, name: attractionFullName, item: `${origin}/#attraction` },
-    { "@type": 'ListItem', position: 3, name: cityName, item: `${origin}/#ciudad` },
-    { "@type": 'ListItem', position: 4, name: stateProvince, item: `${origin}/#region` },
-    { "@type": 'ListItem', position: 5, name: countryName, item: `${origin}/#pais` }
-  ]
+  itemListElement: [{ "@type": 'ListItem', position: 1, name: attractionFullName, item: origin }]
 };
 ---
 <!doctype html>
 <html lang="es-PE">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <meta name="theme-color" content="#6f2e25" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es-PE" href={origin + '/'} />
+    <link rel="alternate" hreflang="x-default" href={origin + '/'} />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -211,9 +187,9 @@ const breadcrumbLd = {
     <meta name="twitter:description" content={pageDescription} />
     <meta name="twitter:image" content={ogImage} />
     <meta name="twitter:image:alt" content={ogImageAlt} />
-    <script type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(attractionLd)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(faqLd)}></script>
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)}></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -249,12 +225,12 @@ const breadcrumbLd = {
               <span>Centro histórico de Huamanga</span>
             </div>
             <p class="hero-kicker">{attractionFullName}</p>
-            <h1>{attractionFullName} <span class="h1-sub">({attractionLocalName}, {cityName})</span></h1>
+            <h1>Plaza de Armas de Ayacucho <span class="h1-sub">({attractionLocalName}, {cityName})</span></h1>
             <p class="hero-tagline">El corazón de piedra, arcos y memoria de Ayacucho</p>
-            <p class="hero-lead">Bienvenido a <strong>{attractionFullName}</strong>, también identificada históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
+            <p class="hero-lead">Bienvenido a <strong>{attractionFullName}</strong>, también identificada históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>Región de {stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
             <div class="hero-actions">
               <a class="button button-gold" href="#planifica">Planificar visita</a>
-              <a class="button button-ghost" href="#fuentes">Ver fuentes y contactos</a>
+              <a class="button button-ghost" href="#fuentes">Ver fuentes de la guía</a>
             </div>
           </div>
 
@@ -269,12 +245,12 @@ const breadcrumbLd = {
             <p class="fine-print">El horario 06:00–21:00 corresponde a la franja de visita recomendada por MINCETUR, no a un cierre físico del espacio público.</p>
           </aside>
         </div>
-        <div class="hero-credit">Foto real: Pollinhhsano · Wikimedia Commons · CC BY-SA 4.0</div>
+        <div class="hero-credit">Fotografía histórica: <a href="https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Huamanga_(25646832758).jpg">EduardoZambrano</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a> · 2017-12-26. Encuadre adaptado.</div>
       </section>
 
       <section class="intro-strip">
         <div class="shell intro-grid">
-          <div class="intro-number"><span>111</span><small>arcos alrededor de la plaza</small></div>
+          <div class="intro-number"><span>111</span><small>columnas y arcos según MINCETUR</small></div>
           <p>Los cuatro frentes —Unión, Constitución, Independencia y Municipal— forman una secuencia de piedra que define la imagen del centro histórico. En el centro, el monumento ecuestre a Antonio José de Sucre articula jardines y fuentes simétricas.</p>
           <a href={minceturUrl} target="_blank" rel="noreferrer">Ver ficha de MINCETUR ↗</a>
         </div>
@@ -285,16 +261,16 @@ const breadcrumbLd = {
           <div class="entity-copy">
             <p class="section-kicker">Sobre el atractivo</p>
             <h2 id="sobre-titulo">Sobre la {attractionFullName}</h2>
-            <p class="large-copy entity-equalizer">Bienvenido a <strong>{attractionFullName}</strong>, conocida históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>{stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
+            <p class="large-copy entity-equalizer">Para orientarte, toma el monumento a Sucre como referencia central y reconoce la fachada de la Catedral en el perímetro. Recorrer la plaza al aire libre es una visita distinta de entrar a templos y museos, que tienen condiciones propias.</p>
             <p>Esta guía, publicada en <strong>{siteDomain}</strong>, reúne información práctica de referencia para visitar el espacio: ubicación, mapa, horarios de visita recomendados, acceso libre, transporte desde el aeropuerto o terminal terrestre, servicios cercanos y contexto histórico básico.</p>
-            <p>IPERÚ indicó expresamente que no valida el contenido de páginas web de terceros. Cuando se requiere revisión institucional o validación histórica, esta web remite a las entidades sugeridas en su respuesta oficial.</p>
+            <p>Datos revisados el 29 de octubre de 2026. Google Maps mostraba 4,5/5 con 19.802 reseñas de terceros; esta valoración pertenece a su ficha y no a esta guía. MINCETUR y Maps tienen horarios con distinto alcance: compáralos antes de visitar.</p>
             <nav class="geo-breadcrumb" aria-label="Jerarquía geográfica del atractivo">
               <ol>
                 <li><span>{attractionFullName}</span></li>
                 <li aria-hidden="true">→</li>
                 <li><span>{cityName}</span></li>
                 <li aria-hidden="true">→</li>
-                <li><span>{stateProvince}</span></li>
+                <li><span>Región de {stateProvince}</span></li>
                 <li aria-hidden="true">→</li>
                 <li><span>{countryName}</span></li>
               </ol>
@@ -303,7 +279,7 @@ const breadcrumbLd = {
           </div>
           <figure class="entity-photo">
             <img src={photos.plaza} alt={`${attractionFullName} (${attractionLocalName}) — vista amplia con portales en ${cityName}, ${countryName}`} loading="lazy" />
-            <figcaption>{attractionFullName} y sus portales · EduardoZambrano · CC BY-SA 2.0</figcaption>
+            <figcaption><a href="https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Huamanga_(25646832758).jpg">Plaza y portales · EduardoZambrano</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a> · 2017-12-26. Encuadre adaptado.</figcaption>
           </figure>
         </div>
       </section>
@@ -323,11 +299,11 @@ const breadcrumbLd = {
           <div class="photo-stack">
             <figure class="photo-main">
               <img src={photos.plaza} alt={`${attractionFullName} (${attractionLocalName}) — vista de los portales y monumento en ${cityName}, ${countryName}`} loading="lazy" />
-              <figcaption>Plaza Mayor y portales · EduardoZambrano · CC BY-SA 2.0</figcaption>
+              <figcaption><a href="https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Huamanga_(25646832758).jpg">Plaza Mayor · EduardoZambrano</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a> · 2017-12-26. Encuadre adaptado.</figcaption>
             </figure>
             <figure class="photo-small">
               <img src={photos.monument} alt={`${attractionFullName} (${attractionLocalName}) — monumento ecuestre a Antonio José de Sucre en ${cityName}, ${countryName}`} loading="lazy" />
-              <figcaption>Monumento a Sucre · Fer121 · CC BY-SA</figcaption>
+              <figcaption><a href="https://commons.wikimedia.org/wiki/File:Plaza_de_Armas_-_Ayacucho.JPG">Monumento a Sucre · Fer121</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · 2009-08-23. Encuadre adaptado.</figcaption>
             </figure>
           </div>
         </div>
@@ -365,7 +341,7 @@ const breadcrumbLd = {
             <article class="planning-card">
               <span class="icon-badge">◷</span>
               <h3>Horario</h3>
-              <p>MINCETUR registra la <strong>visita recomendada de 06:00 a 21:00</strong> durante todo el año. Algunas fichas cartográficas del punto de interés muestran horarios más restringidos; conviene distinguirlos del acceso físico al espacio público.</p>
+              <p>MINCETUR registra la <strong>visita recomendada de 06:00 a 21:00</strong> durante todo el año. Google Maps mostraba apertura el viernes a las 08:00 en la consulta del 29 de octubre de 2026. Son fuentes de distinto alcance: ninguna permite prometer acceso sin restricciones por actos, obras o medidas locales.</p>
             </article>
             <article class="planning-card">
               <span class="icon-badge">☀</span>
@@ -405,20 +381,7 @@ const breadcrumbLd = {
         </div>
       </section>
 
-      <section id="estacionamiento" class="section parking-section">
-        <div class="shell parking-layout">
-          <div class="parking-copy">
-            <p class="section-kicker">Estacionamiento</p>
-            <h2>Deje el auto fuera del corazón peatonal</h2>
-            <p>El perímetro de la Plaza Mayor puede tener restricciones y alta demanda. Estas cocheras cercanas sirven como referencias prácticas; <strong>confirme precio, horario y cupo el mismo día</strong>.</p>
-          </div>
-          <div class="parking-cards">
-            <article><h3>Cochera Grau</h3><p>Miguel Grau 158</p><span>Opción céntrica · horario variable</span></article>
-            <article><h3>Sumaq Plaza</h3><p>Jr. 9 de Diciembre 133</p><span>Muy cerca del centro · verificar disponibilidad</span></article>
-            <article><h3>Garaje Dos de Mayo</h3><p>Dos de Mayo 463</p><span>Alternativa para dejar el vehículo y caminar</span></article>
-          </div>
-        </div>
-      </section>
+      <section id="estacionamiento" class="section parking-section"><div class="shell"><p class="section-kicker">Estacionamiento</p><h2>Confirme dónde dejar el vehículo</h2><p>MINCETUR registra servicios de estacionamiento en la ciudad, no una plaza garantizada junto al recurso. No se ha verificado una cochera concreta, sus tarifas ni cupos; consulte directamente y revise restricciones de circulación antes de conducir al centro.</p></div></section>
 
       <section id="alrededores" class="section section-green">
         <div class="shell">
@@ -428,9 +391,9 @@ const breadcrumbLd = {
           </div>
           <div class="nearby-grid">
             <article><span>En la plaza</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Observe su relación con los portales y la escala abierta de la plaza.</p></article>
-            <article><span>≈ 1 cuadra</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles del centro, asociado al paisaje religioso de Huamanga.</p></article>
-            <article><span>Pocos minutos a pie</span><h3>Arco del Triunfo</h3><p>Hito urbano sobre Jr. 28 de Julio y parada fácil para extender el paseo por las calles del casco antiguo.</p></article>
-            <article><span>Portal Independencia</span><h3>Museo de Arte Popular Joaquín López Antay</h3><p>Una buena introducción al retablo ayacuchano y a la tradición artesanal local. Verifique el horario antes de ir.</p></article>
+            <article><span>Recorrido urbano separado</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles del centro, asociado al paisaje religioso de Huamanga.</p></article>
+            <article><span>Recorrido urbano separado</span><h3>Arco del Triunfo</h3><p>Hito del recorrido urbano de Ayacucho; comprueba la ruta y las condiciones de paso antes de continuar.</p></article>
+            <article><span>Visita cultural separada</span><h3>Museo de Arte Popular Joaquín López Antay</h3><p>Sunarp lo menciona entre las referencias patrimoniales de Ayacucho; confirme su sede y operación actuales antes de organizar la visita.</p></article>
           </div>
 
           <div class="food-heading">
@@ -462,12 +425,12 @@ const breadcrumbLd = {
             <article class="planning-card">
               <span class="icon-badge">⛪</span>
               <h3>Visitar la Catedral y Santo Domingo</h3>
-              <p>La Basílica Catedral de Ayacucho y el Templo de Santo Domingo están a pocos pasos. Combinarlos con la plaza da una lectura completa del centro histórico de Huamanga.</p>
+              <p>La Catedral y Santo Domingo son visitas distintas del espacio público de la plaza; compruebe el acceso y las condiciones de cada templo.</p>
             </article>
             <article class="planning-card">
               <span class="icon-badge">◫</span>
               <h3>Retablos y arte popular</h3>
-              <p>El Museo de Arte Popular Joaquín López Antay, en el Portal Independencia, introduce el retablo ayacuchano y la tradición artesanal local. Verifique el horario antes de ir.</p>
+              <p>El Museo de Arte Popular Joaquín López Antay es una visita cultural separada. Confirme su sede y funcionamiento actuales antes de organizar el recorrido.</p>
             </article>
             <article class="planning-card">
               <span class="icon-badge">☕</span>
@@ -483,17 +446,14 @@ const breadcrumbLd = {
         <div class="shell">
           <div class="section-heading light-heading split-heading">
             <div><p class="section-kicker">Más allá de la plaza</p><h2>Lugares turísticos en {cityName}</h2></div>
-            <p>La {attractionShortName} es el punto de partida ideal para recorrer la ciudad. Estos atractivos se integran en una ruta a pie o en pocos minutos de traslado.</p>
+            <p>La {attractionShortName} es el punto de partida ideal para recorrer la ciudad. Distingue los recorridos urbanos de Wari y Quinua, que requieren organizar una excursión y transporte por separado.</p>
           </div>
           <div class="nearby-grid">
-            <article><span>Centro histórico</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Escenario principal de la Semana Santa y referencia para leer la plaza.</p></article>
-            <article><span>≈ 1 cuadra</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles de Huamanga, asociado al paisaje religioso del centro.</p></article>
-            <article><span>Pocos minutos a pie</span><h3>Arco del Triunfo</h3><p>Hito urbano sobre Jr. 28 de Julio, parada fácil para extender el paseo por el casco antiguo.</p></article>
             <article><span>Mirador</span><h3>Mirador de Ayacucho</h3><p>Punto panorámico para ver la ciudad y el contorno de cerros que rodea la plaza y el centro.</p></article>
-            <article><span>≈ 22 km</span><h3>Complejo Arqueológico de Wari</h3><p>Capital del imperio preincaico Wari, una de las zonas arqueológicas más importantes cerca de Ayacucho.</p></article>
-            <article><span>≈ 37 km</span><h3>Pueblo de Quinua</h3><p>Centro alfarero famoso por los retablos y la cercanía a la Pampa de Ayacucho, escenario de la batalla de Ayacucho.</p></article>
+            <article><span>Excursión regional</span><h3>Complejo Arqueológico de Wari</h3><p>Conjunto arqueológico fuera del centro urbano; reserva transporte, tiempo y verifica el acceso actual por separado.</p></article>
+            <article><span>Excursión regional</span><h3>Pueblo de Quinua</h3><p>Destino alfarero y visita regional separada del centro de Ayacucho; organiza transporte y consulta el acceso a cada lugar.</p></article>
           </div>
-          <p class="data-note">Las distancias son referenciales desde el centro de {cityName}; el tiempo de traslado varía con el tráfico y el medio de transporte.</p>
+          <p class="data-note">Organiza por separado los desplazamientos urbanos y las excursiones; comprueba el acceso, el transporte y el tiempo disponible antes de salir.</p>
         </div>
       </section>
 
@@ -501,7 +461,7 @@ const breadcrumbLd = {
         <div class="shell photo-layout">
           <figure class="cathedral-photo">
             <img src={photos.cathedral} alt={`Basílica Catedral de Ayacucho junto a ${attractionShortName} (${attractionLocalName}) en ${cityName}, ${countryName}`} loading="lazy" />
-            <figcaption>Catedral de Ayacucho · EduardoZambrano · CC BY-SA 2.0</figcaption>
+            <figcaption><a href="https://commons.wikimedia.org/wiki/File:Catedral_de_Ayacucho_(25646655978).jpg">Catedral · EduardoZambrano</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a> · 2017-12-26. Encuadre adaptado.</figcaption>
           </figure>
           <div class="photo-copy">
             <p class="section-kicker">Detalle que vale la pena buscar</p>
@@ -521,7 +481,7 @@ const breadcrumbLd = {
           <div class="map-frame">
             <iframe
               title={`Mapa de ${attractionFullName} en ${cityName}`}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1766507.3027094477!2d-73.79336433217397!3d-13.323280372800665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127df3a774ab1f%3A0xa8754afd6ff9a870!2sPlaza%20Mayor%20de%20Ayacucho!5e1!3m2!1ses!2spe!4v1789008230750!5m2!1ses!2spe"
+              src="https://maps.google.com/maps?q=-13.1603789,-74.2257816&amp;z=17&amp;output=embed&amp;hl=es"
               allowfullscreen
               loading="lazy"
               referrerpolicy="strict-origin-when-cross-origin"></iframe>
@@ -529,8 +489,7 @@ const breadcrumbLd = {
           <p class="official-note">
             Para información turística de referencia y material institucional, consulta{' '}
             <a href={minceturUrl} target="_blank" rel="noopener noreferrer">MINCETUR ↗</a>,{' '}
-            <a href={promperuUrl} target="_blank" rel="noopener noreferrer">Perú Travel / PROMPERÚ ↗</a>{' '}y el{' '}
-            <a href={iperuGuideUrl} target="_blank" rel="noopener noreferrer">material promocional compartido por IPERÚ ↗</a>.
+            <a href={promperuUrl} target="_blank" rel="noopener noreferrer">Perú Travel / PROMPERÚ ↗</a>.
           </p>
         </div>
       </section>
@@ -555,14 +514,14 @@ const breadcrumbLd = {
 
       <section id="fuentes" class="source-band">
         <div class="shell source-grid">
-          <div><p class="section-kicker">Fuentes y orientación</p><h2>Referencias públicas y contactos sugeridos por IPERÚ</h2></div>
+          <div><p class="section-kicker">Fuentes y orientación</p><h2>Fuentes públicas y fecha de consulta</h2></div>
           <div class="source-links">
             <a href={minceturUrl} target="_blank" rel="noreferrer"><strong>MINCETUR</strong><span>Inventario de recursos turísticos</span></a>
             <a href={promperuUrl} target="_blank" rel="noreferrer"><strong>Perú Travel / PROMPERÚ</strong><span>Contexto turístico de Ayacucho</span></a>
-            <a href={iperuGuideUrl} target="_blank" rel="noreferrer"><strong>IPERÚ Ayacucho</strong><span>PDF promocional regional compartido como referencia</span></a>
             <a href={commonsUrl} target="_blank" rel="noreferrer"><strong>Wikimedia Commons</strong><span>Fotografías documentales con licencia libre</span></a>
+            <a href="https://cader.sunarp.gob.pe/ayacucho/" target="_blank" rel="noreferrer"><strong>Sunarp · Ayacucho</strong><span>Descripción patrimonial; confirma por separado la sede y operación de cada museo</span></a>
           </div>
-          <p class="source-review">IPERÚ indicó que no valida contenidos de terceros. Para validación de información: DIRCETUR Ayacucho (Sr. Raúl Sayas, 999 042 541) y Colegio de Historiadores del Perú – Ayacucho (Sra. Gaby Apcho, 966 653 011). Para la gestión y conservación del entorno, la referencia institucional es la Municipalidad Provincial de Huamanga.</p>
+          <p class="source-review">Consulta: 29 de octubre de 2026. MINCETUR distingue el espacio público y sus servicios externos; museos, templos y actividades tienen condiciones propias. Los tiempos de taxi de la ficha son orientativos.</p>
         </div>
       </section>
     </main>
@@ -575,30 +534,29 @@ const breadcrumbLd = {
           <p class="footer-domain">Guía independiente en {siteDomain}</p>
         </div>
         <div>
-          <strong>Contacto institucional sugerido</strong>
+          <strong>Contacto mostrado en Maps</strong>
           <address>
-            Municipalidad Provincial de Huamanga<br />
-            <a href={`tel:${municipalityPhoneHref}`}>{municipalityPhone}</a><br />
-            <a href={`mailto:${municipalityEmail}`}>{municipalityEmail}</a>
+            Ficha de terceros · 29-10-2026<br />
+            <a href={`tel:${mapsPhoneHref}`}>{mapsPhone}</a><br />
+            <span>No se ha verificado que sea un teléfono administrativo.</span>
           </address>
         </div>
         <div>
-          <strong>Material fotográfico oficial</strong>
-          <p>Para solicitar imágenes oficiales de PROMPERÚ, IPERÚ sugirió contactar al Banco de Imágenes o escribir a <a href={`mailto:${promperuImageEmail}`}>{promperuImageEmail}</a>.</p>
+          <strong>Información institucional</strong><p><a href="https://www.gob.pe/munihuamanga">Municipalidad Provincial de Huamanga</a>. Consulta sus avisos y los canales del lugar que quieras visitar.</p>
         </div>
         <div>
           <strong>Privacidad</strong>
-          <p>Google Analytics se carga únicamente si aceptas analítica. Google Maps se carga como contenido externo al visualizar el mapa.</p>
+          <p>Google Analytics se carga únicamente si aceptas analítica. La elección solo dura en esta página. Google Maps conecta con Google por separado; el alojamiento puede añadir medición de rendimiento de Cloudflare independiente de esta elección.</p>
           <button id="cookie-settings" class="footer-button" type="button">Configurar analítica</button>
         </div>
       </div>
-      <div class="shell disclaimer">Sitio informativo independiente y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni a ninguna entidad pública. Según la orientación recibida, la denominación preferente es Plaza Mayor y la validación de contenidos debe solicitarse a las entidades competentes.</div>
+      <div class="shell disclaimer">Guía turística y de divulgación cultural, independiente, sin fines de lucro y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni a ninguna entidad pública.</div>
     </footer>
 
     <div id="cookie-banner" class="cookie-banner" hidden>
       <div>
         <strong>Analítica opcional</strong>
-        <p>Podemos usar Google Analytics 4 (G-HXM22WWPKP) para medir visitas. No se carga hasta que aceptes.</p>
+        <p>Podemos usar Google Analytics 4 (G-HXM22WWPKP) para medir visitas. No se carga hasta que aceptes en esta página. La elección no se guarda; recargar o navegar vuelve a iniciar con rechazo. Puedes retirarla desde Configurar analítica.</p>
       </div>
       <div class="cookie-actions">
         <button id="cookie-reject" type="button">Solo necesarias</button>
@@ -606,44 +564,7 @@ const breadcrumbLd = {
       </div>
     </div>
 
-    <script is:inline>
-      // @ts-nocheck
-      (() => {
-        const KEY = 'ayacucho-analytics-consent';
-        const ID = 'G-HXM22WWPKP';
-        const banner = document.getElementById('cookie-banner');
-        const accept = document.getElementById('cookie-accept');
-        const reject = document.getElementById('cookie-reject');
-        const settings = document.getElementById('cookie-settings');
-
-        function loadAnalytics() {
-          if (document.getElementById('ga4-loader')) return;
-          window.dataLayer = window.dataLayer || [];
-          window.gtag = function(){ window.dataLayer.push(arguments); };
-          window.gtag('js', new Date());
-          window.gtag('config', ID, { anonymize_ip: true });
-          const script = document.createElement('script');
-          script.id = 'ga4-loader';
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
-          document.head.appendChild(script);
-        }
-
-        function setChoice(value) {
-          localStorage.setItem(KEY, value);
-          banner.hidden = true;
-          if (value === 'accepted') loadAnalytics();
-        }
-
-        const saved = localStorage.getItem(KEY);
-        if (saved === 'accepted') loadAnalytics();
-        else if (saved !== 'rejected') banner.hidden = false;
-
-        accept?.addEventListener('click', () => setChoice('accepted'));
-        reject?.addEventListener('click', () => setChoice('rejected'));
-        settings?.addEventListener('click', () => { banner.hidden = false; });
-      })();
-    </script>
+    <script is:inline src="/analytics-choice.js"></script>
     <script is:inline>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {

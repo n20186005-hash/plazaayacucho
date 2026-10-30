@@ -9,7 +9,7 @@ const SITE = 'https://plazaayacucho.com';
 export default defineConfig({
   site: SITE || undefined,
   output: 'static',
-  integrations: SITE ? [sitemap()] : [],
+  integrations: SITE ? [sitemap({ filter: (url) => !new URL(url).pathname.startsWith('/404') })] : [],
   vite: {
     plugins: [tailwindcss()]
   }

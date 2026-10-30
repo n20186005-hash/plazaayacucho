@@ -30,7 +30,7 @@ button { font: inherit; }
 .site-header { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--terracotta-dark) 93%, transparent); color: #fff; backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,.12); }
 .header-inner { min-height: 72px; display: flex; align-items: center; gap: 30px; }
 .brand { margin-right: auto; }
-.brand img { width: 188px; height: auto; filter: brightness(0) invert(1); }
+.brand img { width: 188px; height: auto;  }
 .main-nav { display: flex; gap: 24px; align-items: center; font-size: 14px; font-weight: 750; }
 .main-nav a { opacity: .82; transition: .2s; }
 .main-nav a:hover { opacity: 1; color: #f1cd8f; }
@@ -174,7 +174,7 @@ button { font: inherit; }
 
 .site-footer { background: #191714; color: #d8cec1; padding: 56px 0 20px; }
 .footer-grid { display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 48px; }
-.footer-grid img { width: 188px; filter: brightness(0) invert(1); opacity: .88; }
+.footer-grid img { width: 188px;  opacity: .88; }
 .footer-grid p { color: #988f86; font-size: 13px; line-height: 1.7; }
 .footer-grid strong { color: #f4eadf; }
 .footer-grid code { font-size: 11px; color: #c8b8a8; }
@@ -193,7 +193,7 @@ button { font: inherit; }
 .brand-name { display: flex; flex-direction: column; line-height: 1.2; color: #fff; max-width: 240px; }
 .brand-name b { font-size: 14px; font-weight: 850; letter-spacing: .01em; }
 .brand-name small { font-size: 11px; opacity: .72; font-weight: 600; }
-.brand img { width: 188px; height: auto; filter: brightness(0) invert(1); }
+.brand img { width: 188px; height: auto;  }
 
 .hero h1 { margin: 0; max-width: 820px; font-size: clamp(2.4rem, 5vw, 4.4rem); line-height: 1.05; letter-spacing: -.03em; text-wrap: balance; }
 .h1-sub { display: block; font-size: .45em; letter-spacing: 0; color: #f1cd8f; margin-top: .15em; font-weight: 700; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
@@ -292,3 +292,12 @@ button { font: inherit; }
   .h1-sub { font-size: .55em; }
   .entity-photo img { height: 300px; }
 }
+
+/* Keep complete photographic attribution in its own intrinsic-height row. */
+.hero .hero-credit { display: block; position: relative; z-index: 1; inset: auto; margin: 0 auto; padding: 12px 24px 18px; max-width: 1280px; color: #fff; font-size: 12px; line-height: 1.7; }
+.hero-credit a, figcaption a { text-decoration: underline; }
+.photo-stack { display: grid; gap: 24px; min-height: 0; }
+.photo-stack figure, .cathedral-photo { position: static; inset: auto; display: flex; flex-direction: column; width: auto; height: auto; min-width: 0; margin: 0; }
+.photo-stack .photo-small { border-radius: 12px; }
+.photo-stack img, .cathedral-photo img { display: block; flex: none; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.photo-stack figcaption, .cathedral-photo figcaption { position: static; flex: none; max-width: none; padding: 12px 14px; border-radius: 0; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
