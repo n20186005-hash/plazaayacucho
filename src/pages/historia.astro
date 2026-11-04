@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Historia de la Plaza Mayor de Huamanga (Ayacucho)';
+const description = 'Historia de la Plaza Mayor de Huamanga: del trazado colonial de 1540 al centro cívico actual, con los datos documentados y las fuentes para verificarlos.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/historia/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Contexto histórico"
+  heading="Historia de la Plaza Mayor de Huamanga"
+  lead="Antes de ser postal, la plaza fue el escenario donde una ciudad andina se organizó como centro cívico, religioso y comercial. Esta es la parte que las fuentes públicas sostienen, separada de lo que suele circular sin comprobar."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Historia' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['plaza-mayor-o-plaza-de-armas', 'monumento-antonio-jose-de-sucre', 'centro-historico-huamanga', 'semana-santa-ayacucho']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho, llamada históricamente Plaza Mayor de Huamanga, se consolidó como centro cívico, religioso y comercial de la ciudad fundada como española en 1540. Su arquitectura de los siglos XVI y XVII —portales de piedra, balcones de madera y cubiertas de teja de arcilla— define su fisonomía actual. El monumento ecuestre a Sucre, inaugurado en 1924 según MINCETUR, ordena el centro del conjunto.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong>, conocida históricamente como <strong>{site.attractionLocalName}</strong> y también llamada Plaza de Armas, ocupa el punto central de la ciudad. Como en casi todas las ciudades de fundación española en los Andes, la plaza fue el punto desde el cual se ordenó el trazado urbano: alrededor de ella se ubicaron la iglesia principal, las casas de gobierno y los comercios.</p>
+
+        <p class="section-lead">Una plaza construida para mirar en cuatro direcciones.</p>
+
+        <h2>La plaza dentro de una ciudad fundada en 1540</h2>
+        <p>{site.cityName} corresponde a la antigua Huamanga, fundada como ciudad española en 1540. La plaza fue, desde ese momento, el espacio donde se concentraban la vida religiosa, la administración y el intercambio comercial del valle.</p>
+        <p>Con el tiempo, el conjunto se consolidó con arquitectura de los siglos XVI y XVII: portales de piedra en el primer nivel, balcones de madera en los pisos altos y cubiertas de teja de arcilla. Esa combinación de materiales es la que hoy da a la plaza su continuidad visual tan reconocible.</p>
+
+        <h2>Los nombres del mismo espacio</h2>
+        <p>Es habitual encontrar tres denominaciones para un mismo lugar: <strong>Plaza Mayor de Huamanga</strong>, <strong>Plaza de Armas</strong> y <strong>Plaza Mayor de Ayacucho</strong>. No son tres plazas distintas. Huamanga fue el nombre histórico de la ciudad antes de denominarse {site.cityName}, y “Plaza de Armas” es la denominación tradicional del espacio principal en el urbanismo hispanoamericano.</p>
+        <p>En esta guía usamos <strong>{site.attractionFullName}</strong> como nombre principal y mencionamos los otros dos para que puedas identificar el mismo lugar en mapas, libros y señalética.</p>
+
+        <h2>El monumento a Sucre</h2>
+        <p>En el centro de la plaza se encuentra el monumento ecuestre a <strong>Antonio José de Sucre</strong>, con fecha de inauguración registrada en <strong>1924</strong>. La escultura ordena el espacio de los jardines y funciona como referencia visual desde cualquiera de los cuatro portales.</p>
+        <p>Es un buen punto de encuentro y, para quien visita por primera vez, el elemento que permite orientarse dentro del conjunto.</p>
+
+        <h2>Una plaza institucional</h2>
+        <p>Alrededor de la plaza conviven la Basílica Catedral, la sede de la Municipalidad, oficinas del gobierno regional, la sede de la Corte y espacios universitarios. Esa mezcla explica por qué la plaza sigue funcionando como centro cívico y no solo como atractivo turístico: en ella se desarrollan actos oficiales, celebraciones religiosas y actividades cotidianas de la ciudad.</p>
+
+        <h2>Semana Santa y vida cívica</h2>
+        <p>{site.cityName} es reconocida por su <strong>Semana Santa</strong>, declarada Patrimonio Cultural de la Nación por el Ministerio de Cultura. Las procesiones parten del centro histórico y transforman el uso de la plaza durante esas fechas, con mayor afluencia y controles de tránsito.</p>
+        <p>Más allá de la Semana Santa, la plaza acoge carnavales, actos institucionales y celebraciones cívicas a lo largo del año.</p>
+
+        <div class="callout">
+          <p><strong>Sobre las leyendas:</strong> en torno a la plaza circulan relatos que no siempre están respaldados por documentos. Esta guía no los reproduce como hechos. Si necesitas una versión con valor académico o institucional, corresponde consultar a la Dirección Regional de Comercio Exterior y Turismo, al Colegio de Historiadores del Perú o a la Municipalidad Provincial de Huamanga.</p>
+        </div>
+
+        <p class="verify-note">Fechas y datos de esta página se atribuyen a fuentes públicas (MINCETUR, Ministerio de Cultura) enlazadas al final del documento. La interpretación histórica puede variar entre autores; si el contenido se usará con fines académicos, verifícalo con las instituciones competentes.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

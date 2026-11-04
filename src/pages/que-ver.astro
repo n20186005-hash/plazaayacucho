@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Qué ver en la Plaza de Armas de Ayacucho: portales y monumentos';
+const description = 'Qué ver en la Plaza Mayor de Ayacucho: los cuatro portales, el monumento a Sucre, los jardines y la relación con la Catedral y el centro histórico.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/que-ver/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Qué ver"
+  heading="Qué ver en la Plaza Mayor de Ayacucho"
+  lead="Cuatro portales de piedra, un monumento ecuestre, jardines, balcones de madera y la fachada de la Catedral: en un espacio reducido hay mucho que mirar. Estos son los elementos documentados y cómo leerlos."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Qué ver' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.monument}
+  related={['ubicacion-mapa', 'historia', 'catedral-ayacucho', 'monumento-antonio-jose-de-sucre']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>En la Plaza Mayor de Ayacucho se pueden ver cuatro portales de piedra —Unión, Constitución, Independencia y Municipal— que suman alrededor de 111 arcos y columnas según MINCETUR. En el centro del conjunto se alza el monumento ecuestre a Antonio José de Sucre, inaugurado en 1924. La fachada de la Basílica Catedral, a unos 50 m a pie, preside uno de los costados.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> concentra en un espacio reducido una cantidad notable de elementos para mirar: cuatro portales de piedra, un monumento ecuestre, jardines, balcones de madera y la fachada de la Basílica Catedral. Aquí están los que sí están documentados y cómo leerlos.</p>
+      </div>
+
+      <div class="guide-grid" style="margin-top:38px">
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Arquitectura</p>
+          <h3>Los cuatro portales</h3>
+          <p>Unión, Constitución, Independencia y Municipal: cuatro frentes de arcos de piedra que enmarcan la plaza y suman alrededor de 111 arcos y columnas según MINCETUR.</p>
+        </article>
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Monumento central</p>
+          <h3>Monumento a Sucre</h3>
+          <p>Escultura ecuestre dedicada a Antonio José de Sucre en el centro del conjunto, inaugurada en 1924. Punto de referencia visual desde cualquier portal.</p>
+        </article>
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Detalles</p>
+          <h3>Jardines y balcones</h3>
+          <p>Jardines ordenados alrededor del monumento y, en los pisos altos de los portales, balcones de madera y cubiertas de teja de arcilla.</p>
+        </article>
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Fachada religiosa</p>
+          <h3>Catedral de Ayacucho</h3>
+          <p>La Basílica Catedral está a unos 50 m a pie y su fachada preside uno de los costados del conjunto. MINCETUR documenta esa cercanía.</p>
+        </article>
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Contexto</p>
+          <h3>Edificios institucionales</h3>
+          <p>La Municipalidad, oficinas del gobierno regional, una sede de la Corte y espacios universitarios completan el perímetro cívico.</p>
+        </article>
+        <article class="guide-card">
+          <p class="section-kicker" style="margin:0">Punto de partida</p>
+          <h3>Centro histórico</h3>
+          <p>La plaza es el origen del trazado colonial de 1540 y el punto natural para iniciar un recorrido por templos y casonas del centro.</p>
+        </article>
+      </div>
+
+      <div class="page-copy">
+        <h2>Los cuatro portales</h2>
+        <p>Cada lado de la plaza está definido por un portal con nombre propio: <strong>Unión</strong>, <strong>Constitución</strong>, <strong>Independencia</strong> y <strong>Municipal</strong>. En conjunto, suman alrededor de <strong>111 arcos y columnas de piedra</strong>, según el inventario de MINCETUR. Los portales organizan el comercio en planta baja y residencias u oficinas en los pisos altos, con balcones de madera y cubiertas de teja de arcilla.</p>
+        <p>Identificar los cuatro portales es la forma más rápida de orientarse: cada uno da a una calle distinta y permite planificar la salida hacia otros puntos del centro histórico.</p>
+
+        <h2>El monumento a Sucre</h2>
+        <p>En el centro de la plaza se alza el <strong>monumento ecuestre a Antonio José de Sucre</strong>, cuya inauguración data de <strong>1924</strong> según MINCETUR. La escultura ordena los jardines y funciona como referencia visual desde cualquier punto del perímetro. Es también un punto de encuentro habitual para grupos y visitantes.</p>
+
+        <h2>Jardines, balcones y fachadas</h2>
+        <p>Alrededor del monumento se extienden jardines que suavizan la dureza de la piedra. En los pisos altos, los <strong>balcones de madera</strong> y las <strong>cubiertas de teja de arcilla</strong> repiten la combinación de materiales típica del centro histórico: piedra en planta baja, madera arriba, arcilla en la cubierta.</p>
+        <p>Esta capa de detalles es lo que da a la plaza su continuidad visual. Mirar hacia arriba desde cualquier portal permite apreciar los balcones y la línea de cornisas que recorre el conjunto.</p>
+
+        <h2>La fachada de la Catedral</h2>
+        <p>La <strong>Basílica Catedral de Ayacucho</strong> está a unos <strong>50 m a pie</strong> desde la plaza, según MINCETUR. Su fachada preside uno de los costados y es uno de los elementos más fotografiados del conjunto. La Catedral es un recinto independiente del espacio público: sus condiciones de visita interna deben confirmarse por separado.</p>
+
+        <h2>Edificios institucionales</h2>
+        <p>El perímetro no es solo religioso y comercial. La plaza está flanqueada por la <strong>Municipalidad Provincial de Huamanga</strong>, oficinas del <strong>gobierno regional</strong>, una sede de la <strong>Corte</strong> y <strong>espacios universitarios</strong>. Esa mezcla de usos explica el carácter cívico de la plaza y por qué en ella se desarrollan actos oficiales, celebraciones y actividades cotidianas de la ciudad.</p>
+
+        <div class="callout">
+          <p><strong>Qué mirar primero:</strong> si tienes poco tiempo, identifica los cuatro portales, camina hasta el monumento a Sucre y contempla la fachada de la Catedral. Eso te dará una lectura completa del conjunto en una visita breve.</p>
+        </div>
+
+        <p class="verify-note">Los datos de esta página (nombres de portales, número de arcos, fecha del monumento, distancia a la Catedral) se atribuyen al inventario de MINCETUR. No se verifican aquí horarios de recintos ni condiciones de acceso a la Catedral. Consulta los enlaces oficiales al final para información actualizada.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Visitar la Plaza Mayor de Ayacucho como adulto mayor';
+const description = 'Consideraciones para visitar la Plaza Mayor de Ayacucho siendo adulto mayor: altitud, recorridos cortos, descanso y qué conviene confirmar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/adultos-mayores/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Viajar como adulto mayor"
+  heading="Visitar la plaza siendo adulto mayor"
+  lead="La plaza es un espacio público, plano y contenido, lo que la hace accesible para un recorrido a ritmo pausado. La altitud de la ciudad y el sol del mediodía son los dos factores que más conviene tener presentes al organizar la visita."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Adultos mayores' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['itinerario-1-hora', 'itinerario-medio-dia', 'accesibilidad', 'horarios-visita']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La plaza es un recorrido manejable para un adulto mayor que camina sin dificultad: el conjunto es compacto, hay sombra bajo los portales y la franja recomendada por MINCETUR va de 06:00 a 21:00. La ciudad está a aproximadamente 2.750 m s. n. m., lo que hace sensato un ritmo pausado y pausas frecuentes. Las dudas personales sobre cómo afectará la altitud deben consultarse con un médico antes del viaje.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> es un recorrido manejable para un adulto mayor que camina sin dificultad: el conjunto es compacto, hay sombra bajo los portales y las distancias a los puntos vecinos son cortas. Ahora bien, la ciudad está a una altitud elevada —aproximadamente <strong>2.750 m s. n. m.</strong>— y eso cambia la forma de plantear el día.</p>
+
+        <h2>Altitud y ritmo</h2>
+        <p>A 2.750 m s. n. m., el oxígeno es menor que a nivel del mar. Para quien llega de una ciudad baja, los primeros días pueden sentirse más cansados de lo habitual, incluso sin realizar esfuerzo intenso. Esto no es una condición médica que esta guía pueda evaluar, pero sí una realidad práctica del viaje.</p>
+        <p>Lo sensato es:</p>
+        <ul class="checklist">
+          <li>Plantear el primer día con un recorrido ligero —la plaza sola es una excelente opción.</li>
+          <li>Camina despacio, sin prisa, y haz pausas frecuentes bajo los portales.</li>
+          <li>Evitar acumular varias visitas cerradas en la misma mañana.</li>
+          <li>Si tienes dudas sobre cómo te afectará la altitud, consulta a un médico antes de viajar.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Sobre salud:</strong> esta guía no da consejos médicos. Si tienes una condición crónica, tomas medicación o tienes dudas sobre la altitud, la indicación correcta es consultar a un profesional de la salud antes del viaje. Lo que aquí se describe es la experiencia general del entorno, no una recomendación médica personalizada.</p>
+        </div>
+
+        <h2>Descanso bajo los portales</h2>
+        <p>Los cuatro portales —Unión, Constitución, Independencia y Municipal— ofrecen un perímetro cubierto con sombra y lugares para sentarse. Son el refugio natural dentro de la plaza: permiten descansar sin salir del conjunto y reanudar la visita cuando se quiera. Aprovecharlos es la mejor forma de dosificar el esfuerzo.</p>
+
+        <h2>Evitar el sol del mediodía</h2>
+        <p>A esta altitud, el sol del mediodía es intenso. La temperatura puede subir bastante entre las once y las dos de la tarde, y la exposición prolongada resulta agotadora. Conviene:</p>
+        <ul>
+          <li>Realizar la visita principal por la mañana temprano o por la tarde, cuando el sol baja.</li>
+          <li>Usar sombrero o gorra y protector solar.</li>
+          <li>Hacer las pausas largas en las horas centrales, bajo los portales o en interiores.</li>
+        </ul>
+        <p>La franja de visita recomendada por MINCETUR va de <strong>06:00 a 21:00</strong>, lo que da margen sobrado para elegir horas de menor calor.</p>
+
+        <h2>Temperatura vespertina</h2>
+        <p>En la ciudad andina, la temperatura baja con rapidez en la tarde y la noche. Si se planea estar en la plaza al anochecer, conviene llevar una capa adicional. El contraste entre el calor del mediodía y el frío de la noche puede ser notable, y estar preparado evita cortar la visita antes de tiempo.</p>
+
+        <h2>Decisiones antes de salir</h2>
+        <p>Antes de desplazarte a la plaza, conviene haber resuelto estas cuestiones prácticas:</p>
+        <ul class="checklist">
+          <li><strong>Consulta médica previa:</strong> si tienes dudas sobre cómo te afectará la altitud (~2.750 m s. n. m.), consulta a un médico antes del viaje.</li>
+          <li><strong>Horario elegido:</strong> optar por la mañana temprana o la tarde, evitando el sol del mediodía. La franja recomendada va de 06:00 a 21:00.</li>
+          <li><strong>Ritmo y pausas:</strong> planificar paradas bajo los portales cada veinte o treinta minutos.</li>
+          <li><strong>Recorrido realista:</strong> decidir si se hace solo la plaza o si se suma la Catedral (≈50 m a pie), confirmando su horario.</li>
+          <li><strong>Ropa y protección:</strong> llevar sombrero, protector solar y una capa de abrigo para la tarde.</li>
+          <li><strong>Transporte:</strong> resolver cómo llegar al centro histórico y cómo regresar, especialmente al anochecer.</li>
+        </ul>
+
+        <h2>Qué conviene confirmar antes</h2>
+        <p>Algunos detalles del entorno no están verificados en este proyecto y conviene revisarlos antes de desplazarse:</p>
+        <ul>
+          <li>El estado de los pavimentos del perímetro de la plaza.</li>
+          <li>La existencia y ubicación de bancas o asientos dentro del conjunto.</li>
+          <li>Los horarios de la Catedral y de los templos vecinos, si se planea entrar.</li>
+          <li>Las opciones de transporte desde el hotel o alojamiento hasta el centro histórico.</li>
+        </ul>
+
+        <p class="verify-note">Esta página describe la plaza como espacio público a partir de datos de MINCETUR (franja de visita, monumento, portales) y de la altitud aproximada de la ciudad. No verifica instalaciones específicas, condiciones de accesibilidad ni servicios sanitarios. Para dudas de salud, consulta a un médico. Para condiciones actuales del espacio público, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

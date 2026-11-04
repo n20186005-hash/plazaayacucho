@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Medio día en el centro histórico de Huamanga desde la plaza';
+const description = 'Plan de medio día desde la Plaza Mayor de Ayacucho: plaza, Catedral, Santo Domingo, Arco del Triunfo y una pausa en los portales.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/itinerario-medio-dia/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Recorridos por duración"
+  heading="Itinerario de medio día en el centro histórico"
+  lead="Medio día da para un recorrido coherente: la plaza como punto de partida, la Catedral y el Templo de Santo Domingo como visitas cerradas, el Arco del Triunfo como hito urbano y una pausa bajo los portales. Estos son los elementos que sí están documentados y cómo ordenarlos."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Itinerario medio día' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['itinerario-1-hora', 'itinerario-un-dia', 'ruta-a-pie', 'lugares-cerca']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Medio día permite sumar a la plaza la Catedral (≈50 m a pie), el Templo de Santo Domingo (≈100 m a pie) y el Arco del Triunfo (≈284 m a pie), todas distancias de MINCETUR. El acceso al espacio público es libre y la franja recomendada va de 06:00 a 21:00. Antes de salir, confirma los horarios de los recintos cerrados, porque el recorrido pierde sentido si llegas a un templo cerrado.</p>
+      </div>
+      <div class="page-copy">
+        <p>Medio día es el tiempo mínimo razonable para sumar a la <strong>{site.attractionFullName}</strong> los recintos vecinos que tienen su propia identidad. La diferencia respecto al itinerario de una hora no es solo de distancia —todo está a pie— sino de horarios: la Catedral y los templos abren y cierran en franjas que conviene confirmar el mismo día, y el recorrido pierde sentido si se llega a un recinto cerrado.</p>
+
+        <h2>Distancias de referencia</h2>
+        <table class="fact-table">
+          <caption>Distancias a pie desde la plaza (MINCETUR)</caption>
+          <tbody>
+            <tr><th>Basílica Catedral de Ayacucho</th><td>Aprox. <strong>50 m</strong> a pie desde la plaza.</td></tr>
+            <tr><th>Templo de Santo Domingo</th><td>Aprox. <strong>100 m</strong> a pie desde la plaza.</td></tr>
+            <tr><th>Arco del Triunfo</th><td>Aprox. <strong>284 m</strong> a pie desde la plaza.</td></tr>
+            <tr><th>Espacio público de la plaza</th><td>Acceso <strong>libre</strong>, franja recomendada 06:00–21:00.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>El recorrido en orden</h2>
+        <h3>1. La plaza como punto de partida</h3>
+        <p>Empieza por el perímetro: los cuatro portales —Unión, Constitución, Independencia y Municipal— y el monumento ecuestre a Sucre en el centro. Esto toma entre quince y veinte minutos si se camina sin prisa y se mira la arquitectura de los arcos de piedra y los balcones de madera.</p>
+
+        <h3>2. La Catedral</h3>
+        <p>A unos <strong>50 m a pie</strong> desde la plaza se encuentra la Basílica Catedral de Ayacucho, según el inventario de MINCETUR. Es la iglesia matriz del conjunto y su fachada domina uno de los frentes de la plaza. Si quieres entrar, confirma antes el horario de visitas: los templos tienen horarios litúrgicos que no coinciden siempre con las horas turísticas.</p>
+
+        <h3>3. Templo de Santo Domingo</h3>
+        <p>A unos <strong>100 m a pie</strong> desde la plaza, también según MINCETUR, se encuentra el Templo de Santo Domingo. Es una visita distinta de la Catedral, con su propia portada y su propia historia dentro del paisaje religioso del centro. Como en el caso anterior, el horario debe confirmarse antes de desplazarse.</p>
+
+        <h3>4. Arco del Triunfo</h3>
+        <p>A unos <strong>284 m a pie</strong> desde la plaza, según MINCETUR, se encuentra el Arco del Triunfo. Es un hito urbano del centro histórico y se integra bien en una caminata que parte de la plaza. La distancia se cubre en pocos minutos a pie.</p>
+
+        <h3>5. Pausa bajo los portales</h3>
+        <p>El recorrido termina donde empezó: los portales ofrecen sombra y un lugar para sentarse. Es un buen momento para revisar lo visto, descansar y decidir si el tiempo restante da para una visita más o si conviene dejarla para otro momento.</p>
+
+        <table class="fact-table">
+          <caption>Medio día: distribución horaria del recorrido</caption>
+          <tbody>
+            <tr><th>09:00–09:20 · Plaza y portales</th><td>Perímetro de los cuatro portales (Unión, Constitución, Independencia y Municipal) y monumento ecuestre a Sucre. Espacio público de acceso libre.</td></tr>
+            <tr><th>09:20–10:10 · Catedral</th><td>A unos <strong>50 m a pie</strong> desde la plaza (MINCETUR). Confirma el horario de visita antes de entrar; el recinto tiene horario litúrgico propio.</td></tr>
+            <tr><th>10:10–10:50 · Templo de Santo Domingo</th><td>A unos <strong>100 m a pie</strong> desde la plaza (MINCETUR). Recinto con horario propio: verifica antes de desplazarte.</td></tr>
+            <tr><th>10:50–11:40 · Arco del Triunfo</th><td>A unos <strong>284 m a pie</strong> desde la plaza (MINCETUR). Hito urbano visible desde fuera, en espacio público de acceso libre.</td></tr>
+            <tr><th>11:40–12:00 · Pausa bajo los portales</th><td>Regreso a la plaza. Descanso, sombra y cierre del recorrido antes de decidir si se suma otra visita.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <p><strong>Clave del itinerario:</strong> los horarios de la Catedral y de los templos no están verificados en este proyecto. Antes de salir, confirma las franjas de apertura de cada recinto. Si llegas a un templo cerrado, el recorrido urbano —la plaza, los portales, el monumento y el Arco del Triunfo— sigue siendo plenamente viable, porque todo es espacio público.</p>
+        </div>
+
+        <h2>Cómo manejar el ritmo</h2>
+        <p>La ciudad está a una altitud elevada —aproximadamente 2.750 m s. n. m.—, lo que para algunas personas significa cansarse antes de lo habitual. Caminar despacio, hacer pausas y no acumular visitas es una forma sensata de plantear medio día. El sol del mediodía es fuerte en esta altitud, así que conviene aprovechar la sombra de los portales en las horas centrales.</p>
+
+        <p class="verify-note">Las distancias citadas provienen del inventario de MINCETUR y describen la cercanía a pie desde la plaza. No confirman horarios, tarifas ni condiciones de acceso de los recintos cerrados. Para condiciones actuales, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

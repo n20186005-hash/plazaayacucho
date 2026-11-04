@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Casonas coloniales de Ayacucho: qué mirar en el centro histórico';
+const description = 'Cómo reconocer las casonas coloniales del centro de Ayacucho al caminar desde la Plaza Mayor: patios, portadas, balcones y qué se puede ver y qué no.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/casonas-coloniales/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Arquitectura civil"
+  heading="Casonas coloniales del centro de Ayacucho"
+  lead="Alrededor de la plaza, las calles conservan casas de patio con portadas de piedra y balcones de madera. Se pueden reconocer desde la calle, aunque no siempre se pueden visitar por dentro."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Casonas coloniales' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['centro-historico-huamanga', 'casa-boza-y-solis', 'arquitectura-portales', 'ruta-a-pie']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Las casonas coloniales del centro de Ayacucho se reconocen desde la calle por tres señales: la <strong>portada de piedra</strong>, los <strong>balcones de madera</strong> y la <strong>cubierta de teja de arcilla</strong>, sobre una casa organizada en torno a un patio interior. Esa arquitectura civil se consolidó entre los <strong>siglos XVI y XVII</strong>, tras la fundación de la ciudad en <strong>1540</strong>. Este proyecto no verifica qué casonas concretas admiten visitas ni en qué condiciones, así que el interior debe confirmarse antes de entrar.</p>
+      </div>
+      <div class="page-copy">
+        <p>Los portales de la <strong>{site.attractionFullName}</strong> son la cara más visible de la arquitectura colonial de {site.cityName}, pero no la única. En las calles que salen de la plaza se conservan <strong>casonas con patio interior</strong>, portadas de piedra, balcones de madera y cubiertas de teja de arcilla. Reconocerlas al caminar es una de las mejores formas de leer el centro histórico.</p>
+
+        <h2>Cómo reconocer una casona desde la calle</h2>
+        <p>No hace falta entrar para identificar el tipo. Desde la acera se distinguen tres señales:</p>
+        <ul class="checklist">
+          <li><strong>La portada</strong>: un acceso de piedra, a menudo con un arco y un remate, que marca la entrada principal y concentra la decoración de la fachada.</li>
+          <li><strong>Los balcones de madera</strong>: voladizos cerrados en los pisos altos, con celosías o paneles, que se proyectan sobre la calle.</li>
+          <li><strong>La cubierta de teja de arcilla</strong>: la línea de tejado que unifica las fachadas y que, vista de perfil, revela la continuidad del conjunto.</li>
+        </ul>
+        <p>A esos elementos exteriores se suma lo que no se ve: el <strong>patio interior</strong>, que organiza la casa hacia dentro. Es la pieza central del tipo colonial, aunque normalmente queda fuera de la vista desde la calle.</p>
+
+        <h2>Qué se ve desde fuera y qué no</h2>
+        <p>Caminar por el centro permite ver <strong>fachadas, portadas, balcones y cubiertas</strong>. Es decir, la parte de la casona que da a la vía pública. Eso ya ofrece una lectura rica: el ritmo de las portadas, la variedad de los balcones y la manera en que las casas se alinean forman el paisaje urbano del barrio.</p>
+        <p>El <strong>interior</strong> —patios, escaleras, habitaciones— es otra cosa. Muchas casonas siguen en uso como viviendas, oficinas o locales, y su interior no forma parte del espacio público.</p>
+
+        <div class="callout">
+          <p><strong>Aviso importante:</strong> en este proyecto <strong>no se ha verificado</strong> qué casonas del centro admiten visitas, ni con qué condiciones, horarios o autorización. No asumas que puedes entrar a un patio por encontrarte con una portada abierta: si el acceso no está señalizado como visitable, respeta el uso del inmueble y pregunta antes de pasar.</p>
+        </div>
+
+        <h2>Qué hacer si quieres visitar interiores</h2>
+        <p>La vía correcta es informarte antes. Si te interesa el interior de una casona concreta, lo razonable es:</p>
+        <ul class="checklist">
+          <li>Consultar a la <strong>Municipalidad Provincial de Huamanga</strong> y a las oficinas de turismo para saber qué inmuebles del centro están abiertos al público.</li>
+          <li>Preguntar en el propio inmueble si se trata de un espacio que recibe visitas y en qué condiciones.</li>
+          <li>Considerar los espacios culturales e institucionales del centro, que suelen ser los más accesibles al visitante.</li>
+        </ul>
+
+        <h2>Un recorrido de fachadas</h2>
+        <p>Aunque no entres en ninguna casa, el paseo merece la pena. El plan más sencillo es partir de la plaza y seguir una calle lateral, mirando a ambos lados: la secuencia de portadas y balcones cuenta por sí sola cómo se construyó el centro entre los <strong>siglos XVI y XVII</strong>, tras la fundación de la ciudad como ciudad española en <strong>1540</strong>.</p>
+
+        <table class="fact-table">
+          <caption>Elementos de una casona y dónde mirarlos</caption>
+          <tbody>
+            <tr><th>Portada</th><td>Acceso principal de piedra, con arco y remate. Se ve desde la acera y concentra la decoración de la fachada.</td></tr>
+            <tr><th>Balcones</th><td>Voladizos de madera en los pisos altos. Se observan en altura, proyectados sobre la calle.</td></tr>
+            <tr><th>Cubierta</th><td>Teja de arcilla. Se lee de perfil, siguiendo la línea del tejado.</td></tr>
+            <tr><th>Patio</th><td>Organiza la casa hacia dentro. Normalmente no es visible desde la calle.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Qué distingue una casona de un portal</h2>
+        <p>Los portales y las casonas comparten materiales —piedra, madera y teja—, pero responden a usos distintos. Un portal es una arcada pública y continua que enmarca la plaza; una casona es una vivienda o edificio con su propio acceso, su portada y su patio interior. Al caminar por el centro se ven las dos cosas a la vez: los portales cierran la plaza y, en las calles que salen de ella, las fachadas de las casonas marcan el ritmo de las manzanas.</p>
+        <p>Esa mezcla explica por qué conviene mirar a la vez el conjunto y el detalle: el conjunto da la continuidad del barrio y el detalle —una portada, un balcón, una cubierta— revela la arquitectura civil que se consolidó entre los <strong>siglos XVI y XVII</strong>, tras la fundación de la ciudad en <strong>1540</strong>.</p>
+
+        <p class="verify-note">Esta página describe el tipo arquitectónico que puede observarse desde el espacio público. No confirma la identidad, la fecha, la autoría ni las condiciones de visita de ninguna casona concreta. Para esos datos, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

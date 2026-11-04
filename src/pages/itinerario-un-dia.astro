@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Un día en Ayacucho tomando la Plaza Mayor como base';
+const description = 'Cómo organizar un día en Ayacucho desde la Plaza Mayor: centro histórico por la mañana y una salida regional por la tarde, con criterios para elegir y confirmar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/itinerario-un-dia/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Recorridos por duración"
+  heading="Itinerario de un día con base en la plaza"
+  lead="Un día en Ayacucho permite combinar dos escalas: el centro histórico —la plaza, los templos vecinos y el Arco del Triunfo— y una salida regional por la tarde. La clave está en separar bien lo que se hace a pie de lo que requiere transporte, y en confirmar horarios antes de moverse."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Itinerario un día' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['itinerario-medio-dia', 'lugares-cerca', 'ruta-a-pie', 'centro-historico-huamanga']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Un día en Ayacucho se organiza en dos bloques: el centro histórico a pie por la mañana —plaza, Catedral (≈50 m), Santo Domingo (≈100 m) y Arco del Triunfo (≈284 m), según MINCETUR— y una salida regional por la tarde. El acceso al espacio público de la plaza es libre y la franja recomendada va de 06:00 a 21:00. Las excursiones a Wari y Quinua requieren transporte aparte y sus distancias no están verificadas en este proyecto.</p>
+      </div>
+      <div class="page-copy">
+        <p>Un día completo en {site.cityName} da para mucho más que la <strong>{site.attractionFullName}</strong>, pero la plaza sigue siendo el mejor punto de partida: es el lugar donde se orienta el centro histórico y donde se empieza a leer la ciudad. La organización del día depende de dos factores: qué recintos abren y a qué hora, y cómo se resuelve el transporte para la salida regional.</p>
+
+        <h2>Mañana: el centro histórico a pie</h2>
+        <p>La mañana es la franja más cómoda para el centro histórico: la luz es buena para fotografiar, la temperatura aún no ha subido del todo y los recintos religiosos suelen tener visitas matutinas. El recorrido propuesto en el itinerario de medio día funciona aquí como base.</p>
+
+        <ul class="checklist">
+          <li><strong>Plaza Mayor</strong> — los cuatro portales, el monumento a Sucre y los jardines.</li>
+          <li><strong>Catedral</strong> — a unos 50 m a pie desde la plaza (MINCETUR). Confirma horario de visita.</li>
+          <li><strong>Templo de Santo Domingo</strong> — a unos 100 m a pie desde la plaza (MINCETUR). Confirma horario.</li>
+          <li><strong>Arco del Triunfo</strong> — a unos 284 m a pie desde la plaza (MINCETUR). Espacio público visible desde fuera.</li>
+          <li><strong>Calles del centro histórico</strong> — casonas coloniales, portadas y balcones que se reconocen caminando.</li>
+        </ul>
+
+        <p>La plaza y el Arco del Triunfo son espacios públicos de acceso libre. La Catedral y los templos son recintos con horario propio: antes de moverte, confirma las franjas de visita del día. Si algún templo está cerrado, el recorrido urbano sigue siendo viable.</p>
+
+        <table class="fact-table">
+          <caption>Un día: mañana a pie, tarde regional</caption>
+          <tbody>
+            <tr><th>Mañana · Plaza</th><td>Cuatro portales, monumento ecuestre a Sucre y jardines. Espacio público de acceso libre.</td></tr>
+            <tr><th>Mañana · Catedral</th><td>A unos <strong>50 m a pie</strong> desde la plaza (MINCETUR). Confirma horario de visita.</td></tr>
+            <tr><th>Mañana · Santo Domingo</th><td>A unos <strong>100 m a pie</strong> desde la plaza (MINCETUR). Confirma horario.</td></tr>
+            <tr><th>Mañana · Arco del Triunfo</th><td>A unos <strong>284 m a pie</strong> desde la plaza (MINCETUR). Espacio público visible desde fuera.</td></tr>
+            <tr><th>Mediodía · Pausa y comida</th><td>Portales y calles inmediatas del centro histórico. Esta guía no recomienda comercios concretos.</td></tr>
+            <tr><th>Tarde · Salida regional</th><td>Wari o Quinua. Requiere transporte aparte; distancias y tiempos no verificados en este proyecto.</td></tr>
+            <tr><th>Anochecer · Regreso a la plaza</th><td>Franja recomendada hasta las 21:00 (MINCETUR). Iluminación de fachadas y encuadres nocturnos.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Mediodía: pausa y comida</h2>
+        <p>Los portales de la plaza ofrecen sombra y un lugar para sentarse. Para comer, las calles inmediatas al centro histórico tienen oferta de cocina regional ayacuchana. Esta guía no recomienda comercios concretos: describe zonas y tipos de comida en su página dedicada a dónde comer cerca de la plaza.</p>
+
+        <div class="callout">
+          <p><strong>Sol y altitud:</strong> la ciudad está a aproximadamente 2.750 m s. n. m. El sol del mediodía es intenso a esta altitud. Conviene usar protección solar, buscar sombra en las horas centrales y mantenerse hidratado. Si es tu primer día en altitud, un ritmo moderado ayuda a adaptarse.</p>
+        </div>
+
+        <h2>Tarde: salida regional</h2>
+        <p>La tarde se presta a una salida fuera del casco urbano. Dos destinos conocidos en la región son el <strong>complejo arqueológico de Wari</strong> y el <strong>pueblo de Quinua</strong>. Ambos están fuera del centro histórico y requieren transporte propio o un tour organizado.</p>
+        <p>Este proyecto no verifica distancias, tiempos de viaje ni precios para estas excursiones. Lo que sí se puede decir con responsabilidad:</p>
+        <ul>
+          <li>Es una salida distinta del recorrido urbano: no se hace a pie desde la plaza.</li>
+          <li>Necesita medio día o más, según el destino y el transporte.</li>
+          <li>Conviene resolver el transporte antes de salir: taxi, tour o vehículo propio.</li>
+          <li>Los horarios del complejo arqueológico y de los servicios en Quinua deben confirmarse en sus canales oficiales.</li>
+        </ul>
+
+        <h2>Cómo decidir entre Wari y Quinua</h2>
+        <p>Si solo tienes una tarde, lo sensato es elegir uno. Wari interesa a quien busca contexto arqueológico prehispánico; Quinua, a quien quiere ver un pueblo tradicional de la región, con artesanía y paisaje rural. La elección depende del interés personal y de la disponibilidad de transporte, no de una recomendación de esta guía.</p>
+
+        <h2>Regreso a la plaza</h2>
+        <p>Al volver de la excursión regional, la plaza es un buen lugar para cerrar el día. La franja de visita recomendada por MINCETUR va hasta las <strong>21:00</strong>, y el anochecer trae una iluminación distinta sobre las fachadas de los portales y la Catedral. Para la fotografía nocturna, la plaza ofrece encuadres con buena luz artificial.</p>
+
+        <p class="verify-note">Este itinerario combina datos del espacio público de la plaza con distancias de referencia de MINCETUR (50 m a la Catedral, 100 m a Santo Domingo, 284 m al Arco del Triunfo). Las excursiones a Wari y Quinua no tienen distancias ni tiempos verificados en este proyecto. Confirma horarios, accesos y transporte en los canales oficiales antes de desplazarte.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

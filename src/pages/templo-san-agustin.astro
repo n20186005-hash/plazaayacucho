@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Templo de San Agustín de Ayacucho: qué confirmar antes de ir';
+const description = 'Referencia al Templo de San Agustín en el centro histórico de Ayacucho: cómo ubicarlo y qué datos conviene confirmar antes de la visita.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/templo-san-agustin/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Templos del centro"
+  heading="Templo de San Agustín"
+  lead="Otro de los templos que forman parte del centro histórico de Ayacucho. Aquí no hay datos verificados sobre él, así que esta página explica cómo ubicarlo y qué preguntar antes de la visita."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Templo de San Agustín' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['templo-santo-domingo', 'catedral-ayacucho', 'lugares-cerca', 'centro-historico-huamanga']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Templo de San Agustín</strong> se menciona entre los recintos religiosos del centro histórico de Ayacucho, en el entorno de la plaza, pero en este proyecto no hay datos verificados sobre él. No constan su historia, sus fechas, su dirección exacta ni sus condiciones de visita. Esta página explica cómo encaja ese tipo de templo en el centro y qué preguntar a las instituciones competentes antes de intentar visitarlo.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Templo de San Agustín</strong> es uno de los recintos religiosos que se mencionan al hablar del centro histórico de {site.cityName}, en el entorno de la {site.attractionFullName}. Conviene ser claro desde el principio: en este proyecto <strong>no hay datos verificados</strong> sobre este templo. No consta aquí su historia, sus fechas, su horario ni sus condiciones de visita.</p>
+
+        <p>Por eso, en lugar de rellenar el vacío con suposiciones, esta página hace dos cosas: explicar cómo encaja un templo de este tipo en el centro histórico y detallar qué conviene confirmar antes de intentar visitarlo.</p>
+
+        <h2>Dónde encaja en el centro histórico</h2>
+        <p>El centro de Huamanga reúne varios espacios religiosos en pocas manzanas. La <strong>Basílica Catedral</strong> ocupa el papel principal junto a la plaza, y otros templos, como el de <strong>Santo Domingo</strong>, se suman al recorrido del barrio. En ese conjunto, los templos funcionan como paradas del paisaje religioso del centro: edificios que forman parte del carácter patrimonial del casco antiguo y que, al mismo tiempo, siguen teniendo un uso litúrgico.</p>
+        <p>San Agustín se menciona en ese mismo contexto. Pero conviene no confundir dos cosas: que un templo forme parte del patrimonio del centro no equivale a que sea visitable, ni a que exista una ficha pública con datos accesibles para el visitante.</p>
+
+        <h2>Cómo ubicarlo</h2>
+        <p>La forma de localizarlo es coherente con el resto del centro: la plaza es el punto de orientación, y desde ella el templo se alcanza caminando por las calles del casco histórico. Como no hay aquí una distancia de referencia verificada, no damos una cifra. Lo razonable es orientarte con la plaza y las calles laterales, y preguntar en el propio centro o en las oficinas de turismo.</p>
+        <ul class="checklist">
+          <li>Toma la <strong>plaza</strong> como punto de partida y referencia.</li>
+          <li>Recorre a pie las calles del centro histórico, donde se concentran los templos.</li>
+          <li>Pregunta por el templo en las oficinas de información turística antes de buscarlo a ciegas.</li>
+        </ul>
+
+        <h2>Qué confirmar antes de ir</h2>
+        <p>Sin datos verificados, el paso previo a cualquier visita es informarse. Estas preguntas concretas ayudan a no dar por hecho lo que no está confirmado:</p>
+        <ul class="checklist">
+          <li>La <strong>dirección exacta</strong> del templo y si sigue funcionando como recinto religioso.</li>
+          <li>Si está <strong>abierto al público</strong> y en qué franja horaria.</li>
+          <li>Si se puede <strong>fotografiar</strong> en el interior y con qué condiciones.</li>
+          <li>Si hay <strong>restricciones</strong> por obras, restauración o celebraciones.</li>
+        </ul>
+        <p>Estas respuestas las proporcionan la <strong>Municipalidad Provincial de Huamanga</strong>, la <strong>Dirección Regional de Comercio Exterior y Turismo</strong>, las oficinas de información turística y el propio templo.</p>
+
+        <div class="callout">
+          <p><strong>Aviso:</strong> este proyecto no verifica la historia, las fechas, el horario ni el acceso del Templo de San Agustín. No reproducimos aquí datos que no hemos podido confirmar. Si necesitas una ficha fiable, acude a las instituciones competentes antes de organizar la visita.</p>
+        </div>
+
+        <h2>Qué hacer mientras tanto</h2>
+        <p>Si tu objetivo es conocer el paisaje religioso del centro, no dependes de un templo concreto: la plaza y sus calles aledañas ya concentran buena parte de los recintos y del patrimonio arquitectónico. Un recorrido a pie por el centro permite ver fachadas, portadas y templos, y deja la visita interior para los espacios que estén efectivamente abiertos al público en el momento de tu llegada.</p>
+        <p>Ten en cuenta además la altitud: la ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>. El recorrido a pie por el centro es corto, pero conviene caminar sin prisa.</p>
+
+        <p class="verify-note">Este proyecto no dispone de datos verificados sobre el Templo de San Agustín. Por eso esta página describe el contexto y las vías de confirmación, sin afirmar hechos sobre el recinto. Consulta MINCETUR, la Municipalidad Provincial de Huamanga y el Ministerio de Cultura, enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Templo de Santo Domingo de Ayacucho: guía desde la plaza';
+const description = 'El Templo de Santo Domingo de Ayacucho visto desde la Plaza Mayor: ubicación, distancia a pie de referencia y su relación con el paisaje religioso del centro.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/templo-santo-domingo/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Templos del centro"
+  heading="Templo de Santo Domingo"
+  lead="Uno de los templos históricos que forman el paisaje religioso del centro, a unos pasos de la plaza. Su horario y sus condiciones de visita no están verificados aquí."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Templo de Santo Domingo' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['templo-san-agustin', 'catedral-ayacucho', 'lugares-cerca', 'centro-historico-huamanga']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Templo de Santo Domingo</strong> es uno de los recintos religiosos del centro histórico de Ayacucho, y el inventario turístico de MINCETUR lo sitúa a unos <strong>100 m a pie</strong> desde la plaza, una distancia que se cubre caminando en pocos minutos. Forma parte del paisaje religioso que la <strong>Basílica Catedral</strong> encabeza junto al conjunto. Su horario y sus condiciones de visita no están verificados aquí y deben confirmarse antes de ir.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Templo de Santo Domingo</strong> es uno de los recintos religiosos que dan forma al centro histórico de {site.cityName}. El inventario turístico de MINCETUR lo sitúa a unos <strong>100 m a pie</strong> desde la {site.attractionFullName}: una distancia corta, que se cubre caminando en pocos minutos desde el perímetro de la plaza.</p>
+
+        <p>Esa cercanía lo convierte en una parada natural cuando se recorre el centro. Ahora bien, conviene distinguir dos cosas: el templo forma parte del paisaje urbano del entorno de la plaza, pero su interior es un espacio con reglas propias, y en este proyecto <strong>no se han verificado su horario ni sus condiciones de visita</strong>.</p>
+
+        <table class="fact-table">
+          <caption>Datos de referencia</caption>
+          <tbody>
+            <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>100 m a pie</strong>. Fuente: inventario turístico de MINCETUR.</td></tr>
+            <tr><th>Tipo de recinto</th><td>Templo del centro histórico, distinto del espacio público de la plaza.</td></tr>
+            <tr><th>Horario de visitas</th><td><strong>No verificado</strong> en este proyecto. Confírmalo antes de ir.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Un templo dentro del paisaje religioso del centro</h2>
+        <p>El centro histórico de Huamanga reúne varios recintos religiosos repartidos entre las manzanas que rodean la plaza. La presencia de la <strong>Basílica Catedral</strong> como edificio principal del conjunto, y de otros templos cercanos como Santo Domingo, explica por qué el barrio conserva un carácter religioso tan marcado.</p>
+        <p>En ese paisaje, Santo Domingo funciona como una de las paradas del recorrido devocional y patrimonial de la ciudad. Su ubicación cercana a la plaza lo hace fácil de integrar en una caminata, aunque el templo se visite por separado respecto del espacio público.</p>
+
+        <h2>Cómo integrarlo en un recorrido</h2>
+        <p>La forma más práctica de llegar es partir de la plaza y caminar hacia el templo, tomando los portales como referencia. Al estar a unos 100 m, se alcanza en pocos minutos y se puede combinar con otras visitas del centro.</p>
+        <ul class="checklist">
+          <li>Empieza en la plaza, para orientarte con los cuatro portales y el monumento a Sucre.</li>
+          <li>Camina hacia el templo como visita separada del espacio público, no como una extensión de la plaza.</li>
+          <li>Confirma el horario y las condiciones de acceso el mismo día.</li>
+          <li>Respeta el uso litúrgico del recinto si coincide con una celebración.</li>
+        </ul>
+
+        <h2>Qué confirmar antes de ir</h2>
+        <p>Como no hay aquí datos verificados sobre el templo, el paso previo es informarse. Antes de desplazarte, conviene aclarar varios puntos que suelen cambiar con el tiempo:</p>
+        <ul class="checklist">
+          <li>Si el templo está <strong>abierto al público</strong> y en qué franja horaria.</li>
+          <li>Si hay alguna <strong>limitación de acceso</strong> por obras, restauración o celebraciones.</li>
+          <li>Si se puede <strong>fotografiar</strong> en el interior y con qué condiciones.</li>
+          <li>Si existe algún <strong>recorrido guiado</strong> o material informativo.</li>
+        </ul>
+        <p>Estas preguntas se resuelven consultando a la <strong>Municipalidad Provincial de Huamanga</strong>, a las oficinas de turismo de la ciudad y al propio recinto.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> el único dato que este proyecto verifica sobre el Templo de Santo Domingo es la referencia de MINCETUR de aproximadamente 100 m a pie desde la plaza. El horario de visitas, las condiciones de acceso y cualquier otro detalle deben confirmarse en las fuentes oficiales antes de la visita.</p>
+        </div>
+
+        <h2>Un detalle de altitud y horario</h2>
+        <p>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>, así que el recorrido corto hasta el templo conviene hacerlo con calma. Si piensas entrar, reserva la visita para una franja en la que las iglesias suelen estar abiertas y confírmala antes, porque fuera de esos horarios el recinto puede permanecer cerrado.</p>
+
+        <p class="verify-note">La distancia de 100 m se atribuye al inventario turístico de MINCETUR, enlazado al final de la página. Esta guía no confirma horarios, acceso, precios ni condiciones del templo.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

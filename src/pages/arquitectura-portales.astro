@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Arquitectura de los portales de la Plaza Mayor de Ayacucho';
+const description = 'Los portales de la Plaza Mayor de Ayacucho: arcos de piedra, balcones de madera, teja de arcilla y la lectura arquitectónica del conjunto.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/arquitectura-portales/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Arquitectura"
+  heading="Arquitectura de los portales de la plaza"
+  lead="Los portales son la firma visual de la plaza: piedra abajo, madera arriba y teja de arcilla en las cubiertas. Entender ese orden de materiales permite leer todo el conjunto de una sola mirada."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Arquitectura de los portales' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['portales-plaza-mayor', 'centro-historico-huamanga', 'casonas-coloniales', 'monumento-antonio-jose-de-sucre']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Los portales de la plaza se leen como una sola estructura en tres capas: la arcada de piedra al nivel de la calle, los balcones de madera en los pisos altos y la cubierta de teja de arcilla como remate. Entre los cuatro frentes suman alrededor de <strong>111 arcos y columnas</strong>, según el inventario turístico de MINCETUR, y esa repetición es la que da al conjunto su continuidad visual. Esta página explica cómo se construyó y cómo se lee como arquitectura; el recorrido práctico por los cuatro frentes tiene su propia guía.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> está rodeada por <strong>cuatro portales</strong> que forman una arcada continua. Son soportales de planta baja, con arcos de piedra al nivel de la calle, balcones de madera en los pisos altos y cubiertas de teja de arcilla. Ese apilado de materiales, repetido frente tras frente, es lo que da a la plaza su continuidad visual tan reconocible.</p>
+
+        <h2>Un orden de materiales en tres alturas</h2>
+        <p>La lectura empieza abajo. El primer nivel es de <strong>arcos y columnas de piedra</strong>: soportes robustos que forman un pasaje cubierto y que, vistos en fila, producen el ritmo de luces y sombras más característico del conjunto. El inventario turístico de MINCETUR cuenta alrededor de <strong>111 arcos y columnas</strong> repartidos entre los cuatro portales.</p>
+        <p>Por encima aparecen los <strong>balcones de madera</strong>. Son voladizos cerrados que asoman sobre el pasaje y que aportan la nota cálida del conjunto, en contraste con la piedra. En el nivel superior, el remate son las <strong>cubiertas de teja de arcilla</strong>, cuya línea recorre los cuatro frentes y cierra la silueta de la plaza.</p>
+
+        <table class="fact-table">
+          <caption>Los tres niveles del portal</caption>
+          <tbody>
+            <tr><th>Nivel de calle</th><td>Arcada de piedra. Alrededor de 111 arcos y columnas en los cuatro portales (MINCETUR). Forma un pasaje cubierto.</td></tr>
+            <tr><th>Pisos altos</th><td>Balcones de madera que asoman sobre el pasaje y matizan la fachada de piedra.</td></tr>
+            <tr><th>Cubierta</th><td>Teja de arcilla, cuya línea recorre los cuatro frentes.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Por qué el conjunto se ve como una sola cosa</h2>
+        <p>Los portales no se leen como cuatro edificios aislados, sino como un anillo. La repetición del mismo esquema constructivo —arco de piedra abajo, madera arriba, teja al final— en los cuatro costados crea esa sensación de unidad. Al caminar por el perímetro, el ojo sigue una secuencia continua de vanos y soportes que no se interrumpe.</p>
+        <p>Como referencia histórica, la arquitectura del entorno se consolidó durante los <strong>siglos XVI y XVII</strong>, dentro de una ciudad fundada como española en <strong>1540</strong>. Esa cronología explica el aire colonial del conjunto.</p>
+
+        <h2>Leer el conjunto como arquitectura, no como postal</h2>
+        <p>Para mirar los portales como arquitectura conviene empezar por el módulo y no por el edificio. Un portal no es una fachada maciza, sino una sucesión de vanos iguales separados por soportes de piedra que se repite a lo largo de todo el frente. Una vez identificado ese módulo, se entiende por qué los cuatro frentes comparten el mismo esquema y por qué la plaza funciona como un patio cerrado por un único sistema constructivo.</p>
+        <p>Ese sistema se ordena en tres capas superpuestas, cada una con su material y su función. Mirarlas por separado, de abajo arriba, es la mejor forma de comprender por qué el conjunto se percibe como una unidad aunque lo formen varios frentes.</p>
+
+        <table class="fact-table">
+          <caption>Las tres capas y qué observar en cada una</caption>
+          <tbody>
+            <tr><th>Nivel bajo (arcada)</th><td>Arcos y columnas de piedra que forman el pasaje cubierto. Observa la proporción entre el alto y el ancho de cada vano y el ritmo de los soportes en fila.</td></tr>
+            <tr><th>Nivel alto (balcones)</th><td>Balcones de madera que vuelan sobre el pasaje. Observa cómo se proyectan sobre la arcada y cómo imponen un ritmo distinto al de la piedra.</td></tr>
+            <tr><th>Cubierta (teja)</th><td>Cubierta de teja de arcilla. Observa la línea de alero, que recorre los cuatro frentes y remata la silueta del conjunto.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Por qué los cuatro frentes se leen como un solo cuerpo</h2>
+        <p>La continuidad no depende de que los cuatro portales sean idénticos, sino de que repiten el mismo orden de materiales y de proporciones. La arcada de piedra mantiene abajo un ritmo regular de vanos; los balcones de madera introducen arriba una segunda cadencia; y la cubierta de teja cierra el conjunto con una línea que el ojo sigue sin interrupciones.</p>
+        <p>Cuando esa línea de cubierta da la vuelta completa, la plaza se percibe como un solo recinto y no como cuatro edificios independientes. Si además se mira desde el centro, hacia el monumento a Sucre, las cuatro fachadas se alinean en profundidad y refuerzan la misma lectura: un anillo construido con un solo criterio, repetido frente a frente.</p>
+
+        <h2>Qué mirar al detalle</h2>
+        <ul class="checklist">
+          <li>La proporción entre el alto y el ancho de cada arco, que se repite a lo largo del frente.</li>
+          <li>El ritmo de columnas: casi nunca son idénticas, y las diferencias cuentan la historia de las reparaciones.</li>
+          <li>El vuelo de los balcones de madera, que se proyectan sobre el pasaje de piedra.</li>
+          <li>La línea de la cubierta de teja, que unifica los cuatro lados y remata la silueta.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Sobre la datación de cada tramo:</strong> este proyecto no verifica el año de construcción ni las reformas de cada portal por separado. La lectura aquí es arquitectónica y general. Para fechas concretas, consulta el inventario de MINCETUR y las publicaciones de patrimonio de la Municipalidad Provincial de Huamanga.</p>
+        </div>
+
+        <p class="verify-note">El número de arcos y columnas y la descripción de los materiales provienen del inventario turístico de MINCETUR y de la descripción recurrente del conjunto, enlazados al final de la página. Los detalles constructivos de cada frente deben confirmarse con fuentes locales.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Lugares turísticos cerca de la Plaza de Armas de Ayacucho';
+const description = 'Qué hay cerca de la Plaza Mayor de Ayacucho: Catedral, Templo de Santo Domingo, Arco del Triunfo y museos, con las distancias de referencia de MINCETUR.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/lugares-cerca/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+
+const places = [
+  {
+    tag: 'En la plaza',
+    name: 'Basílica Catedral de Ayacucho',
+    text: 'La gran fachada religiosa del conjunto. MINCETUR la sitúa a unos 50 m a pie desde la plaza. Su interior tiene condiciones propias de visita.',
+    href: site.minceturCatedralUrl
+  },
+  {
+    tag: 'Recorrido urbano',
+    name: 'Templo de Santo Domingo',
+    text: 'Uno de los templos históricos del centro, a unos 100 m a pie según MINCETUR. Es una visita distinta del espacio público de la plaza.',
+    href: site.minceturUrl
+  },
+  {
+    tag: 'Recorrido urbano',
+    name: 'Arco del Triunfo',
+    text: 'Hito urbano del centro histórico, a unos 284 m a pie según MINCETUR. Se integra bien en una caminata corta desde la plaza.',
+    href: site.minceturArcoUrl
+  },
+  {
+    tag: 'Visita cultural',
+    name: 'Museos del centro histórico',
+    text: 'El centro reúne espacios museísticos y de arte popular. No se ha verificado aquí la sede ni el horario actual de cada uno: confírmalos antes de organizar la visita.',
+    href: site.promperuUrl
+  }
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Qué hay alrededor"
+  heading="Lugares turísticos cerca de la Plaza Mayor de Ayacucho"
+  lead="Alrededor de la plaza hay un grupo de visitas que caben en una caminata. Estas son las que cuentan con una distancia de referencia documentada, más lo que conviene confirmar antes de ir."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Lugares cerca' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['ruta-a-pie', 'catedral-ayacucho', 'templo-santo-domingo', 'arco-del-triunfo']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>A pie desde la Plaza Mayor de Ayacucho se encuentran la Basílica Catedral (unos 50 m), el Templo de Santo Domingo (unos 100 m) y el Arco del Triunfo (unos 284 m), según las distancias de referencia de MINCETUR. Todas estas visitas caben en una caminata sin necesidad de transporte. Las excursiones regionales como Wari o Quinua están fuera del centro y requieren transporte aparte.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> funciona como punto de partida del centro histórico. Caminando desde la plaza se llega a templos, arcos y espacios museísticos sin necesidad de transporte. Eso sí: el espacio público de la plaza y los recintos cerrados tienen condiciones de visita distintas, y no siempre coinciden en horarios.</p>
+      </div>
+
+      <div class="guide-grid" style="margin-top:38px">
+        {places.map((place) => (
+          <article class="guide-card">
+            <p class="section-kicker" style="margin:0">{place.tag}</p>
+            <h3>{place.name}</h3>
+            <p>{place.text}</p>
+            <a class="guide-more" href={place.href} target="_blank" rel="noreferrer">Ver fuente ↗</a>
+          </article>
+        ))}
+      </div>
+
+      <div class="page-copy">
+        <h2>Recorridos urbanos y excursiones regionales</h2>
+        <p>Conviene separar dos escalas. Los <strong>recorridos urbanos</strong> (Catedral, Santo Domingo, Arco del Triunfo, museos del centro) se hacen a pie desde la plaza. Las <strong>excursiones regionales</strong>, como el complejo arqueológico de Wari o el pueblo de Quinua, están fuera del casco urbano y requieren transporte propio o un tour organizado.</p>
+        <p>No las presentes como un paseo a pie: la distancia y el tiempo no son comparables, y necesitas reservar medio día o más para cada una.</p>
+
+        <h2>Cómo organizar la visita</h2>
+        <ul class="checklist">
+          <li>Empieza por la plaza, para orientarte con los cuatro portales y el monumento a Sucre.</li>
+          <li>Suma la Catedral y Santo Domingo como visitas separadas del espacio público.</li>
+          <li>Confirma horarios y acceso de cada recinto el mismo día; los museos cambian con frecuencia.</li>
+          <li>Deja las excursiones regionales para otro bloque horario, con transporte resuelto.</li>
+        </ul>
+
+        <h2>Distancias documentadas desde la plaza</h2>
+        <table class="fact-table">
+          <caption>Distancias a pie desde la plaza</caption>
+          <tbody>
+            <tr><th>Basílica Catedral de Ayacucho</th><td>Aprox. <strong>50 m</strong> a pie · fuente: MINCETUR</td></tr>
+            <tr><th>Templo de Santo Domingo</th><td>Aprox. <strong>100 m</strong> a pie · fuente: MINCETUR</td></tr>
+            <tr><th>Arco del Triunfo</th><td>Aprox. <strong>284 m</strong> a pie · fuente: MINCETUR</td></tr>
+          </tbody>
+        </table>
+        <p>Estas tres distancias están documentadas en el inventario de MINCETUR y describen la cercanía a pie desde la plaza. No incluyen duración del recorrido ni horarios de cada recinto: calcula tu tiempo en función de cuántos quieras entrar.</p>
+
+        <h2>Qué verificar antes de la visita</h2>
+        <ul class="checklist">
+          <li>Confirma el horario de cada recinto el mismo día; los museos cambian con frecuencia.</li>
+          <li>Verifica si los templos piden un aporte o tienen acceso restringido durante oficios religiosos.</li>
+          <li>Si visitas en Semana Santa, declarada Patrimonio Cultural de la Nación, espera aglomeraciones y controles en el centro histórico.</li>
+          <li>Lleva una capa adicional si piensas quedarte hasta la tarde: la temperatura cae con rapidez por la altitud.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Distancias:</strong> las referencias de 50 m, 100 m y 284 m provienen del inventario turístico de MINCETUR y describen la cercanía a pie desde la plaza. No describen horarios, precios ni condiciones de acceso de cada lugar.</p>
+        </div>
+
+        <p class="verify-note">Esta página no confirma horarios, tarifas ni disponibilidad de los recintos mencionados. Para condiciones actuales, consulta MINCETUR, Perú Travel / PROMPERÚ y los canales de cada institución, enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

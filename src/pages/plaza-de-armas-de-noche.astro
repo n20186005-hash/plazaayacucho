@@ -1,0 +1,71 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Plaza de Armas de Ayacucho de noche: qué esperar';
+const description = 'Cómo es la Plaza Mayor de Ayacucho al anochecer: iluminación de fachadas, ambiente local, fotografía nocturna y qué precauciones conviene tomar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/plaza-de-armas-de-noche/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Visita nocturna"
+  heading="Plaza Mayor de Ayacucho de noche"
+  lead="Cuando cae la tarde, la plaza cambia: las fachadas se encienden, el ambiente se inclina hacia el paseo nocturno y la fotografía encuentra encuadres que de día no aparecen. La franja recomendada por MINCETUR se extiende hasta las 21:00. Aquí explicamos qué esperar y qué precauciones sensatas conviene tomar."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'De noche' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['horarios-visita', 'plaza-mayor-fotografia', 'que-ver', 'centro-historico-huamanga']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho cambia al anochecer: las fachadas se iluminan y el ambiente se inclina hacia el paseo nocturno dentro de la franja recomendada por MINCETUR, que se extiende hasta las 21:00. La temperatura cae con rapidez por la altitud —la ciudad está a unos 2.750 m—. Esta guía no ofrece garantías de seguridad ni datos criminales; las decisiones son de cada visitante.</p>
+      </div>
+      <div class="page-copy">
+        <p>Cuando cae la tarde, la <strong>{site.attractionFullName}</strong> cambia. La luz natural desaparece, las fachadas se encienden y el uso del espacio se inclina hacia el paseo nocturno. La franja recomendada por MINCETUR se extiende hasta las <strong>21:00</strong>, y muchas de las mejores imágenes de la plaza se hacen en ese tramo final del día.</p>
+
+        <h2>Iluminación de fachadas</h2>
+        <p>Al anochecer, la iluminación artificial resalta las fachadas de la Catedral, los portales y el monumento a Sucre. La piedra de los arcos y las cubiertas de teja de arcilla toman un color cálido que cambia por completo la lectura del conjunto respecto a la del día.</p>
+        <p>Los cuatro portales —Unión, Constitución, Independencia y Municipal— mantienen actividad en sus locales de planta baja, lo que aporta luz y movimiento al perímetro. El conjunto no queda a oscuras: hay iluminación del espacio público y de los comercios abiertos.</p>
+
+        <h2>Ambiente nocturno</h2>
+        <p>La plaza es, por la noche, un lugar de paseo. El movimiento es menor que al mediodía, pero el espacio no se vacía. El descenso de temperatura propio de la altitud —la ciudad está a unos 2.750 m— hace que la noche sea fresca, en especial fuera de los meses de lluvia.</p>
+        <p>El carácter de la plaza cambia también con el calendario. Durante la Semana Santa, declarada Patrimonio Cultural de la Nación, las procesiones nocturnas transforman por completo el uso del espacio. En fechas ordinarias, la noche es más tranquila.</p>
+
+        <h2>Fotografía nocturna</h2>
+        <p>La franja del anochecer es una de las mejores para la fotografía. La luz artificial de las fachadas, el contraste entre los arcos iluminados y las sombras, y el monumento a Sucre como punto central ofrecen encuadres que de día no aparecen.</p>
+        <p>Para fotografía nocturna conviene llevar un dispositivo o cámara que maneje bien la baja luz, o un trípode pequeño. Al fotografiar en un espacio público en uso, respeta a las personas que transitan y evita el uso de flash directo hacia los peatones.</p>
+
+        <h2>Precauciones sensatas</h2>
+        <p>Como en cualquier espacio público urbano de noche, conviene tomar precauciones básicas. Esta guía no hace afirmaciones sobre seguridad ni ofrece garantías, porque no tiene datos que respaldarlas. Lo que sí recomendamos es sentido común:</p>
+        <ul class="checklist">
+          <li>Mantén tus objetos personales a la vista y evita dejarlos en bancos sin atención.</li>
+          <li>Si sales de la plaza de noche, usa calles iluminadas y con tránsito de peatones.</li>
+          <li>Si no conoces la ciudad, prefiere caminar acompañado en la franja nocturna.</li>
+          <li>Ten previsto el regreso a tu alojamiento antes de que se reduzca el movimiento en el centro.</li>
+        </ul>
+        <p>La altitud hace que la temperatura caiga con rapidez después del atardecer. Lleva una capa adicional si piensas quedarte hasta el final de la franja recomendada.</p>
+
+        <div class="callout">
+          <p><strong>Sin garantías:</strong> esta guía no ofrece afirmaciones de seguridad ni datos criminales. La plaza es un espacio público que se usa de noche, pero las condiciones reales varían con la fecha, la hora y el contexto. Toma decisiones con criterio propio y consulta fuentes locales si necesitas información específica.</p>
+        </div>
+
+        <p class="verify-note">La franja recomendada hasta las 21:00 se atribuye a MINCETUR. La declaración de la Semana Santa como Patrimonio Cultural de la Nación corresponde al Ministerio de Cultura. Esta página no verifica condiciones de seguridad ni estadísticas criminales. Para información específica, consulta a las autoridades locales y los enlaces oficiales al final.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

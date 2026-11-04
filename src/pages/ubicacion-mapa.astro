@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Ubicación y mapa de la Plaza Mayor de Ayacucho, Perú';
+const description = 'Dónde está la Plaza Mayor de Ayacucho: coordenadas, código postal, plus code, cómo leer el mapa y qué rodea el centro histórico.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/ubicacion-mapa/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Ubicación y orientación"
+  heading="Ubicación y mapa de la Plaza Mayor de Ayacucho"
+  lead="La plaza es el punto desde el que se ordena el casco histórico de Ayacucho, en un valle andino a unos 2.750 m de altitud. Estas son las coordenadas verificadas, el código postal y el plus code, junto con una guía para leer el mapa y orientarte."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Ubicación y mapa' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['como-llegar', 'que-ver', 'centro-historico-huamanga', 'ruta-a-pie']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho está en el centro del casco urbano de Ayacucho, región Ayacucho, Perú, con código postal 05003 y plus code RQQF+RM. Sus coordenadas son latitud -13.1603789 y longitud -74.2257816. La plaza es el punto desde el que se ordenó el trazado colonial de la ciudad fundada en 1540 y sigue siendo hoy su referencia más usada.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong>, también conocida como {site.attractionAltName} y llamada históricamente {site.attractionLocalName}, se encuentra en el centro del casco urbano de {site.cityName}, capital de la región de {site.regionName}, en {site.countryName}. Es el espacio público desde el cual se ordenó el trazado colonial de la ciudad fundada en 1540 y sigue siendo hoy su punto de referencia más usado.</p>
+
+        <table class="fact-table">
+          <caption>Datos geográficos verificables</caption>
+          <tbody>
+            <tr><th>Coordenadas (decimal)</th><td>Latitud <strong>{site.latitude}</strong> · Longitud <strong>{site.longitude}</strong></td></tr>
+            <tr><th>Código postal</th><td><strong>{site.postalCode}</strong></td></tr>
+            <tr><th>Plus code</th><td><strong>{site.mapsPlusCode}</strong></td></tr>
+            <tr><th>Ciudad y región</th><td>{site.cityName} (históricamente Huamanga), región {site.regionName}, {site.countryName}</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Cómo leer el mapa</h2>
+        <p>Para situar la plaza en un mapa digital tienes tres opciones equivalentes: las coordenadas decimales, el código postal o el plus code. El plus code es un sistema de geolocalización abierto que no depende de nombres de calles ni de numeración y funciona incluso donde la dirección postal es incompleta. Basta con copiarlo y pegarlo en la barra de búsqueda de un mapa para abrir el punto exacto.</p>
+        <p>Desde esta guía enlazamos a la ficha compartida de terceros en la que aparece el lugar con el nombre que usa esa plataforma, la categoría de parque urbano y una valoración de usuarios. Esa ficha no es un canal oficial: es un listado de terceros que conviene tratar como referencia, no como fuente administrativa.</p>
+
+        <h2>Qué rodea el centro</h2>
+        <p>El perímetro de la plaza tiene carácter institucional. En él conviven la Basílica Catedral, la sede de la Municipalidad Provincial de Huamanga, oficinas del gobierno regional, una sede de la Corte y espacios universitarios. Esa mezcla de usos cívicos explica por qué la plaza no funciona solo como atractivo turístico, sino también como centro administrativo de la ciudad.</p>
+        <p>Alrededor de ese núcleo se extiende el centro histórico, con calles coloniales, casonas de patios interiores y balcones de madera, templos y comercios. La ciudad se asienta en un valle andino a alta altitud —aproximadamente 2.750 m sobre el nivel del mar—, lo que implica un sol fuerte al mediodía y un descenso rápido de la temperatura hacia la tarde.</p>
+
+        <h2>Orientarse con los cuatro portales</h2>
+        <p>Una vez en el sitio, la forma más sencilla de orientarse es usar los portales como puntos cardinales. La plaza está flanqueada por cuatro portales con nombre propio: <strong>Unión</strong>, <strong>Constitución</strong>, <strong>Independencia</strong> y <strong>Municipal</strong>. En conjunto suman alrededor de 111 arcos y columnas de piedra, según el inventario de MINCETUR.</p>
+        <p>En el centro del conjunto se encuentra el monumento ecuestre a Antonio José de Sucre, inaugurado en 1924. Sirve como referencia visual desde cualquier portal y como punto de encuentro para grupos. Si dudas de dónde estás, busca el monumento: te situará de inmediato en el centro de la plaza.</p>
+        <p>Cada portal da a una calle distinta del centro histórico, así que identificarlos te ayuda también a planificar la salida hacia la Catedral, hacia otros templos cercanos o hacia las zonas comerciales.</p>
+
+        <div class="callout">
+          <p><strong>Sobre la ficha de terceros:</strong> el listado compartido de Google Maps muestra {site.mapsRating}/5 y {site.mapsReviews} reseñas de usuarios, categoría "{site.mapsPlaceType}" y un teléfono que no se ha verificado como línea administrativa oficial. Úsalo para orientarte, no como canal oficial de contacto.</p>
+        </div>
+
+        <p class="verify-note">Esta página usa coordenadas y datos geográficos del registro interno del proyecto, contrastados con la ficha de MINCETUR y el listado de Google Maps. No confirma direcciones postales completas ni numeración de calles. Para trámites administrativos, consulta a la Municipalidad Provincial de Huamanga.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

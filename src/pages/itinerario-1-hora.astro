@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Itinerario de 1 hora en la Plaza Mayor de Ayacucho';
+const description = 'Qué alcanza a ver en una hora en la Plaza Mayor de Ayacucho: recorrido corto por portales, monumento y Catedral, pensado para escalas breves.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/itinerario-1-hora/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Recorridos breves"
+  heading="Itinerario de 1 hora desde la plaza"
+  lead={`Si tienes poco tiempo —una escala, una parada entre compromisos—, la plaza y lo que está a sus pies bastan para entender por qué ${site.cityName} tiene un centro histórico tan reconocible. Esto es lo que cabe en una hora y lo que conviene dejar para otra visita.`}
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Itinerario 1 hora' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['itinerario-medio-dia', 'que-ver', 'portales-plaza-mayor', 'catedral-ayacucho']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>En una hora alcanzas para recorrer los cuatro portales de piedra, el monumento ecuestre a Sucre (inaugurado en 1924 según MINCETUR) y la fachada de la Catedral, a unos 50 m a pie. El acceso al espacio público es libre y la franja recomendada de visita va de 06:00 a 21:00. Lo que no entra en sesenta minutos es entrar a recintos cerrados como templos o museos, cuyos horarios debes confirmar aparte.</p>
+      </div>
+      <div class="page-copy">
+        <p>Una hora da para recorrer la <strong>{site.attractionFullName}</strong> con calma y asomarse a los elementos que la definen: los cuatro portales de piedra, el monumento ecuestre a Sucre y la fachada de la Catedral, que según MINCETUR está a unos <strong>50 m a pie</strong>. Lo que no cabe es entrar a recintos con horario propio: la Catedral, los templos y los museos exigen una visita aparte y horarios que hay que confirmar el mismo día.</p>
+
+        <h2>Lo que sí entra en una hora</h2>
+        <p>El recorrido se hace entero a pie y sobre el espacio público, que es de acceso libre. La plaza es un único conjunto: no hay que desplazarse entre puntos lejanos, sino caminar sus cuatro frentes y detenerse en los detalles.</p>
+
+        <ul class="checklist">
+          <li><strong>Los cuatro portales</strong> — Unión, Constitución, Independencia y Municipal — con sus arcos de piedra y balcones de madera en los pisos altos.</li>
+          <li><strong>El monumento ecuestre a Antonio José de Sucre</strong> en el centro de la plaza, inaugurado en 1924 según el inventario de MINCETUR.</li>
+          <li><strong>La fachada de la Catedral</strong>, a unos 50 m a pie, visible desde el perímetro de la plaza sin necesidad de entrar.</li>
+          <li><strong>Los jardines y el conjunto de bancas</strong>, que permiten leer la plaza como un espacio cívico y no solo como postal.</li>
+        </ul>
+
+        <h2>Una secuencia posible</h2>
+        <p>Empieza por uno de los portales —el de Unión o el Municipal son buenas entradas— y camina el perímetro completo. Desde cualquier ángulo se ve el monumento a Sucre, así que conviene acercarse, leerlo como pieza central y desde ahí mirar hacia la Catedral. Si te sobran diez minutos, recorre el portal opuesto para ver cómo cambia la luz sobre los arcos de piedra según el frente.</p>
+        <p>La franja de visita recomendada por MINCETUR va de <strong>06:00 a 21:00</strong> durante todo el año. Para una hora de visita, conviene elegir una franja con buena luz natural: la mañana temprana o la tarde, antes de que el sol caiga del todo.</p>
+
+        <table class="fact-table">
+          <caption>Recorrido de una hora: bloque por bloque</caption>
+          <tbody>
+            <tr><th>0–20 min · Perímetro de la plaza</th><td>Camina los cuatro portales (Unión, Constitución, Independencia y Municipal) y detente en el monumento ecuestre a Sucre, inaugurado en 1924. Espacio público de acceso libre.</td></tr>
+            <tr><th>20–40 min · Fachada de la Catedral</th><td>A unos <strong>50 m a pie</strong> desde la plaza (MINCETUR). La fachada se ve desde fuera sin necesidad de entrar al recinto.</td></tr>
+            <tr><th>40–60 min · Portal opuesto y jardines</th><td>Cambia de frente para ver cómo la luz incide sobre los arcos de piedra. Cierra el recorrido en los jardines y bancas del conjunto. No incluye el Templo de Santo Domingo (≈100 m) ni el Arco del Triunfo (≈284 m), que quedan para otro momento.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Lo que no entra en una hora</h2>
+        <p>Lo que queda fuera es tan importante como lo que entra. Una hora no basta para:</p>
+        <ul>
+          <li>Entrar a la <strong>Catedral</strong> con tiempo para ver el interior. La fachada sí se ve desde fuera, pero el recinto tiene sus propios horarios.</li>
+          <li>Visitar el <strong>Templo de Santo Domingo</strong>, a unos 100 m a pie según MINCETUR. Es una visita distinta del espacio público.</li>
+          <li>Llegar al <strong>Arco del Triunfo</strong>, a unos 284 m a pie según MINCETUR, y volver con tranquilidad.</li>
+          <li>Entrar a museos o espacios culturales del centro histórico, cuyas sedes y horarios no están verificados en este proyecto.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Si tu hora se acorta:</strong> prioriza el perímetro de la plaza y el monumento. La fachada de la Catedral se ve desde fuera sin entrar, así que no hace falta apartar tiempo para el recinto. Lo demás se cubre en el itinerario de medio día.</p>
+        </div>
+
+        <h2>Cuándo elegir este itinerario</h2>
+        <p>Este recorrido corto funciona bien para quien llega a {site.cityName} con poco tiempo, para quien hace una escala entre vuelos o buses, o para quien quiere una primera aproximación antes de organizar una visita más larga. También sirve como versión reducida si el clima o el cansancio acortan el día.</p>
+        <p>La altitud de la ciudad —aproximadamente 2.750 m s. n. m.— hace que algunas personas prefieran un primer día liviano. Una hora en la plaza es una forma sensata de empezar a moverse sin exigir demasiado.</p>
+
+        <p class="verify-note">Este itinerario se basa en el espacio público de la plaza y en las distancias de referencia de MINCETUR (50 m a la Catedral, 100 m a Santo Domingo, 284 m al Arco del Triunfo). No confirma horarios de recintos cerrados ni condiciones de acceso. Si planeas entrar a la Catedral, revisa sus horarios antes de desplazarte.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

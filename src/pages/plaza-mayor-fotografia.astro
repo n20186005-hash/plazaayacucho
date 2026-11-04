@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Fotografía en la Plaza Mayor de Ayacucho: luz y encuadres';
+const description = 'Cómo fotografiar la Plaza Mayor de Ayacucho: horarios de luz, encuadres con los portales y la Catedral, y cuidados al fotografiar un espacio público en uso.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/plaza-mayor-fotografia/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Fotografía"
+  heading="Fotografía en la Plaza Mayor de Ayacucho"
+  lead="La plaza cambia por completo según la luz. Aquí van algunas orientaciones prácticas sobre horarios, encuadres y comportamiento respetuoso en un espacio público que la ciudad usa todos los días."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Fotografía' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['que-ver', 'plaza-de-armas-de-noche', 'horarios-visita', 'portales-plaza-mayor']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La mejor manera de fotografiar la <strong>Plaza Mayor de Ayacucho</strong> es aprovechar la franja recomendada por MINCETUR, de <strong>06:00 a 21:00</strong> durante todo el año, y elegir la hora según la luz: temprano para encuadres limpios y al final de la tarde para el tono cálido sobre piedra, madera y teja. Como la plaza está rodeada por los cuatro portales, la propia <strong>arcada de piedra</strong> sirve de marco hacia el <strong>monumento a Sucre</strong>, y la <strong>Basílica Catedral</strong> queda a unos 50 m a pie. Recuerda que es un espacio público en uso: conviene pedir permiso antes de fotografiar a personas.</p>
+      </div>
+      <div class="page-copy">
+        <p>Fotografiar la <strong>{site.attractionFullName}</strong> es, sobre todo, una cuestión de luz. El conjunto está rodeado de <strong>arcos de piedra, balcones de madera y cubiertas de teja de arcilla</strong>, y todos esos materiales reaccionan de forma distinta según la hora. Elegir bien el momento importa más que el equipo.</p>
+
+        <figure class="page-figure">
+          <img src={images.plaza.src} alt={images.plaza.alt} loading="lazy" />
+          <figcaption>{images.plaza.caption} <a href={images.plaza.creditUrl} target="_blank" rel="noreferrer">Ver ficha</a> · <a href={images.plaza.licenseUrl} target="_blank" rel="noreferrer">Licencia</a></figcaption>
+        </figure>
+
+        <h2>La luz a lo largo del día</h2>
+        <p>La franja de visita recomendada por MINCETUR va de <strong>06:00 a 21:00</strong> durante todo el año. Dentro de esa ventana, la luz ofrece registros muy distintos:</p>
+        <ul class="checklist">
+          <li><strong>Primera hora de la mañana</strong>: suele ser el momento de la luz más limpia y del menor movimiento de gente. Ideal para encuadres amplios sin obstáculos.</li>
+          <li><strong>Mañana media</strong>: luz más dura y contrastada; las sombras de los arcos empiezan a marcar el pasaje.</li>
+          <li><strong>Mediodía</strong>: sol fuerte y vertical, típico de la altitud andina. Las sombras se acortan y los contrastes son intensos.</li>
+          <li><strong>Tarde</strong>: la luz cae de lado y tiñe de dorado la piedra, la madera y la teja. Es la franja más cálida para el conjunto.</li>
+        </ul>
+        <p>Como la ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>, el sol es intenso al mediodía: protege la vista y el equipo, y evita largas esperas a pleno sol.</p>
+
+        <h2>Encuadres con los portales</h2>
+        <p>Los portales son el mejor marco de la plaza, porque la arcada de piedra crea una ventana natural hacia el interior. Dos ideas sencillas funcionan bien:</p>
+        <ul class="checklist">
+          <li><strong>Fotografiar desde dentro de la arcada</strong>, usando un arco de piedra como marco y dejando el centro de la plaza como fondo.</li>
+          <li><strong>Recorrer el perímetro</strong> para captar la repetición de arcos y balcones, que es lo que da continuidad visual al conjunto.</li>
+        </ul>
+        <p>La plaza es amplia, así que conviene moverse: cambiar de portal cambia la composición por completo, y el monumento del centro adopta posiciones distintas en cada encuadre.</p>
+
+        <h2>La fachada de la Catedral</h2>
+        <p>La <strong>Basílica Catedral</strong> está a unos <strong>50 m a pie</strong> de la plaza, según MINCETUR, y su fachada es uno de los motivos más frecuentes. Al tratarse de una fachada orientada hacia un lado concreto, la luz la trata de forma desigual a lo largo del día: conviene observarla primero, decidir desde qué lado la quieres y volver en el momento adecuado. No hay una única posición correcta; depende de lo que busques.</p>
+
+        <h2>Fotografiar un espacio público en uso</h2>
+        <p>La plaza no es un decorado: es un espacio que la ciudad usa todos los días. Antes que cualquier consejo técnico, aplica el sentido común:</p>
+        <ul class="checklist">
+          <li>Pide permiso antes de fotografiar a personas de forma reconocible, y respeta un no como respuesta.</li>
+          <li>No interrumpas el paso ni ocupes el espacio con trípodes y equipos durante largos periodos.</li>
+          <li>Sé discreto en actos religiosos o celebraciones: la prioridad es la ceremonia, no la foto.</li>
+          <li>Evita bloquear accesos, escaleras y el flujo de peatones.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Sobre permisos:</strong> esta página no afirma nada sobre permisos especiales. Para fotografiar el espacio público no se requiere una autorización particular más allá de las normas de convivencia; si pretendes hacer una sesión profesional con montaje, consulta con la Municipalidad Provincial de Huamanga.</p>
+        </div>
+
+        <p class="verify-note">Las referencias de distancia y de franja horaria provienen del inventario turístico de MINCETUR, enlazado al final de la página. Esta guía no propone puntos de foto concretos ni afirma condiciones especiales de acceso.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

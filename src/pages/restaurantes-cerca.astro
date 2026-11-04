@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Dónde comer cerca de la Plaza Mayor de Ayacucho';
+const description = 'Cómo elegir dónde comer cerca de la Plaza Mayor de Ayacucho: zonas, tipos de cocina ayacuchana y criterios prácticos, sin recomendar comercios concretos.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/restaurantes-cerca/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Dónde comer"
+  heading="Dónde comer cerca de la plaza"
+  lead="Esta guía describe zonas, tipos de cocina regional y criterios prácticos para elegir dónde comer cerca de la plaza. No recomienda ni nombra restaurantes concretos: es una guía independiente y sin fines comerciales."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Restaurantes' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['cafeterias-cerca', 'lugares-cerca', 'itinerario-medio-dia', 'centro-historico-huamanga']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Cerca de la Plaza Mayor de Ayacucho hay oferta de comida en los cuatro portales y en las calles inmediatas del centro histórico, con cocina regional ayacuchana basada en papa, maíz, quinua, cerdo y cuy. Esta guía es independiente y no comercial: no nombra, enlaza ni recomienda restaurantes concretos. El acceso al espacio público de la plaza es libre y la franja recomendada va de 06:00 a 21:00.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> está rodeada de calles con oferta de comida. Esta página no nombra, enlaza ni recomienda ningún restaurante en particular, porque este es un proyecto independiente, sin fines de lucro y no comercial. Lo que sí se puede hacer es describir las zonas donde suele concentrarse la oferta, los tipos de cocina ayacuchana que conviene conocer y los criterios prácticos para elegir.</p>
+
+        <div class="callout">
+          <p><strong>Independencia editorial:</strong> esta guía no recibe patrocinio ni comisión de ningún comercio. No se recomiendan restaurantes, cafés, hoteles ni tiendas concretos. Las decisiones sobre dónde comer son del viajero.</p>
+        </div>
+
+        <h2>Zonas con oferta de comida</h2>
+        <p>La oferta de restaurantes alrededor de la plaza se organiza en tres anillos:</p>
+
+        <h3>Los portales de la plaza</h3>
+        <p>Los cuatro portales —Unión, Constitución, Independencia y Municipal— albergan locales en sus bajos. Es la zona más inmediata: se puede salir de la plaza y sentarse a comer sin desplazarse. La oferta tiende a ser de cocina regional y de servicio rápido.</p>
+
+        <h3>Las calles inmediatas al perímetro</h3>
+        <p>A una o dos manzanas de la plaza hay más restaurantes y comedores. Esta zona mantiene el carácter del centro histórico y suele tener una gama más amplia de precios y estilos. Caminar unos minutos desde la plaza abre opciones sin alejarse del casco.</p>
+
+        <h3>El centro histórico amplio</h3>
+        <p>Si se recorre más lejos del núcleo de la plaza, el centro histórico ofrece restaurantes con distintas orientaciones. La distancia desde la plaza sigue siendo caminable, y el entorno arquitectónico justifica el paseo.</p>
+
+        <h2>Cocina regional ayacuchana</h2>
+        <p>{site.cityName} tiene una tradición culinaria propia, con platos que reflejan el valle andino y la historia de la región. Sin nombrar establecimientos, conviene saber qué buscar:</p>
+        <ul class="checklist">
+          <li><strong>Platos de base andina</strong> — papa, maíz, quinua y otros ingredientes locales preparados de formas tradicionales.</li>
+          <li><strong>Carnes regionales</strong> — cerdo y cuy preparados según recetas locales.</li>
+          <li><strong>Sopas y caldos</strong> — particularmente aptos para la altitud y el clima fresco de la tarde.</li>
+          <li><strong>Postres tradicionales</strong> — {site.cityName} tiene una tradición repostera reconocida.</li>
+        </ul>
+
+        <h2>Criterios prácticos para elegir</h2>
+        <p>Sin recomendar comercios concretos, estos son los criterios que ayudan a decidir dónde comer:</p>
+        <ul>
+          <li><strong>Menú del día:</strong> muchos locales ofrecen un menú fijo a precio cerrado al mediodía. Sueve ser la opción más económica y permite probar cocina casera regional.</li>
+          <li><strong>Horario de almuerzo:</strong> en la sierra peruana el almuerzo se sirve típicamente entre la una y las tres de la tarde. Llegar fuera de esa franja puede encontrar locales cerrados o con cocina reducida.</li>
+          <li><strong>Concurrencia:</strong> un local con clientela local a la hora de almuerzo suele ser buena señal. La fila o el movimiento indican que la comida gira rápido.</li>
+          <li><strong>Higiene visible:</strong> conviene observar el estado del local, la forma de manipular los alimentos y la limpieza general antes de sentarse.</li>
+          <li><strong>Precio acordado:</strong> antes de pedir, revisa la carta o pregunta el precio del menú. No asumas tarifas.</li>
+        </ul>
+
+        <h2>Durante Semana Santa</h2>
+        <p>La Semana Santa de Ayacucho fue declarada Patrimonio Cultural de la Nación por el Ministerio de Cultura. En esas fechas, el centro histórico recibe una afluencia muy superior a la habitual y los locales de comida se saturan. Conviene comer temprano, reservar si es posible y tener un plan alternativo si el primer local está lleno.</p>
+
+        <p class="verify-note">Esta página no recomienda, nombra ni enlaza restaurantes concretos. Describe zonas, tipos de cocina regional y criterios de elección. Para información específica sobre un establecimiento, consulta directamente al comercio o a los canales turísticos oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

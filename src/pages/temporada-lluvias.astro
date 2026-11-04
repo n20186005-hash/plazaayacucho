@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Temporada de lluvias en Ayacucho: visitar la plaza con lluvia';
+const description = 'Qué supone visitar la Plaza Mayor de Ayacucho en temporada de lluvias: cómo se comporta el clima andino, qué llevar y cómo reorganizar el plan.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/temporada-lluvias/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Clima y temporada"
+  heading="Visitar la plaza en temporada de lluvias"
+  lead="Visitar la plaza con lluvia no tiene por qué arruinar el día, pero cambia la forma de plantearlo. El clima andino se comporta de manera particular: sol fuerte al mediodía, descenso rápido de temperatura en la tarde y posibilidad de lluvia que conviene anticipar."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Temporada de lluvias' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['horarios-visita', 'itinerario-medio-dia', 'plaza-de-armas-de-noche', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho, a unos 2.750 m s. n. m., puede visitarse con lluvia gracias al perímetro cubierto de sus cuatro portales. El clima andino combina sol intenso al mediodía, descenso rápido de temperatura por la tarde y posibilidad de precipitación. El acceso al espacio público es libre y la franja recomendada por MINCETUR va de 06:00 a 21:00.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> se encuentra en una ciudad andina a aproximadamente <strong>2.750 m s. n. m.</strong>. El clima en esa altitud tiene patrones que conviene conocer antes de viajar: no se trata de hacer pronósticos exactos —esta página no da estadísticas de precipitación ni afirma que ciertos meses serán secos o húmedos con certeza—, sino de entender cómo se comporta el entorno para reorganizar la visita si hace falta.</p>
+
+        <h2>El clima andino: patrones generales</h2>
+        <p>En una ciudad de valle andino a esta altitud, el día puede pasar por varias estaciones en pocas horas. Los rasgos más habituales son:</p>
+        <ul class="checklist">
+          <li><strong>Sol intenso al mediodía</strong> — la radiación es fuerte a esta altitud, incluso con cielo parcialmente nublado.</li>
+          <li><strong>Descenso rápido de temperatura</strong> — por la tarde y la noche el frío llega pronto, y el contraste con el calor del mediodía puede ser notable.</li>
+          <li><strong>Posibilidad de lluvia</strong> — la precipitación puede presentarse de forma concentrada en ciertas épocas del año.</li>
+          <li><strong>Cambios en pocas horas</strong> — un día puede empezar despejado, cubrirse al mediodía y llover por la tarde.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>No hay meses garantizados:</strong> esta guía no afirma que un mes concreto será seco o húmedo. El clima andino varía de un año a otro. Lo responsable es revisar el pronóstico meteorológico unos días antes de viajar y durante la estancia, y llevar equipo para sol y para lluvia sin importar la fecha.</p>
+        </div>
+
+        <h2>Qué llevar</h2>
+        <p>La regla práctica para una visita a la plaza en cualquier época del año es ir preparado para más de un escenario:</p>
+        <ul>
+          <li><strong>Protector solar y sombrero</strong> — el sol del mediodía es fuerte, llueva o no.</li>
+          <li><strong>Capa impermeable o paraguas</strong> — si el pronóstico anuncia lluvia, conviene llevar protección.</li>
+          <li><strong>Capa adicional de abrigo</strong> — para la tarde y la noche, cuando la temperatura baja.</li>
+          <li><strong>Calzado con agarre</strong> — los pavimentos de piedra pueden resbalar con la lluvia.</li>
+        </ul>
+
+        <h2>Si llueve: cómo reorganizar la visita</h2>
+        <p>La lluvia no obliga a cancelar la visita, pero sí a reorganizarla. Estas son las opciones:</p>
+
+        <h3>Los portales como refugio</h3>
+        <p>Los cuatro portales de la plaza —Unión, Constitución, Independencia y Municipal— ofrecen un perímetro cubierto. Con lluvia ligera, se puede recorrer la plaza bajo los portales, mirar los arcos de piedra y el monumento a Sucre desde la protección del techo, y esperar a que pase el chubasco. La arquitectura misma de la plaza, pensada con arcadas en el nivel inferior, sirve para esto.</p>
+
+        <h3>Dividir la visita en bloques</h3>
+        <p>Si el clima es inestable, conviene dividir el recorrido en bloques cortos: salir en los claros y volver a cubrirse cuando llueve. La franja de visita recomendada por MINCETUR va de <strong>06:00 a 21:00</strong>, lo que da margen sobrado para elegir ventanas de buen tiempo a lo largo del día.</p>
+
+        <h3>Alternativas en interiores</h3>
+        <p>El centro histórico de {site.cityName} tiene museos y recintos religiosos que funcionan como alternativas en interiores. La Catedral, a unos 50 m a pie según MINCETUR, y otros templos del centro pueden visitarse mientras llueve. Ahora bien, <strong>los horarios de estos recintos no están verificados en este proyecto</strong>: conviene confirmarlos antes de desplazarse, porque si llueve y el recinto está cerrado, la alternativa desaparece.</p>
+
+        <h2>Fotografía con lluvia</h2>
+        <p>La lluvia no es enemiga de la fotografía: los pavimentos mojados reflejan las fachadas, los portales ganan dramatismo con luz baja y los charcos pueden crear encuadres interesantes. Si te interesa la fotografía, la lluvia puede ser una oportunidad en lugar de un obstáculo. Eso sí, protege el equipo.</p>
+
+        <h2>Semana Santa y afluencia</h2>
+        <p>La Semana Santa de Ayacucho, declarada Patrimonio Cultural de la Nación, concentra una gran afluencia en el centro histórico. Si la visita coincide con esas fechas y además hay lluvia, la plaza puede estar concurrida y con superficies mojadas: conviene extremar el cuidado al caminar y mantener margen de tiempo adicional.</p>
+
+        <p class="verify-note">Esta página describe patrones generales del clima andino y estrategias para reorganizar la visita. No da estadísticas de precipitación, no afirma que meses concretos serán secos o húmedos, y no verifica horarios de museos ni recintos interiores. Para el pronóstico del día de tu visita, consulta un servicio meteorológico. Para condiciones actuales del espacio público y de los recintos, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Cafeterías y pausas cerca de la Plaza Mayor de Ayacucho';
+const description = 'Dónde hacer una pausa de café cerca de la Plaza Mayor de Ayacucho: zonas con más oferta y qué revisar antes de entrar, sin recomendar comercios concretos.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/cafeterias-cerca/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Pausas y cafés"
+  heading="Cafés y pausas cerca de la plaza"
+  lead="Una pausa de café encaja bien en cualquier punto del recorrido por la plaza. Esta guía describe dónde suele haber oferta y qué considerar al elegir, sin nombrar ni recomendar cafeterías concretas."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Cafeterías' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['restaurantes-cerca', 'itinerario-medio-dia', 'plaza-de-armas-de-noche', 'lugares-cerca']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Los cuatro portales de la plaza y las calles adyacentes concentran la oferta de café cerca de la Plaza Mayor de Ayacucho. Esta guía es independiente y no recomienda cafeterías concretas: describe zonas, tipos de pausa y criterios de elección. La franja de visita recomendada por MINCETUR va de 06:00 a 21:00, lo que permite encajar pausas en cualquier momento del día.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> se presta a pausas: el recorrido a pie es corto, la altitud hace que descansar sea sensato y los portales ofrecen sombra. Esta página describe dónde encaja una pausa de café y cómo elegir, sin nombrar, enlazar ni recomendar cafeterías concretas. Es una guía independiente y sin fines comerciales.</p>
+
+        <div class="callout">
+          <p><strong>Sin recomendaciones comerciales:</strong> esta guía no recibe patrocinio ni comisión. No se nombran cafeterías, ni se enlazan negocios ni se recomiendan establecimientos. La decisión de dónde tomar café es enteramente del visitante.</p>
+        </div>
+
+        <h2>Dónde encaja una pausa de café</h2>
+        <p>La oferta de café alrededor de la plaza se distribuye en dos zonas principales:</p>
+
+        <h3>Los portales de la plaza</h3>
+        <p>Los cuatro portales —Unión, Constitución, Independencia y Municipal— tienen locales en sus bajos. Es la opción más inmediata: se sale de la plaza y se pide un café sin desplazarse. La ventaja es la proximidad; la característica es que suele ser un servicio de paso, con vistas directas al conjunto de la plaza.</p>
+
+        <h3>Las calles adyacentes</h3>
+        <p>A una o dos manzanas del perímetro hay más opciones. Caminar unos minutos desde la plaza permite encontrar locales con distintas características: más tranquilos, con terraza o con un ambiente distinto del de los portales. El centro histórico justifica el paseo.</p>
+
+        <h2>Parada rápida o terraza con vista</h2>
+        <p>Conviene distinguir dos tipos de pausa, porque responden a necesidades distintas:</p>
+        <ul class="checklist">
+          <li><strong>Parada de mostrador</strong> — un café rápido, de pie o en barra, para reponer energía entre tramos del recorrido. Encaja bien en un itinerario corto o cuando el tiempo apremia.</li>
+          <li><strong>Terraza o sala con vista</strong> — una pausa más larga, sentado, con vista a la plaza o a los portales. Encaja al final del recorrido o en las horas de mayor sol, cuando conviene descansar más rato.</li>
+        </ul>
+
+        <h2>Cómo elegir</h2>
+        <p>Sin recomendar comercios concretos, estos son los criterios prácticos:</p>
+        <ul>
+          <li><strong>El menú visible:</strong> antes de entrar, revisa si hay carta expuesta o precios visibles. Si no, pregunta antes de sentarte.</li>
+          <li><strong>La concurrencia:</strong> un local con gente a media mañana o a media tarde suele indicar que el producto gira. La fila corta es buena señal.</li>
+          <li><strong>La vista que buscas:</strong> si lo que quieres es ver la plaza mientras tomas café, elige un local en los portales con vista al conjunto. Si prefieres tranquilidad, una calle adyacente suele ser más silenciosa.</li>
+          <li><strong>El horario:</strong> conviene saber que algunas cafeterías del centro cierran temprano en la tarde. Si planeas una pausa tardía, confirma antes.</li>
+        </ul>
+
+        <h2>El café y la altura</h2>
+        <p>{site.cityName} está a aproximadamente 2.750 m s. n. m. La cafeína y la altitud interactúan de distinta manera en cada persona: para algunos, un café a esta altura no supone ningún problema; para otros, conviene moderar el consumo en los primeros días. Esta guía no da consejos médicos: si tienes dudas, consulta a un profesional de la salud antes del viaje.</p>
+
+        <h2>Cuándo tomar la pausa</h2>
+        <p>El café encaja bien en dos momentos del recorrido:</p>
+        <ul>
+          <li><strong>A media mañana</strong>, entre la plaza y la visita a un templo vecino, como pausa corta.</li>
+          <li><strong>A media tarde</strong>, después del Arco del Triunfo o al cerrar el recorrido, como pausa más larga antes de decidir si se queda en la plaza para el anochecer.</li>
+        </ul>
+        <p>La franja de visita recomendada por MINCETUR va de <strong>06:00 a 21:00</strong>, lo que permite encajar pausas en cualquier momento del día.</p>
+
+        <p class="verify-note">Esta página no recomienda, nombra ni enlaza cafeterías concretas. Describe zonas, tipos de pausa y criterios de elección. Para información específica sobre un establecimiento, consulta directamente al comercio o a los canales turísticos oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

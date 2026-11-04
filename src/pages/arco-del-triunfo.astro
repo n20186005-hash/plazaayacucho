@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Arco del Triunfo de Ayacucho: dónde está y cómo verlo';
+const description = 'El Arco del Triunfo de Ayacucho desde la Plaza Mayor: ubicación, distancia a pie de referencia y cómo integrarlo en un recorrido por el centro.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/arco-del-triunfo/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Hitos urbanos"
+  heading="Arco del Triunfo de Ayacucho"
+  lead="Un hito urbano del centro histórico, a unos minutos a pie de la plaza. Sirve como objetivo de una caminata corta y como punto de referencia dentro del casco antiguo."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Arco del Triunfo' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['lugares-cerca', 'ruta-a-pie', 'centro-historico-huamanga', 'itinerario-1-hora']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Arco del Triunfo</strong> es un hito urbano del centro histórico que el inventario turístico de MINCETUR sitúa a unos <strong>284 m a pie</strong> desde la plaza. No es un recinto que se visite por dentro, sino un elemento del espacio público que se ve, se rodea y sirve para orientarse en el barrio. Este proyecto no verifica su fecha de construcción ni el acontecimiento que pudiera conmemorar, así que esos datos deben confirmarse con fuentes institucionales.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Arco del Triunfo</strong> es uno de los hitos urbanos que se pueden alcanzar caminando desde la {site.attractionFullName}. El inventario turístico de MINCETUR lo sitúa a unos <strong>284 m a pie</strong> desde la plaza, una distancia cómoda que lo convierte en un buen objetivo para una caminata corta por el centro histórico.</p>
+
+        <p>Más que un destino en sí mismo, el arco funciona como un marcador dentro del recorrido: da una meta concreta a un paseo por las calles del casco antiguo y ayuda a orientarse en el barrio.</p>
+
+        <table class="fact-table">
+          <caption>Datos de referencia</caption>
+          <tbody>
+            <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>284 m a pie</strong>. Fuente: inventario turístico de MINCETUR.</td></tr>
+            <tr><th>Tipo</th><td>Hito urbano del centro histórico: un elemento arquitectónico que señala un punto del recorrido.</td></tr>
+            <tr><th>Fecha de construcción</th><td><strong>No verificada</strong> en este proyecto.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Qué es un hito urbano</h2>
+        <p>En una ciudad con casco antiguo, algunos elementos construidos cumplen la función de <strong>referencia espacial</strong>: sirven para saber dónde estás y para describir un recorrido a otra persona. El Arco del Triunfo entra en esa categoría. No es un recinto que se visita por dentro, sino un elemento del espacio urbano que se ve, se rodea y se usa como orientación.</p>
+        <p>Eso cambia la forma de visitarlo. Con un museo, el objetivo es entrar y recorrer salas; con un hito urbano, el objetivo es integrarlo en el paseo y contemplarlo desde distintos ángulos dentro del barrio.</p>
+
+        <h2>Cómo incluirlo en una caminata corta</h2>
+        <p>A 284 m de la plaza, el arco encaja bien en un recorrido breve. Una forma sencilla de organizarlo es esta:</p>
+        <ul class="checklist">
+          <li>Empieza en la plaza y recorre sus cuatro portales para orientarte.</li>
+          <li>Sal del perímetro siguiendo una calle lateral, en dirección al arco.</li>
+          <li>Al llegar, dedica unos minutos a mirarlo y a ubicarte en el barrio.</li>
+          <li>Vuelve por una calle distinta, para completar el paseo y ver más fachadas del centro.</li>
+        </ul>
+        <p>Como el trayecto es corto, se puede combinar con otras visitas cercanas del centro histórico, como la <strong>Catedral</strong> o el <strong>Templo de Santo Domingo</strong>, que quedan más cerca aún de la plaza.</p>
+
+        <h2>Qué mirar y qué no afirmar</h2>
+        <p>Al tratarse de un elemento arquitectónico del espacio público, se puede observar desde la calle: su forma, su escala respecto a las edificaciones vecinas y su papel como señal dentro del recorrido. Esa lectura es la que aquí se propone.</p>
+        <p>En cambio, en este proyecto <strong>no se verifica</strong> la fecha de construcción del arco, el acontecimiento que pudiera conmemorar ni los detalles de su historia. No los reproducimos porque no los hemos podido confirmar.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> el único dato verificado aquí sobre el Arco del Triunfo es la referencia de MINCETUR de aproximadamente 284 m a pie desde la plaza. Su historia, su fecha y el motivo de su construcción deben confirmarse con las fuentes institucionales antes de citarlos por escrito.</p>
+        </div>
+
+        <h2>Un comentario práctico</h2>
+        <p>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>, así que incluso un recorrido de pocos cientos de metros merece hacerse con calma. El sol del mediodía es fuerte y la temperatura baja rápido después: conviene llevar agua y una capa ligera de abrigo, sobre todo si sales por la tarde.</p>
+
+        <p class="verify-note">La distancia de 284 m se atribuye al inventario turístico de MINCETUR, enlazado al final de la página. Esta guía no confirma fechas, horarios ni otros datos del arco.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

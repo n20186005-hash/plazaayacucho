@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Semana Santa de Ayacucho: qué es y qué implica visitar la plaza';
+const description = 'La Semana Santa de Ayacucho, declarada Patrimonio Cultural de la Nación: por qué se celebra en el centro histórico y qué cambia al visitar la plaza en esas fechas.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/semana-santa-ayacucho/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Celebraciones"
+  heading="Semana Santa de Ayacucho"
+  lead="La Semana Santa es la celebración más conocida de la ciudad y transforma el uso de la plaza y del centro histórico. Esto es lo que está confirmado y lo que conviene tener en cuenta si viajas en esas fechas."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Semana Santa de Ayacucho' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['catedral-ayacucho', 'historia', 'centro-historico-huamanga', 'que-ver']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La <strong>Semana Santa de Ayacucho</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura y es una de las celebraciones más conocidas del Perú. Las procesiones parten del área de la catedral y recorren el centro histórico, de modo que la plaza cambia de uso durante esos días, con mucha afluencia y controles de tránsito. Las fechas se mueven entre <strong>marzo y abril</strong> según el calendario litúrgico, así que conviene consultar el programa oficial antes de viajar.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Semana Santa de Ayacucho</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura. Es una de las celebraciones más conocidas del Perú, y su desarrollo tiene un efecto directo sobre la {site.attractionFullName} y sobre todo el centro histórico: durante esos días, la plaza y las calles aledañas se llenan de actividad, procesiones y visitantes.</p>
+
+        <h2>Una celebración reconocida</h2>
+        <p>El reconocimiento oficial como Patrimonio Cultural de la Nación es el dato más sólido para entender el peso de esta celebración. Según el Ministerio de Cultura, la Semana Santa de Ayacucho forma parte del patrimonio cultural del país, lo que explica por qué concentra tanta atención tanto de fieles como de visitantes.</p>
+        <p>Se trata de una celebración religiosa con una fuerte dimensión colectiva: no es solo un acto litúrgico, sino un acontecimiento que involucra a toda la ciudad.</p>
+
+        <h2>Dónde y cómo se desarrolla</h2>
+        <p>Las procesiones <strong>parten del área de la catedral y recorren el centro histórico</strong>. Eso significa que el movimiento se concentra en las mismas calles y plazas que cualquier visitante recorre a pie: la plaza, sus portales y las vías que salen de ellos.</p>
+        <p>Conviene tener presente que las fechas <strong>se mueven entre marzo y abril</strong>, según el calendario litúrgico. No son fechas fijas, así que si quieres coincidir con la celebración, o evitarla, debes consultar el calendario del año correspondiente.</p>
+
+        <h2>Qué cambia al visitar la plaza en esas fechas</h2>
+        <p>Durante la Semana Santa, la plaza y el centro funcionan de manera distinta a lo habitual. Los cambios más previsibles son estos:</p>
+        <ul class="checklist">
+          <li><strong>Mayor afluencia</strong>: la ciudad recibe muchos visitantes y las calles se llenan en determinados momentos del día.</li>
+          <li><strong>Controles de tránsito</strong>: por el paso de las procesiones, algunas calles pueden cerrarse o reorganizarse.</li>
+          <li><strong>Horarios especiales</strong>: los actos religiosos marcan el ritmo del día, y eso puede afectar a otros servicios.</li>
+          <li><strong>Ambiente distinto</strong>: la plaza, que normalmente funciona como espacio cotidiano, pasa a ser escenario de la celebración.</li>
+        </ul>
+        <p>Nada de esto significa que no se pueda visitar: significa que conviene planificar con más margen y estar dispuesto a adaptarse.</p>
+
+        <h2>Cómo planificar la visita</h2>
+        <ul class="checklist">
+          <li>Consulta el <strong>programa oficial</strong> del año antes de reservar viaje y alojamiento.</li>
+          <li>Reserva con antelación: es una de las fechas de mayor demanda en la ciudad.</li>
+          <li>Deja margen en los desplazamientos por los posibles controles de tránsito.</li>
+          <li>Respeta el carácter religioso de los actos: son ceremonias con un profundo significado para la comunidad.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Antes de viajar:</strong> confirma siempre el programa oficial y las fechas concretas del año. La declaratoria como Patrimonio Cultural de la Nación está documentada por el Ministerio de Cultura; el detalle de cada acto, su horario y su recorrido varía y debe consultarse en los canales oficiales. Puedes revisar el anuncio del Ministerio de Cultura <a href={site.culturaSemanaSantaUrl} target="_blank" rel="noreferrer">en este enlace</a>.</p>
+        </div>
+
+        <h2>Fuera de la Semana Santa</h2>
+        <p>La plaza mantiene su carácter cívico el resto del año, con la vida cotidiana de la ciudad y otras celebraciones. Si visitas la ciudad en otro momento, seguirás encontrando el mismo conjunto patrimonial —portales, monumento y basílica—, solo que sin la intensidad de la Semana Santa.</p>
+
+        <p class="verify-note">El reconocimiento como Patrimonio Cultural de la Nación se atribuye al Ministerio de Cultura, enlazado al final de la página. Esta guía no confirma fechas concretas, recorridos ni horarios de la celebración.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

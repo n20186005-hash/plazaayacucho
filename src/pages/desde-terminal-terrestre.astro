@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Del terminal terrestre a la Plaza de Armas de Ayacucho';
+const description = 'Cómo llegar del Terminal Terrestre Los Libertadores a la Plaza Mayor de Ayacucho: distancia de referencia, taxi, y cómo orientarse al entrar al centro histórico.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/desde-terminal-terrestre/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'Web Site', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Transporte desde el terminal"
+  heading="Del terminal terrestre a la Plaza Mayor de Ayacucho"
+  lead="El Terminal Terrestre Los Libertadores está a unos 3,6 km de la plaza, con una referencia de 12 minutos en taxi según MINCETUR. Los buses llegan a horas muy variadas. Aquí explicamos el traslado y cómo orientarse al entrar al centro histórico."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Desde el terminal' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['como-llegar', 'desde-aeropuerto', 'ubicacion-mapa', 'ruta-a-pie']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El Terminal Terrestre Los Libertadores está a unos 3,6 km de la Plaza Mayor de Ayacucho, con una referencia de 12 minutos en taxi según el inventario de MINCETUR. Los buses interprovinciales llegan a horas muy variadas, incluida la madrugada. Como siempre en el centro histórico, el último tramo se hace caminando.</p>
+      </div>
+      <div class="page-copy">
+        <p>El Terminal Terrestre Los Libertadores es la principal puerta de entrada por tierra a {site.cityName}. Desde allí hasta la <strong>{site.attractionFullName}</strong> hay un trayecto corto en vehículo que termina, como siempre en el centro histórico, caminando. Estas son las referencias documentadas y qué tener en cuenta al llegar.</p>
+
+        <table class="fact-table">
+          <caption>Referencia del traslado</caption>
+          <tbody>
+            <tr><th>Terminal</th><td>Terminal Terrestre Los Libertadores</td></tr>
+            <tr><th>Distancia a la plaza</th><td>Aprox. <strong>3,6 km</strong> · fuente: MINCETUR</td></tr>
+            <tr><th>Tiempo de referencia</th><td>Aprox. <strong>12 min</strong> en taxi · valor orientativo, no garantizado</td></tr>
+            <tr><th>Último tramo</th><td>A pie por calles del centro histórico</td></tr>
+          </tbody>
+        </table>
+
+        <h2>El terminal</h2>
+        <p>El Terminal Terrestre Los Libertadores concentra la llegada de buses interprovinciales a {site.cityName}. Está a unos <strong>3,6 km</strong> de la plaza, según el inventario de MINCETUR. La referencia de tiempo es de <strong>12 minutos en taxi</strong>, un valor orientativo que no garantiza una duración real.</p>
+
+        <h2>Llegadas a horas intempestivas</h2>
+        <p>Los buses interprovinciales a {site.cityName} suelen llegar en horarios muy variados, incluida la madrugada. Eso tiene tres consecuencias prácticas:</p>
+        <ul class="checklist">
+          <li>La disponibilidad de taxis puede ser distinta a la de horas diurnas; conviene tener resuelto el traslado antes de bajar del bus.</li>
+          <li>El centro histórico tiene menos actividad de madrugada, lo que facilita la circulación pero reduce la presencia de servicios abiertos.</li>
+          <li>La temperatura a primera hora de la madrugada puede ser baja por la altitud —la ciudad está a unos 2.750 m—.</li>
+        </ul>
+        <p>Si llegas de noche, lleva una capa de abrigo y ten previsto el nombre y la dirección del lugar donde te alojas para indicárselo al conductor.</p>
+
+        <h2>El traslado en taxi</h2>
+        <p>El taxi es el medio habitual para cubrir la distancia entre el terminal y el centro. Antes de subir, acuerda el destino y el costo. Si prefieres una referencia de precio previa, usa una aplicación.</p>
+        <p>No verificamos aquí tarifas concretas. Los precios pueden variar según la hora, el operador y la temporada. En fechas como la Semana Santa, la demanda puede influir en la disponibilidad y en el costo.</p>
+
+        <h2>Cómo orientarse al entrar al centro</h2>
+        <p>El taxi te dejará en una calle cercana a la plaza, desde donde caminarás los últimos metros. Una vez en el conjunto, orienta con los cuatro portales —Unión, Constitución, Independencia y Municipal— o con el monumento ecuestre a Sucre en el centro. Esos dos elementos te situarán de inmediato.</p>
+        <p>Si necesitas regresar al terminal después de tu visita, planifica el trayecto con tiempo. La referencia de 12 minutos es orientativa y puede aumentar en horas de mayor tránsito.</p>
+
+        <h2>Planificar el regreso y la conexión con otras visitas</h2>
+        <p>Si tu plan incluye visitar la plaza y volver al terminal el mismo día, ten en cuenta que la franja recomendada por MINCETUR se extiende de 06:00 a 21:00, pero los buses tienen horarios propios que no siempre coinciden con esa ventana. Antes de organizar el día, confirma la hora de salida de tu bus y calcula el tiempo de traslado con margen.</p>
+        <p>La plaza funciona como punto de partida para visitas cercanas con distancias documentadas por MINCETUR: la Basílica Catedral a unos 50 m, el Templo de Santo Domingo a unos 100 m y el Arco del Triunfo a unos 284 m a pie. Si quieres combinarlas con el regreso al terminal, organiza el recorrido para cerrarlo cerca de la calle donde te recogerá el taxi.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> la distancia de 3,6 km y los 12 minutos provienen de MINCETUR y son valores orientativos. El horario real de llegada del bus, el tránsito y los eventos del centro pueden cambiar el tiempo de traslado.</p>
+        </div>
+
+        <p class="verify-note">Los datos de distancia y tiempo se atribuyen al inventario de MINCETUR. No se verifican aquí tarifas de taxi, horarios de buses ni disponibilidad de transporte en el terminal. Para condiciones actuales, consulta los canales del terminal y los enlaces oficiales al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

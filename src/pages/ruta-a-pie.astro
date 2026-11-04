@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Ruta a pie desde la Plaza Mayor de Ayacucho: qué ver caminando';
+const description = 'Un recorrido a pie por el centro histórico de Ayacucho tomando la Plaza Mayor como punto de partida, con las distancias de referencia de MINCETUR.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/ruta-a-pie/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Recorrido a pie"
+  heading="Ruta a pie desde la Plaza Mayor de Ayacucho"
+  lead="La plaza es el punto natural de partida para un recorrido a pie por el centro histórico. Esta ruta usa solo las distancias documentadas por MINCETUR: 50 m a la Catedral, 100 m a Santo Domingo y 284 m al Arco del Triunfo. Sin transporte, todo se hace caminando."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Ruta a pie' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['que-ver', 'lugares-cerca', 'catedral-ayacucho', 'arco-del-triunfo']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho es el punto de partida de un recorrido a pie por el centro histórico que incluye la Basílica Catedral a unos 50 m, el Templo de Santo Domingo a unos 100 m y el Arco del Triunfo a unos 284 m, todas distancias de referencia de MINCETUR. El circuito completo se hace caminando, sin necesidad de transporte. Los horarios de cada recinto deben confirmarse por separado.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> es el punto natural de partida para un recorrido a pie por el centro histórico de {site.cityName}. Todo lo que mencionamos en esta ruta está a una distancia caminable documentada por MINCETUR, sin necesidad de transporte.</p>
+
+        <table class="fact-table">
+          <caption>Distancias de referencia desde la plaza</caption>
+          <tbody>
+            <tr><th>Basílica Catedral de Ayacucho</th><td>Aprox. <strong>50 m</strong> a pie · fuente: MINCETUR</td></tr>
+            <tr><th>Templo de Santo Domingo</th><td>Aprox. <strong>100 m</strong> a pie · fuente: MINCETUR</td></tr>
+            <tr><th>Arco del Triunfo</th><td>Aprox. <strong>284 m</strong> a pie · fuente: MINCETUR</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Punto de partida: la plaza</h2>
+        <p>Empieza en el centro del conjunto, junto al monumento ecuestre a Sucre. Desde ahí identifica los cuatro portales —Unión, Constitución, Independencia y Municipal— para saber hacia dónde te diriges en cada salida. Los alrededor de 111 arcos y columnas de piedra que los recorren ya te dan una idea de la escala del conjunto.</p>
+        <p>Dedica unos minutos a mirar la fachada de la Basílica Catedral desde la plaza antes de acercarte: es el elemento que preside el espacio y conviene verlo en su contexto.</p>
+
+        <h2>Primera parada: Basílica Catedral (~50 m)</h2>
+        <p>A unos <strong>50 m a pie</strong> desde la plaza se encuentra la <strong>Basílica Catedral de Ayacucho</strong>, según MINCETUR. Es la iglesia matriz de la ciudad y uno de los elementos religiosos más relevantes del centro histórico. Su fachada se ve desde la plaza, pero la corta distancia permite acercarse y apreciarla de cerca.</p>
+        <p>La Catedral es un recinto independiente del espacio público. Sus horarios y condiciones de visita interna no se verifican en esta guía y deben confirmarse el mismo día a través de sus canales propios.</p>
+
+        <h2>Templo de Santo Domingo (~100 m)</h2>
+        <p>Continuando el recorrido, a unos <strong>100 m a pie</strong> desde la plaza se encuentra el <strong>Templo de Santo Domingo</strong>, según MINCETUR. Es otro de los templos históricos del centro y se integra bien en una caminata corta desde la plaza.</p>
+        <p>Como en el caso de la Catedral, se trata de un recinto con reglas propias. Si quieres entrar, confirma su horario antes de organizar la ruta.</p>
+
+        <h2>Arco del Triunfo (~284 m)</h2>
+        <p>Algo más lejos, a unos <strong>284 m a pie</strong>, se encuentra el <strong>Arco del Triunfo</strong>, según MINCETUR. Es un hito urbano del centro histórico y un buen punto para extender la caminata más allá del núcleo de la plaza y los templos inmediatos.</p>
+        <p>La distancia es breve y no requiere transporte. Desde el Arco puedes volver a la plaza completando un circuito a pie por el centro histórico.</p>
+
+        <h2>Volver a la plaza</h2>
+        <p>El recorrido de regreso es igual de corto. Desde cualquiera de los tres puntos documentados, la vuelta a la plaza se hace en pocos minutos a pie. Una vez de vuelta, los portales ofrecen zonas comerciales y de descanso para cerrar la visita.</p>
+
+        <div class="callout">
+          <p><strong>Sobre las distancias:</strong> las referencias de 50 m, 100 m y 284 m provienen del inventario de MINCETUR y describen la cercanía a pie desde la plaza. No describen duración del recorrido ni horarios de cada recinto. Calcula tu tiempo en función de cuántos recintos quieras entrar.</p>
+        </div>
+
+        <p class="verify-note">Esta ruta solo incluye lugares con una distancia documentada por MINCETUR. No menciona otros puntos del centro cuya distancia no está verificada. Los horarios y condiciones de acceso de cada recinto deben confirmarse antes de la visita a través de los enlaces oficiales al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

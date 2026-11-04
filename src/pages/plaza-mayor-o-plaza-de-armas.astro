@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = '¿Plaza Mayor o Plaza de Armas en Ayacucho? Los nombres del mismo espacio';
+const description = 'Por qué el mismo espacio aparece como Plaza Mayor de Ayacucho, Plaza de Armas de Ayacucho y Plaza Mayor de Huamanga, y cuál conviene usar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/plaza-mayor-o-plaza-de-armas/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Los nombres"
+  heading="¿Plaza Mayor o Plaza de Armas?"
+  lead="Tres nombres para un solo lugar: Plaza Mayor de Ayacucho, Plaza de Armas de Ayacucho y Plaza Mayor de Huamanga. No son tres plazas distintas, y aquí explicamos por qué."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: '¿Plaza Mayor o Plaza de Armas?' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['historia', 'centro-historico-huamanga', 'que-ver', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Los tres nombres —<strong>Plaza Mayor de Ayacucho</strong>, <strong>Plaza Mayor de Huamanga</strong> y <strong>Plaza de Armas de Ayacucho</strong>— designan un único espacio en el centro de la ciudad, no tres plazas distintas. «Plaza Mayor de Ayacucho» es el nombre principal actual, «Plaza Mayor de Huamanga» el histórico, y «Plaza de Armas» la denominación tradicional del espacio central en el urbanismo hispanoamericano. Si encuentras cualquiera de los tres en un mapa o en un libro, apuntan al mismo punto del centro histórico.</p>
+      </div>
+      <div class="page-copy">
+        <p>Si buscas la plaza principal de {site.cityName} en un mapa, en un libro o en un folleto, te vas a encontrar con nombres distintos. Todos apuntan al mismo punto: la <strong>Plaza Mayor de Ayacucho</strong>, que históricamente se llamó <strong>Plaza Mayor de Huamanga</strong> y que también se conoce como <strong>Plaza de Armas de Ayacucho</strong>. Este artículo explica de dónde viene cada denominación y cuál conviene usar en cada contexto.</p>
+
+        <table class="fact-table">
+          <caption>Los tres nombres del mismo espacio</caption>
+          <tbody>
+            <tr><th>Plaza Mayor de Ayacucho</th><td>Nombre principal y actual. Es el que usamos en esta guía como referencia.</td></tr>
+            <tr><th>Plaza Mayor de Huamanga</th><td>Denominación histórica: Huamanga fue el nombre de la ciudad antes de llamarse {site.cityName}.</td></tr>
+            <tr><th>Plaza de Armas de Ayacucho</th><td>Denominación tradicional del espacio principal en el urbanismo hispanoamericano.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Por qué hay tres nombres</h2>
+        <p>La explicación no está en tres lugares distintos, sino en tres maneras de nombrar el mismo. Por un lado, <strong>Huamanga</strong> fue el nombre histórico de la ciudad, y ese topónimo sigue vivo en documentos, libros y en el propio habla local, de modo que la plaza aparece como «Plaza Mayor de Huamanga» en fuentes antiguas.</p>
+        <p>Por otro, «Plaza de Armas» es el término tradicional del urbanismo español en América para designar el espacio central de una ciudad. No describe un uso militar actual, sino una función histórica del trazado: era el punto de reunión y de organización urbana.</p>
+        <p>Y por último, <strong>Plaza Mayor de Ayacucho</strong> une el nombre genérico del tipo de espacio con el nombre actual de la ciudad. Es el más directo cuando hablas con alguien de hoy.</p>
+
+        <h2>Cuál usar en cada contexto</h2>
+        <ul class="checklist">
+          <li><strong>Mapas y aplicaciones:</strong> verás el nombre de la ficha de mapas; suele aparecer como «Plaza de Armas». Es el rótulo más frecuente en servicios digitales.</li>
+          <li><strong>Textos oficiales e inventarios:</strong> suele usarse el nombre mayor, junto al histórico cuando se habla de patrimonio.</li>
+          <li><strong>Habla cotidiana:</strong> en la ciudad lo más habitual es «Plaza de Armas», sin más. Todo el mundo entiende a qué espacio te refieres.</li>
+          <li><strong>Búsquedas y divulgación:</strong> usar los dos nombres ayuda a que te encuentren tanto quien busca «Plaza Mayor» como quien escribe «Plaza de Armas».</li>
+        </ul>
+
+        <h2>Por qué en esta guía usamos «Plaza Mayor de Ayacucho»</h2>
+        <p>Elegimos <strong>Plaza Mayor de Ayacucho</strong> como nombre principal porque describe con precisión qué es el lugar (la plaza mayor) y dónde está (Ayacucho), y porque es el nombre con el que se identifica el conjunto en su sentido más amplio. Los otros dos los mencionamos siempre que aparecen, para que puedas reconocer el mismo espacio en cualquier fuente.</p>
+        <p>Conviene recordar un detalle práctico: como el nombre varía entre fuentes, no conviene concluir que hay varias plazas. Si ves «Plaza de Armas de Ayacucho» en una ficha de mapas y «Plaza Mayor de Huamanga» en un texto histórico, siguen siendo el mismo punto del centro histórico.</p>
+
+        <div class="callout">
+          <p><strong>Cómo verificarlo:</strong> la identidad entre los tres nombres se comprueba comparando el inventario turístico de MINCETUR con la ficha compartida de Google Maps y con el uso histórico documentado. Todas las fuentes enlazadas al final de la página apuntan al mismo espacio.</p>
+        </div>
+
+        <p class="verify-note">Las tres denominaciones designan una sola plaza. Esta guía no afirma cuál de los nombres es «el correcto», porque depende del contexto: el histórico, el administrativo o el de uso diario.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

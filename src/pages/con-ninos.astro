@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Visitar la Plaza Mayor de Ayacucho con niños';
+const description = 'Cómo plantear la visita a la Plaza Mayor de Ayacucho con niños: espacios abiertos, tiempos cortos, qué mirar y qué precauciones tomar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/con-ninos/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Viajar con niños"
+  heading="Visitar la plaza con niños"
+  lead="La plaza es un espacio abierto, plano y peatonal en buena parte de su perímetro, lo que la hace manejable con niños. La clave está en ajustar los tiempos, elegir bien las horas y mantener a los menores cerca en las franjas de mayor afluencia."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Con niños' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['itinerario-1-hora', 'itinerario-medio-dia', 'que-ver', 'horarios-visita']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho es un espacio público, libre y compacto, lo que la hace manejable con niños: el perímetro se camina en quince o veinte minutos y los portales ofrecen sombra. La ciudad está a unos 2.750 m s. n. m., así que conviene dosificar el esfuerzo y protegerse del sol. El monumento ecuestre a Sucre y los arcos de piedra son los elementos que más suelen llamar la atención de los menores.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> funciona bien como visita familiar porque es un espacio público, libre y contenido: no hay que recorrer grandes distancias, hay sombra bajo los portales y el conjunto se lee en poco tiempo. Con niños, la pregunta no es tanto qué ver sino cómo dosificarlo.</p>
+
+        <h2>El espacio desde la mirada de un niño</h2>
+        <p>Lo que a un adulto le parece arquitectura colonial, a un niño le puede parecer un patio enorme con arcos, jardín y una estatua de alguien a caballo. Esa lectura es válida y basta para una primera visita. Los elementos que más suelen llamar la atención:</p>
+        <ul class="checklist">
+          <li>El <strong>monumento ecuestre a Sucre</strong> — una escultura con caballo que ordena el centro de la plaza.</li>
+          <li>Los <strong>cuatro portales</strong> con arcos de piedra — un juego visual de repeticiones que se puede contar.</li>
+          <li>Los <strong>jardines</strong> del conjunto, que ofrecen verde y espacio para caminar.</li>
+          <li>La <strong>fachada de la Catedral</strong>, a unos 50 m a pie, visible sin necesidad de entrar al recinto.</li>
+        </ul>
+
+        <h2>Tiempos cortos y pausas</h2>
+        <p>La atención de un niño no dura lo mismo que la de un adulto. Conviene plantear la visita en bloques breves: el perímetro de la plaza se camina en quince o veinte minutos, y a partir de ahí lo razonable es hacer pausas bajo los portales, donde hay sombra y bancas. Si los niños ya vieron bastante, se puede cerrar la visita sin forzar.</p>
+        <p>Si se quiere sumar algo más, el <strong>Arco del Triunfo</strong> está a unos 284 m a pie según MINCETUR, una distancia corta que se cubre en pocos minutos. La <strong>Catedral</strong> y el <strong>Templo de Santo Domingo</strong> son recintos cerrados con horario propio: entra solo si el horario encaja y si los niños están dispuestos a un recinto interior.</p>
+
+        <h2>Protección solar en altitud</h2>
+        <p>{site.cityName} está a aproximadamente 2.750 m s. n. m. A esa altitud el sol es más intenso de lo que parece, incluso en días nublados. Con niños conviene:</p>
+        <ul>
+          <li>Usar protector solar antes de salir.</li>
+          <li>Llevar un sombrero o gorra.</li>
+          <li>Aprovechar la sombra de los portales en las horas centrales del día.</li>
+          <li>Mantenerse hidratado durante todo el recorrido.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Semana Santa y celebraciones:</strong> durante la Semana Santa de Ayacucho —declarada Patrimonio Cultural de la Nación— y otras celebraciones cívicas, la plaza recibe mucha más afluencia de lo habitual. En esas fechas conviene visitar con los niños en franjas de menor movimiento y mantenerlos cerca en todo momento.</p>
+        </div>
+
+        <h2>Mantener a los niños cerca</h2>
+        <p>La plaza es un espacio público abierto y concurrido. En franjas normales es un entorno tranquilo, pero en horas punta, fines de semana y fechas señaladas puede haber mucha gente. Conviene fijar un punto de encuentro —el monumento a Sucre es el más visible— y mantener a los niños dentro del campo de visión en todo momento.</p>
+        <p>El perímetro de la plaza incluye calles con tránsito vehicular: los niños deben cruzar acompañados. Los portales y el interior del conjunto peatonal son más seguros que los bordes.</p>
+
+        <h2>Decisiones antes de salir</h2>
+        <p>Antes de desplazarte a la plaza con niños, conviene haber resuelto estas cuestiones prácticas:</p>
+        <ul class="checklist">
+          <li><strong>Horario elegido:</strong> decidir si se visita por la mañana temprano o por la tarde, evitando el sol del mediodía a 2.750 m s. n. m.</li>
+          <li><strong>Duración realista:</strong> definir si se plantea solo el perímetro de la plaza o si se suma el Arco del Triunfo (≈284 m a pie según MINCETUR).</li>
+          <li><strong>Punto de encuentro:</strong> fijar el monumento a Sucre como referencia visible en caso de separación.</li>
+          <li><strong>Protección solar e hidratación:</strong> llevar protector, gorra y agua antes de salir del alojamiento.</li>
+          <li><strong>Recintos cerrados:</strong> confirmar horarios de la Catedral y del Templo de Santo Domingo solo si se planea entrar con los niños.</li>
+          <li><strong>Ropa de abrigo:</strong> llevar una capa adicional para la tarde, cuando la temperatura baja con rapidez a esta altitud.</li>
+        </ul>
+
+        <h2>Qué evitar</h2>
+        <p>No se recomienda inventar instalaciones que no existen: esta guía no verifica áreas de juego infantiles, servicios específicos para niños ni baños públicos dentro de la plaza. Si alguno de esos servicios es necesario, conviene confirmarlo antes con la Municipalidad Provincial de Huamanga o con MINCETUR.</p>
+
+        <p class="verify-note">Esta página describe la plaza como espacio público a partir de datos de MINCETUR (distancias, monumento, portales) y de la altitud aproximada de la ciudad. No verifica instalaciones infantiles, servicios sanitarios ni condiciones específicas para familias. Para información actual, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Artesanías de Huamanga: retablos y qué buscar cerca de la plaza';
+const description = 'Qué caracteriza la artesanía de Huamanga, en especial el retablo ayacuchano, y cómo acercarse a ella desde la Plaza Mayor de Ayacucho.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/artesanias-huamanga/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Artesanía local"
+  heading="Artesanía y retablos en Huamanga"
+  lead="Huamanga tiene una tradición artesanal reconocida, encabezada por el retablo ayacuchano. Desde la plaza se puede iniciar un acercamiento a esa artesanía, mirándola con criterio y sin que esta guía recomiende talleres o tiendas concretos."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Artesanías' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['lugares-cerca', 'centro-historico-huamanga', 'restaurantes-cerca', 'cafeterias-cerca']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Huamanga es conocida por el retablo ayacuchano, un altar portátil de madera con figuras pintadas que representa escenas religiosas y cotidianas. Desde la plaza se puede iniciar un acercamiento a esa tradición, junto a la textilería y el tallado en piedra de Huamanga. Esta guía no recomienda talleres ni tiendas concretos y no verifica la sede ni los horarios del Museo de Arte Popular Joaquín López Antay.</p>
+      </div>
+      <div class="page-copy">
+        <p>La artesanía de {site.cityName} —la antigua Huamanga— es una de las expresiones culturales más reconocidas de la región. Desde la <strong>{site.attractionFullName}</strong>, el visitante puede iniciar un acercamiento a esa tradición, que combina técnica, iconografía religiosa y vida cotidiana. Esta guía describe qué buscar y cómo mirarlo con criterio, sin recomendar talleres ni tiendas concretos.</p>
+
+        <div class="callout">
+          <p><strong>Sin recomendaciones comerciales:</strong> esta guía es independiente y sin fines de lucro. No nombra, enlaza ni recomienda talleres, tiendas ni vendedores concretos. La decisión de dónde adquirir artesanía es del visitante.</p>
+        </div>
+
+        <h2>El retablo ayacuchano</h2>
+        <p>El <strong>retablo ayacuchano</strong> es la pieza artesanal más asociada a la región. Es un altar portátil de madera, pintado con figuras de yeso o pasta, que representa escenas religiosas y cotidianas. Originalmente ligado al uso doméstico y devocional, el retablo se ha convertido en la pieza más reconocible de la artesanía local.</p>
+        <p>Sus características generales:</p>
+        <ul class="checklist">
+          <li>Estructura de madera con puertas que se abren para mostrar el interior.</li>
+          <li>Figuras modeladas y pintadas a mano, dispuestas en niveles o escenas.</li>
+          <li>Temas que combinan iconografía religiosa con escenas de la vida andina.</li>
+          <li>Una tradición que se transmite entre generaciones de artesanos.</li>
+        </ul>
+
+        <h2>Otras tradiciones artesanales</h2>
+        <p>Más allá del retablo, {site.cityName} tiene otras tradiciones artesanales reconocidas:</p>
+        <ul>
+          <li><strong>Textilería</strong> — tejidos con técnicas y motivos de la región, que reflejan el vocabulario visual andino.</li>
+          <li><strong>Tallado en piedra</strong> — la piedra de Huamanga, un material local, se trabaja en piezas que van desde lo religioso hasta lo decorativo.</li>
+          <li><strong>Cerámica</strong> — producción alfarera con formas y estilos de la tradición regional.</li>
+        </ul>
+        <p>Estas tradiciones se describen de forma general porque este proyecto no verifica talleres concretos, rutas de talleres ni catálogos específicos.</p>
+
+        <h2>El Museo de Arte Popular Joaquín López Antay</h2>
+        <p>El Museo de Arte Popular Joaquín López Antay aparece referenciado en los listados patrimoniales de la ciudad. Sin embargo, este proyecto <strong>no ha verificado su sede actual, sus horarios ni sus condiciones de visita</strong>. Si te interesa visitarlo, confirma esos datos antes de desplazarte a través de los canales oficiales de cultura o turismo.</p>
+
+        <h2>Cómo mirar la artesanía con criterio</h2>
+        <p>Acercarse a la artesanía de forma responsable significa mirar lo que se tiene delante y hacer preguntas. Estos son algunos criterios:</p>
+        <ul>
+          <li><strong>Pregunta el origen:</strong> un vendedor que conoce su oficio puede explicar de qué taller viene la pieza, qué técnica se usó y qué significa la escena.</li>
+          <li><strong>Mira el detalle:</strong> en el retablo, la calidad de las figuras, la pintura y el ensamblaje son indicadores del trabajo. Una pieza bien hecha tiene figuras nítidas y puertas que encajan.</li>
+          <li><strong>Compara antes de decidir:</strong> mira varias opciones antes de adquirir. La artesanía varía en tamaño, complejidad y precio.</li>
+          <li><strong>Pregunta el precio con naturalidad:</strong> el precio es parte de la conversación. Acordar antes de comprar evita malentendidos.</li>
+        </ul>
+
+        <h2>Señales de calidad</h2>
+        <p>Sin recomendar vendedores concretos, estas son las señales que ayudan a distinguir una pieza bien trabajada:</p>
+        <ul class="checklist">
+          <li>Figuras con detalle y proporción, no masificadas ni difuminadas.</li>
+          <li>Pintura aplicada con cuidado, sin goteos ni zonas descuidadas.</li>
+          <li>Madera sólida, con puertas que abren y cierran sin holgura.</li>
+          <li>Coherencia entre la escena representada y la tradición iconográfica regional.</li>
+        </ul>
+
+        <p class="verify-note">Esta página describe la artesanía de Huamanga de forma general, con base en tradiciones culturales reconocidas. No verifica talleres, tiendas, rutas artesanales ni las condiciones actuales del Museo de Arte Popular Joaquín López Antay. Para información específica, consulta los canales oficiales de cultura y turismo enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

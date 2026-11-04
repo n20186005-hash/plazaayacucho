@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { site, guides, guideGroups } from '../data/site.mjs';
 
 const origin = Astro.site ? Astro.site.origin : 'https://plazaayacucho.com';
 const pathname = Astro.url.pathname;
@@ -16,6 +17,10 @@ const countryCode = 'PE';
 const postalCode = '05003';
 const mapsPhone = '+51 985 928 260';
 const mapsPhoneHref = '+51985928260';
+const mapsRating = '4.5';
+const mapsReviews = '19,804';
+const mapsPlaceType = 'Parque urbano';
+const mapsPlusCode = 'RQQF+RM, Ayacucho, Perú';
 const latitude = -13.1603789;
 const longitude = -74.2257816;
 
@@ -30,8 +35,8 @@ const localCathedral = `${origin}/images/catedral-ayacucho.jpg`;
 const ogImage = localHero;
 const ogImageAlt = `${attractionFullName} (${attractionLocalName}) — vista principal en ${cityName}, ${countryName}`;
 
-const pageTitle = 'Plaza de Armas de Ayacucho: Plaza Mayor, ubicación y visita';
-const pageDescription = 'Visita la Plaza Mayor de Ayacucho o Plaza de Armas: ubicación, portales, monumento a Sucre, horarios atribuidos y cómo distinguir los paseos urbanos de Wari y Quinua.';
+const pageTitle = 'Plaza de Armas de Ayacucho, Ayacucho: guía turística';
+const pageDescription = 'Guía turística de la Plaza de Armas de Ayacucho o Plaza Mayor de Huamanga: ubicación, historia, portales, monumento a Sucre, mapa y consejos de visita en Ayacucho, Perú.';
 
 const photos = {
   hero: '/images/plaza-mayor-huamanga-wide.jpg',
@@ -93,7 +98,7 @@ const faq = [
     q: `¿Qué es la ${attractionLocalName}?`,
     a: `${attractionLocalName} es la forma histórica con la que también se identifica a la ${attractionShortName}. Huamanga fue el nombre histórico de la ciudad antes de denominarse Ayacucho, de modo que ambas expresiones pueden aparecer juntas en material turístico y patrimonial.`
   },
-  { q: '¿Qué horarios y contacto muestra Google Maps?', a: 'Consulta del 29 de octubre de 2026: 4,5/5 y 19.802 reseñas de terceros; la ficha muestra apertura el viernes a las 08:00 y el teléfono +51 985 928 260. No se ha confirmado que ese teléfono sea de la administración de la plaza ni que ese horario regule todo el espacio público. MINCETUR publica una franja de visita de 06:00 a 21:00; confirma tu fecha y los recintos que quieres visitar.' }
+  { q: '¿Qué datos muestra la ficha de Google Maps?', a: `La ficha compartida de Google Maps muestra Plaza de Armas of Ayacucho, ${mapsRating}/5, ${mapsReviews} reseñas de terceros, la categoría ${mapsPlaceType}, Ayacucho ${postalCode}, Perú, el plus code ${mapsPlusCode} y el teléfono ${mapsPhone}. No se ha confirmado aquí que ese teléfono corresponda a la administración de la plaza ni que la categoría describa por completo el uso patrimonial del lugar.` }
 ];
 
 const attractionLd = {
@@ -122,7 +127,7 @@ const attractionLd = {
     longitude
   },
   "hasMap": mapUrl,
-  sameAs: [mapUrl, minceturUrl, promperuUrl],
+  sameAs: [mapUrl, minceturUrl, promperuUrl, commonsUrl],
   containedInPlace: {
     "@type": 'City',
     name: cityName,
@@ -202,6 +207,7 @@ const breadcrumbLd = {
         </a>
         <nav class="main-nav" aria-label="Navegación principal">
           <a href="#sobre">Sobre</a>
+          <a href="/guias/">Guías</a>
           <a href="#historia">Historia</a>
           <a href="#planifica">Planifica</a>
           <a href="#que-hacer">Qué hacer</a>
@@ -222,6 +228,7 @@ const breadcrumbLd = {
             <div class="eyebrow-row">
               <span>Ayacucho · Perú</span>
               <span>2.752 m s. n. m.</span>
+              <span>Maps {mapsRating} · {mapsReviews}</span>
               <span>Centro histórico de Huamanga</span>
             </div>
             <p class="hero-kicker">{attractionFullName}</p>
@@ -263,7 +270,7 @@ const breadcrumbLd = {
             <h2 id="sobre-titulo">Sobre la {attractionFullName}</h2>
             <p class="large-copy entity-equalizer">Para orientarte, toma el monumento a Sucre como referencia central y reconoce la fachada de la Catedral en el perímetro. Recorrer la plaza al aire libre es una visita distinta de entrar a templos y museos, que tienen condiciones propias.</p>
             <p>Esta guía, publicada en <strong>{siteDomain}</strong>, reúne información práctica de referencia para visitar el espacio: ubicación, mapa, horarios de visita recomendados, acceso libre, transporte desde el aeropuerto o terminal terrestre, servicios cercanos y contexto histórico básico.</p>
-            <p>Datos revisados el 29 de octubre de 2026. Google Maps mostraba 4,5/5 con 19.802 reseñas de terceros; esta valoración pertenece a su ficha y no a esta guía. MINCETUR y Maps tienen horarios con distinto alcance: compáralos antes de visitar.</p>
+            <p>La ficha compartida de Google Maps muestra {mapsRating}/5 con {mapsReviews} reseñas de terceros y la categoría <strong>{mapsPlaceType}</strong>; esa valoración pertenece a Google Maps y no a esta guía. Compárala con MINCETUR y con las condiciones reales del día antes de visitar.</p>
             <nav class="geo-breadcrumb" aria-label="Jerarquía geográfica del atractivo">
               <ol>
                 <li><span>{attractionFullName}</span></li>
@@ -341,7 +348,7 @@ const breadcrumbLd = {
             <article class="planning-card">
               <span class="icon-badge">◷</span>
               <h3>Horario</h3>
-              <p>MINCETUR registra la <strong>visita recomendada de 06:00 a 21:00</strong> durante todo el año. Google Maps mostraba apertura el viernes a las 08:00 en la consulta del 29 de octubre de 2026. Son fuentes de distinto alcance: ninguna permite prometer acceso sin restricciones por actos, obras o medidas locales.</p>
+              <p>MINCETUR registra la <strong>visita recomendada de 06:00 a 21:00</strong> durante todo el año. Google Maps puede mostrar horarios de ficha con otro alcance. Ninguna de estas referencias permite prometer acceso sin restricciones por actos, obras o medidas locales.</p>
             </article>
             <article class="planning-card">
               <span class="icon-badge">☀</span>
@@ -475,7 +482,7 @@ const breadcrumbLd = {
       <section id="mapa" class="section map-section">
         <div class="shell">
           <div class="section-heading split-heading">
-            <div><p class="section-kicker">Ubicación</p><h2>Ubicación y cómo visitar la {attractionFullName}</h2><p class="map-address">{attractionFullName} ({attractionLocalName}) · {cityName} {postalCode}, {countryName}</p></div>
+            <div><p class="section-kicker">Ubicación</p><h2>Ubicación y cómo visitar la {attractionFullName}</h2><p class="map-address">{attractionFullName} ({attractionLocalName}) · {cityName} {postalCode}, {countryName} · {mapsPlusCode}</p></div>
             <a class="text-link" href={mapUrl} target="_blank" rel="noreferrer">Abrir mapa completo ↗</a>
           </div>
           <div class="map-frame">
@@ -512,16 +519,46 @@ const breadcrumbLd = {
         </div>
       </section>
 
+      <section id="guias" class="section guides-section" aria-labelledby="guias-titulo">
+        <div class="shell">
+          <div class="section-heading split-heading">
+            <div>
+              <p class="section-kicker">Guías de la plaza</p>
+              <h2 id="guias-titulo">Explora la plaza por temas</h2>
+            </div>
+            <p>{guides.length} guías dedicadas a un mismo lugar: cómo llegar, qué ver, historia, patrimonio y recorridos según el tiempo disponible.</p>
+          </div>
+          {guideGroups.map((group) => (
+            <div class="hub-group">
+              <p class="hub-group-title">{group.label}</p>
+              <p>{group.blurb}</p>
+              <div class="guide-grid">
+                {guides.filter((guide) => guide.group === group.id).map((guide) => (
+                  <a class="guide-card" href={`/${guide.slug}/`}>
+                    <h3>{guide.h1}</h3>
+                    <p>{guide.summary}</p>
+                    <span class="guide-more">Leer guía →</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+          <div class="page-cta"><a class="button button-gold" href="/guias/">Ver todas las guías</a></div>
+        </div>
+      </section>
+
       <section id="fuentes" class="source-band">
         <div class="shell source-grid">
-          <div><p class="section-kicker">Fuentes y orientación</p><h2>Fuentes públicas y fecha de consulta</h2></div>
+          <div><p class="section-kicker">Fuentes y orientación</p><h2>Fuentes públicas y fecha de revisión</h2></div>
           <div class="source-links">
             <a href={minceturUrl} target="_blank" rel="noreferrer"><strong>MINCETUR</strong><span>Inventario de recursos turísticos</span></a>
             <a href={promperuUrl} target="_blank" rel="noreferrer"><strong>Perú Travel / PROMPERÚ</strong><span>Contexto turístico de Ayacucho</span></a>
+            <a href={mapUrl} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Ficha compartida con nombre, valoración, categoría y plus code</span></a>
             <a href={commonsUrl} target="_blank" rel="noreferrer"><strong>Wikimedia Commons</strong><span>Fotografías documentales con licencia libre</span></a>
             <a href="https://cader.sunarp.gob.pe/ayacucho/" target="_blank" rel="noreferrer"><strong>Sunarp · Ayacucho</strong><span>Descripción patrimonial; confirma por separado la sede y operación de cada museo</span></a>
           </div>
-          <p class="source-review">Consulta: 29 de octubre de 2026. MINCETUR distingue el espacio público y sus servicios externos; museos, templos y actividades tienen condiciones propias. Los tiempos de taxi de la ficha son orientativos.</p>
+          <p class="source-review">La ficha compartida de Google Maps muestra Plaza de Armas of Ayacucho, {mapsRating}/5, {mapsReviews} reseñas de terceros, la categoría {mapsPlaceType} y el plus code {mapsPlusCode}. MINCETUR distingue el espacio público y sus servicios externos; museos, templos y actividades tienen condiciones propias. Los tiempos de taxi de la ficha son orientativos.</p>
+          <p class="last-reviewed">Última revisión editorial: <time datetime={site.lastReviewedIso}>{site.lastReviewed}</time>. Las condiciones pueden haber cambiado desde entonces.</p>
         </div>
       </section>
     </main>
@@ -536,9 +573,9 @@ const breadcrumbLd = {
         <div>
           <strong>Contacto mostrado en Maps</strong>
           <address>
-            Ficha de terceros · 29-10-2026<br />
+            Ficha de terceros · {mapsPlaceType}<br />
             <a href={`tel:${mapsPhoneHref}`}>{mapsPhone}</a><br />
-            <span>No se ha verificado que sea un teléfono administrativo.</span>
+            <span>{mapsPlusCode} · No se ha verificado que sea un teléfono administrativo.</span>
           </address>
         </div>
         <div>

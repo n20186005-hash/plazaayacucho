@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Accesibilidad en la Plaza Mayor de Ayacucho: qué se sabe y qué falta';
+const description = 'Qué se puede decir con responsabilidad sobre la accesibilidad en la Plaza Mayor de Ayacucho, y qué información conviene verificar antes de viajar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/accesibilidad/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Accesibilidad"
+  heading="Accesibilidad en la Plaza Mayor de Ayacucho"
+  lead="Esta página no afirma que la plaza tenga o no tenga rampas, ascensores, baños adaptados o pavimento táctil, porque este proyecto no ha verificado esas condiciones. Lo que sí hace es explicar qué conviene preguntar y a quién, antes de desplazarse."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Accesibilidad' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['adultos-mayores', 'con-ninos', 'ubicacion-mapa', 'horarios-visita']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Este proyecto no ha verificado las condiciones de accesibilidad de la Plaza Mayor de Ayacucho: no confirma rampas, ascensores, baños adaptados ni pavimento táctil. Lo que sí se confirma es que el acceso al espacio público es libre, según MINCETUR. Antes de desplazarse, conviene preguntar a la Municipalidad Provincial de Huamanga y a MINCETUR, y verificar los accesos de cada recinto que se quiera visitar.</p>
+      </div>
+      <div class="page-copy">
+        <p>La accesibilidad de un espacio público depende de muchos factores: pavimento, desniveles, rampas, servicios adaptados, señalización y transporte hasta el punto. En el caso de la <strong>{site.attractionFullName}</strong>, este proyecto no ha verificado ninguno de esos elementos sobre el terreno. Por eso, esta página es una guía de verificación, no una declaración de condiciones.</p>
+
+        <h2>Qué sabemos y qué no sabemos</h2>
+        <table class="fact-table">
+          <caption>Estado de la información sobre accesibilidad</caption>
+          <tbody>
+            <tr><th>Espacio público de la plaza</th><td>Acceso libre según MINCETUR. No se verifica aquí el estado de pavimentos, desniveles o pasos peatonales.</td></tr>
+            <tr><th>Rampas y acceso sin escalones</th><td><strong>No verificado.</strong> Se debe consultar a la Municipalidad Provincial de Huamanga.</td></tr>
+            <tr><th>Baños adaptados</th><td><strong>No verificado.</strong> No se confirma su existencia ni su ubicación en el conjunto.</td></tr>
+            <tr><th>Pavimento táctil y señalización</th><td><strong>No verificado.</strong> No se afirma su presencia ni su ausencia.</td></tr>
+            <tr><th>Edificios del entorno</th><td>La Catedral, los templos y los museos tienen accesos propios no verificados aquí.</td></tr>
+          </tbody>
+        </table>
+
+        <div class="callout">
+          <p><strong>Honestidad primero:</strong> este proyecto es independiente y no oficial. No ha realizado una auditoría de accesibilidad sobre el terreno. Cualquier afirmación sobre rampas, ascensores o servicios adaptados sería una suposición, y no se hace aquí. La responsabilidad de verificar las condiciones recae en quien viaja, con apoyo de las instituciones competentes.</p>
+        </div>
+
+        <h2>Cómo verificar antes de viajar</h2>
+        <p>La verificación de accesibilidad corresponde a las instituciones que administran el espacio público y los edificios del entorno. Estas son las preguntas que conviene plantear antes de desplazarse:</p>
+
+        <h3>A la Municipalidad Provincial de Huamanga</h3>
+        <ul class="checklist">
+          <li>¿El perímetro de la plaza tiene acceso sin escalones desde las calles adyacentes?</li>
+          <li>¿Cuál es el estado actual de los pavimentos del conjunto?</li>
+          <li>¿Existen bancas o zonas de descanso dentro de la plaza?</li>
+          <li>¿Hay baños públicos en las inmediaciones y están adaptados?</li>
+        </ul>
+
+        <h3>A MINCETUR</h3>
+        <ul class="checklist">
+          <li>¿El inventario turístico registra condiciones de accesibilidad para la plaza?</li>
+          <li>¿Qué información oficial existe sobre acceso para personas con movilidad reducida?</li>
+          <li>¿Hay canales de consulta específicos para visitantes con discapacidad?</li>
+        </ul>
+
+        <h3>A los recintos del entorno</h3>
+        <p>Si se planea entrar a la Catedral, al Templo de Santo Domingo o a algún museo del centro, conviene preguntar directamente a cada institución:</p>
+        <ul>
+          <li>¿El acceso al recinto tiene escalones o rampa?</li>
+          <li>¿Hay ascensor si el edificio tiene más de un nivel?</li>
+          <li>¿El interior permite el paso de silla de ruedas o bastón?</li>
+        </ul>
+
+        <h2>Transporte hasta la plaza</h2>
+        <p>El aeropuerto está a unos 2,8 km y el terminal terrestre a unos 3,6 km, según MINCETUR. Llegar a la plaza desde cualquiera de los dos puntos suele implicar un taxi. Si se necesita vehículo adaptado o asistencia para el traslado, eso debe gestionarse antes de viajar: este proyecto no verifica qué operadores ofrecen ese servicio ni bajo qué condiciones.</p>
+
+        <h2>Decisiones antes de salir</h2>
+        <p>Además de las preguntas anteriores, conviene tomar estas decisiones prácticas antes de desplazarse:</p>
+        <ul class="checklist">
+          <li><strong>Verificar con la Municipalidad:</strong> confirmar el estado de pavimentos, desniveles y pasos peatonales del perímetro de la plaza.</li>
+          <li><strong>Consultar a MINCETUR:</strong> preguntar si el inventario turístico registra condiciones de accesibilidad para la plaza.</li>
+          <li><strong>Contactar recintos:</strong> preguntar directamente a la Catedral y a los templos sobre sus accesos si se planea entrar.</li>
+          <li><strong>Transporte adaptado:</strong> gestionar el traslado desde el aeropuerto (≈2,8 km) o el terminal terrestre (≈3,6 km) con tiempo.</li>
+          <li><strong>Ruta de respaldo:</strong> preparar un plan alternativo si algún acceso no reúne las condiciones necesarias.</li>
+          <li><strong>Acompañante:</strong> decidir si se necesita compañía para el recorrido por el centro histórico.</li>
+        </ul>
+
+        <h2>Una nota sobre el entorno histórico</h2>
+        <p>El centro histórico de {site.cityName} —la antigua Huamanga— conserva arquitectura de los siglos XVI y XVII. Los conjuntos históricos, por su propia naturaleza, pueden tener pavimentos irregulares, desniveles y umbrales que no siempre se han adaptado a estándares contemporáneos de accesibilidad. Eso no significa que no se pueda visitar, pero sí que conviene ajustar las expectativas y confirmar las condiciones con tiempo.</p>
+
+        <p class="verify-note">Esta página no verifica ninguna condición de accesibilidad. Describe qué información falta y cómo obtenerla. Para condiciones actuales del espacio público, consulta a la Municipalidad Provincial de Huamanga y a MINCETUR; para los recintos cerrados, contacta directamente a cada institución. Los enlaces oficiales están al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

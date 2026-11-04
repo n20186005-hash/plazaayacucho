@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Mirador de Acuchimay desde la Plaza Mayor de Ayacucho';
+const description = 'Cómo plantear una visita al mirador de Acuchimay desde la Plaza Mayor de Ayacucho: para qué sirve, cómo llegar y qué confirmar antes de subir.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/mirador-acuchimay/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Miradores"
+  heading="Mirador de Acuchimay"
+  lead="El mirador de Acuchimay es un punto panorámico por encima de la ciudad de Ayacucho. Esta guía explica para qué sirve un mirador así, cómo plantear la visita y qué se debe confirmar antes de subir, porque este proyecto no verifica su altitud, acceso, horarios ni condiciones de seguridad."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Mirador Acuchimay' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['plaza-de-armas-de-noche', 'plaza-mayor-fotografia', 'centro-historico-huamanga', 'temporada-lluvias']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El mirador de Acuchimay es un punto panorámico por encima de Ayacucho que complementa la visita a la plaza. Este proyecto no verifica su altitud, distancia desde la plaza, acceso, horarios ni condiciones de seguridad: todo eso debe confirmarse antes de subir. La plaza misma, a unos 2.750 m s. n. m., tiene acceso libre y franja recomendada de 06:00 a 21:00 según MINCETUR.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>mirador de Acuchimay</strong> es un punto elevado desde el cual se domina una vista panorámica de {site.cityName}. Se encuentra por encima del casco urbano y permite leer la ciudad en su conjunto: el centro histórico, los cerros que la rodean y la topografía del valle andino. Desde la <strong>{site.attractionFullName}</strong>, la visita al mirador es una salida distinta del recorrido urbano: requiere transporte, planificación y confirmación previa.</p>
+
+        <div class="callout">
+          <p><strong>Lo que no está verificado:</strong> este proyecto no confirma la altitud exacta del mirador, la distancia desde la plaza, el tiempo de acceso, las condiciones del camino, los horarios de apertura ni las condiciones de seguridad. Todo eso debe verificarse antes de subir. Lo que sigue es una guía de planificación, no una descripción de condiciones comprobadas.</p>
+        </div>
+
+        <h2>Para qué sirve un mirador</h2>
+        <p>Un mirador cumple varias funciones en un viaje:</p>
+        <ul class="checklist">
+          <li><strong>Orientación</strong> — desde lo alto se entiende cómo se ordena la ciudad, dónde está el centro histórico y cómo se relaciona la plaza con el resto del valle.</li>
+          <li><strong>Fotografía</strong> — una vista panorámica permite encuadres que no son posibles desde el nivel de la calle.</li>
+          <li><strong>Contexto geográfico</strong> — ver la ciudad inserta en su valle andino ayuda a comprender por qué el clima, la altitud y la luz se comportan como lo hacen.</li>
+          <li><strong>Descanso visual</strong> — después de un recorrido denso por el centro histórico, un punto elevado ofrece una pausa y una perspectiva distinta.</li>
+        </ul>
+
+        <h2>Cómo plantear la visita</h2>
+        <p>La visita al mirador no se improvisa. Conviene planificarla con tres variables:</p>
+
+        <h3>Transporte</h3>
+        <p>El mirador está por encima de la ciudad, no es un recorrido a pie desde la plaza. Necesitas resolver cómo subir: taxi, vehículo propio o un tour que lo incluya. Este proyecto no verifica operadores de transporte ni tarifas. Acuerda el traslado y el costo antes de salir.</p>
+
+        <h3>Momento del día</h3>
+        <p>El momento del día cambia completamente la experiencia. Una visita matutina ofrece luz clara sobre la ciudad y el valle; una visita vespertina o al atardecer permite ver cómo cambia la luz sobre los techos y los cerros. La elección depende del tipo de fotografía que busques y de tu tolerancia al frío: la temperatura baja con rapidez al caer la tarde en una ciudad andina a ~2.750 m s. n. m.</p>
+
+        <h3>Clima</h3>
+        <p>El clima es el factor menos controlable y el más decisivo. Un mirador cubierto de nubes o con lluvia pierde su razón de ser. Conviene revisar el pronóstico antes de planificar la subida y tener un plan alternativo si el cielo no acompaña.</p>
+
+        <h2>Qué confirmar antes de subir</h2>
+        <p>Estos son los datos que conviene verificar antes de desplazarse al mirador:</p>
+        <ul>
+          <li><strong>Acceso:</strong> ¿hay camino vehicular hasta el mirador o se camina un tramo? ¿Cuál es el estado del acceso?</li>
+          <li><strong>Horario:</strong> ¿el mirador tiene horario de apertura o es un espacio libre?</li>
+          <li><strong>Seguridad:</strong> ¿el lugar cuenta con barandas, iluminación o vigilancia? ¿Es seguro al atardecer?</li>
+          <li><strong>Tiempo de permanencia:</strong> ¿cuánto tiempo conviene reservar para la visita completa, incluyendo el traslado?</li>
+          <li><strong>Costo:</strong> ¿tiene entrada o es de acceso libre?</li>
+        </ul>
+
+        <h2>Cómo combinarlo con la visita a la plaza</h2>
+        <p>El mirador y la plaza cumplen funciones distintas y se complementan bien. Un plan razonable es visitar el centro histórico y la plaza por la mañana, hacer una pausa al mediodía y subir al mirador por la tarde, cuando la luz sobre la ciudad cambia. Si el cielo está despejado, el atardecer desde un punto elevado sobre {site.cityName} puede ser uno de los momentos más memorables del viaje.</p>
+        <p>Ahora bien, si el clima no acompaña o no se ha podido confirmar el acceso, lo sensato es posponer la salida y quedarse en el centro histórico, donde el recorrido urbano sigue siendo viable.</p>
+
+        <p class="verify-note">Esta página no verifica la altitud, distancia, acceso, horarios, condiciones de seguridad ni tarifas del mirador de Acuchimay. Describe cómo planificar una visita y qué confirmar antes de subir. Para información actual, consulta a la Municipalidad Provincial de Huamanga y a MINCETUR a través de los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

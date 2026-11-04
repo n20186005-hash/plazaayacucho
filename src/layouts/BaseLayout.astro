@@ -1,0 +1,211 @@
+---
+import '../styles/global.css';
+import { site, images, guides, guideHref } from '../data/site.mjs';
+
+const {
+  title,
+  description,
+  kicker = site.attractionFullName,
+  heading,
+  lead,
+  breadcrumbs = [],
+  jsonLd = [],
+  heroImage = images.plaza,
+  related = [],
+  compactHero = false,
+  updatedNote = 'Contenido de referencia elaborado a partir de fuentes públicas citadas al final de esta página. No es información oficial.'
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.origin).toString();
+
+const crumbs = [{ label: 'Inicio', href: '/' }, ...breadcrumbs];
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((crumb, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: crumb.label,
+    item: crumb.href ? new URL(crumb.href, site.origin).toString() : canonical
+  }))
+};
+
+const graphs = [
+  breadcrumbLd,
+  ...jsonLd.map((graph: any) =>
+    graph && graph['@type'] === 'Article' ? { ...graph, dateModified: site.lastReviewedIso } : graph
+  )
+];
+
+const relatedGuides = related
+  .map((slug: string) => guides.find((guide) => guide.slug === slug))
+  .filter(Boolean);
+---
+
+<!doctype html>
+<html lang={site.lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#6f2e25" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es-PE" href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={canonical} />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Plaza Ayacucho" />
+    <meta name="application-name" content="Plaza Ayacucho" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="icon" href="/icons/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/icons/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="/icons/favicon-16.png" type="image/png" sizes="16x16" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180" />
+    <meta property="og:site_name" content="Plaza Ayacucho" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={`${site.origin}${heroImage.src}`} />
+    <meta property="og:image:alt" content={heroImage.alt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${site.origin}${heroImage.src}`} />
+    <meta name="twitter:image:alt" content={heroImage.alt} />
+    {graphs.map((graph) => (
+      <script is:inline type="application/ld+json" set:html={JSON.stringify(graph)}></script>
+    ))}
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a href="/" class="brand" aria-label={`Inicio — ${site.attractionFullName} (${site.attractionLocalName})`}>
+          <img src="/icons/logo.svg" alt={`${site.attractionFullName} (${site.attractionLocalName})`} width="186" height="52" />
+          <span class="brand-name"><b>{site.attractionFullName}</b><small>{site.attractionLocalName} · {site.cityName}, {site.countryName}</small></span>
+        </a>
+        <nav class="main-nav" aria-label="Navegación principal">
+          <a href="/">Inicio</a>
+          <a href="/guias/">Guías</a>
+          <a href="/como-llegar/">Cómo llegar</a>
+          <a href="/que-ver/">Qué ver</a>
+          <a href="/historia/">Historia</a>
+          <a href="/preguntas-frecuentes/">FAQ</a>
+        </nav>
+        <a class="map-button" href={site.mapsUrl} target="_blank" rel="noreferrer">Cómo llegar ↗</a>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class:list={['page-hero', compactHero && 'page-hero-compact']} style={`--page-hero-image: url('${heroImage.src}')`}>
+        <div class="shell page-hero-inner">
+          <nav class="crumbs" aria-label="Ruta de navegación">
+            <ol>
+              {crumbs.map((crumb, index) => (
+                <li>
+                  {crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span aria-current="page">{crumb.label}</span>}
+                  {index < crumbs.length - 1 && <b aria-hidden="true">›</b>}
+                </li>
+              ))}
+            </ol>
+          </nav>
+          <p class="hero-kicker">{kicker}</p>
+          <h1>{heading}</h1>
+          {lead && <p class="page-lead">{lead}</p>}
+        </div>
+      </section>
+
+      <slot />
+
+      {relatedGuides.length > 0 && (
+        <section class="related-band" aria-labelledby="relacionadas">
+          <div class="shell">
+            <div class="section-heading light-heading">
+              <p class="section-kicker">Sigue leyendo</p>
+              <h2 id="relacionadas">Guías relacionadas</h2>
+            </div>
+            <div class="related-grid">
+              {relatedGuides.map((guide: any) => (
+                <a href={guideHref(guide)}>
+                  <strong>{guide.h1}</strong>
+                  <span>{guide.summary}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section class="source-band">
+        <div class="shell source-grid">
+          <div>
+            <p class="section-kicker">Fuentes y orientación</p>
+            <h2>Fuentes públicas y fecha de revisión</h2>
+          </div>
+          <div class="source-links">
+            <a href={site.minceturUrl} target="_blank" rel="noreferrer"><strong>MINCETUR</strong><span>Inventario de recursos turísticos de la plaza</span></a>
+            <a href={site.promperuUrl} target="_blank" rel="noreferrer"><strong>Perú Travel / PROMPERÚ</strong><span>Contexto turístico de Ayacucho</span></a>
+            <a href={site.mapsUrl} target="_blank" rel="noreferrer"><strong>Google Maps</strong><span>Ficha compartida con nombre, valoración, categoría y plus code</span></a>
+            <a href={site.commonsUrl} target="_blank" rel="noreferrer"><strong>Wikimedia Commons</strong><span>Fotografías documentales con licencia libre</span></a>
+          </div>
+          <p class="source-review">{updatedNote} La ficha compartida de Google Maps muestra {site.attractionAltName}, {site.mapsRating}/5 y {site.mapsReviews} reseñas de terceros. Confirma horarios, accesos y servicios en los canales oficiales antes de desplazarte.</p>
+          <p class="last-reviewed">Última revisión editorial: <time datetime={site.lastReviewedIso}>{site.lastReviewed}</time>. Las condiciones pueden haber cambiado desde entonces. <a href="/">Volver a la guía principal de la {site.attractionFullName}</a> para la orientación general del lugar.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div class="footer-brand">
+          <img src="/icons/logo.svg" alt={`${site.attractionFullName} (${site.attractionLocalName})`} width="186" height="52" />
+          <p><strong>{site.attractionFullName}</strong><br />{site.attractionLocalName}</p>
+          <p class="footer-domain">Guía independiente en {site.domain}</p>
+        </div>
+        <div>
+          <strong>Explorar guías</strong>
+          <p>
+            <a href="/guias/">Todas las guías</a><br />
+            <a href="/como-llegar/">Cómo llegar</a><br />
+            <a href="/que-ver/">Qué ver</a><br />
+            <a href="/historia/">Historia</a>
+          </p>
+        </div>
+        <div>
+          <strong>Información institucional</strong><p><a href={site.municipalidadUrl}>Municipalidad Provincial de Huamanga</a>. Consulta sus avisos y los canales del lugar que quieras visitar.</p>
+        </div>
+        <div>
+          <strong>Privacidad</strong>
+          <p>Google Analytics se carga únicamente si aceptas analítica. La elección solo dura en esta página. Google Maps conecta con Google por separado; el alojamiento puede añadir medición de rendimiento de Cloudflare independiente de esta elección.</p>
+          <button id="cookie-settings" class="footer-button" type="button">Configurar analítica</button>
+        </div>
+      </div>
+      <div class="shell disclaimer">Guía turística y de divulgación cultural, independiente, sin fines de lucro y no oficial. No representa a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni a ninguna entidad pública.</div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner" hidden>
+      <div>
+        <strong>Analítica opcional</strong>
+        <p>Podemos usar Google Analytics 4 (G-HXM22WWPKP) para medir visitas. No se carga hasta que aceptes en esta página. La elección no se guarda; recargar o navegar vuelve a iniciar con rechazo. Puedes retirarla desde Configurar analítica.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-reject" type="button">Solo necesarias</button>
+        <button id="cookie-accept" type="button">Aceptar analítica</button>
+      </div>
+    </div>
+
+    <script is:inline src="/analytics-choice.js"></script>
+    <script is:inline>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js').catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>

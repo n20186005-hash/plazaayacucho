@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Centro histórico de Huamanga: qué es y qué incluye';
+const description = 'Qué abarca el centro histórico de Huamanga alrededor de la Plaza Mayor de Ayacucho: calles, templos, casonas y edificios institucionales.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/centro-historico-huamanga/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Contexto urbano"
+  heading="Centro histórico de Huamanga"
+  lead="La plaza no está aislada: forma parte de un centro histórico que se recorre caminando. Estas son las piezas que lo componen y cómo se relacionan entre sí."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Centro histórico de Huamanga' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['casonas-coloniales', 'ruta-a-pie', 'portales-plaza-mayor', 'templo-santo-domingo']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El centro histórico de Huamanga es el casco urbano que se organiza alrededor de la <strong>Plaza Mayor de Ayacucho</strong>: un tejido caminable de calles, templos, casonas y edificios institucionales. Su escala es muy compacta, con la <strong>Basílica Catedral a unos 50 m</strong>, el <strong>Templo de Santo Domingo a unos 100 m</strong> y el <strong>Arco del Triunfo a unos 284 m</strong> a pie, según MINCETUR. La ciudad se fundó como ciudad española en <strong>1540</strong> y su arquitectura se consolidó entre los siglos XVI y XVII.</p>
+      </div>
+      <div class="page-copy">
+        <p>Cuando se habla del <strong>centro histórico de Huamanga</strong> se habla, en la práctica, del casco urbano que se organiza alrededor de la <strong>{site.attractionFullName}</strong>. No es un recinto cerrado con una única puerta, sino un tejido de calles, plazas, templos, casonas y edificios institucionales que funcionan como un conjunto caminable.</p>
+
+        <p>Entendido así, el centro histórico es la unidad de visita natural: la plaza es el centro, y a su alrededor todo se recorre a pie en distancias cortas.</p>
+
+        <h2>Qué lo compone</h2>
+        <p>El centro reúne varios tipos de edificaciones que conviven en pocas manzanas:</p>
+        <ul class="checklist">
+          <li><strong>Templos y espacios religiosos</strong>, como la Basílica Catedral, junto a la plaza, y otros templos del entorno inmediato.</li>
+          <li><strong>Edificios institucionales</strong>: la sede de la Municipalidad, oficinas del gobierno regional, la sede de la Corte y espacios universitarios que dan a la plaza su carácter cívico.</li>
+          <li><strong>Casonas con patio interior</strong>, portadas de piedra y balcones de madera, que definen el paisaje de las calles aledañas.</li>
+          <li><strong>Calles comerciales</strong>, donde la vida cotidiana de la ciudad se mezcla con el recorrido del visitante.</li>
+        </ul>
+
+        <h2>Un conjunto caminable</h2>
+        <p>La escala es lo que hace especial al centro: casi todo está a minutos a pie. El inventario de MINCETUR da referencias concretas desde la plaza: la <strong>Basílica Catedral</strong> a unos <strong>50 m</strong>, el <strong>Templo de Santo Domingo</strong> a unos <strong>100 m</strong> y el <strong>Arco del Triunfo</strong> a unos <strong>284 m</strong>. Son distancias cortas que permiten encadenar varias visitas sin necesidad de transporte.</p>
+        <p>Esa cercanía también explica por qué el centro se entiende mejor caminando: las transiciones entre fachadas, calles y plazas son parte del recorrido.</p>
+
+        <h2>El contexto histórico</h2>
+        <p>La ciudad se fundó como ciudad española en <strong>1540</strong>, y la plaza se convirtió desde entonces en el centro cívico, religioso y comercial. La arquitectura del entorno se consolidó durante los <strong>siglos XVI y XVII</strong>. Hoy esa herencia se lee en los materiales: piedra en los primeros niveles, madera en los balcones y teja de arcilla en las cubiertas.</p>
+        <p>A esa base colonial se fueron sumando los edificios institucionales que hoy rodean la plaza, lo que da al centro su doble carácter: patrimonio antiguo y sede administrativa viva al mismo tiempo.</p>
+
+        <h2>Cómo orientarse</h2>
+        <p>La plaza es el punto de referencia del centro. Si te sitúas en ella, el resto se organiza por direcciones sencillas: los templos y las casonas están en las calles que salen de los portales, y los hitos urbanos como el Arco del Triunfo se alcanzan caminando unos minutos.</p>
+        <p>Un detalle práctico: la ciudad está en un valle andino a unos <strong>2.750 m sobre el nivel del mar</strong>. El recorrido es corto, pero el sol del mediodía es fuerte y la temperatura baja rápido después. Conviene caminar con calma y llevar una capa de abrigo.</p>
+
+        <h2>El perímetro de la plaza</h2>
+        <p>El borde de la plaza reúne algunos de los edificios que explican su papel cívico: la <strong>Basílica Catedral</strong>, la sede de la <strong>Municipalidad</strong>, oficinas del <strong>gobierno regional</strong>, la sede de la <strong>Corte</strong> y espacios universitarios. Ver esos usos juntos ayuda a entender que el centro histórico no es solo un escenario patrimonial, sino la sede administrativa viva de la ciudad.</p>
+
+        <table class="fact-table">
+          <caption>Referencias a pie desde la plaza</caption>
+          <tbody>
+            <tr><th>Basílica Catedral</th><td>Aprox. <strong>50 m</strong>. Fuente: MINCETUR.</td></tr>
+            <tr><th>Templo de Santo Domingo</th><td>Aprox. <strong>100 m</strong>. Fuente: MINCETUR.</td></tr>
+            <tr><th>Arco del Triunfo</th><td>Aprox. <strong>284 m</strong>. Fuente: MINCETUR.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Cuándo recorrerlo</h2>
+        <p>MINCETUR recomienda visitar la plaza entre las <strong>06:00 y las 21:00</strong> durante todo el año, una franja orientativa y no un cierre físico. Dentro de ese horario, la mañana temprano suele ser el momento más tranquilo para caminar, y el mediodía, con el sol fuerte de los <strong>2.750 m de altitud</strong>, invita a buscar la sombra de los portales. Al caer la tarde la temperatura baja rápido, así que conviene llevar una capa de abrigo.</p>
+
+        <div class="callout">
+          <p><strong>Para organizar la visita:</strong> el centro histórico funciona a pie, así que no necesitas un vehículo para recorrerlo. El transporte solo es necesario para llegar desde el aeropuerto o el terminal terrestre y para las excursiones fuera de la ciudad.</p>
+        </div>
+
+        <p class="verify-note">Las distancias de 50 m, 100 m y 284 m provienen del inventario turístico de MINCETUR, enlazado al final de la página. Esta guía no confirma horarios, tarifas ni condiciones de acceso de los recintos del centro.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

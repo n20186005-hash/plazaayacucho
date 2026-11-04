@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Casa Boza y Solís en Ayacucho: qué es y cómo verificarla';
+const description = 'Referencia a la Casa Boza y Solís en el centro de Ayacucho: por qué aparece en los listados patrimoniales, qué se puede confirmar y qué conviene verificar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/casa-boza-y-solis/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Patrimonio"
+  heading="Casa Boza y Solís"
+  lead="Una referencia que aparece en los listados patrimoniales del centro de Ayacucho. En este proyecto no hay datos verificados sobre ella, así que esta página explica qué se puede afirmar, qué no, y cómo confirmarlo."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Casa Boza y Solís' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['casonas-coloniales', 'centro-historico-huamanga', 'arquitectura-portales', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La <strong>Casa Boza y Solís</strong> es un nombre que figura en compilaciones patrimoniales del centro de Ayacucho, en el contexto de las casonas coloniales que rodean la plaza. En este proyecto no hay datos verificados sobre ella: no constan su historia, su fecha de construcción, su dirección ni si recibe visitas. Esta página explica, precisamente, qué se puede afirmar, qué no, y a qué instituciones preguntar para confirmarlo.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Casa Boza y Solís</strong> es un nombre que aparece en compilaciones patrimoniales del centro de {site.cityName} y que suele citarse junto a otras casonas coloniales del entorno de la {site.attractionFullName}. Ahora bien: en este proyecto <strong>no contamos con datos verificados</strong> sobre ella. No consta aquí su historia, su arquitecto, sus fechas ni su estado actual de conservación.</p>
+
+        <p>Por honestidad, esta página no va a rellenar ese vacío con suposiciones. Lo que sí puede hacer es explicar por qué este tipo de inmuebles aparece en los listados, cómo se localiza y qué preguntas conviene llevar a las instituciones competentes.</p>
+
+        <h2>Por qué aparece en los listados patrimoniales</h2>
+        <p>En el centro histórico de Huamanga existen numerosas <strong>casonas con patio interior, portadas de piedra y balcones de madera</strong>, resultado de la arquitectura civil que se consolidó durante los siglos XVI y XVII. Cuando una ciudad conserva su casco antiguo, es habitual que se elaboren <strong>inventarios y catálogos</strong> de los inmuebles de interés: a esos repertorios pertenecen nombres como el de la Casa Boza y Solís.</p>
+        <p>Eso significa, en principio, que el edificio está reconocido como parte del patrimonio del centro. Pero un listado patrimonial no es lo mismo que una ficha con datos abiertos al público: el nivel de detalle disponible varía, y muchos repertorios no van acompañados de información accesible para el visitante.</p>
+
+        <h2>Qué se puede afirmar y qué no</h2>
+        <p>Con la información disponible aquí, lo único razonable es distinguir dos planos:</p>
+        <ul class="checklist">
+          <li><strong>Lo que consta:</strong> que el nombre figura en compilaciones de patrimonio del centro de Huamanga, en el contexto de las casonas coloniales de la ciudad.</li>
+          <li><strong>Lo que no consta en este proyecto:</strong> su historia, la fecha de construcción, quién la mandó edificar, su estado de conservación, si recibe visitas y, sobre todo, una dirección verificada.</li>
+        </ul>
+        <p>Si en algún sitio encuentras una historia detallada de esta casa, trátala con cautela hasta poder contrastarla con una fuente institucional. No reproducimos aquí datos que no hemos podido confirmar.</p>
+
+        <h2>Cómo localizarla y verificarla</h2>
+        <p>Para pasar de una referencia a un dato utilizable, el camino es preguntar a quien custodia la información patrimonial. Estas son las vías más fiables:</p>
+        <ul class="checklist">
+          <li>La <strong>Municipalidad Provincial de Huamanga</strong>, que suele llevar el registro de inmuebles de valor en su jurisdicción.</li>
+          <li>La <strong>Dirección Regional de Comercio Exterior y Turismo</strong> y las oficinas de información turística de la ciudad.</li>
+          <li>El <strong>Ministerio de Cultura</strong> y sus dependencias regionales, para lo relativo a declaratorias y catálogos patrimoniales.</li>
+        </ul>
+        <p>Cuando preguntes, conviene solicitar tres cosas concretas: la <strong>dirección exacta</strong>, el <strong>estado de conservación</strong> y si el inmueble <strong>admite visitas</strong>. Sin esas tres respuestas, no es posible planificar una visita responsable.</p>
+
+        <div class="callout">
+          <p><strong>Aviso:</strong> esta página no confirma que la Casa Boza y Solís esté abierta al público, que se encuentre en buen estado ni que sea visitable. No inventamos su historia, su autoría ni sus fechas. Cualquier dato concreto debe obtenerse de las instituciones competentes citadas arriba.</p>
+        </div>
+
+        <h2>Qué hacer mientras tanto</h2>
+        <p>Si tu interés es la arquitectura civil del centro, no necesitas esperar a tener la ficha de una casa concreta. Las casonas coloniales se pueden reconocer desde la calle, en las manzanas que rodean la plaza, y esa lectura de fachadas ya aporta una idea clara del conjunto. Si además quieres entrar a algún inmueble, reserva ese paso para los espacios institucionales y culturales del centro, que son los que suelen estar preparados para recibir visitantes.</p>
+
+        <p class="verify-note">Este proyecto no dispone de datos verificados sobre la Casa Boza y Solís. Por eso esta página describe el contexto y las vías de verificación, sin afirmar hechos sobre el inmueble. Consulta MINCETUR, el Ministerio de Cultura y la Municipalidad Provincial de Huamanga, enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

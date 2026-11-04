@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Catedral de Ayacucho: guía desde la Plaza Mayor';
+const description = 'Cómo visitar la Basílica Catedral de Ayacucho desde la Plaza Mayor: ubicación, distancia a pie, su papel en la Semana Santa y qué confirmar antes de ir.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/catedral-ayacucho/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Recinto religioso junto a la plaza"
+  heading="Catedral de Ayacucho desde la Plaza Mayor"
+  lead="La Basílica Catedral de Ayacucho está a unos 50 m a pie de la plaza, según MINCETUR. Su fachada preside el conjunto y su papel en la Semana Santa es central. Aquí explicamos su relación con la plaza y por qué sus condiciones internas de visita deben confirmarse antes de ir."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Catedral' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.cathedral}
+  related={['que-ver', 'lugares-cerca', 'semana-santa-ayacucho', 'plaza-de-armas-de-noche']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Basílica Catedral de Ayacucho está a unos 50 m a pie de la Plaza Mayor, según MINCETUR, y su fachada preside uno de los costados del conjunto. La Semana Santa de Ayacucho, declarada Patrimonio Cultural de la Nación, tiene a la Catedral como uno de sus epicentros. Los horarios y condiciones de visita interna del templo no están verificados en esta guía y deben confirmarse antes de ir.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Basílica Catedral de Ayacucho</strong> es la iglesia matriz de la ciudad y uno de los edificios que preside el perímetro de la <strong>{site.attractionFullName}</strong>. Según MINCETUR, está a unos <strong>50 m a pie</strong> desde la plaza, lo que la convierte en la visita religiosa más inmediata del conjunto.</p>
+
+        <figure class="page-figure">
+          <img src={images.cathedral.src} alt={images.cathedral.alt} loading="lazy" />
+          <figcaption>{images.cathedral.caption}</figcaption>
+        </figure>
+
+        <table class="fact-table">
+          <caption>Datos de referencia</caption>
+          <tbody>
+            <tr><th>Nombre</th><td>Basílica Catedral de Ayacucho</td></tr>
+            <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>50 m</strong> a pie · fuente: MINCETUR</td></tr>
+            <tr><th>Relación con la plaza</th><td>Su fachada preside uno de los costados del conjunto</td></tr>
+            <tr><th>Condiciones internas</th><td><strong>No verificadas</strong> en esta guía; deben confirmarse</td></tr>
+          </tbody>
+        </table>
+
+        <h2>La iglesia matriz junto a la plaza</h2>
+        <p>La Catedral es el edificio religioso más visible desde la plaza. Su fachada se contempla cómodamente desde el espacio público, sin necesidad de entrar. La corta distancia —apenas 50 m a pie— hace que la transición entre la plaza y la entrada del templo sea casi inmediata.</p>
+        <p>Como en todas las iglesias coloniales del centro histórico, el interior es un recinto independiente del espacio público: tiene sus propios horarios, reglas de acceso y eventuales restricciones durante los oficios religiosos.</p>
+
+        <h2>Su papel en la Semana Santa</h2>
+        <p>La <strong>Semana Santa de Ayacucho</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura. En esas fechas, el centro histórico se transforma: las procesiones parten de los templos y recorren las calles, y la plaza adquiere un uso distinto, con mayor afluencia y control de tránsito.</p>
+        <p>La Catedral tiene un papel relevante en ese ciclo de celebraciones. Durante la Semana Santa, el acceso al templo y el entorno de la plaza pueden estar condicionados por el desarrollo de los actos religiosos. Si planeas visitar la Catedral en esas fechas, confirma las condiciones con anticipación.</p>
+
+        <h2>Condiciones de visita no verificadas</h2>
+        <p>Esta guía no verifica los horarios internos de la Catedral, ni si cobra una entrada o un aporte, ni qué días está abierta al público fuera de los oficios religiosos. Toda esa información puede cambiar y corresponde a la institución responsable del templo.</p>
+        <p>Lo que sí está documentado es la cercanía: la Catedral está a unos 50 m a pie desde la plaza, según MINCETUR. Para el resto, confirma antes de ir.</p>
+
+        <h2>Cómo confirmar las condiciones de visita</h2>
+        <p>Dado que esta guía no verifica los horarios internos ni las tarifas de la Catedral, conviene confirmar esos datos antes de desplazarte. Estos son los pasos que recomendamos:</p>
+        <ul class="checklist">
+          <li>Consulta la ficha de MINCETUR para la Catedral, enlazada al final de esta página, como punto de partida.</li>
+          <li>Revisa los canales de la Arquidiócesis de Ayacucho o de la propia parroquia para horarios de culto y visita.</li>
+          <li>Pregunta en la oficina de informes turísticos de la ciudad por las condiciones actuales del templo.</li>
+          <li>Si visitas en Semana Santa, confirma con anticipación: el acceso puede estar condicionado por las procesiones.</li>
+          <li>Ten un plan alternativo: contemplar la fachada desde la plaza siempre es posible y no tiene costo.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> contemplar la fachada desde la plaza es libre. Entrar al templo es una visita distinta, con condiciones propias. No asumas que la Catedral abre al público turístico en las mismas franjas que la plaza.</p>
+        </div>
+
+        <p class="verify-note">La distancia de 50 m y la declaración de la Semana Santa como Patrimonio Cultural de la Nación se atribuyen a MINCETUR y al Ministerio de Cultura respectivamente. Los horarios y condiciones internas de la Catedral no están verificados en esta guía. Consulta los enlaces oficiales al final para información actualizada.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

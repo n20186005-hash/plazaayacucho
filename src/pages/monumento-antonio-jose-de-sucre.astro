@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Monumento a Sucre en la Plaza Mayor de Ayacucho';
+const description = 'El monumento ecuestre a Antonio José de Sucre en el centro de la Plaza Mayor de Ayacucho: qué representa, de cuándo data y cómo se lee en el conjunto.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/monumento-antonio-jose-de-sucre/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Monumentos"
+  heading="Monumento a Antonio José de Sucre"
+  lead="En el centro de la plaza, sobre el cruce de los jardines, la escultura ecuestre de Sucre es la pieza que ordena el espacio y el punto de referencia más reconocible del conjunto."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Monumento a Sucre' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.monument}
+  related={['plaza-mayor-o-plaza-de-armas', 'portales-plaza-mayor', 'que-ver', 'historia']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El centro de la plaza lo ocupa el <strong>monumento ecuestre a Antonio José de Sucre</strong>, inaugurado en <strong>1924</strong> según el inventario turístico de MINCETUR. Se levanta en el punto donde se cruzan los ejes que unen los cuatro portales, por lo que funciona como referencia visual y punto de encuentro desde cualquier lado del conjunto. Este proyecto no verifica el nombre del escultor ni el material de la obra: esos detalles deben confirmarse en fuentes institucionales.</p>
+      </div>
+      <div class="page-copy">
+        <p>Desde cualquiera de los cuatro portales, la vista se ordena sola hacia el centro: ahí se levanta el <strong>monumento ecuestre a Antonio José de Sucre</strong>, la pieza que da escala a la plaza y que sirve de punto de encuentro a vecinos y visitantes. Es, en la práctica, el elemento que permite orientarse dentro del conjunto.</p>
+
+        <table class="fact-table">
+          <caption>Ficha del monumento</caption>
+          <tbody>
+            <tr><th>Ubicación</th><td>Centro de la plaza, entre los jardines y sobre el cruce de los ejes que unen los cuatro portales.</td></tr>
+            <tr><th>Tipo</th><td>Escultura ecuestre: una figura a caballo, elevada sobre un pedestal que la hace visible desde todo el perímetro.</td></tr>
+            <tr><th>Personaje</th><td>Antonio José de Sucre.</td></tr>
+            <tr><th>Inauguración</th><td><strong>1924</strong>. Fuente: inventario de recursos turísticos de MINCETUR.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>La pieza que ordena el centro de la plaza</h2>
+        <p>Una plaza rodeada de portales funciona como un gran patio: los frentes de piedra enmarcan el vacío y, en medio, hace falta un elemento que lo articule. El monumento cumple esa función. Su emplazamiento central divide el espacio en recorridos, marca el eje por el que se cruzan los paseos y funciona como referencia a la hora de citarse o de describir una posición.</p>
+        <p>Si miras la plaza desde arriba o desde el lado opuesto, el monumento aparece recortado contra los jardines y contra las cubiertas de teja. Esa relación entre la escultura y el cerco de portales es la que da al conjunto su imagen más repetida.</p>
+
+        <h2>De cuándo data</h2>
+        <p>El inventario de recursos turísticos de MINCETUR registra la <strong>inauguración del monumento en 1924</strong>. Es una fecha útil porque sitúa la pieza en un momento posterior a la consolidación colonial del conjunto: los portales ya estaban allí, y el monumento se añadió después como homenaje en el espacio central.</p>
+        <p>Más allá de ese año, este proyecto no verifica otras fechas relacionadas con la obra, como el encargo, el traslado o la reinstalación de sus partes.</p>
+
+        <h2>Cómo se lee en el conjunto</h2>
+        <p>Merece la pena fijarse en tres niveles al mirarlo. El primero es el <strong>basamento</strong>: la base que eleva la escultura y la separa del nivel del suelo. El segundo es el <strong>grupo ecuestre</strong>, con la figura y el caballo como un solo bloque. El tercero es el <strong>fondo</strong>: la línea de portales, balcones y cubiertas que queda detrás y que cambia según desde el portal desde el que mires.</p>
+        <p>La posición central tiene una consecuencia práctica: no se ve igual desde los cuatro lados. Al caminar alrededor de la plaza la silueta cambia, y ese recorrido circular es una buena forma de captar el conjunto.</p>
+
+        <h2>Cómo verlo con calma</h2>
+        <ul class="checklist">
+          <li>Empieza en el centro y camina en sentido contrario a las agujas del reloj para recorrer los cuatro frentes.</li>
+          <li>Dedica un momento a mirar el monumento desde cada portal: la perspectiva cambia por completo.</li>
+          <li>Aprovecha la luz de la mañana o el final de la tarde, cuando la escultura se recorta mejor.</li>
+          <li>Trátalo como un espacio en uso: es un punto de encuentro cotidiano, no solo un objeto turístico.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Sobre la autoría y los materiales:</strong> este proyecto no verifica el nombre del escultor, el material de la obra ni los detalles de su ejecución. Para el dato correcto, consulta el inventario de MINCETUR, la Municipalidad Provincial de Huamanga o una publicación especializada en patrimonio.</p>
+        </div>
+
+        <p class="verify-note">La fecha de 1924 y la ubicación central se atribuyen al inventario turístico de MINCETUR, enlazado al final de la página. Otras precisiones sobre el monumento deben confirmarse en fuentes institucionales antes de citarlas por escrito.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

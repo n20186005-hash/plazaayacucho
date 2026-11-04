@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Portales de la Plaza Mayor de Ayacucho: recorrido por los cuatro frentes';
+const description = 'Recorrido por los portales Unión, Constitución, Independencia y Municipal de la Plaza Mayor de Ayacucho, frente a frente.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/portales-plaza-mayor/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Patrimonio"
+  heading="Los cuatro portales de la Plaza Mayor"
+  lead="La plaza se recorre por sus bordes. Estos son los cuatro portales que la cierran —Unión, Constitución, Independencia y Municipal— pensados como una secuencia de caminata."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Los cuatro portales' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['arquitectura-portales', 'que-ver', 'centro-historico-huamanga', 'monumento-antonio-jose-de-sucre']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La plaza está cerrada por cuatro portales —<strong>Unión</strong>, <strong>Constitución</strong>, <strong>Independencia</strong> y <strong>Municipal</strong>— que forman un anillo de soportales continuo alrededor del perímetro. Se recorren a pie por debajo de la arcada, y cada frente se distingue por lo que tiene detrás: la fachada de la Catedral, edificios institucionales o el comercio cotidiano. Esta es una guía para usar mientras caminas la plaza, no un análisis de su construcción.</p>
+      </div>
+      <div class="page-copy">
+        <p>Alrededor de la <strong>{site.attractionFullName}</strong> corren <strong>cuatro portales</strong> que forman un anillo de soportales: <strong>Unión</strong>, <strong>Constitución</strong>, <strong>Independencia</strong> y <strong>Municipal</strong>. Recorrerlos en orden es la mejor manera de entender la plaza, porque cada frente tiene su propio carácter y, juntos, cierran el conjunto.</p>
+
+        <p>El mejor plan es caminar el perímetro completo sin prisa. Los portales son espacios públicos: se pueden recorrer a pie por debajo de la arcada, mirando a la plaza desde dentro del pasaje cubierto.</p>
+
+        <div class="guide-grid" style="margin:34px 0">
+          {['Unión', 'Constitución', 'Independencia', 'Municipal'].map((nombre) => (
+            <article class="guide-card">
+              <p class="section-kicker" style="margin:0">Portal</p>
+              <h3>{nombre}</h3>
+              <p>Uno de los cuatro frentes que cierran la plaza. Arcos de piedra abajo y balcones de madera arriba, con el mismo esquema constructivo del resto del conjunto.</p>
+            </article>
+          ))}
+        </div>
+
+        <h2>Cómo recorrerlos</h2>
+        <p>La forma más sencilla de hacer la visita es elegir un portal de referencia y girar alrededor de la plaza. Si empiezas por el que tenga la Catedral como fondo, verás cómo el monumento a Sucre cambia de posición respecto a cada frente: es la señal de que estás avanzando.</p>
+        <p>Cada portal tiene su propia actividad. Bajo las arcadas hay comercios, cafés y oficinas, y el movimiento cambia según la hora. Por eso conviene recorrerlos en dos tramos: uno por la mañana, cuando el pasaje cubierto está más tranquilo, y otro al atardecer, cuando la luz entra de lado entre los arcos.</p>
+
+        <h2>Qué define a cada frente</h2>
+        <p>En términos arquitectónicos, los cuatro comparten el mismo sistema: <strong>arcada de piedra</strong> al nivel de la calle, <strong>balcones de madera</strong> en los pisos altos y <strong>cubierta de teja de arcilla</strong> como remate. El conjunto suma alrededor de <strong>111 arcos y columnas</strong> según el inventario turístico de MINCETUR.</p>
+        <p>Más allá de ese esquema común, cada portal se distingue por lo que hay detrás de la arcada: en un caso una gran fachada religiosa, en otro edificaciones institucionales, en otros el comercio cotidiano. Esas diferencias son las que hacen que la vuelta completa merezca la pena.</p>
+
+        <h2>Antes de empezar: cómo saber en qué lado estás</h2>
+        <p>La forma más rápida de orientarte es pararte junto al <strong>monumento a Sucre</strong>, en el centro, y dar una vuelta lenta mirando los cuatro frentes. Todos son pasajes cubiertos con arcos de piedra abajo y balcones de madera encima; lo que los distingue es el edificio que tienen detrás. La <strong>Basílica Catedral</strong>, a unos <strong>50 m a pie</strong> según MINCETUR, es la referencia más cercana y sirve para fijar una primera dirección.</p>
+        <p>No hace falta memorizar los nombres de antemano: basta con recorrer el perímetro una vez y quedarte con la fachada o el edificio que acompaña a cada tramo. A partir de ahí, situarte en la plaza es inmediato.</p>
+
+        <table class="fact-table">
+          <caption>Referencias prácticas para orientarte</caption>
+          <tbody>
+            <tr><th>El monumento a Sucre</th><td>En el centro de la plaza. Úsalo como punto cero para elegir la dirección y para volver a ubicarte.</td></tr>
+            <tr><th>Basílica Catedral</th><td>A unos <strong>50 m a pie</strong> (MINCETUR). Es la referencia más cercana al conjunto.</td></tr>
+            <tr><th>Templo de Santo Domingo</th><td>A unos <strong>100 m a pie</strong> (MINCETUR).</td></tr>
+            <tr><th>Arco del Triunfo</th><td>A unos <strong>284 m a pie</strong> (MINCETUR).</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Qué ofrece el pasaje cubierto al caminar</h2>
+        <p>La razón práctica para recorrer los portales por dentro, y no por el borde abierto de la plaza, es que la arcada de piedra forma un pasaje cubierto. A unos <strong>2.750 m sobre el nivel del mar</strong>, el sol del mediodía es fuerte y bajo los arcos quedas a la sombra; cuando cae la lluvia, el mismo pasaje te resguarda. Caminar por dentro permite, además, ver la plaza desde la penumbra de los vanos, con el monumento y los jardines recortados a la luz.</p>
+
+        <h2>Pausas y descanso</h2>
+        <p>La plaza es un espacio público de uso cotidiano y los portales concentran la actividad comercial y de servicios de su perímetro. Si necesitas detenerte, el propio pasaje cubierto ofrece sombra para hacer una pausa. El mobiliario concreto y las zonas de descanso no están verificados en este proyecto, así que conviene resolverlos sobre el terreno una vez allí.</p>
+
+        <h2>Plan de una vuelta completa</h2>
+        <ul class="checklist">
+          <li>Empieza junto al monumento a Sucre, en el centro, para tomar referencias.</li>
+          <li>Elige un portal y camina por debajo de la arcada, no por el borde exterior.</li>
+          <li>En cada esquina cambia de frente y mira hacia atrás: la plaza se ve distinta desde cada lado.</li>
+          <li>Fíjate en la fachada o el edificio que acompaña a cada tramo, para reconocerlo después.</li>
+          <li>Completa la vuelta y usa el monumento como punto de regreso.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Sobre los nombres:</strong> los nombres Unión, Constitución, Independencia y Municipal son una descripción recurrente del conjunto, y la forma habitual de referirse a cada frente en el habla local. Los detalles concretos de cada arco, sus denominaciones individuales y su historia por tramos conviene confirmarlos con fuentes locales —MINCETUR, la Municipalidad Provincial de Huamanga— antes de citarlos por escrito.</p>
+        </div>
+
+        <p class="verify-note">Esta página describe los portales como partes del espacio público y no confirma el nombre, la fecha ni la autoría de cada arco en particular. Para esos datos, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Del aeropuerto de Ayacucho a la Plaza Mayor: cómo llegar';
+const description = 'Traslado desde el Aeropuerto Coronel FAP Alfredo Mendívil Duarte hasta la Plaza Mayor de Ayacucho: distancia, referencia de tiempo y qué esperar al llegar.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/desde-aeropuerto/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Transporte desde el aeropuerto"
+  heading="Cómo llegar desde el aeropuerto de Ayacucho"
+  lead="El Aeropuerto Coronel FAP Alfredo Mendívil Duarte está a unos 2,8 km de la plaza. La referencia de MINCETUR es de 7 minutos en taxi, un valor orientativo. Aquí explicamos el traslado, el último tramo a pie y por qué conviene tomarse las primeras horas con calma por la altitud."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Desde el aeropuerto' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['como-llegar', 'desde-terminal-terrestre', 'ubicacion-mapa', 'horarios-visita']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El Aeropuerto Coronel FAP Alfredo Mendívil Duarte está a unos 2,8 km de la Plaza Mayor de Ayacucho, con una referencia de 7 minutos en taxi según el inventario de MINCETUR. El último tramo se hace a pie por las calles del centro histórico. La ciudad se encuentra a unos 2.750 m de altitud, por lo que conviene adaptarse con calma en las primeras horas.</p>
+      </div>
+      <div class="page-copy">
+        <p>El Aeropuerto Coronel FAP Alfredo Mendívil Duarte es la puerta de entrada por aire a {site.cityName}. Desde allí hasta la <strong>{site.attractionFullName}</strong> hay una distancia corta que, en condiciones favorables, se cubre en pocos minutos. Estas son las referencias que sí están documentadas y qué esperar al llegar.</p>
+
+        <table class="fact-table">
+          <caption>Referencia del traslado</caption>
+          <tbody>
+            <tr><th>Aeropuerto</th><td>Coronel FAP Alfredo Mendívil Duarte</td></tr>
+            <tr><th>Distancia a la plaza</th><td>Aprox. <strong>2,8 km</strong> · fuente: MINCETUR</td></tr>
+            <tr><th>Tiempo de referencia</th><td>Aprox. <strong>7 min</strong> en taxi · valor orientativo, no garantizado</td></tr>
+            <tr><th>Último tramo</th><td>A pie por calles del centro histórico</td></tr>
+          </tbody>
+        </table>
+
+        <h2>El aeropuerto</h2>
+        <p>El Aeropuerto Coronel FAP Alfredo Mendívil Duarte es el aeropuerto civil que sirve a {site.cityName}. Está a unos <strong>2,8 km</strong> de la plaza, según el inventario de MINCETUR. Es un aeropuerto de tamaño reducido, por lo que el trámite de salida suele ser rápido.</p>
+        <p>La distancia es corta, pero el tiempo real depende del tránsito en el momento. La referencia de <strong>7 minutos en taxi</strong> que cita MINCETUR es un valor orientativo calculado en condiciones favorables, no una duración garantizada.</p>
+
+        <h2>El traslado</h2>
+        <p>El taxi es el medio más habitual para cubrir el trayecto entre el aeropuerto y el centro. Antes de subir, acuerda el destino y el costo con el conductor o usa una aplicación si prefieres una referencia de precio previa.</p>
+        <p>No verificamos aquí tarifas concretas porque cambian con el operador y con el tiempo. Tampoco confirmamos la disponibilidad permanente de taxis en la puerta del aeropuerto: en horarios de vuelos poco frecuentes puede haber menos oferta.</p>
+
+        <h2>El último tramo a pie</h2>
+        <p>Como en casi todo el centro histórico, el último tramo se hace caminando. Las calles del perímetro de la plaza pueden tener restricciones vehiculares, sobre todo en horas de actividad cívica o durante celebraciones. Lo habitual es que el taxi te deje en una calle cercana y que camines los últimos metros hasta la plaza.</p>
+        <p>Una vez a pie, la plaza funciona como punto de orientación: identifica los cuatro portales —Unión, Constitución, Independencia y Municipal— o el monumento central a Sucre para situarte de inmediato.</p>
+
+        <h2>Altitud: adaptarse con calma</h2>
+        <p>{site.cityName} se encuentra a aproximadamente <strong>2.750 m sobre el nivel del mar</strong>. Si llegas desde una ciudad a baja altitud, conviene tomarse las primeras horas con calma: caminar despacio, hidratarse y evitar esfuerzo intenso enseguida.</p>
+        <p>Esta guía no ofrece consejos médicos. Si tienes una condición de salud relevante o viajas con personas que necesitan atención especial, consulta con un profesional antes del viaje. Lo que sí podemos decir es que la altitud afecta la percepción del sol —que es más intenso— y la temperatura —que cae con rapidez al atardecer—.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> la referencia de 2,8 km y 7 minutos proviene de MINCETUR y es orientativa. El tránsito, la hora del día y los eventos en el centro pueden cambiar el tiempo real. Calcula siempre margen adicional.</p>
+        </div>
+
+        <p class="verify-note">Los datos de distancia y tiempo se atribuyen al inventario de MINCETUR. No se verifican aquí tarifas de taxi, horarios de vuelos ni disponibilidad de transporte en el aeropuerto. Para condiciones actuales, consulta los canales del aeropuerto y los enlaces oficiales al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

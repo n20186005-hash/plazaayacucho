@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Cómo llegar a la Plaza de Armas de Ayacucho: guía práctica';
+const description = 'Cómo llegar a la Plaza Mayor de Ayacucho desde el aeropuerto, el terminal terrestre o el centro histórico, con distancias y referencias de tiempo de MINCETUR.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/como-llegar/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Transporte y acceso"
+  heading="Cómo llegar a la Plaza Mayor de Ayacucho"
+  lead="La plaza es el centro del casco histórico, así que el último tramo casi siempre se hace caminando. Estas son las referencias de distancia y tiempo que sí están documentadas, y las que conviene confirmar el mismo día."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Cómo llegar' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['desde-aeropuerto', 'desde-terminal-terrestre', 'ubicacion-mapa', 'ruta-a-pie']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho está en el centro histórico, a unos 2,8 km del Aeropuerto Coronel FAP Alfredo Mendívil Duarte (referencia de 7 minutos en taxi) y a 3,6 km del Terminal Terrestre Los Libertadores (referencia de 12 minutos), según el inventario de MINCETUR. El último tramo se hace siempre a pie por las calles del casco colonial. Los tiempos son orientativos y dependen del tránsito, la hora y los eventos del centro.</p>
+      </div>
+      <div class="page-copy">
+        <p>Llegar a la <strong>{site.attractionFullName}</strong> es, en la práctica, llegar al centro histórico de {site.cityName}. El aeropuerto y el terminal terrestre están fuera del casco urbano, y desde ambos el trayecto termina en calles donde conviene bajar del vehículo y caminar los últimos metros.</p>
+
+        <table class="fact-table">
+          <caption>Distancias de referencia</caption>
+          <tbody>
+            <tr><th>Aeropuerto Coronel FAP Alfredo Mendívil Duarte</th><td>Aprox. <strong>2,8 km</strong> · referencia de <strong>7 min</strong> en taxi. Fuente: inventario de MINCETUR.</td></tr>
+            <tr><th>Terminal Terrestre Los Libertadores</th><td>Aprox. <strong>3,6 km</strong> · referencia de <strong>12 min</strong> en taxi. Fuente: inventario de MINCETUR.</td></tr>
+            <tr><th>Dentro del centro histórico</th><td>Recorrido <strong>a pie</strong>. La plaza funciona como punto de orientación del casco urbano.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Desde el aeropuerto</h2>
+        <p>El Aeropuerto Coronel FAP Alfredo Mendívil Duarte está a unos <strong>2,8 km</strong> de la plaza. La ficha de MINCETUR usa una referencia de <strong>7 minutos en taxi</strong>; es un valor orientativo calculado en condiciones favorables de tránsito, no una duración garantizada.</p>
+        <p>En la práctica, el tiempo real depende de la hora y del movimiento en el centro. Si llegas en hora punta o en fechas de celebración, calcula margen adicional.</p>
+
+        <h2>Desde el terminal terrestre</h2>
+        <p>El Terminal Terrestre Los Libertadores queda a unos <strong>3,6 km</strong>, con referencia de <strong>12 minutos en taxi</strong> según MINCETUR. Los buses interprovinciales suelen llegar en horarios muy variados, incluida la madrugada, así que conviene tener resuelto el traslado antes de bajar del bus.</p>
+
+        <h2>Si ya estás en el centro histórico</h2>
+        <p>La mejor decisión es caminar. La plaza es el punto de referencia natural del casco histórico: desde ahí se llega a la Catedral, a los portales con cafés y restaurantes, y a calles comerciales en pocos minutos.</p>
+        <p>Durante desfiles, procesiones o montajes, algunas calles del perímetro pueden tener control vehicular. En esos casos el peatón sigue teniendo paso, pero el tránsito se reorganiza.</p>
+
+        <h2>Taxi y movilidad</h2>
+        <p>En {site.cityName} el taxi es el medio más habitual para cubrir la distancia entre el aeropuerto o el terminal y el centro. Antes de subir, acuerda el destino y el costo, o usa una aplicación si prefieres una referencia de precio previa. Aquí no verificamos tarifas concretas porque cambian con el tiempo y con el operador.</p>
+
+        <h2>Estacionamiento</h2>
+        <p>MINCETUR registra servicios de estacionamiento <strong>en la ciudad</strong>, no una cochera garantizada junto a la plaza. No se ha verificado aquí un establecimiento concreto, sus tarifas ni su disponibilidad. Si viajas en auto propio, confirma dónde dejar el vehículo y revisa las restricciones de circulación del centro antes de entrar.</p>
+
+        <h2>Qué verificar antes de desplazarte</h2>
+        <ul class="checklist">
+          <li>Confirma el horario de tu vuelo o bus y calcula margen para el último tramo a pie.</li>
+          <li>Si llegas en Semana Santa u otra celebración, espera restricciones vehiculares en el centro.</li>
+          <li>Acuerda el costo del taxi antes de subir, o usa una aplicación para tener una referencia previa.</li>
+          <li>Si viajas en auto propio, verifica dónde puedes estacionar antes de entrar al casco histórico.</li>
+          <li>Ten a mano el nombre y la dirección de tu alojamiento para indicar al conductor.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> los tiempos de MINCETUR y los de la ficha de Google Maps son referencias, no compromisos. Tránsito, obras, eventos y clima pueden cambiar el trayecto. Trata cualquier duración como una estimación.</p>
+        </div>
+
+        <p class="verify-note">Esta página describe el acceso al espacio público con datos atribuidos a MINCETUR y a la ficha compartida de Google Maps. No confirma tarifas de taxi, horarios de transporte público ni disponibilidad de estacionamiento. Para condiciones actuales, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Preguntas frecuentes sobre la Plaza Mayor de Ayacucho';
+const description = 'Respuestas breves a las dudas más comunes sobre la Plaza Mayor de Ayacucho: acceso, horarios, nombres, transporte, cercanía y fuentes.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/preguntas-frecuentes/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+
+const faqItems = [
+  {
+    q: '¿La Plaza Mayor de Ayacucho tiene entrada gratuita?',
+    a: 'Sí. El acceso al espacio público de la plaza es libre, según el inventario de MINCETUR. Lo que puede tener costo aparte es la entrada a recintos cerrados del entorno, como la Catedral, los templos o los museos, cuyos horarios y tarifas deben confirmarse por separado.'
+  },
+  {
+    q: '¿Cuál es el horario de visita?',
+    a: 'MINCETUR recomienda una franja de visita de 06:00 a 21:00 durante todo el año. Es una recomendación, no un cierre físico del espacio público: la plaza es un espacio abierto. Los recintos cerrados del entorno tienen sus propios horarios, distintos de la plaza.'
+  },
+  {
+    q: '¿Plaza Mayor, Plaza de Armas o Plaza Mayor de Huamanga?',
+    a: 'Son tres nombres para un mismo espacio. "Plaza Mayor de Huamanga" es el nombre histórico, porque la ciudad se llamó Huamanga antes de denominarse Ayacucho. "Plaza de Armas" es la denominación tradicional del espacio principal en el urbanismo hispanoamericano. "Plaza Mayor de Ayacucho" es el nombre que usamos en esta guía.'
+  },
+  {
+    q: '¿Cómo se llega a la plaza desde el aeropuerto?',
+    a: 'El Aeropuerto Coronel FAP Alfredo Mendívil Duarte está a unos 2,8 km de la plaza, con una referencia de 7 minutos en taxi según MINCETUR. Es un tiempo orientativo, no garantizado: el tránsito y las condiciones del día pueden cambiar el trayecto.'
+  },
+  {
+    q: '¿Y desde el terminal terrestre?',
+    a: 'El Terminal Terrestre Los Libertadores está a unos 3,6 km, con una referencia de 12 minutos en taxi según MINCETUR. Como en el caso del aeropuerto, es un tiempo orientativo. Conviene acordar el costo del taxi antes de subir.'
+  },
+  {
+    q: '¿Qué hay cerca de la plaza?',
+    a: 'La Basílica Catedral de Ayacucho está a unos 50 m a pie, el Templo de Santo Domingo a unos 100 m a pie y el Arco del Triunfo a unos 284 m a pie, todas según MINCETUR. Las excursiones regionales como Wari o Quinua están fuera del centro histórico y requieren transporte aparte.'
+  },
+  {
+    q: '¿La plaza es accesible para personas con movilidad reducida?',
+    a: 'Este proyecto no ha verificado las condiciones de accesibilidad de la plaza: no confirma rampas, baños adaptados, pavimento táctil ni acceso sin escalones. Conviene consultar a la Municipalidad Provincial de Huamanga y a MINCETUR antes de desplazarse, y preguntar directamente a los recintos que se quieran visitar.'
+  },
+  {
+    q: '¿Se puede fotografiar la plaza?',
+    a: 'Sí. La plaza es un espacio público y la fotografía es una actividad habitual. Conviene respetar a las personas que están en el espacio, especialmente durante celebraciones o actos cívicos, y tener cuidado con el equipo en las horas de mayor afluencia.'
+  },
+  {
+    q: '¿Qué pasa si llueve durante la visita?',
+    a: 'Los cuatro portales ofrecen un perímetro cubierto que sirve de refugio. Con lluvia ligera se puede recorrer la plaza bajo los portales. Si la lluvia es fuerte, conviene dividir la visita en bloques y buscar alternativas en interiores, cuyos horarios deben confirmarse antes. Revisa el pronóstico antes de salir.'
+  },
+  {
+    q: '¿Hace frío en Ayacucho?',
+    a: 'La ciudad está a aproximadamente 2.750 m s. n. m. El sol del mediodía es intenso, pero la temperatura baja con rapidez por la tarde y la noche. Conviene llevar protección solar para el día y una capa de abrigo para la tarde, sin importar la época del año.'
+  },
+  {
+    q: '¿Esta guía es oficial?',
+    a: 'No. Esta guía es independiente, sin fines de lucro y no oficial. No representa a la Municipalidad Provincial de Huamanga, a MINCETUR, a PROMPERÚ, a IPERÚ ni a ninguna entidad pública. Los datos se atribuyen a fuentes públicas, enlazadas al final de cada página.'
+  },
+  {
+    q: '¿Recomienda esta guía restaurantes o talleres concretos?',
+    a: 'No. Esta guía no nombra, enlaza ni recomienda restaurantes, cafeterías, talleres, hoteles ni tiendas concretos. Describe zonas, tipos de cocina regional y tradiciones artesanales de forma general. Las decisiones sobre dónde comer o qué comprar son del visitante.'
+  },
+  {
+    q: '¿Cuántos portales tiene la Plaza Mayor de Ayacucho?',
+    a: 'Cuatro: Unión, Constitución, Independencia y Municipal, con alrededor de 111 arcos y columnas de piedra según el inventario de MINCETUR. Los portales tienen arcadas de piedra en el nivel inferior, balcones de madera en los pisos altos y cubiertas de teja de arcilla.'
+  },
+  {
+    q: '¿Qué representa el monumento central de la plaza?',
+    a: 'El monumento ecuestre a Antonio José de Sucre, inaugurado en 1924 según MINCETUR. Es la pieza central del conjunto y un buen punto de encuentro para orientarse dentro de la plaza.'
+  },
+  {
+    q: '¿En qué dirección está la Catedral desde la plaza?',
+    a: 'La Basílica Catedral de Ayacucho está a unos 50 m a pie desde la plaza, según MINCETUR. Su fachada domina uno de los frentes del conjunto y se ve desde el perímetro sin necesidad de entrar al recinto.'
+  },
+  {
+    q: '¿La plaza está cerca del Arco del Triunfo?',
+    a: 'Sí. El Arco del Triunfo está a unos 284 m a pie desde la plaza, según MINCETUR. Es un hito urbano del centro histórico que se integra bien en un recorrido a pie desde la plaza.'
+  }
+];
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  "@type": 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    "@type": 'Question',
+    name: item.q,
+    acceptedAnswer: { "@type": 'Answer', text: item.a }
+  }))
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Preguntas frecuentes"
+  heading="Preguntas frecuentes sobre la plaza"
+  lead="Respuestas breves a las dudas más habituales sobre la Plaza Mayor de Ayacucho: acceso, horarios, nombres del espacio, transporte, lugares cercanos, accesibilidad y la independencia de esta guía."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'FAQ' }]}
+  jsonLd={[articleLd, faqLd]}
+  heroImage={images.plaza}
+  related={['como-llegar', 'horarios-visita', 'entrada-gratis', 'lugares-cerca']}
+>
+  <section class="section faq-section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>La Plaza Mayor de Ayacucho tiene acceso libre, franja de visita recomendada de 06:00 a 21:00 (MINCETUR) y cuatro portales con alrededor de 111 arcos de piedra. La Catedral está a unos 50 m a pie, el Templo de Santo Domingo a unos 100 m y el Arco del Triunfo a unos 284 m. Esta guía responde aquí las preguntas más habituales antes de desplazarse, con datos atribuidos a fuentes públicas.</p>
+      </div>
+      <div class="page-copy">
+        <h2>Las preguntas más habituales</h2>
+        <p>Estas son las preguntas que con más frecuencia se hacen los visitantes antes de desplazarse a la <strong>{site.attractionFullName}</strong>. Las respuestas se basan en datos atribuidos a fuentes públicas —principalmente el inventario de MINCETUR— y dejan claro qué está verificado y qué conviene confirmar por separado.</p>
+      </div>
+
+      <div class="faq-list">
+        {faqItems.map((item) => (
+          <details>
+            <summary><span>{item.q}</span><b>+</b></summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="page-copy">
+        <h2>Sobre las fuentes de estas respuestas</h2>
+        <p class="verify-note">Las respuestas se basan en datos del inventario turístico de MINCETUR (acceso libre, franja recomendada 06:00–21:00, distancias a la Catedral, Santo Domingo y Arco del Triunfo) y en la declaración de la Semana Santa como Patrimonio Cultural de la Nación por el Ministerio de Cultura. No confirman horarios de recintos cerrados, tarifas de transporte ni condiciones de accesibilidad. Para información actual, consulta los canales oficiales enlazados al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Horarios y mejor momento para visitar la Plaza Mayor de Ayacucho';
+const description = 'Franja de visita recomendada por MINCETUR, cómo se comportan la luz y el ambiente a lo largo del día, y qué horarios pertenecen a otros recintos.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/horarios-visita/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Horarios y franja de visita"
+  heading="Horarios y mejor momento para visitar la plaza"
+  lead="La plaza es un espacio público sin cierre físico documentado. MINCETUR recomienda una franja de 06:00 a 21:00 todo el año. Aquí explicamos qué significa esa recomendación, cómo cambia la luz a lo largo del día y qué horarios pertenecen a otros recintos, no a la plaza."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Horarios de visita' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['entrada-gratis', 'que-ver', 'plaza-de-armas-de-noche', 'plaza-mayor-fotografia']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>MINCETUR recomienda visitar la Plaza Mayor de Ayacucho entre las 06:00 y las 21:00 durante todo el año. Esa franja no implica un cierre físico del espacio público: es una recomendación turística para aprovechar mejor la luz y el ambiente. Los horarios de templos y museos vecinos son independientes y deben confirmarse por separado.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>{site.attractionFullName}</strong> es un espacio público abierto. MINCETUR, en su inventario de recursos turísticos, recomienda una franja de visita de <strong>06:00 a 21:00</strong> durante todo el año. Esa recomendación no implica un cierre físico del espacio: es una ventana orientativa para aprovechar mejor la luz y el ambiente.</p>
+
+        <table class="fact-table">
+          <caption>Franja de visita recomendada</caption>
+          <tbody>
+            <tr><th>Recomendación de MINCETUR</th><td>De <strong>06:00</strong> a <strong>21:00</strong>, todo el año</td></tr>
+            <tr><th>Naturaleza</th><td>Recomendación turística, no un cierre del espacio público</td></tr>
+            <tr><th>Horarios de otros recintos</th><td>Cada templo, museo u oficina tiene su propio horario; no coincide con el de la plaza</td></tr>
+          </tbody>
+        </table>
+
+        <h2>La franja recomendada</h2>
+        <p>La ventana de 06:00 a 21:00 cubre prácticamente todo el día útil en {site.cityName}. MINCETUR la sugiere porque dentro de esa franja se concentra la actividad del centro histórico y se disfruta mejor el conjunto: los portales están en uso, hay movimiento de peatones y la luz permite apreciar las fachadas y el monumento.</p>
+        <p>Que la recomendación llegue hasta las 21:00 no significa que la plaza se vacíe a esa hora. El espacio público no tiene un horario de cierre verificable en las fuentes que manejamos. Lo que sí cambia a partir de esa hora es la intensidad de uso y, sobre todo, la luz natural.</p>
+
+        <h2>La luz a lo largo del día</h2>
+        <p>La ciudad se encuentra en un valle andino a alta altitud —aproximadamente 2.750 m sobre el nivel del mar—. Eso tiene consecuencias directas en cómo se percibe la plaza según la hora:</p>
+        <ul class="checklist">
+          <li><strong>Mañana temprana (06:00–10:00):</strong> luz suave, temperaturas frescas y menos afluencia. Buen momento para fotografiar los portales y la fachada de la Catedral sin contraluz.</li>
+          <li><strong>Mediodía (11:00–15:00):</strong> el sol es intenso por la altitud. Las fachadas se ven planas pero el color de la piedra resalta. Es la hora de más movimiento en los portales.</li>
+          <li><strong>Tarde (15:00–18:00):</strong> la luz se inclina y realza los volúmenes de arcos y balcones. La temperatura comienza a descender.</li>
+          <li><strong>Anochecer (18:00–21:00):</strong> la luz artificial enciende las fachadas. El ambiente cambia y la plaza adquiere un carácter distinto, más orientado al paseo nocturno.</li>
+        </ul>
+        <p>Por la altitud, la temperatura puede caer con rapidez después del atardecer. Lleva una capa adicional si piensas quedarte en la franja de la noche.</p>
+
+        <h2>Horarios que no pertenecen a la plaza</h2>
+        <p>Es importante separar dos cosas. El espacio público de la plaza tiene la franja recomendada de MINCETUR. Pero alrededor hay recintos con horarios propios: la Basílica Catedral, el Templo de Santo Domingo, museos y oficinas. Cada uno abre y cierra según sus propias reglas, que no siempre coinciden entre sí ni con la franja de la plaza.</p>
+        <p>La ficha de Google Maps también muestra un horario, pero ese dato pertenece al listado de terceros y puede referirse a una interpretación del lugar, no a un cierre real del espacio público. No lo trates como un horario oficial.</p>
+        <p>Si tu visita incluye entrar a la Catedral o a un museo, confirma el horario de cada recinto el mismo día a través de sus canales propios. No asumas que porque la plaza está abierta, los recintos también lo estén.</p>
+
+        <div class="callout">
+          <p><strong>En resumen:</strong> la franja 06:00–21:00 es una recomendación de MINCETUR para aprovechar la visita. El espacio público no tiene un cierre físico documentado. Los horarios de templos y museos son independientes y deben confirmarse por separado.</p>
+        </div>
+
+        <p class="verify-note">Los horarios citados provienen del inventario de MINCETUR. No se han verificado aquí los horarios internos de la Catedral, de otros templos ni de museos del centro. Para condiciones actuales, consulta los canales de cada recinto y los enlaces oficiales al final de la página.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

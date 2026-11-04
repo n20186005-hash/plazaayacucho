@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, images, guides, guideGroups } from '../../data/site.mjs';
+
+const title = 'Guías de la Plaza Mayor de Ayacucho: todas las páginas';
+const description = 'Índice de todas las guías sobre la Plaza Mayor de Ayacucho: cómo llegar, qué ver, historia, patrimonio, recorridos por duración y preguntas frecuentes.';
+
+const collectionLd = {
+  '@context': 'https://schema.org',
+  "@type": 'CollectionPage',
+  name: title,
+  description,
+  inLanguage: site.lang,
+  url: `${site.origin}/guias/`,
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  hasPart: guides.map((guide) => ({
+    "@type": 'WebPage',
+    name: guide.h1,
+    url: `${site.origin}/${guide.slug}/`
+  }))
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Índice de contenidos"
+  heading="Guías de la Plaza Mayor de Ayacucho"
+  lead={`Todas las guías de este sitio, agrupadas por tema. Cada página trabaja sobre un mismo lugar —${site.attractionFullName}— y atribuye sus datos a fuentes públicas.`}
+  breadcrumbs={[{ label: 'Guías' }]}
+  jsonLd={[collectionLd]}
+  heroImage={images.plaza}
+  compactHero
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>Este sitio reúne <strong>{guides.length} guías</strong> sobre un único lugar: la {site.attractionFullName}, también llamada Plaza de Armas de Ayacucho o {site.attractionLocalName}, en {site.cityName}, {site.countryName}. El acceso al espacio público es libre y MINCETUR recomienda visitarlo entre las 06:00 y las 21:00. Abajo están todas las guías agrupadas por tema, para que vayas directo a lo que necesitas.</p>
+      </div>
+
+      <div class="page-copy">
+        <p>Esta guía no es un portal turístico de la región: se concentra en un solo espacio, la <strong>{site.attractionFullName}</strong>, y lo mira desde todos los ángulos útiles para un visitante. Las páginas están separadas por tema para que puedas ir directo a lo que necesitas, sin leerlo todo.</p>
+        <p>Son <strong>{guides.length} guías</strong> agrupadas en tres bloques: lo práctico para planificar, el contexto histórico y patrimonial, y los recorridos según el tiempo o las necesidades de cada viajero.</p>
+      </div>
+
+      {guideGroups.map((group) => (
+        <div class="hub-group">
+          <p class="hub-group-title">{group.label}</p>
+          <p>{group.blurb}</p>
+          <div class="guide-grid">
+            {guides.filter((guide) => guide.group === group.id).map((guide) => (
+              <a class="guide-card" href={`/${guide.slug}/`}>
+                <h3>{guide.h1}</h3>
+                <p>{guide.summary}</p>
+                <span class="guide-more">Leer guía →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="page-copy">
+        <p class="verify-note">Todas las guías son de carácter informativo e independiente, sin fines de lucro y no oficiales. No representan a la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni a ninguna entidad pública. Los datos se atribuyen a las fuentes citadas en cada página; las condiciones actuales deben confirmarse en los canales oficiales.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

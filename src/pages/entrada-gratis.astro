@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = '¿La Plaza de Armas de Ayacucho es gratis? Entrada y costos';
+const description = 'El acceso al espacio público de la Plaza Mayor de Ayacucho es libre. Qué puede tener costo aparte: templos, museos y visitas guiadas.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/entrada-gratis/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Costo de la visita"
+  heading="¿La Plaza Mayor de Ayacucho es gratis?"
+  lead="Sí. El acceso al espacio público de la plaza es libre, según MINCETUR. No hay taquilla ni control de entrada. Lo que puede tener costo aparte son los recintos religiosos, los museos y las visitas guiadas, cuyas tarifas no se verifican en esta guía."
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Entrada gratis' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['horarios-visita', 'que-ver', 'catedral-ayacucho', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El ingreso al espacio público de la Plaza Mayor de Ayacucho es libre y no tiene tarifa, según el inventario de recursos turísticos de MINCETUR. La plaza no cuenta con taquilla ni control de acceso: se puede pasear por los cuatro portales y contemplar el monumento a Sucre sin pagar. Los posibles costos corresponden a templos, museos y servicios de terceros, cuyas tarifas deben confirmarse en cada recinto.</p>
+      </div>
+      <div class="page-copy">
+        <p>Sí. El acceso al espacio público de la <strong>{site.attractionFullName}</strong> es <strong>libre</strong>. MINCETUR, en su inventario de recursos turísticos, registra el acceso como libre. No hay taquilla, control de entrada ni tarifa para estar en la plaza, pasear por los portales o contemplar el monumento.</p>
+
+        <table class="fact-table">
+          <caption>Acceso y costos</caption>
+          <tbody>
+            <tr><th>Espacio público de la plaza</th><td><strong>Acceso libre</strong> · sin tarifa · fuente: MINCETUR</td></tr>
+            <tr><th>Templos y recintos religiosos</th><td>Tienen sus propias condiciones; pueden gestionar aportes o restringir el acceso en horarios de culto</td></tr>
+            <tr><th>Museos y espacios culturales</th><td>Cada uno define su política de admisión y tarifas; no se verifican aquí</td></tr>
+            <tr><th>Visitas guiadas</th><td>Servicio opcional prestado por terceros; el costo depende del operador</td></tr>
+            <tr><th>Excursiones regionales</th><td>Fuera del centro histórico; requieren transporte aparte</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Acceso libre al espacio público</h2>
+        <p>La plaza es, por definición, un espacio público. Estar en ella, caminar por los portales, sentarse en los bancos y contemplar el monumento a Sucre o la fachada de la Catedral desde fuera no tiene costo. No necesitas entradas, reservas ni permisos para visitarla dentro de la franja recomendada por MINCETUR.</p>
+        <p>Esa gratuidad se aplica al espacio abierto. Lo que pueda ocurrir dentro de los edificios que rodean la plaza es otra cosa, con reglas distintas.</p>
+
+        <h2>Qué puede tener costo aparte</h2>
+        <p>Alrededor de la plaza hay recintos que no forman parte del espacio público abierto y que pueden gestionar su acceso de forma independiente:</p>
+        <ul class="checklist">
+          <li><strong>Templos:</strong> la Basílica Catedral y otros templos del centro pueden pedir un aporte, restringir el acceso durante oficios religiosos o tener horarios de visita distintos del culto.</li>
+          <li><strong>Museos:</strong> los espacios museísticos del centro histórico definen sus propias tarifas y horarios. No se verifican aquí precios concretos.</li>
+          <li><strong>Visitas guiadas:</strong> algunos guías y operadores ofrecen recorridos por la plaza y el centro histórico. Es un servicio opcional y su costo depende del prestador.</li>
+          <li><strong>Excursiones regionales:</strong> visitas al complejo arqueológico de Wari o al pueblo de Quinua están fuera del centro histórico y requieren transporte separado. No son parte de la plaza.</li>
+        </ul>
+
+        <h2>No verificamos precios</h2>
+        <p>Esta guía no publica tarifas de templos, museos ni operadores. Los precios cambian con el tiempo, varían entre instituciones y a veces dependen de la temporada o de eventos como la Semana Santa. Antes de planificar una visita a un recinto específico, confirma su costo actual en sus propios canales.</p>
+        <p>Tampoco confirmamos si los templos del centro cobran un aporte voluntario o una entrada fija: esa información corresponde a cada institución religiosa y puede cambiar.</p>
+
+        <h2>La plaza durante eventos y celebraciones</h2>
+        <p>El carácter gratuito del espacio público se mantiene durante todo el año, incluida la Semana Santa de Ayacucho, declarada Patrimonio Cultural de la Nación por el Ministerio de Cultura. En esas fechas, las procesiones cruzan el centro histórico y la plaza se llena de visitantes y residentes. El acceso sigue siendo libre, pero el uso del espacio cambia: hay mayor afluencia, controles de tránsito y, en algunos momentos, áreas restringidas por el desarrollo de los actos religiosos.</p>
+        <p>Lo mismo ocurre en carnavales, actos institucionales y celebraciones cívicas a lo largo del año. La plaza no cobra entrada en ninguno de esos casos, pero conviene consultar el programa de actividades si quieres evitar aglomeraciones o, al contrario, presenciar alguna celebración.</p>
+
+        <div class="callout">
+          <p><strong>En resumen:</strong> estar en la plaza es gratis. Entrar a templos, museos o contratar una visita guiada son decisiones aparte, con costos que no están verificados en esta guía y que debes confirmar directamente.</p>
+        </div>
+
+        <p class="verify-note">La afirmación de que el acceso al espacio público es libre se atribuye al inventario de MINCETUR. Cualquier referencia a costos de templos, museos o servicios de terceros es general y no verifica tarifas concretas. Consulta los canales oficiales enlazados al final de la página para información actualizada.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
