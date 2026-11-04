@@ -8,13 +8,29 @@ const {
   kicker = site.attractionFullName,
   heading,
   lead,
+  tagline,
+  heroMeta = [],
   breadcrumbs = [],
   jsonLd = [],
   heroImage = images.plaza,
   related = [],
   compactHero = false,
   updatedNote = 'Contenido de referencia elaborado a partir de fuentes públicas citadas al final de esta página. No es información oficial.'
-} = Astro.props;
+} = Astro.props as {
+  title: string;
+  description: string;
+  kicker?: string;
+  heading: string;
+  lead?: string;
+  tagline?: string;
+  heroMeta?: Array<{ text: string; href?: string }>;
+  breadcrumbs?: Array<{ label: string; href?: string }>;
+  jsonLd?: Array<Record<string, unknown>>;
+  heroImage?: { src: string; alt: string };
+  related?: string[];
+  compactHero?: boolean;
+  updatedNote?: string;
+};
 
 const canonical = new URL(Astro.url.pathname, site.origin).toString();
 
@@ -118,6 +134,18 @@ const relatedGuides = related
           <p class="hero-kicker">{kicker}</p>
           <h1>{heading}</h1>
           {lead && <p class="page-lead">{lead}</p>}
+          {tagline && <p class="page-tagline">{tagline}</p>}
+          {heroMeta.length > 0 && (
+            <ul class="hero-meta">
+              {heroMeta.map((item) => (
+                <li>
+                  {item.href
+                    ? <a href={item.href} target="_blank" rel="noreferrer">{item.text}</a>
+                    : <span>{item.text}</span>}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
@@ -182,6 +210,11 @@ const relatedGuides = related
         <div>
           <strong>Privacidad</strong>
           <p>Google Analytics se carga únicamente si aceptas analítica. La elección solo dura en esta página. Google Maps conecta con Google por separado; el alojamiento puede añadir medición de rendimiento de Cloudflare independiente de esta elección.</p>
+          <p class="footer-legal">
+            <a href="/politica-de-privacidad/">Política de privacidad</a><br />
+            <a href="/terminos-de-servicio/">Términos de servicio</a><br />
+            <a href="/configuracion-de-cookies/">Configuración de cookies</a>
+          </p>
           <button id="cookie-settings" class="footer-button" type="button">Configurar analítica</button>
         </div>
       </div>

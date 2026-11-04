@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Semana Santa de Ayacucho: qué es y qué implica visitar la plaza';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Celebraciones"
   heading="Semana Santa de Ayacucho"
   lead="La Semana Santa es la celebración más conocida de la ciudad y transforma el uso de la plaza y del centro histórico. Esto es lo que está confirmado y lo que conviene tener en cuenta si viajas en esas fechas."
+  tagline="La celebración declarada Patrimonio Cultural de la Nación y su efecto sobre la plaza y el centro histórico"
+  heroMeta={[
+    { text: `Maps ${site.mapsRating}/5 · ${site.mapsReviews} reseñas de la plaza` },
+    { text: 'Fechas móviles entre marzo y abril' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Semana Santa de Ayacucho' }]}
   jsonLd={[articleLd]}
   heroImage={images.cathedral}
@@ -34,6 +41,100 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>La <strong>Semana Santa de Ayacucho</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura y es una de las celebraciones más conocidas del Perú. Las procesiones parten del área de la catedral y recorren el centro histórico, de modo que la plaza cambia de uso durante esos días, con mucha afluencia y controles de tránsito. Las fechas se mueven entre <strong>marzo y abril</strong> según el calendario litúrgico, así que conviene consultar el programa oficial antes de viajar.</p>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Semana Santa de Ayacucho</strong> transforma el uso de la {site.attractionFullName} y de todo el centro histórico durante unos días al año. Esta página reúne lo esencial para entender qué está confirmado, cómo cambia la ciudad en esas fechas y qué conviene tener en cuenta si viajas para coincidir con la celebración o para evitarla.</p>
+        <p>Más abajo encontrarás consejos de visita, una ficha rápida con los datos prácticos, un recorrido sugerido y puntos de referencia para la fotografía, además del análisis de la celebración que ya forma parte de esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo preparar la visita en Semana Santa</h2>
+      </div>
+      <ul class="checklist">
+        <li>Consulta el <strong>programa oficial del año</strong> antes de fijar fechas, alojamiento y transporte.</li>
+        <li>Reserva con antelación: son las fechas de mayor demanda en la ciudad.</li>
+        <li>Deja margen en los desplazamientos por los controles de tránsito y el paso de las procesiones.</li>
+        <li>Aloja cerca del centro si quieres seguir los actos sin depender del transporte.</li>
+        <li>Respeta el carácter religioso de las ceremonias y no interfieras en el paso de las procesiones.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a esta celebración</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Reconocimiento</span>
+          <h3>Patrimonio Cultural de la Nación</h3>
+          <p>El Ministerio de Cultura declaró la Semana Santa de Ayacucho Patrimonio Cultural de la Nación, el dato con mayor respaldo oficial sobre su relevancia.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Las procesiones</span>
+          <h3>Del área de la catedral al centro</h3>
+          <p>Las procesiones parten del área de la catedral y recorren el centro histórico, por las mismas calles que cualquier visitante atraviesa a pie.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Efecto en la plaza</span>
+          <h3>Un uso distinto del espacio</h3>
+          <p>La plaza, que el resto del año es un espacio cívico cotidiano, pasa a ser escenario de la celebración, con mayor afluencia y controles de tránsito.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre la celebración</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Semana Santa de Ayacucho</strong> es una celebración religiosa con una fuerte dimensión colectiva: no se limita a los actos litúrgicos, sino que involucra a toda la ciudad y reorganiza la vida del centro histórico durante varios días.</p>
+        <p>El dato con mayor respaldo oficial es la <strong>declaratoria como Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura. Esta guía no verifica fechas concretas, recorridos ni horarios de cada acto: esos detalles cambian cada año y deben consultarse en el programa oficial.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida de la Semana Santa</caption>
+        <tbody>
+          <tr><th>Qué es</th><td>Celebración religiosa del calendario litúrgico, una de las más conocidas del Perú.</td></tr>
+          <tr><th>Reconocimiento</th><td>Patrimonio Cultural de la Nación. Fuente: Ministerio de Cultura del Perú.</td></tr>
+          <tr><th>Cuándo</th><td>Fechas móviles entre marzo y abril, según el calendario litúrgico.</td></tr>
+          <tr><th>Dónde</th><td>Centro histórico de Ayacucho; las procesiones parten del área de la catedral.</td></tr>
+          <tr><th>Efecto en la plaza</th><td>Mayor afluencia, controles de tránsito y horarios especiales.</td></tr>
+          <tr><th>Acceso</th><td>La plaza es espacio público de ingreso libre; cada acto puede tener condiciones propias.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Fechas y actos</h3>
+          <p>No hay un horario único: las fechas <strong>se mueven entre marzo y abril</strong> y cada acto tiene su propia hora. Esta guía no verifica el programa de cada año; confírmalo en los canales oficiales y en el anuncio del Ministerio de Cultura.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>El acceso al espacio público de la plaza es <strong>libre</strong>. Esta guía no verifica si algún acto o recinto concreto tiene condiciones o costos propios: verifícalo antes de ir.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar y moverse</h3>
+          <p>La celebración se sigue caminando por el centro histórico. Durante las procesiones puede haber <strong>controles de tránsito</strong> y calles reorganizadas, así que conviene prever más tiempo para cada desplazamiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre la celebración</p>
+        <h2>La Semana Santa y el centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>La <strong>Semana Santa de Ayacucho</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> por el Ministerio de Cultura. Es una de las celebraciones más conocidas del Perú, y su desarrollo tiene un efecto directo sobre la {site.attractionFullName} y sobre todo el centro histórico: durante esos días, la plaza y las calles aledañas se llenan de actividad, procesiones y visitantes.</p>
@@ -75,4 +176,59 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la visita en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Consulta el programa del año.</strong> Antes de reservar, revisa las fechas y los actos oficiales para saber qué días coinciden con tu viaje.</li>
+        <li><strong>Llega con margen.</strong> Acércate al centro histórico con tiempo suficiente para los controles de tránsito y la mayor afluencia.</li>
+        <li><strong>Ubícate en la plaza.</strong> Toma los portales y el área de la catedral como referencia, porque las procesiones parten de ese entorno.</li>
+        <li><strong>Deja pasar las procesiones.</strong> Observa desde los laterales, sin interrumpir el recorrido, y respeta el desarrollo de los actos.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa y evita esfuerzos en la primera hora.</li>
+        <li>Las fechas son móviles (marzo–abril): confirma el calendario del año antes de citarlas por escrito.</li>
+        <li>Es una de las fechas de mayor demanda: reserva alojamiento y transporte con antelación.</li>
+        <li>Durante las procesiones puede haber controles de tránsito y horarios especiales en otros servicios.</li>
+        <li>Respeta el carácter religioso de los actos: son ceremonias con un profundo significado para la comunidad.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Ambiente</span>
+          <h3>El centro en movimiento</h3>
+          <p>Un plano general de la plaza durante los actos ayuda a mostrar cómo cambia el uso del espacio respecto al resto del año.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Procesiones</span>
+          <h3>Con respeto</h3>
+          <p>Si fotografías una procesión, hazlo desde los laterales, sin interponerte ni bloquear el recorrido, y respeta el momento que se está celebrando.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Fachadas y portales</h3>
+          <p>La luz de la mañana y del final de la tarde recorta mejor las fachadas de piedra; al anochecer cambian por completo la iluminación y el ambiente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="la Semana Santa de Ayacucho" />
 </BaseLayout>

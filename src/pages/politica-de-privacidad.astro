@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.mjs';
+
+const title = 'Política de privacidad | Plaza Mayor de Ayacucho';
+const description = 'Cómo trata los datos esta guía independiente de la Plaza Mayor de Ayacucho: sin cuentas ni formularios, con analítica opcional de Google Analytics 4 y contenidos de terceros como Google Maps.';
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  "@type": 'WebPage',
+  name: title,
+  description,
+  inLanguage: site.lang,
+  url: `${site.origin}/politica-de-privacidad/`,
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Legal"
+  heading="Política de privacidad"
+  lead="Esta guía es un proyecto independiente, sin fines de lucro y no oficial. No recopila datos personales identificables ni exige registro, y solo carga analítica si tú lo aceptas expresamente."
+  breadcrumbs={[{ label: 'Política de privacidad' }]}
+  jsonLd={[webPageLd]}
+  compactHero={true}
+  related={['como-llegar', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">En resumen</p>
+        <p>No hay cuentas de usuario, ni formularios de contacto, ni boletines. La única medición propia es <strong>Google Analytics 4</strong>, que <strong>no se carga hasta que pulsas «Aceptar analítica»</strong>. Esa elección <strong>no se guarda</strong>: al recargar o cambiar de página se vuelve a partir del rechazo. Además, la página incrusta un mapa de <strong>Google Maps</strong> y se aloja en <strong>Cloudflare</strong>, servicios que tienen sus propias políticas.</p>
+      </div>
+
+      <div class="page-copy">
+        <h2>Quién es el responsable</h2>
+        <p>Este sitio, publicado en <strong>{site.domain}</strong>, es una guía turística y de divulgación cultural <strong>independiente, sin fines de lucro y no oficial</strong>. No representa a la Municipalidad Provincial de Huamanga, a MINCETUR, a PROMPERÚ, a IPERÚ ni a ninguna entidad pública.</p>
+        <p>Al no existir registro de usuarios, cuentas ni formularios, el sitio <strong>no solicita ni almacena datos personales identificables</strong> como nombre, documento, dirección o correo electrónico.</p>
+
+        <h2>Qué datos se tratan</h2>
+        <p>El funcionamiento básico del sitio no requiere datos personales. Los únicos tratamientos posibles son los que se describen a continuación y dependen de tus propias decisiones o de los servicios de terceros integrados:</p>
+        <ul class="checklist">
+          <li><strong>Analítica web (opcional).</strong> Solo si aceptas, se carga Google Analytics 4 para medir visitas de forma agregada.</li>
+          <li><strong>Mapa incrustado.</strong> El mapa de Google Maps conecta tu navegador con Google para poder mostrarse.</li>
+          <li><strong>Alojamiento y seguridad.</strong> El sitio se publica a través de Cloudflare, que puede registrar datos técnicos de la conexión.</li>
+        </ul>
+
+        <h2>Analítica opcional (Google Analytics 4)</h2>
+        <p>La medición con <strong>Google Analytics 4</strong> (identificador <strong>G-HXM22WWPKP</strong>) está <strong>desactivada por defecto</strong>. El script de Google solo se inserta en la página cuando pulsas el botón «Aceptar analítica» del aviso de cookies. Si rechazas, no se carga ninguna herramienta de medición.</p>
+        <p>Es importante que sepas que <strong>esta guía no guarda tu elección</strong>: no se usan cookies propias ni almacenamiento local para recordarla. Por eso, cada vez que recargas o navegas a otra página del sitio, la analítica vuelve a estar desactivada hasta que la aceptes de nuevo. Puedes cambiar de opinión en cualquier momento desde el botón «Configurar analítica» del pie de página o desde la página de <a href="/configuracion-de-cookies/">Configuración de cookies</a>.</p>
+        <p>Cuando la analítica se activa, el tratamiento de los datos generados corresponde a Google, conforme a sus propias condiciones y política de privacidad. Esta guía no recibe datos personales identificables de esa medición.</p>
+
+        <h2>Contenidos y servicios de terceros</h2>
+        <p>Algunas páginas incrustan un <strong>mapa de Google Maps</strong> para mostrar la ubicación. Al mostrarse un mapa incrustado, tu navegador se comunica con Google, que puede establecer sus propias cookies o tratamientos según su política. Esta guía no controla esos servicios.</p>
+        <p>La página también enlaza a fuentes y sitios externos (por ejemplo, MINCETUR, PROMPERÚ, Wikimedia Commons o Google Maps). Al seguirlos, pasas a regirte por las políticas de privacidad de esos sitios, que son ajenas a esta guía.</p>
+
+        <h2>Alojamiento y datos técnicos</h2>
+        <p>El sitio se publica a través de <strong>Cloudflare</strong>, que actúa como proveedor de infraestructura y seguridad. Como parte de su funcionamiento habitual, Cloudflare puede registrar datos técnicos de la conexión (por ejemplo, la dirección IP o el tipo de dispositivo) con fines de seguridad, rendimiento y protección frente a abusos. Este tratamiento corresponde al proveedor de alojamiento y puede incluir medición de rendimiento independiente de la elección de analítica de esta guía.</p>
+
+        <h2>Tus derechos</h2>
+        <p>Como esta guía <strong>no recopila datos personales identificables</strong>, no dispone de una base de datos de usuarios sobre la que ejercer derechos de acceso, rectificación o supresión. Si deseas controlar la medición analítica, puedes:</p>
+        <ul class="checklist">
+          <li>No aceptar la analítica, o retirar el consentimiento con el botón «Configurar analítica» del pie de página.</li>
+          <li>Usar los controles que Google ofrece para su propia analítica y para los mapas incrustados.</li>
+          <li>Bloquear cookies y scripts de terceros desde la configuración de tu navegador.</li>
+        </ul>
+
+        <h2>Menores de edad</h2>
+        <p>El contenido de esta guía es informativo y de divulgación cultural, apto para público general. Al no existir registro ni formularios, el sitio no recopila conscientemente datos de menores de edad.</p>
+
+        <h2>Cambios en esta política</h2>
+        <p>Esta política puede actualizarse para reflejar cambios técnicos o legales. La versión vigente es la publicada en esta misma dirección, con la fecha de revisión indicada en el pie de página.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> esta guía no es un servicio oficial ni presta asistencia turística directa. Para consultas sobre el lugar, utiliza los canales institucionales citados al final de cada página.</p>
+        </div>
+
+        <p class="verify-note">Esta política describe el funcionamiento técnico real de {site.domain}, verificado sobre su propio código: analítica desactivada por defecto, consentimiento no persistente y contenidos de terceros incrustados. Última revisión editorial: <time datetime={site.lastReviewedIso}>{site.lastReviewed}</time>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Monumento a Sucre en la Plaza Mayor de Ayacucho';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Monumentos"
   heading="Monumento a Antonio José de Sucre"
   lead="En el centro de la plaza, sobre el cruce de los jardines, la escultura ecuestre de Sucre es la pieza que ordena el espacio y el punto de referencia más reconocible del conjunto."
+  tagline="La escultura ecuestre que da escala a la plaza y sirve de punto de encuentro del centro histórico"
+  heroMeta={[
+    { text: `Maps ${site.mapsRating}/5 · ${site.mapsReviews} reseñas de la plaza` },
+    { text: 'Visita recomendada 06:00–21:00' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Monumento a Sucre' }]}
   jsonLd={[articleLd]}
   heroImage={images.monument}
@@ -34,6 +41,99 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>El centro de la plaza lo ocupa el <strong>monumento ecuestre a Antonio José de Sucre</strong>, inaugurado en <strong>1924</strong> según el inventario turístico de MINCETUR. Se levanta en el punto donde se cruzan los ejes que unen los cuatro portales, por lo que funciona como referencia visual y punto de encuentro desde cualquier lado del conjunto. Este proyecto no verifica el nombre del escultor ni el material de la obra: esos detalles deben confirmarse en fuentes institucionales.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>monumento a Sucre</strong> es el punto desde el que se ordena toda la plaza: los cuatro portales, los jardines y la fachada de la Catedral se leen a partir de su posición central. Esta página reúne lo esencial para verlo con calma, entender de cuándo data y situarlo dentro del conjunto monumental.</p>
+        <p>Más abajo encontrarás consejos de visita, una ficha rápida con los datos prácticos, un recorrido sugerido y varios puntos de fotografía, además del análisis del conjunto que ya forma parte de esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo verlo con calma</h2>
+      </div>
+      <ul class="checklist">
+        <li>Acércate en la primera hora de la mañana o al final de la tarde: la luz lateral recorta mejor la silueta.</li>
+        <li>Da la vuelta completa a la plaza; la pieza no se ve igual desde los cuatro portales.</li>
+        <li>Mira por separado el basamento, el grupo ecuestre y el fondo de portales y balcones.</li>
+        <li>Trátalo como un espacio en uso: es un punto de encuentro cotidiano, no solo un objeto turístico.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué hace especial a esta pieza</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Pieza central</span>
+          <h3>Escultura ecuestre</h3>
+          <p>Una figura a caballo sobre un pedestal, emplazada en el cruce de los ejes que unen los cuatro portales y visible desde todo el perímetro.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">El conjunto</span>
+          <h3>Entre portales y jardines</h3>
+          <p>La escultura se recorta contra los frentes de piedra, los balcones de madera, la teja de arcilla y la línea de jardines de la plaza.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Uso urbano</span>
+          <h3>Referencia para orientarse</h3>
+          <p>Funciona como punto de encuentro y como referencia para describir una posición dentro del centro histórico de Huamanga.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el monumento</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>monumento a Sucre</strong> es la pieza escultórica que ocupa el centro de la {site.attractionFullName}. Su emplazamiento no es casual: en una plaza cerrada por portales hace falta un elemento que articule el vacío y ordene los recorridos, y esa es la función que cumple.</p>
+        <p>Este proyecto no verifica el nombre del escultor, el material de la obra ni los detalles de su ejecución. Solo damos por confirmada la <strong>fecha de inauguración de 1924</strong> y su ubicación central, según el inventario turístico de MINCETUR.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del monumento</caption>
+        <tbody>
+          <tr><th>Dónde está</th><td>Centro de la plaza, entre los jardines y sobre el cruce de los ejes que unen los cuatro portales.</td></tr>
+          <tr><th>Tipo</th><td>Escultura ecuestre sobre pedestal.</td></tr>
+          <tr><th>Acceso</th><td>Libre: forma parte del espacio público de la plaza.</td></tr>
+          <tr><th>Horario recomendado</th><td>06:00–21:00, franja de visita recomendada por MINCETUR.</td></tr>
+          <tr><th>Duración sugerida</th><td>10–20 minutos para recorrer el perímetro y observarlo con calma.</td></tr>
+          <tr><th>Cómo llegar</th><td>A pie; el monumento está en el propio centro de la plaza.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo verlo</h3>
+          <p>La franja recomendada por MINCETUR para la plaza es de <strong>06:00 a 21:00</strong> durante todo el año. No implica un cierre físico del espacio público, pero orienta sobre las horas de más luz y actividad.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>El ingreso al espacio público de la plaza es <strong>libre</strong>. Ver el monumento no tiene costo; los recintos y servicios del entorno pueden tener condiciones propias.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se llega caminando desde cualquier punto del centro histórico. Si vienes del aeropuerto o del terminal terrestre, completa el trayecto hasta la plaza y termina a pie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el conjunto</p>
+        <h2>El monumento dentro de la plaza</h2>
       </div>
       <div class="page-copy">
         <p>Desde cualquiera de los cuatro portales, la vista se ordena sola hacia el centro: ahí se levanta el <strong>monumento ecuestre a Antonio José de Sucre</strong>, la pieza que da escala a la plaza y que sirve de punto de encuentro a vecinos y visitantes. Es, en la práctica, el elemento que permite orientarse dentro del conjunto.</p>
@@ -76,4 +176,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la visita en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en un portal.</strong> Desde cualquiera de los cuatro frentes, ubica el monumento en el centro de la plaza para orientarte.</li>
+        <li><strong>Recorre el perímetro.</strong> Camina alrededor de los jardines para ver la escultura desde los cuatro lados.</li>
+        <li><strong>Detente frente a cada portal.</strong> Compara cómo cambian el fondo y la escala según el punto de vista.</li>
+        <li><strong>Cierra con una pausa.</strong> Siéntate un momento en los jardines y observa el conjunto en reposo antes de seguir.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa y evita esfuerzos en la primera hora.</li>
+        <li>El sol del mediodía es fuerte y la temperatura baja rápido por la tarde; lleva agua y una capa ligera de abrigo.</li>
+        <li>Respeta el uso cotidiano del espacio y no interfieras con actos cívicos, religiosos o culturales.</li>
+        <li>Si vas a citar datos por escrito, confírmalos: esta guía no verifica la autoría ni los materiales de la obra.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Plano general</span>
+          <h3>Desde cada portal</h3>
+          <p>Cada uno de los cuatro frentes ofrece un encuadre distinto del monumento, con los portales de piedra como marco del fondo.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Primera hora y atardecer</h3>
+          <p>La luz lateral de la mañana temprano y del final de la tarde recorta mejor la escultura contra el cielo y las cubiertas.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>Basamento y grupo ecuestre</h3>
+          <p>Un plano más cerrado permite observar el pedestal y la figura por separado del fondo urbano de la plaza.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el monumento a Sucre" />
 </BaseLayout>

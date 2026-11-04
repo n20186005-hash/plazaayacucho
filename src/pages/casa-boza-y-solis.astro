@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Casa Boza y Solís en Ayacucho: qué es y cómo verificarla';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Patrimonio"
   heading="Casa Boza y Solís"
   lead="Una referencia que aparece en los listados patrimoniales del centro de Ayacucho. En este proyecto no hay datos verificados sobre ella, así que esta página explica qué se puede afirmar, qué no, y cómo confirmarlo."
+  tagline="Una referencia del patrimonio civil del centro de Huamanga y las vías para confirmar qué se puede afirmar sobre ella"
+  heroMeta={[
+    { text: 'Datos verificados limitados en esta guía' },
+    { text: 'Guía independiente y no oficial' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Casa Boza y Solís' }]}
   jsonLd={[articleLd]}
   heroImage={images.plaza}
@@ -34,6 +41,99 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>La <strong>Casa Boza y Solís</strong> es un nombre que figura en compilaciones patrimoniales del centro de Ayacucho, en el contexto de las casonas coloniales que rodean la plaza. En este proyecto no hay datos verificados sobre ella: no constan su historia, su fecha de construcción, su dirección ni si recibe visitas. Esta página explica, precisamente, qué se puede afirmar, qué no, y a qué instituciones preguntar para confirmarlo.</p>
+      </div>
+      <div class="page-copy">
+        <p>Esta página reúne, con la mayor honestidad posible, todo lo que este proyecto puede decir sobre la <strong>Casa Boza y Solís</strong>: por qué aparece en los repertorios patrimoniales, qué se puede afirmar y qué no, y cómo se confirma el resto.</p>
+        <p>Más abajo encontrarás consejos para leer este tipo de inmuebles dentro del centro histórico, una ficha rápida con el estado de la información, un recorrido sugerido y varios puntos de fotografía del casco antiguo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo acercarse a esta referencia</h2>
+      </div>
+      <ul class="checklist">
+        <li>Antes de planificar una visita, confirma con las instituciones competentes si el inmueble está abierto y en qué condiciones.</li>
+        <li>Si te interesa la arquitectura civil, reconoce las casonas desde la calle: fachadas, portadas y balcones se aprecian sin entrar.</li>
+        <li>No des por buenos los relatos detallados sin contrastarlos: un listado patrimonial no equivale a una ficha con datos públicos.</li>
+        <li>Trata el centro histórico como un espacio en uso: muchas casonas siguen siendo viviendas o sedes privadas.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué caracteriza a esta referencia</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Referencia</span>
+          <h3>Un nombre en los listados</h3>
+          <p>La Casa Boza y Solís aparece citada en compilaciones del patrimonio del centro de Huamanga, junto a otras casonas coloniales del entorno de la plaza.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Contexto urbano</span>
+          <h3>Dentro del casco antiguo</h3>
+          <p>El interés de este tipo de inmuebles está en su relación con el conjunto: calles, portadas de piedra y balcones que definen la arquitectura civil del centro.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Criterio editorial</span>
+          <h3>Verificar antes que inventar</h3>
+          <p>Ante la falta de datos, esta guía describe el contexto y las vías de confirmación, sin afirmar hechos que no puede respaldar con una fuente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre la Casa Boza y Solís</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>La <strong>Casa Boza y Solís</strong> es un nombre que aparece en repertorios del patrimonio civil del centro histórico de Huamanga. En esta guía lo tratamos como lo que es: una referencia que conviene confirmar, y no un conjunto de datos que podamos dar por ciertos sin fuente.</p>
+        <p>El inmueble se cita en el contexto de las <strong>casonas coloniales</strong> que rodean la {site.attractionFullName}, con su patrón habitual de patio interior, portada de piedra y balcones de madera. Esta guía, sin embargo, <strong>no verifica</strong> su historia, su fecha de construcción ni su estado de conservación.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida</caption>
+        <tbody>
+          <tr><th>Qué es</th><td>Una referencia patrimonial del centro de Huamanga: un nombre que aparece en compilaciones de casonas coloniales. Esta guía no verifica sus datos.</td></tr>
+          <tr><th>Dónde está</th><td>En el centro histórico de Ayacucho, en el entorno de la plaza. Esta guía no dispone de una dirección verificada.</td></tr>
+          <tr><th>Tipo</th><td>Arquitectura civil: se cita junto a las casonas coloniales del centro. Esta guía no verifica la adscripción del inmueble.</td></tr>
+          <tr><th>Fecha de construcción</th><td>No verificada por esta guía. Debe confirmarse en fuentes institucionales.</td></tr>
+          <tr><th>Acceso</th><td>No verificado: esta guía no confirma que el inmueble esté abierto al público ni que sea visitable.</td></tr>
+          <tr><th>Cómo confirmarlo</th><td>Municipalidad Provincial de Huamanga, Dirección Regional de Comercio Exterior y Turismo y Ministerio de Cultura.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo verla</h3>
+          <p>Esta guía <strong>no verifica horarios</strong> ni franjas de visita para la Casa Boza y Solís. No consta que el inmueble reciba público. Para confirmarlo, pregunta a la Municipalidad Provincial de Huamanga o a la Dirección Regional de Comercio Exterior y Turismo.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>Esta guía <strong>no verifica precios ni condiciones de acceso</strong>. No podemos afirmar si el inmueble se puede visitar ni si tiene costo. Cualquier dato de entrada debe confirmarse en los canales oficiales antes de darlo por bueno.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Sin una dirección verificada, esta guía no puede indicar una ruta concreta. Lo razonable es orientarte por la {site.attractionFullName} y el centro histórico, y preguntar por el inmueble en las oficinas de información turística o en la Municipalidad Provincial de Huamanga.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el inmueble</p>
+        <h2>La Casa Boza y Solís en el centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>La <strong>Casa Boza y Solís</strong> es un nombre que aparece en compilaciones patrimoniales del centro de {site.cityName} y que suele citarse junto a otras casonas coloniales del entorno de la {site.attractionFullName}. Ahora bien: en este proyecto <strong>no contamos con datos verificados</strong> sobre ella. No consta aquí su historia, su arquitecto, sus fechas ni su estado actual de conservación.</p>
@@ -72,4 +172,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo acercarse en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Toma la plaza como punto de partida.</strong> Es la referencia para orientarte en el centro histórico.</li>
+        <li><strong>Recorre las manzanas del casco antiguo.</strong> Ahí se concentran las casonas coloniales, con patio interior, portadas de piedra y balcones de madera.</li>
+        <li><strong>Observa las fachadas desde la calle.</strong> La lectura del exterior no depende de entrar a ningún inmueble.</li>
+        <li><strong>Confirma antes de ir más allá.</strong> Si quieres pasar al interior, pregunta por su dirección, estado y acceso en las instituciones competentes.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa por el centro.</li>
+        <li>No des por hecho que una casona concreta sea visitable: muchas siguen en uso privado.</li>
+        <li>Si vas a citar datos del inmueble, confírmalos primero: esta guía no verifica historia, fechas ni dirección.</li>
+        <li>Respeta el uso cotidiano de las calles y no interfieras con la vida de los vecinos.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Contexto</span>
+          <h3>El casco antiguo en general</h3>
+          <p>Como esta guía no verifica la fachada concreta de la Casa Boza y Solís, lo fotografiable es el entorno: las casonas coloniales del centro histórico.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>Portadas y balcones</h3>
+          <p>Las portadas de piedra y los balcones de madera son los elementos característicos de la arquitectura civil del centro.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Respeto</span>
+          <h3>Fotografía desde la calle</h3>
+          <p>Toma las imágenes desde el espacio público y evita captar a las personas o el interior de viviendas particulares sin permiso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="la Casa Boza y Solís" />
 </BaseLayout>

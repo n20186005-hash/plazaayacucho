@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.mjs';
+
+const title = 'Configuración de cookies | Plaza Mayor de Ayacucho';
+const description = 'Qué cookies y almacenamiento usa esta guía de la Plaza Mayor de Ayacucho: sin cookies propias, con Google Analytics 4 opcional y contenidos de terceros como Google Maps y Cloudflare.';
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  "@type": 'WebPage',
+  name: title,
+  description,
+  inLanguage: site.lang,
+  url: `${site.origin}/configuracion-de-cookies/`,
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Legal"
+  heading="Configuración de cookies"
+  lead="Esta guía no usa cookies propias ni recuerda tus preferencias. La analítica con Google Analytics 4 está desactivada hasta que la aceptas, y puedes cambiar de opinión en cualquier momento."
+  breadcrumbs={[{ label: 'Configuración de cookies' }]}
+  jsonLd={[webPageLd]}
+  compactHero={true}
+  related={['como-llegar', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">En resumen</p>
+        <p>El sitio <strong>no utiliza cookies propias</strong> ni almacenamiento local para recordar tu elección. La única medición propia es <strong>Google Analytics 4</strong> (G-HXM22WWPKP), que <strong>solo se carga si pulsas «Aceptar analítica»</strong>. Los mapas de <strong>Google Maps</strong> y el alojamiento en <strong>Cloudflare</strong> son servicios de terceros con sus propias cookies.</p>
+      </div>
+
+      <div class="page-copy">
+        <h2>Qué son las cookies</h2>
+        <p>Las cookies son pequeños archivos que un sitio puede guardar en tu navegador para recordar información entre visitas. Además de las cookies, existen otras formas de almacenamiento local en el navegador. Esta página explica cuáles usa —y cuáles no usa— <strong>{site.domain}</strong>.</p>
+
+        <h2>Tu elección, en un clic</h2>
+        <p>Puedes mostrar de nuevo el aviso de analítica desde este botón. Allí eliges entre <strong>«Solo necesarias»</strong> y <strong>«Aceptar analítica»</strong>. Recuerda que la decisión no se guarda: se aplica a la página que estás viendo y vuelve a partir del rechazo cuando recargas o cambias de página.</p>
+        <button id="legal-open-cookie" class="legal-action" type="button">Mostrar el aviso de analítica</button>
+
+        <h2>Cookies y almacenamiento que usa el sitio</h2>
+        <p>La siguiente tabla resume el uso real del sitio, tal como funciona hoy:</p>
+        <table class="fact-table">
+          <caption>Cookies y almacenamiento</caption>
+          <tbody>
+            <tr><th>Cookies propias</th><td><strong>Ninguna.</strong> El sitio no establece cookies propias para funcionar ni para recordar preferencias.</td></tr>
+            <tr><th>Almacenamiento local</th><td><strong>Ninguno.</strong> La elección sobre analítica no se guarda en el navegador.</td></tr>
+            <tr><th>Google Analytics 4</th><td><strong>Solo si aceptas.</strong> Al aceptar, se carga la medición y Google puede establecer sus propias cookies analíticas (habitualmente las identificadas como <em>_ga</em> y <em>_ga_G-HXM22WWPKP</em>).</td></tr>
+            <tr><th>Google Maps</th><td><strong>Terceros.</strong> Al mostrarse un mapa incrustado, Google puede establecer sus propias cookies según su política.</td></tr>
+            <tr><th>Cloudflare (alojamiento)</th><td><strong>Terceros.</strong> El proveedor de alojamiento y seguridad puede usar cookies técnicas de seguridad y medición de rendimiento.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Analítica opcional</h2>
+        <p>La medición con Google Analytics 4 está <strong>desactivada por defecto</strong>. El script de Google solo se inserta cuando aceptas, y el consentimiento se envía como <em>denied</em> hasta ese momento. Si rechazas, no se carga ninguna herramienta de medición y no se genera tráfico a Google por esta vía.</p>
+        <p>Más información sobre este tratamiento está disponible en la <a href="/politica-de-privacidad/">Política de privacidad</a>.</p>
+
+        <h2>Contenidos de terceros</h2>
+        <p>Algunas páginas incrustan un mapa de Google Maps para mostrar la ubicación. Ese contenido es de un tercero: al mostrarse, tu navegador se comunica con Google, que puede tratar datos y establecer cookies conforme a su propia política. Esta guía no controla esos servicios.</p>
+
+        <h2>Cómo gestionar las cookies en tu navegador</h2>
+        <p>Además de las opciones de esta página, puedes controlar o eliminar cookies desde la configuración de tu navegador. Ten en cuenta que bloquear contenidos de terceros puede afectar a la visualización de elementos como el mapa incrustado:</p>
+        <ul class="checklist">
+          <li>Revisa la sección de privacidad y cookies de tu navegador para bloquear o eliminar datos.</li>
+          <li>Usa la navegación privada si prefieres no conservar el almacenamiento entre sesiones.</li>
+          <li>Consulta las políticas de Google para sus propias cookies de analítica y de mapas.</li>
+        </ul>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> esta guía no vende datos ni elabora perfiles publicitarios. La analítica se usa únicamente para conocer, de forma agregada, qué páginas resultan útiles.</p>
+        </div>
+
+        <p class="verify-note">La configuración descrita se corresponde con el funcionamiento real del sitio: sin cookies propias, sin almacenamiento de la elección y analítica cargada solo tras el consentimiento. Última revisión editorial: <time datetime={site.lastReviewedIso}>{site.lastReviewed}</time>.</p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.getElementById('legal-open-cookie')?.addEventListener('click', () => {
+      document.getElementById('cookie-banner')?.removeAttribute('hidden');
+      document.getElementById('cookie-settings')?.setAttribute('hidden', '');
+      document.getElementById('cookie-banner')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</BaseLayout>

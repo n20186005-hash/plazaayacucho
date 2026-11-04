@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Centro histórico de Huamanga: qué es y qué incluye';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Contexto urbano"
   heading="Centro histórico de Huamanga"
   lead="La plaza no está aislada: forma parte de un centro histórico que se recorre caminando. Estas son las piezas que lo componen y cómo se relacionan entre sí."
+  tagline="El tejido caminable de calles, templos, casonas y edificios institucionales que se organiza alrededor de la plaza"
+  heroMeta={[
+    { text: `Maps ${site.mapsRating}/5 · ${site.mapsReviews} reseñas de la plaza` },
+    { text: 'Visita recomendada 06:00–21:00' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Centro histórico de Huamanga' }]}
   jsonLd={[articleLd]}
   heroImage={images.cathedral}
@@ -34,6 +41,99 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>El centro histórico de Huamanga es el casco urbano que se organiza alrededor de la <strong>Plaza Mayor de Ayacucho</strong>: un tejido caminable de calles, templos, casonas y edificios institucionales. Su escala es muy compacta, con la <strong>Basílica Catedral a unos 50 m</strong>, el <strong>Templo de Santo Domingo a unos 100 m</strong> y el <strong>Arco del Triunfo a unos 284 m</strong> a pie, según MINCETUR. La ciudad se fundó como ciudad española en <strong>1540</strong> y su arquitectura se consolidó entre los siglos XVI y XVII.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>centro histórico de Huamanga</strong> es el casco urbano que se organiza alrededor de la {site.attractionFullName}. Se recorre a pie y reúne calles, templos, casonas y edificios institucionales en pocas manzanas.</p>
+        <p>Más abajo encontrarás consejos para recorrerlo, una ficha rápida, un recorrido sugerido y puntos de fotografía, además del análisis del conjunto que ya forma parte de esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo recorrerlo con calma</h2>
+      </div>
+      <ul class="checklist">
+        <li>Toma la plaza como centro y organízate por direcciones: los hitos principales quedan a pocos minutos a pie.</li>
+        <li>Empieza temprano: la mañana suele ser la franja más tranquila para caminar y fotografiar.</li>
+        <li>Al mediodía, busca la sombra de los portales: el sol a los 2.750 m de altitud es fuerte.</li>
+        <li>Lleva una capa ligera de abrigo: al caer la tarde la temperatura baja rápido.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este centro histórico</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Escala compacta</span>
+          <h3>Todo a pocos minutos</h3>
+          <p>La Basílica Catedral a unos 50 m, el Templo de Santo Domingo a unos 100 m y el Arco del Triunfo a unos 284 m, según MINCETUR. Son distancias que permiten encadenar visitas a pie.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Patrimonio y ciudad</span>
+          <h3>Un uso vivo</h3>
+          <p>El centro combina templos, casonas y edificios institucionales con calles comerciales donde la vida cotidiana se mezcla con el recorrido del visitante.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Caminable</span>
+          <h3>Sin vehículo</h3>
+          <p>El casco se recorre a pie: el transporte solo es necesario para llegar a la ciudad y para las excursiones fuera de ella.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el centro histórico</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>centro histórico de Huamanga</strong> es el casco urbano que se organiza alrededor de la {site.attractionFullName}. No es un recinto cerrado con una puerta única, sino un tejido de calles, plazas, templos, casonas y edificios institucionales que funciona como un conjunto caminable.</p>
+        <p>La ciudad se fundó como ciudad española en <strong>1540</strong> y la arquitectura del entorno se consolidó durante los <strong>siglos XVI y XVII</strong>. Este proyecto no verifica horarios, tarifas ni condiciones de acceso de los recintos concretos: esos datos deben confirmarse en las fuentes oficiales.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del centro histórico</caption>
+        <tbody>
+          <tr><th>Qué es</th><td>Casco urbano organizado alrededor de la {site.attractionFullName}, dentro de la ciudad de {site.cityName}.</td></tr>
+          <tr><th>Escala</th><td>Muy compacta; los hitos principales quedan a minutos a pie.</td></tr>
+          <tr><th>Época</th><td>Fundación en 1540; arquitectura consolidada entre los siglos XVI y XVII.</td></tr>
+          <tr><th>Recorrido</th><td>A pie; no hace falta vehículo para recorrer el centro.</td></tr>
+          <tr><th>Altitud</th><td>Unos 2.750 m sobre el nivel del mar.</td></tr>
+          <tr><th>Fuente</th><td>Distancias a pie y franja de visita según el inventario turístico de MINCETUR.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo recorrerlo</h3>
+          <p>El inventario de MINCETUR da una franja orientativa de <strong>06:00 a 21:00</strong> para la plaza, que no es un cierre físico del espacio público. Esta guía no verifica los horarios propios de cada templo, museo o edificio del centro: confírmalos en cada recinto o en fuentes oficiales.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>No hay un precio de entrada único: el centro histórico es un <strong>espacio urbano de uso libre</strong>. Los recintos concretos (templos, museos, espacios institucionales) pueden tener condiciones y tarifas propias que esta guía no verifica.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se recorre a pie tomando la {site.attractionFullName} como punto de partida. El transporte solo es necesario para llegar desde el aeropuerto o el terminal terrestre y para las salidas fuera de la ciudad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el conjunto</p>
+        <h2>El centro histórico alrededor de la plaza</h2>
       </div>
       <div class="page-copy">
         <p>Cuando se habla del <strong>centro histórico de Huamanga</strong> se habla, en la práctica, del casco urbano que se organiza alrededor de la <strong>{site.attractionFullName}</strong>. No es un recinto cerrado con una única puerta, sino un tejido de calles, plazas, templos, casonas y edificios institucionales que funcionan como un conjunto caminable.</p>
@@ -84,4 +184,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar el recorrido en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en la plaza.</strong> Ubícate en la {site.attractionFullName}: es el centro desde el que se ordena el resto del casco urbano.</li>
+        <li><strong>Sigue hacia la Catedral.</strong> La Basílica está a unos 50 m a pie, según MINCETUR, en el borde mismo de la plaza.</li>
+        <li><strong>Continúa hacia Santo Domingo y el Arco del Triunfo.</strong> Quedan a unos 100 m y 284 m respectivamente, por las calles que salen de los portales.</li>
+        <li><strong>Vuelve por las calles comerciales.</strong> Cierra el recorrido mirando las casonas y el movimiento cotidiano del centro.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa y evita esfuerzos en la primera hora.</li>
+        <li>El sol del mediodía es fuerte y la temperatura baja rápido por la tarde; lleva agua y una capa ligera de abrigo.</li>
+        <li>Respeta el uso cotidiano del espacio y no interfieras con actos cívicos, religiosos o culturales.</li>
+        <li>Confirma horarios y accesos de cada recinto antes de entrar: esta guía no los verifica.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Plano general</span>
+          <h3>La plaza y sus portales</h3>
+          <p>Desde cualquiera de los cuatro frentes, los portales de piedra enmarcan el conjunto y dan el encuadre más reconocible del centro.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Calles</span>
+          <h3>La línea de fachadas</h3>
+          <p>Mirar a lo largo de las calles que salen de la plaza muestra cómo la secuencia de portadas y balcones acompaña el recorrido.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle e hitos</span>
+          <h3>Balcones, teja y Arco</h3>
+          <p>Un plano cerrado permite aislar una portada, un balcón de madera o una cubierta de teja; caminando unos minutos se alcanza también el Arco del Triunfo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el centro histórico de Huamanga" />
 </BaseLayout>

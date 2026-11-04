@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.mjs';
+
+const title = 'Términos de servicio | Plaza Mayor de Ayacucho';
+const description = 'Condiciones de uso de esta guía independiente de la Plaza Mayor de Ayacucho: contenido informativo y no oficial, alcance, propiedad intelectual, enlaces externos y limitación de responsabilidad.';
+
+const webPageLd = {
+  '@context': 'https://schema.org',
+  "@type": 'WebPage',
+  name: title,
+  description,
+  inLanguage: site.lang,
+  url: `${site.origin}/terminos-de-servicio/`,
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Legal"
+  heading="Términos de servicio"
+  lead="Estas condiciones explican qué es esta guía, qué puedes esperar de ella y cuáles son sus límites. Es un recurso informativo independiente, sin fines de lucro y no oficial, que no presta servicios turísticos."
+  breadcrumbs={[{ label: 'Términos de servicio' }]}
+  jsonLd={[webPageLd]}
+  compactHero={true}
+  related={['como-llegar', 'preguntas-frecuentes']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">En resumen</p>
+        <p>Esta guía es un recurso <strong>informativo, independiente y no oficial</strong>. Su contenido es de referencia y <strong>puede cambiar</strong>: verifica siempre horarios, accesos y servicios en los <strong>canales oficiales</strong> antes de desplazarte. No presta servicios turísticos, no gestiona reservas y no se responsabiliza del uso que se haga de la información.</p>
+      </div>
+
+      <div class="page-copy">
+        <h2>Qué es este sitio</h2>
+        <p><strong>{site.domain}</strong> es una guía turística y de divulgación cultural sobre la <strong>{site.attractionFullName}</strong> y su entorno, en {site.cityName}, {site.countryName}. Es un proyecto <strong>independiente, sin fines de lucro y no oficial</strong>, sin vínculo con la Municipalidad Provincial de Huamanga, MINCETUR, PROMPERÚ, IPERÚ ni con ninguna entidad pública o privada del lugar.</p>
+        <p>Al utilizar este sitio aceptas estos términos. Si no estás de acuerdo con ellos, te pedimos que no lo utilices.</p>
+
+        <h2>Uso del contenido</h2>
+        <p>El contenido se ofrece únicamente para <strong>consulta e información personal</strong>. Puedes leerlo, compartir enlaces a sus páginas y citarlo indicando la fuente. No está permitido presentarlo como información oficial ni atribuirle un carácter que no tiene.</p>
+
+        <h2>Exactitud de la información</h2>
+        <p>Esta guía se esfuerza por trabajar con <strong>fuentes públicas verificables</strong> y por señalar las fuentes al final de cada página, junto con la fecha de revisión editorial. Aun así, hay que tener en cuenta que:</p>
+        <ul class="checklist">
+          <li>El contenido es <strong>de referencia</strong> y no sustituye a la información oficial de las autoridades competentes.</li>
+          <li>Datos como <strong>horarios, accesos, precios, ceremonias o cierres</strong> pueden cambiar en cualquier momento.</li>
+          <li>Cuando un dato no ha podido verificarse, la propia página lo indica de forma expresa en lugar de darlo por confirmado.</li>
+        </ul>
+        <p>Antes de planificar un desplazamiento, <strong>confirma la información en los canales oficiales</strong> correspondientes.</p>
+
+        <h2>Contenido de terceros y enlaces externos</h2>
+        <p>El sitio incluye enlaces a páginas externas y contenidos incrustados de terceros, como mapas de Google Maps o material de Wikimedia Commons. Esos contenidos pertenecen a sus respectivos titulares y se rigen por sus propias condiciones y políticas. Esta guía no controla ni responde por ellos.</p>
+        <p>Cuando se citan valoraciones o fichas de terceros (por ejemplo, la ficha compartida de Google Maps), se indica claramente su origen y que su contenido corresponde a terceros, no a esta guía.</p>
+
+        <h2>Propiedad intelectual</h2>
+        <p>Los textos originales de esta guía, así como su diseño y su organización de contenidos, se ofrecen como divulgación cultural sin fines de lucro. Las <strong>imágenes y materiales de terceros</strong> conservan la licencia y la autoría de sus titulares, que se acreditan en las páginas donde se utilizan. Las marcas y logotipos mencionados pertenecen a sus propietarios.</p>
+
+        <h2>Limitación de responsabilidad</h2>
+        <p>La guía se ofrece <strong>tal cual</strong>, sin garantías de exactitud, disponibilidad o idoneidad para un fin concreto. En la medida permitida por la ley, esta guía no asume responsabilidad por daños o perjuicios derivados del uso de la información publicada, de cambios en las condiciones del lugar, ni de las decisiones que tomes a partir de ella.</p>
+
+        <h2>Disponibilidad del sitio</h2>
+        <p>El sitio puede modificarse, suspenderse o dejar de estar disponible en cualquier momento y sin aviso previo, ya que es un proyecto sin fines de lucro mantenido de forma independiente.</p>
+
+        <h2>Cambios en estos términos</h2>
+        <p>Estos términos pueden actualizarse para reflejar cambios en el sitio o en la normativa aplicable. La versión vigente es la publicada en esta misma dirección, con la fecha de revisión indicada en el pie de página.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> esta guía no gestiona reservas, entradas, alojamiento ni servicios turísticos, y no actúa como intermediario. Para cualquier gestión, acude a los canales oficiales del establecimiento o de la autoridad correspondiente.</p>
+        </div>
+
+        <p class="verify-note">Estos términos describen la naturaleza y el alcance reales de esta guía independiente y sin fines de lucro, y se corresponden con el aviso de no oficialidad mostrado en el pie de página del sitio. Última revisión editorial: <time datetime={site.lastReviewedIso}>{site.lastReviewed}</time>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

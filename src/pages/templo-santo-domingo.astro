@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Templo de Santo Domingo de Ayacucho: guía desde la plaza';
@@ -24,6 +25,13 @@ const articleLd = {
   kicker="Templos del centro"
   heading="Templo de Santo Domingo"
   lead="Uno de los templos históricos que forman el paisaje religioso del centro, a unos pasos de la plaza. Su horario y sus condiciones de visita no están verificados aquí."
+  tagline="El templo del centro histórico, a unos pasos de la plaza, dentro del paisaje religioso de Huamanga"
+  heroMeta={[
+    { text: `Maps ${site.mapsRating}/5 · ${site.mapsReviews} reseñas de la plaza` },
+    { text: 'A unos 100 m a pie de la plaza · MINCETUR' },
+    { text: 'Horario de visitas: no verificado en esta guía' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Templo de Santo Domingo' }]}
   jsonLd={[articleLd]}
   heroImage={images.cathedral}
@@ -34,6 +42,100 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>El <strong>Templo de Santo Domingo</strong> es uno de los recintos religiosos del centro histórico de Ayacucho, y el inventario turístico de MINCETUR lo sitúa a unos <strong>100 m a pie</strong> desde la plaza, una distancia que se cubre caminando en pocos minutos. Forma parte del paisaje religioso que la <strong>Basílica Catedral</strong> encabeza junto al conjunto. Su horario y sus condiciones de visita no están verificados aquí y deben confirmarse antes de ir.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Templo de Santo Domingo</strong> es uno de los recintos religiosos que forman el paisaje del centro histórico de {site.cityName}. Esta página reúne consejos de visita, una ficha rápida con los datos prácticos, un recorrido sugerido y puntos de referencia para la fotografía, además del análisis del templo que ya forma parte de esta guía.</p>
+        <p>Conviene recordar desde el principio qué se sabe y qué no: la distancia de referencia está confirmada por MINCETUR, pero el horario, el acceso y las condiciones de visita no están verificados aquí y deben confirmarse antes de ir.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo plantear la visita</h2>
+      </div>
+      <ul class="checklist">
+        <li>Parte de la plaza para orientarte con los cuatro portales y el monumento a Sucre antes de caminar hacia el templo.</li>
+        <li>Camina sin prisa: la ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>, aunque el trayecto sea corto.</li>
+        <li>Confirma el horario y las condiciones de acceso el mismo día, porque no están verificados aquí.</li>
+        <li>Respeta el uso litúrgico del recinto si coincides con una celebración.</li>
+        <li>Trátalo como una visita separada del espacio público: no es una extensión de la plaza.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este templo</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Cercanía</span>
+          <h3>A unos 100 m a pie</h3>
+          <p>El inventario turístico de MINCETUR sitúa el templo a esa distancia de la plaza, un trayecto cómodo de pocos minutos.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">El paisaje religioso</span>
+          <h3>Junto a la Catedral</h3>
+          <p>Forma parte del conjunto de recintos religiosos del centro histórico, encabezado por la Basílica Catedral como edificio principal.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">El recorrido</span>
+          <h3>Una parada del centro</h3>
+          <p>Su cercanía lo convierte en una parada natural del recorrido devocional y patrimonial, fácil de integrar en una caminata por el barrio.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el templo</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Templo de Santo Domingo</strong> es un recinto religioso del centro histórico de {site.cityName}, distinto del espacio público de la plaza. Su interior es un espacio con reglas propias y no forma parte del recorrido libre del conjunto monumental.</p>
+        <p>El único dato que este proyecto verifica es la referencia de <strong>MINCETUR de aproximadamente 100 m a pie</strong> desde la plaza. El horario, las condiciones de acceso y cualquier otro detalle deben confirmarse en las fuentes oficiales antes de la visita.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del templo</caption>
+        <tbody>
+          <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>100 m a pie</strong>. Fuente: inventario turístico de MINCETUR.</td></tr>
+          <tr><th>Tipo de recinto</th><td>Templo del centro histórico, distinto del espacio público de la plaza.</td></tr>
+          <tr><th>Horario de visitas</th><td><strong>No verificado</strong> en este proyecto. Confírmalo antes de ir.</td></tr>
+          <tr><th>Acceso</th><td><strong>No verificado</strong>: puede variar por obras, restauración o celebraciones.</td></tr>
+          <tr><th>Entrada</th><td><strong>No verificada</strong>. Cada recinto religioso puede tener condiciones propias.</td></tr>
+          <tr><th>Cómo llegar</th><td>A pie desde la plaza, por el centro histórico; unos pocos minutos.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo visitarlo</h3>
+          <p>Esta guía <strong>no verifica</strong> la franja de apertura del templo. Para confirmarla, consulta a la <strong>parroquia</strong>, a la Municipalidad Provincial de Huamanga, a las oficinas de turismo de la ciudad o al inventario de MINCETUR, y verifícalo el mismo día de la visita.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>Esta guía <strong>no verifica</strong> si la visita tiene costo ni qué condiciones se aplican al interior. Los recintos religiosos pueden cobrar o no según el caso: confirma el dato antes de ir.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se llega caminando desde la plaza. El inventario de MINCETUR sitúa el templo a unos <strong>100 m a pie</strong>; toma los portales como punto de partida y avanza por el centro histórico.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el templo</p>
+        <h2>Santo Domingo dentro del centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>El <strong>Templo de Santo Domingo</strong> es uno de los recintos religiosos que dan forma al centro histórico de {site.cityName}. El inventario turístico de MINCETUR lo sitúa a unos <strong>100 m a pie</strong> desde la {site.attractionFullName}: una distancia corta, que se cubre caminando en pocos minutos desde el perímetro de la plaza.</p>
@@ -83,4 +185,59 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la visita en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en la plaza.</strong> Oriéntate con los cuatro portales y el monumento a Sucre antes de salir hacia el templo.</li>
+        <li><strong>Camina hacia Santo Domingo.</strong> El trayecto es de unos 100 m a pie según MINCETUR: unos pocos minutos sin prisa.</li>
+        <li><strong>Mira el templo desde fuera.</strong> Observa su fachada y su ubicación dentro del barrio, aunque no llegues a entrar.</li>
+        <li><strong>Confirma condiciones y visita con respeto.</strong> Si está abierto, entra respetando el uso litúrgico del recinto; si no, será una parada del recorrido.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa, aunque el trayecto sea corto.</li>
+        <li>El horario no está verificado aquí: confírmalo con la parroquia, la municipalidad o las oficinas de turismo antes de ir.</li>
+        <li>Comprueba si hay restricciones por obras, restauración o celebraciones el mismo día.</li>
+        <li>Si quieres fotografiar el interior, pregunta antes por las condiciones de cada recinto.</li>
+        <li>Si vas a citar datos por escrito, confírmalos: esta guía no verifica horarios, acceso ni precios.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Contexto</span>
+          <h3>El templo en el barrio</h3>
+          <p>Un encuadre abierto, que incluya las edificaciones vecinas, ayuda a situar el templo dentro del centro histórico y del paisaje religioso del entorno.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Fachada</span>
+          <h3>Desde la calle</h3>
+          <p>La fachada se puede contemplar desde el espacio público de la calle. Antes de fotografiar el interior, pregunta por las condiciones de cada recinto.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Mañana y atardecer</h3>
+          <p>La luz de la primera hora y del final de la tarde da más volumen a las fachadas de piedra del centro histórico.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el Templo de Santo Domingo" />
 </BaseLayout>

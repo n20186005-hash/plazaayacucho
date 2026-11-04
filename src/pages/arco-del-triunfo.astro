@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Arco del Triunfo de Ayacucho: dónde está y cómo verlo';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Hitos urbanos"
   heading="Arco del Triunfo de Ayacucho"
   lead="Un hito urbano del centro histórico, a unos minutos a pie de la plaza. Sirve como objetivo de una caminata corta y como punto de referencia dentro del casco antiguo."
+  tagline="El hito urbano que da meta a una caminata corta por el casco antiguo de Ayacucho"
+  heroMeta={[
+    { text: 'A unos 284 m a pie de la plaza · MINCETUR' },
+    { text: 'Hito urbano al aire libre' },
+    { text: 'Ver la plaza en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Arco del Triunfo' }]}
   jsonLd={[articleLd]}
   heroImage={images.plaza}
@@ -34,6 +41,98 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>El <strong>Arco del Triunfo</strong> es un hito urbano del centro histórico que el inventario turístico de MINCETUR sitúa a unos <strong>284 m a pie</strong> desde la plaza. No es un recinto que se visite por dentro, sino un elemento del espacio público que se ve, se rodea y sirve para orientarse en el barrio. Este proyecto no verifica su fecha de construcción ni el acontecimiento que pudiera conmemorar, así que esos datos deben confirmarse con fuentes institucionales.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Arco del Triunfo</strong> es un hito urbano del centro histórico que se alcanza caminando en pocos minutos desde la plaza. Esta página reúne consejos de visita, una ficha con datos prácticos, un recorrido sugerido y puntos de fotografía, además del contexto que ya forma parte de esta guía.</p>
+        <p>Conviene recordar desde el principio qué es y qué no es: no se trata de un recinto con taquilla ni de un edificio que se recorra por dentro, sino de un elemento del espacio público que se contempla y sirve para orientarse en el barrio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo aprovechar la caminata</h2>
+      </div>
+      <ul class="checklist">
+        <li>Ve con calma: 284 m a pie pueden parecer pocos, pero la altitud invita a caminar sin prisa.</li>
+        <li>Sal de la plaza por una calle lateral y vuelve por otra distinta para completar el paseo.</li>
+        <li>Míralo desde varios ángulos: es un elemento del espacio público, no un recinto cerrado.</li>
+        <li>Combínalo con visitas cercanas como la Catedral o el Templo de Santo Domingo.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este hito urbano</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Tipo</span>
+          <h3>Elemento del espacio público</h3>
+          <p>No se visita por dentro: se ve, se rodea y se usa como referencia para orientarse en el barrio.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Distancia</span>
+          <h3>A unos 284 m a pie</h3>
+          <p>El inventario turístico de MINCETUR sitúa el arco a esa distancia de la plaza, un trayecto cómodo de pocos minutos.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Función</span>
+          <h3>Meta de una caminata corta</h3>
+          <p>Da un objetivo concreto a un paseo por el casco antiguo y ayuda a describir el recorrido a otra persona.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el arco</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Arco del Triunfo</strong> es un hito urbano del centro histórico de {site.cityName}. A diferencia de un museo o un templo, no es un recinto que se recorra por dentro: es una construcción del espacio público que se contempla y se usa como punto de referencia.</p>
+        <p>Este proyecto no verifica su fecha de construcción ni el acontecimiento que pudiera conmemorar. Solo damos por confirmada la referencia de <strong>MINCETUR de aproximadamente 284 m a pie</strong> desde la plaza.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del arco</caption>
+        <tbody>
+          <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>284 m a pie</strong>. Fuente: inventario turístico de MINCETUR.</td></tr>
+          <tr><th>Tipo</th><td>Hito urbano al aire libre.</td></tr>
+          <tr><th>Acceso</th><td>Sin recinto ni taquilla: se observa desde el espacio público.</td></tr>
+          <tr><th>Duración sugerida</th><td>10–15 minutos, incluida la caminata de ida y vuelta.</td></tr>
+          <tr><th>Cómo llegar</th><td>A pie desde la plaza, siguiendo una calle lateral del centro histórico.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo verlo</h3>
+          <p>Al estar en el espacio público, puede verse a cualquier hora. Para caminar con buena luz conviene la franja de <strong>06:00 a 21:00</strong> que MINCETUR recomienda para la plaza.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p><strong>No hay entrada</strong>: no es un recinto con taquilla ni horario de acceso propio. Cualquier servicio cercano puede tener condiciones distintas.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se llega caminando desde la plaza. Como no hay una distancia verificada más precisa, toma los portales como punto de partida y pregunta en el centro si dudas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el entorno</p>
+        <h2>El arco dentro del centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>El <strong>Arco del Triunfo</strong> es uno de los hitos urbanos que se pueden alcanzar caminando desde la {site.attractionFullName}. El inventario turístico de MINCETUR lo sitúa a unos <strong>284 m a pie</strong> desde la plaza, una distancia cómoda que lo convierte en un buen objetivo para una caminata corta por el centro histórico.</p>
@@ -78,4 +177,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la caminata en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en la plaza.</strong> Recorre sus cuatro portales para orientarte y toma una calle lateral como salida.</li>
+        <li><strong>Camina hacia el arco.</strong> El trayecto es de unos 284 m a pie según MINCETUR: unos pocos minutos sin prisa.</li>
+        <li><strong>Rodea el hito.</strong> Míralo desde varios ángulos y ubícate en el barrio, ya que no es un recinto que se visite por dentro.</li>
+        <li><strong>Vuelve por otra calle.</strong> Cierra el paseo con un recorrido distinto para ver más fachadas del centro histórico.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa, aunque el trayecto sea corto.</li>
+        <li>El sol del mediodía es fuerte y la temperatura baja rápido por la tarde; lleva agua y una capa ligera de abrigo.</li>
+        <li>Es un elemento del espacio público: respeta el uso cotidiano y no interfieras con actos cívicos o religiosos.</li>
+        <li>Si vas a citar datos por escrito, confírmalos: esta guía no verifica la fecha ni la historia del arco.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Plano general</span>
+          <h3>Durante la caminata</h3>
+          <p>Aprovecha el trayecto para encuadrar el arco con las calles del casco antiguo como marco del fondo.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Mañana y atardecer</h3>
+          <p>La luz lateral de la primera hora y del final de la tarde da más volumen a la construcción y a las fachadas vecinas.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Contexto</span>
+          <h3>Con el barrio alrededor</h3>
+          <p>Un encuadre más abierto, que incluya las edificaciones cercanas, ayuda a mostrar su papel como hito urbano del centro.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el Arco del Triunfo" />
 </BaseLayout>

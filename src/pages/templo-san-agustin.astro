@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Templo de San Agustín de Ayacucho: qué confirmar antes de ir';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Templos del centro"
   heading="Templo de San Agustín"
   lead="Otro de los templos que forman parte del centro histórico de Ayacucho. Aquí no hay datos verificados sobre él, así que esta página explica cómo ubicarlo y qué preguntar antes de la visita."
+  tagline="Un templo mencionado en el centro histórico de Huamanga y las preguntas que conviene resolver antes de intentar visitarlo"
+  heroMeta={[
+    { text: 'Datos verificados limitados en esta guía' },
+    { text: 'Guía independiente y no oficial' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Templo de San Agustín' }]}
   jsonLd={[articleLd]}
   heroImage={images.cathedral}
@@ -34,6 +41,99 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>El <strong>Templo de San Agustín</strong> se menciona entre los recintos religiosos del centro histórico de Ayacucho, en el entorno de la plaza, pero en este proyecto no hay datos verificados sobre él. No constan su historia, sus fechas, su dirección exacta ni sus condiciones de visita. Esta página explica cómo encaja ese tipo de templo en el centro y qué preguntar a las instituciones competentes antes de intentar visitarlo.</p>
+      </div>
+      <div class="page-copy">
+        <p>Esta página reúne lo que este proyecto puede decir con honestidad sobre el <strong>Templo de San Agustín</strong>: cómo encaja en el paisaje religioso del centro histórico y qué conviene confirmar antes de intentar visitarlo.</p>
+        <p>Más abajo encontrarás consejos para ubicarlo, una ficha rápida con el estado de la información, un recorrido sugerido por el casco antiguo y varios puntos de fotografía de los templos del centro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo acercarse a este templo</h2>
+      </div>
+      <ul class="checklist">
+        <li>Confirma con las instituciones competentes si el templo está abierto y en qué franja antes de planificar la visita.</li>
+        <li>Toma la plaza como punto de partida y referencia para orientarte en el centro histórico.</li>
+        <li>Recorre a pie las calles del casco antiguo, donde se concentran los templos del barrio.</li>
+        <li>Ten presente que un templo patrimonial puede seguir en uso litúrgico: respeta los horarios de culto y los avisos.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué caracteriza a este templo</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Paisaje religioso</span>
+          <h3>Un templo del centro</h3>
+          <p>San Agustín se menciona entre los recintos religiosos del centro histórico, en el conjunto que encabeza la Basílica Catedral junto a la plaza.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Patrimonio</span>
+          <h3>Parte del casco antiguo</h3>
+          <p>Los templos del centro forman parte del carácter patrimonial del casco antiguo y, al mismo tiempo, pueden mantener su uso litúrgico.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Criterio editorial</span>
+          <h3>Confirmar antes de ir</h3>
+          <p>Ante la falta de datos, esta guía describe el contexto y las preguntas clave, sin afirmar hechos que no puede respaldar con una fuente.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el Templo de San Agustín</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Templo de San Agustín</strong> se menciona entre los recintos religiosos del centro histórico de Huamanga, en el entorno de la {site.attractionFullName}. En esta guía lo tratamos como una referencia por confirmar: un templo del casco antiguo del que este proyecto no dispone de datos verificados.</p>
+        <p>La <strong>Basílica Catedral</strong> ocupa el papel principal junto a la plaza y otros templos, como el de <strong>Santo Domingo</strong>, se suman al recorrido del barrio. Es en ese conjunto donde suele citarse a San Agustín, sin que esta guía pueda confirmar su historia, sus fechas ni su acceso.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida</caption>
+        <tbody>
+          <tr><th>Qué es</th><td>Un recinto religioso citado en el centro histórico de Huamanga. Esta guía no verifica sus datos.</td></tr>
+          <tr><th>Dónde está</th><td>En el entorno de la {site.attractionFullName}, dentro del centro histórico. Esta guía no dispone de una dirección verificada.</td></tr>
+          <tr><th>Tipo</th><td>Templo del centro histórico, con uso litúrgico según el patrón de los recintos del casco antiguo. Adscripción no verificada por esta guía.</td></tr>
+          <tr><th>Horario</th><td>No verificado por esta guía. Debe confirmarse con el propio templo o con las instituciones competentes.</td></tr>
+          <tr><th>Acceso</th><td>No verificado: esta guía no confirma que el templo esté abierto al público ni en qué franja.</td></tr>
+          <tr><th>Cómo confirmarlo</th><td>Municipalidad Provincial de Huamanga, Dirección Regional de Comercio Exterior y Turismo y el propio templo.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo visitarlo</h3>
+          <p>Esta guía <strong>no verifica franjas horarias</strong> ni días de apertura para el Templo de San Agustín. No consta que esté abierto al público. Para confirmarlo, pregunta al propio templo, a la Municipalidad Provincial de Huamanga o a la Dirección Regional de Comercio Exterior y Turismo.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>Esta guía <strong>no verifica si la entrada tiene costo ni las condiciones de acceso</strong>. Muchos templos del centro tienen uso litúrgico y no funcionan como recintos turísticos. Cualquier dato de entrada debe confirmarse en los canales oficiales.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Sin una distancia verificada, esta guía no da una cifra. La plaza es el punto de orientación y el templo se alcanza caminando por las calles del casco histórico. Conviene preguntar en las oficinas de información turística antes de buscarlo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el templo</p>
+        <h2>El Templo de San Agustín en el centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>El <strong>Templo de San Agustín</strong> es uno de los recintos religiosos que se mencionan al hablar del centro histórico de {site.cityName}, en el entorno de la {site.attractionFullName}. Conviene ser claro desde el principio: en este proyecto <strong>no hay datos verificados</strong> sobre este templo. No consta aquí su historia, sus fechas, su horario ni sus condiciones de visita.</p>
@@ -74,4 +174,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo ubicarlo en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en la plaza.</strong> Es el punto de orientación y la referencia desde la que se ordena el centro histórico.</li>
+        <li><strong>Camina por el casco antiguo.</strong> Las calles aledañas concentran los templos y el patrimonio arquitectónico del barrio.</li>
+        <li><strong>Ubícalo con ayuda local.</strong> Pregunta en las oficinas de información turística antes de buscarlo a ciegas.</li>
+        <li><strong>Confirma el acceso.</strong> Antes de entrar, verifica si está abierto, en qué franja y si se puede fotografiar.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: el recorrido a pie es corto, pero conviene caminar sin prisa.</li>
+        <li>Respeta el uso litúrgico del templo y no interfieras con celebraciones o actos religiosos.</li>
+        <li>Lleva agua y una capa ligera: el sol del mediodía es fuerte y la temperatura baja por la tarde.</li>
+        <li>Si vas a citar datos del templo, confírmalos primero: esta guía no verifica historia, fechas, horario ni acceso.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Fachada</span>
+          <h3>Desde el espacio público</h3>
+          <p>Como esta guía no verifica el acceso interior, lo fotografiable es la fachada y el entorno, siempre desde la calle.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Conjunto</span>
+          <h3>Los templos del centro</h3>
+          <p>Los recintos religiosos del casco antiguo se leen mejor en conjunto, integrados en la trama de calles y portadas del centro.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Respeto</span>
+          <h3>Interior, solo con permiso</h3>
+          <p>Si el templo está abierto, respeta las indicaciones sobre fotografiar en el interior y evita captar a las personas sin su consentimiento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el Templo de San Agustín" />
 </BaseLayout>

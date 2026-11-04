@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
 const title = 'Casonas coloniales de Ayacucho: qué mirar en el centro histórico';
@@ -24,6 +25,12 @@ const articleLd = {
   kicker="Arquitectura civil"
   heading="Casonas coloniales del centro de Ayacucho"
   lead="Alrededor de la plaza, las calles conservan casas de patio con portadas de piedra y balcones de madera. Se pueden reconocer desde la calle, aunque no siempre se pueden visitar por dentro."
+  tagline="La arquitectura civil del centro histórico, reconocible desde la calle por sus portadas de piedra, balcones de madera y patios interiores"
+  heroMeta={[
+    { text: `Maps ${site.mapsRating}/5 · ${site.mapsReviews} reseñas de la plaza` },
+    { text: 'Recorrido a pie por el centro histórico' },
+    { text: 'Ver ubicación en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Casonas coloniales' }]}
   jsonLd={[articleLd]}
   heroImage={images.plaza}
@@ -34,6 +41,99 @@ const articleLd = {
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
         <p>Las casonas coloniales del centro de Ayacucho se reconocen desde la calle por tres señales: la <strong>portada de piedra</strong>, los <strong>balcones de madera</strong> y la <strong>cubierta de teja de arcilla</strong>, sobre una casa organizada en torno a un patio interior. Esa arquitectura civil se consolidó entre los <strong>siglos XVI y XVII</strong>, tras la fundación de la ciudad en <strong>1540</strong>. Este proyecto no verifica qué casonas concretas admiten visitas ni en qué condiciones, así que el interior debe confirmarse antes de entrar.</p>
+      </div>
+      <div class="page-copy">
+        <p>Las <strong>casonas coloniales</strong> son la arquitectura civil que da continuidad al centro histórico de {site.cityName}: casas de patio con portadas de piedra, balcones de madera y cubiertas de teja de arcilla. Se reconocen caminando, sin necesidad de entrar en los inmuebles.</p>
+        <p>Más abajo encontrarás consejos para recorrerlas, una ficha rápida, un recorrido sugerido y puntos de fotografía, además del análisis del tipo arquitectónico que ya forma parte de esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo recorrerlas con calma</h2>
+      </div>
+      <ul class="checklist">
+        <li>Camina despacio por las calles laterales: las casonas se leen mejor a pie y sin prisa.</li>
+        <li>Mira por separado la planta baja y las plantas altas: las portadas y los balcones cuentan cosas distintas.</li>
+        <li>Recorre las calles en ambos sentidos: el sol cambia y con él la lectura de la piedra y la madera.</li>
+        <li>Trata las fachadas como parte de un espacio en uso: muchas casonas siguen siendo viviendas u oficinas.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué hace reconocible a una casona</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Pieza clave</span>
+          <h3>La portada de piedra</h3>
+          <p>El acceso principal, a menudo con un arco y un remate, concentra la decoración de la fachada y marca dónde empieza la casa.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">En altura</span>
+          <h3>Los balcones de madera</h3>
+          <p>Voladizos cerrados en los pisos altos, con celosías o paneles, que se proyectan sobre la calle y definen el perfil del barrio.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Hacia dentro</span>
+          <h3>El patio interior</h3>
+          <p>La pieza que organiza la casa alrededor de un espacio abierto. Es el corazón del tipo colonial, aunque normalmente no se ve desde la calle.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre las casonas</p>
+        <h2>Qué es una casona y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>Una <strong>casona colonial</strong> es una casa organizada en torno a un <strong>patio interior</strong>, con la fachada marcada por una <strong>portada de piedra</strong>, balcones de madera en las plantas altas y cubierta de teja de arcilla. Esa arquitectura civil se consolidó entre los <strong>siglos XVI y XVII</strong>, tras la fundación de la ciudad como ciudad española en <strong>1540</strong>.</p>
+        <p>Este proyecto no verifica la identidad, la fecha ni la autoría de ninguna casona concreta del centro, ni la lista de las que admiten visitas. Lo que sí se puede afirmar es el tipo arquitectónico y cómo reconocerlo desde el espacio público.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida de la casona tipo</caption>
+        <tbody>
+          <tr><th>Qué es</th><td>Casa de patio interior con portada de piedra, balcones de madera y cubierta de teja de arcilla.</td></tr>
+          <tr><th>Dónde se ve</th><td>En las calles que parten de la {site.attractionFullName}, dentro del centro histórico.</td></tr>
+          <tr><th>Época</th><td>Arquitectura civil consolidada entre los siglos XVI y XVII, tras la fundación de 1540.</td></tr>
+          <tr><th>Acceso</th><td>Desde la calle: fachadas, portadas, balcones y cubiertas. El interior normalmente no es público.</td></tr>
+          <tr><th>Interiores</th><td>No verificados por esta guía; confirma en cada inmueble y en fuentes oficiales antes de entrar.</td></tr>
+          <tr><th>Cómo llegar</th><td>A pie desde la plaza; el centro histórico se recorre caminando.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo verlas</h3>
+          <p>No hay un horario único. Muchas casonas son <strong>viviendas privadas u oficinas</strong> y no tienen horario de visita al público. Esta guía no verifica horarios por inmueble: confírmalos en la <a href={site.municipalidadUrl} target="_blank" rel="noreferrer">Municipalidad Provincial de Huamanga</a>, en MINCETUR o en la propia institución.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>El recorrido de fachadas desde la calle es <strong>libre</strong>. No existe un precio de entrada general porque la mayoría de las casonas no son recintos visitables; si algún inmueble abre al público, sus condiciones y tarifas son propias y esta guía no las verifica.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se accede a pie desde la {site.attractionFullName}, siguiendo las calles que salen de los portales. Para visitar interiores, pregunta en el propio inmueble o consulta los canales oficiales antes de entrar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el tipo</p>
+        <h2>La casona dentro del centro histórico</h2>
       </div>
       <div class="page-copy">
         <p>Los portales de la <strong>{site.attractionFullName}</strong> son la cara más visible de la arquitectura colonial de {site.cityName}, pero no la única. En las calles que salen de la plaza se conservan <strong>casonas con patio interior</strong>, portadas de piedra, balcones de madera y cubiertas de teja de arcilla. Reconocerlas al caminar es una de las mejores formas de leer el centro histórico.</p>
@@ -84,4 +184,58 @@ const articleLd = {
       </div>
     </div>
   </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar el paseo en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Empieza en la plaza.</strong> Toma la {site.attractionFullName} como punto de partida y ubica una calle lateral para entrar en las manzanas del centro.</li>
+        <li><strong>Avanza mirando a ambos lados.</strong> Lee la secuencia de portadas y el ritmo de las fachadas a lo largo de la calle.</li>
+        <li><strong>Levanta la vista.</strong> Observa los balcones de madera y la línea de teja que unifica el conjunto por encima de las plantas bajas.</li>
+        <li><strong>Cierra el paseo sin entrar.</strong> Si quieres ver un patio, pregunta primero en el inmueble o confirma en los canales oficiales.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa y evita esfuerzos en la primera hora.</li>
+        <li>No asumas que puedes entrar a un patio: muchas casonas siguen en uso como viviendas u oficinas.</li>
+        <li>Respeta la propiedad privada y el espacio cotidiano del barrio; no interfieras con actos cívicos, religiosos o culturales.</li>
+        <li>Si vas a citar datos por escrito, confírmalos: esta guía no verifica la fecha, la autoría ni las condiciones de visita de cada casona.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Conjunto</span>
+          <h3>La fachada completa</h3>
+          <p>Un encuadre frontal de la calle reúne portada, balcones y cubierta, y muestra el ritmo con que las casas se alinean en la manzana.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>La portada de piedra</h3>
+          <p>Un plano más cerrado del acceso principal, con su arco y su remate, permite leer la decoración que concentra la fachada.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Perfil</span>
+          <h3>La línea de tejado</h3>
+          <p>Mirar de perfil la cubierta de teja de arcilla revela la continuidad del conjunto por encima de las fachadas.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="las casonas coloniales del centro histórico" />
 </BaseLayout>
