@@ -3,8 +3,23 @@ import { site } from '../data/site.mjs';
 
 const {
   place = site.attractionFullName,
-  startPoint = `la ${site.attractionFullName}`
-} = Astro.props as { place?: string; startPoint?: string };
+  startPoint = `la ${site.attractionFullName}`,
+  mapNote = `Toma ${startPoint} como punto de partida: ${place} se alcanza caminando por el centro histórico. Si llegas desde el aeropuerto o el terminal terrestre, completa el trayecto hasta la plaza y termina a pie. Varias calles del entorno pueden tener control vehicular durante celebraciones o montajes.`,
+  locationLine = `${site.attractionFullName} (${site.attractionLocalName}) · ${site.cityName} ${site.postalCode}, ${site.countryName} · ${site.mapsPlusCode}`,
+  mapUrl = site.mapsUrl,
+  mapTitle = `Mapa de ${site.attractionFullName} en ${site.cityName}`,
+  mapSrc = 'https://maps.google.com/maps?q=-13.1603789,-74.2257816&amp;z=17&amp;output=embed&amp;hl=es',
+  mapLinkLabel = 'Abrir mapa completo ↗'
+} = Astro.props as {
+  place?: string;
+  startPoint?: string;
+  mapNote?: string;
+  locationLine?: string;
+  mapUrl?: string;
+  mapTitle?: string;
+  mapSrc?: string;
+  mapLinkLabel?: string;
+};
 ---
 
 <section class="section section-stone" aria-labelledby="alojamiento-sugerido">
@@ -58,15 +73,15 @@ const {
       <div>
         <p class="section-kicker">Ubicación</p>
         <h2 id="ubicacion-guia">Cómo llegar y ubicación</h2>
-        <p class="map-address">{site.attractionFullName} ({site.attractionLocalName}) · {site.cityName} {site.postalCode}, {site.countryName} · {site.mapsPlusCode}</p>
+        <p class="map-address">{locationLine}</p>
       </div>
-      <a class="text-link" href={site.mapsUrl} target="_blank" rel="noreferrer">Abrir mapa completo ↗</a>
+      <a class="text-link" href={mapUrl} target="_blank" rel="noreferrer">{mapLinkLabel}</a>
     </div>
-    <p class="map-note">Toma {startPoint} como punto de partida: {place} se alcanza caminando por el centro histórico. Si llegas desde el aeropuerto o el terminal terrestre, completa el trayecto hasta la plaza y termina a pie. Varias calles del entorno pueden tener control vehicular durante celebraciones o montajes.</p>
+    <p class="map-note">{mapNote}</p>
     <div class="map-frame">
       <iframe
-        title={`Mapa de ${site.attractionFullName} en ${site.cityName}`}
-        src="https://maps.google.com/maps?q=-13.1603789,-74.2257816&amp;z=17&amp;output=embed&amp;hl=es"
+        title={mapTitle}
+        src={mapSrc}
         allowfullscreen
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin"></iframe>

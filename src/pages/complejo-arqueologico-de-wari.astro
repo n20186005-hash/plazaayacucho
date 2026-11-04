@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Complejo Arqueológico Wari en Ayacucho: guía de visita';
+const description = 'El Complejo Arqueológico Wari, capital prehispánica de la cultura Wari cerca de Ayacucho: qué es, cómo llegar desde la plaza (22–23 km), qué ver y qué confirmar antes de ir.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/complejo-arqueologico-de-wari/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Complejo+Arqueol%C3%B3gico+Wari,+Pacaycasa,+Ayacucho&hl=es';
+const mapSrc = 'https://maps.google.com/maps?q=Complejo+Arqueol%C3%B3gico+Wari,+Pacaycasa,+Ayacucho&amp;z=14&amp;output=embed&amp;hl=es';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Sitios arqueológicos"
+  heading="Complejo Arqueológico Wari"
+  lead="La capital del primer imperio andino, a unos 22–23 km de la plaza, en el distrito de Pacaycasa. Esta guía reúne los datos de referencia del inventario turístico de MINCETUR, consejos para organizar la excursión, un recorrido sugerido y puntos de fotografía."
+  tagline="La capital del primer imperio andino, seis siglos antes de los incas"
+  heroMeta={[
+    { text: 'A unos 22–23 km de la plaza · MINCETUR' },
+    { text: 'Altitud aprox. 2.731 m s. n. m. · MINCETUR' },
+    { text: 'Cultura Wari · 550–900 d. C.' },
+    { text: 'Ver la plaza en el mapa ↗', href: site.mapsUrl }
+  ]}
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Complejo Arqueológico Wari' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['pueblo-de-quinua', 'itinerario-un-dia', 'centro-historico-huamanga', 'lugares-cerca']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Complejo Arqueológico Wari</strong> fue la capital prehispánica de la cultura Wari y la expresión más compleja del urbanismo andino, seis siglos antes de los incas. El inventario turístico de MINCETUR lo sitúa a unos <strong>22–23 km de la plaza</strong>, con una referencia de <strong>30–35 minutos</strong> en vehículo, a unos <strong>2.731 m s. n. m.</strong> Fue declarado <strong>Patrimonio Cultural de la Nación</strong> (RDN N°202/INC, 1998) y cuenta con <strong>museo de sitio</strong>. Esta guía no verifica el horario ni la tarifa vigentes: confírmalos antes de ir.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Complejo Arqueológico Wari</strong> es un destino de excursión, no un punto del recorrido urbano. Está fuera del casco histórico, en el distrito de Pacaycasa, y visitarlo exige organizar el transporte y reservar medio día o más. Esta página reúne consejos de visita, una ficha con los datos de referencia, un recorrido sugerido y puntos de fotografía.</p>
+        <p>Conviene decirlo desde el principio: Wari es un <strong>sitio arqueológico</strong> con su propia lógica de visita. El área monumental es extensa, parte de las estructuras están soterradas y el recorrido se hace a pie entre muros y callejones. No es comparable a recorrer una plaza o un templo del centro.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo aprovechar la excursión</h2>
+      </div>
+      <ul class="checklist">
+        <li>Resérvalo como excursión: está a 22–23 km, así que organiza el transporte antes de salir.</li>
+        <li>Ve con tiempo: el área monumental abarca casi 302 hectáreas y el recorrido se hace a pie.</li>
+        <li>Visita el museo de sitio para ver cerámicas, líticos, textiles y monolitos de las excavaciones.</li>
+        <li>Combínalo con el pueblo de Quinua y el Santuario Histórico de la Pampa de Ayacucho, en el mismo circuito.</li>
+        <li>Confirma horario, tarifa y operación del museo: esta guía no los verifica.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este complejo</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Cronología</span>
+          <h3>Capital del primer imperio andino</h3>
+          <p>La cultura Wari se desarrolló entre el 550 y el 900 d. C. y su estado militar llegó a dominar un vasto territorio, seis siglos antes de los incas.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Urbanismo</span>
+          <h3>Trazado planificado y murallas</h3>
+          <p>El núcleo urbano se organiza con grandes murallas de corte trapezoidal, estructuras de planta en forma de «D» y edificaciones subterráneas de varios niveles.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Museo de sitio</span>
+          <h3>Piezas de las excavaciones</h3>
+          <p>Exhibe bienes culturales procedentes de las excavaciones: cerámicas, líticos, textiles y monolitos, entre otros.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el complejo</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Complejo Arqueológico Wari</strong> fue una ciudad prehispánica y la capital de la cultura del mismo nombre. Según el inventario de MINCETUR, la civilización Wari fue una organización política y social estatal que surgió entre el <strong>550 y el 900 d. C.</strong> y llegó a extenderse desde Cajamarca, por el norte, hasta Tacna, por el sur.</p>
+        <p>El área monumental corresponde a la parte central del complejo y es también el área de visita turística. Tiene forma cuadrangular, una extensión de casi <strong>302 hectáreas</strong> y una inclinación moderada de este a oeste.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del complejo</caption>
+        <tbody>
+          <tr><th>Nombre en el inventario</th><td><strong>Complejo Arqueológico Wari</strong></td></tr>
+          <tr><th>Otros nombres</th><td>Viñaque (denominación del cronista Pedro Cieza de León, mediados del siglo XVI)</td></tr>
+          <tr><th>Cultura</th><td>Wari, aprox. <strong>550–900 d. C.</strong></td></tr>
+          <tr><th>Ubicación</th><td>Distrito de Pacaycasa, provincia de Huamanga, {site.cityName}</td></tr>
+          <tr><th>Altitud</th><td>Aprox. <strong>2.731 m s. n. m.</strong> (MINCETUR).</td></tr>
+          <tr><th>Distancia desde la plaza</th><td><strong>23 km</strong> · 35 min en bus turístico; <strong>22 km</strong> · 30 min en mini bus público desde el paradero de Ayacucho.</td></tr>
+          <tr><th>Área monumental</th><td>Casi <strong>302 hectáreas</strong>; el conjunto total se estima en unas 2.000 hectáreas.</td></tr>
+          <tr><th>Ingreso</th><td><strong>Por confirmar</strong>: esta guía no verifica la tarifa ni el horario vigentes.</td></tr>
+          <tr><th>Reconocimiento</th><td>Patrimonio Cultural de la Nación, Resolución Directoral Nacional N° 202/INC del 21/07/1998.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo ir</h3>
+          <p>Esta guía <strong>no verifica</strong> el horario de atención. Al tratarse de un sitio arqueológico con museo de sitio, conviene confirmar los días y las horas de apertura antes de desplazarte.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>La tarifa <strong>no está verificada</strong> aquí. Los sitios arqueológicos administrados por el Estado suelen tener una entrada, pero el importe y las exenciones deben confirmarse en el momento o en un canal oficial.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Por vía asfaltada: <strong>23 km</strong> en bus turístico (35 min) o <strong>22 km</strong> en mini bus público desde el paradero de Ayacucho (30 min). Los tiempos son referencias de MINCETUR.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el complejo</p>
+        <h2>Historia, arquitectura y visita</h2>
+      </div>
+      <div class="page-copy">
+        <p>Wari es el punto de partida de buena parte de lo que después sería el mundo andino. Según la ficha oficial, su urbanismo —conceptos, patrones y tecnologías— influyó luego tanto en las culturas del Período Intermedio Tardío, como la Chimú, como en el Horizonte Inka.</p>
+
+        <h2>Una ciudad planificada</h2>
+        <p>El núcleo urbano se organiza con <strong>grandes murallas de corte trapezoidal</strong> que encierran estructuras menores de distintas formas y funciones, conectadas por callejones, corredores, patios y terrazas. Buena parte de esas construcciones, sobre todo en la parte baja, está soterrada, mientras que en la parte alta permanece expuesta. Las murallas de algunos sectores, como Uchpa-Qoto y Capillapata, conservan alturas superiores a los ocho metros.</p>
+        <p>Uno de los rasgos que caracterizan el trazado ortogonal de la ciudad son las <strong>estructuras de planta en forma de «D»</strong>, visibles en sectores como Sullu Cruz, Capillapata, Vegachayoc Moqo, Monqachayoc y Cheqo Huasi. La ficha menciona también <strong>edificaciones subterráneas de varios niveles</strong> y señala que las paredes de los principales edificios civiles, religiosos y administrativos debieron estar enlucidas y pintadas de blanco y rojo.</p>
+
+        <h2>Un imperio con ingeniería hidráulica</h2>
+        <p>La ciudad disponía de un <strong>sistema de abastecimiento de agua</strong> que llegaba desde la laguna de Yanaqocha por un canal trapezoidal de unos 25 kilómetros, del cual una parte sigue en uso. La población en su momento de mayor desarrollo se estima entre <strong>50.000 y 70.000 habitantes</strong>. En su periferia se han registrado además manifestaciones de <strong>arte rupestre</strong>, con petroglifos y pocitos circulares tallados en piedras y afloramientos rocosos.</p>
+
+        <h2>El nombre y los hallazgos recientes</h2>
+        <p>La primera mención escrita del sitio se atribuye al cronista <strong>Pedro Cieza de León</strong>, quien a mediados del siglo XVI lo describió con el nombre de <strong>Viñaque</strong>. La toponimia quechua de <em>wari</em> se asocia al efecto del sol al subir la temperatura ambiental.</p>
+        <p>En 2015, investigaciones del Ministerio de Cultura, la Universidad Nacional de San Cristóbal de Huamanga y el Gobierno Regional de Ayacucho identificaron nuevos restos en los sectores de Vegachayuq Moqo, un área ceremonial, y Monqachayuq, de uso funerario, con mausoleos, galerías subterráneas, un patio hundido y fosas. El principal hallazgo de este último fue un mausoleo con compartimientos orientados a un espacio central, a unos ocho metros de profundidad.</p>
+
+        <h2>Por qué merece la excursión</h2>
+        <p>Con unas 2.000 hectáreas, Wari está considerada la zona arqueológica más extensa de la sierra peruana. La visita combina dos escalas: el recorrido por el área monumental, entre murallas y estructuras, y la lectura de las piezas en el museo de sitio. Por eso conviene ir con tiempo y con calzado cómodo.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> los datos históricos, arquitectónicos y de extensión provienen del inventario de MINCETUR. Esta guía no verifica el estado de conservación actual, el horario, la tarifa ni la disponibilidad del museo de sitio: confírmalos con el Ministerio de Cultura antes de organizar la visita.</p>
+        </div>
+
+        <p class="verify-note">Descripción basada en el inventario de recursos turísticos de MINCETUR (ficha del Complejo Arqueológico Wari). Los detalles de conservación y de operación del sitio no han sido comprobados en el terreno por esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la excursión en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Confirma antes de salir.</strong> Verifica horario, tarifa y operación del museo de sitio, porque esta guía no los da por confirmados.</li>
+        <li><strong>Organiza el transporte.</strong> Bus turístico desde la plaza (23 km, 35 min) o mini bus público desde el paradero de Ayacucho (22 km, 30 min).</li>
+        <li><strong>Recorre el área monumental.</strong> Camina entre murallas, estructuras en forma de «D» y patios, prestando atención al trazado planificado de la ciudad.</li>
+        <li><strong>Cierra en el museo y combina con Quinua.</strong> Visita el museo de sitio y, si tienes tiempo, enlaza con el pueblo de Quinua y la Pampa de Ayacucho.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>Está a unos <strong>2.731 m s. n. m.</strong> y el conjunto se extiende entre los 2.645 y los 2.800 m: camina sin prisa.</li>
+        <li>El clima de la zona es seco y con sol fuerte: lleva agua, protección solar y una capa ligera de abrigo.</li>
+        <li>El área monumental es extensa y se recorre a pie: usa calzado cómodo y reserva tiempo suficiente.</li>
+        <li>Confirma horario y tarifa antes de viajar: son datos que esta guía no verifica.</li>
+        <li>Combínalo con el pueblo de Quinua y el Santuario Histórico de la Pampa de Ayacucho, en el mismo circuito regional.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Panorámica</span>
+          <h3>Las murallas del conjunto</h3>
+          <p>Un encuadre amplio permite mostrar la escala del núcleo urbano y el trazado ortogonal de las estructuras.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>Muros y estructura en «D»</h3>
+          <p>Un plano cerrado ayuda a leer el aparejo de la piedra, las juntas de dilatación y la planta en forma de «D» de algunos edificios.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Mañana y tarde</h3>
+          <p>La luz lateral de la primera hora y del final del día da volumen a los muros y revela las texturas del terreno.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail
+    place="el Complejo Arqueológico Wari"
+    mapNote="Wari está fuera de la ciudad, a unos 22–23 km de la plaza en el distrito de Pacaycasa. La ficha de MINCETUR describe el acceso por vía asfaltada: en bus turístico desde la plaza (23 km, unos 35 minutos) o en mini bus público desde el paradero de Ayacucho (22 km, unos 30 minutos). No es un paseo a pie desde el centro histórico: organiza el transporte y confirma horario y tarifa antes de salir."
+    locationLine={`Complejo Arqueológico Wari · Distrito de Pacaycasa, provincia de Huamanga, ${site.cityName}, ${site.countryName}. Acceso por vía asfaltada desde la ciudad.`}
+    mapUrl={mapUrl}
+    mapTitle={`Mapa del Complejo Arqueológico Wari en ${site.cityName}`}
+    mapSrc={mapSrc}
+  />
+</BaseLayout>

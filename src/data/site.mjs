@@ -28,6 +28,10 @@ export const site = {
   minceturUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=386',
   minceturCatedralUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=1092',
   minceturArcoUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=1118',
+  minceturAcuchimayUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=1114',
+  minceturWariUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=1125',
+  minceturQuinuaCeramicaUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=12950',
+  minceturPampaAyacuchoUrl: 'https://consultasenlinea.mincetur.gob.pe/fichaInventario/index.aspx?cod_Ficha=1947',
   promperuUrl: 'https://target2.promperu.gob.pe/destinos/ayacucho/ciudad-de-ayacucho/plaza-mayor-de-la-ciudad-de-ayacucho',
   commonsUrl: 'https://commons.wikimedia.org/wiki/Ayacucho',
   culturaSemanaSantaUrl: 'https://www.gob.pe/institucion/cultura/noticias/663446-ministerio-de-cultura-declara-patrimonio-cultural-de-la-nacion-a-la-semana-santa-de-ayacucho',
@@ -323,6 +327,22 @@ export const guides = [
     summary: 'La referencia del arte popular ayacuchano y el retablo, dentro del centro histórico.'
   },
   {
+    slug: 'complejo-arqueologico-de-wari',
+    group: 'patrimonio',
+    h1: 'Complejo Arqueológico Wari',
+    title: 'Complejo Arqueológico Wari en Ayacucho: guía de visita',
+    description: 'El Complejo Arqueológico Wari, capital prehispánica de la cultura Wari cerca de Ayacucho: qué es, cómo llegar desde la plaza, horario de referencia y qué confirmar antes de ir.',
+    summary: 'La capital del primer imperio andino, a unos 22–23 km de la plaza.'
+  },
+  {
+    slug: 'pueblo-de-quinua',
+    group: 'patrimonio',
+    h1: 'Pueblo de Quinua',
+    title: 'Pueblo de Quinua en Ayacucho: guía de visita',
+    description: 'El Pueblo de Quinua, cerca de Ayacucho: su cerámica tradicional declarada Patrimonio Cultural de la Nación, el Santuario Histórico de la Pampa de Ayacucho y qué confirmar antes de ir.',
+    summary: 'El pueblo artesano y el escenario de la batalla de Ayacucho.'
+  },
+  {
     slug: 'semana-santa-ayacucho',
     group: 'patrimonio',
     h1: 'Semana Santa de Ayacucho',
@@ -417,8 +437,8 @@ export const guides = [
     group: 'viajero',
     h1: 'Mirador de Acuchimay',
     title: 'Mirador de Acuchimay desde la Plaza Mayor de Ayacucho',
-    description: 'Cómo plantear una visita al mirador de Acuchimay desde la Plaza Mayor de Ayacucho: para qué sirve, cómo llegar y qué confirmar antes de subir.',
-    summary: 'Un punto panorámico por encima de la ciudad y cómo organizarlo.'
+    description: 'Cómo plantear una visita al mirador de Acuchimay, también llamado Mirador de Ayacucho, desde la Plaza Mayor: qué es, cómo llegar, acceso libre y qué confirmar antes de subir.',
+    summary: 'El mirador de 360° sobre Ayacucho, a 2,5 km de la plaza y con acceso libre.'
   },
   {
     slug: 'temporada-lluvias',

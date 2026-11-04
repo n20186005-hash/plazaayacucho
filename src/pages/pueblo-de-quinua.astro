@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Pueblo de Quinua en Ayacucho: guía de visita';
+const description = 'El Pueblo de Quinua, cerca de Ayacucho: su cerámica tradicional declarada Patrimonio Cultural de la Nación, el Santuario Histórico de la Pampa de Ayacucho y qué confirmar antes de ir.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/pueblo-de-quinua/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Pueblo+de+Quinua,+Huamanga,+Ayacucho&hl=es';
+const mapSrc = 'https://maps.google.com/maps?q=Pueblo+de+Quinua,+Huamanga,+Ayacucho&amp;z=13&amp;output=embed&amp;hl=es';
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Pueblos y patrimonio"
+  heading="Pueblo de Quinua"
+  lead="El pueblo alfarero de Ayacucho y la puerta de entrada a la Pampa donde se selló la independencia sudamericana. Esta guía reúne los datos de referencia del inventario turístico de MINCETUR, consejos para organizar la excursión, un recorrido sugerido y puntos de fotografía."
+  tagline="El pueblo alfarero a las puertas de la Pampa de Ayacucho"
+  heroMeta={[
+    { text: 'A unos 37 km al noroeste de la ciudad · MINCETUR' },
+    { text: 'Altitud aprox. 3.275 m s. n. m. · MINCETUR' },
+    { text: 'Cerámica Patrimonio Cultural de la Nación (2019)' },
+    { text: 'Ver la plaza en el mapa ↗', href: site.mapsUrl }
+  ]}
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Pueblo de Quinua' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['complejo-arqueologico-de-wari', 'itinerario-un-dia', 'artesanias-huamanga', 'lugares-cerca']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Pueblo de Quinua</strong> es un destino alfarero cerca de Ayacucho, en el distrito del mismo nombre, a unos <strong>37 km al noroeste de la ciudad</strong>, a unos <strong>3.275 m s. n. m.</strong> Su <strong>cerámica tradicional</strong> fue declarada <strong>Patrimonio Cultural de la Nación</strong> (RVM N°037-2019-VMPCIC-MC). Junto al pueblo se encuentra el <strong>Santuario Histórico de la Pampa de Ayacucho</strong>, escenario de la batalla de 1824, con su obelisco de 44 metros. Esta guía no verifica horarios ni tarifas vigentes: confírmalos antes de ir.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Pueblo de Quinua</strong> combina dos atractivos en un mismo destino: un pueblo de tradición alfarera, reconocido por su cerámica, y el <strong>Santuario Histórico de la Pampa de Ayacucho</strong>, el escenario donde se libró la batalla que consolidó la independencia de Sudamérica. Esta página reúne consejos de visita, una ficha con los datos de referencia, un recorrido sugerido y puntos de fotografía.</p>
+        <p>Se trata de una <strong>excursión regional</strong>, no de un paseo urbano: está a unos 37 km al noroeste de la ciudad y conviene organizar el transporte con antelación. El recorrido se entiende mejor como una media jornada que como una parada rápida.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo aprovechar la excursión</h2>
+      </div>
+      <ul class="checklist">
+        <li>Resérvalo como excursión: está a unos 37 km al noroeste de la ciudad, así que organiza el transporte.</li>
+        <li>Combínalo con Wari: el circuito Ayacucho–Complejo Arqueológico Wari–Quinua es el más visitado de la región.</li>
+        <li>Reserva tiempo para la cerámica: los talleres y la venta de artesanía son parte central de la experiencia.</li>
+        <li>Sube a la Pampa de Ayacucho, a 1 km del pueblo, para ver el obelisco y los cerros Condorcunca y Andrespata.</li>
+        <li>Confirma horarios y tarifas: esta guía no los verifica.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a Quinua</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Artesanía</span>
+          <h3>Una cerámica reconocida</h3>
+          <p>La cerámica tradicional de Quinua fue declarada Patrimonio Cultural de la Nación en 2019, con un legado de la cultura Wari.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Historia</span>
+          <h3>El escenario de la batalla</h3>
+          <p>La Pampa de Ayacucho, a 1 km del pueblo, fue el campo de la batalla de 1824; hoy la recuerda un obelisco de 44 metros.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Paisaje</span>
+          <h3>Mirador natural de la campiña</h3>
+          <p>Los cerros Condorcunca y Andrespata enmarcan la llanura y ofrecen una vista amplia de la campiña ayacuchana.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el destino</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Pueblo de Quinua</strong> es un núcleo de tradición alfarera en el distrito de Quinua, provincia de Huamanga. Su cerámica tiene reconocimiento nacional e internacional, y el pueblo se asocia al paisaje histórico de la <strong>Pampa de Ayacucho</strong>, el área natural protegida donde se libró la batalla de 1824.</p>
+        <p>El Santuario Histórico de la Pampa de Ayacucho, administrado por el SERNANP, se ubica a unos <strong>37 km al noroeste de la ciudad</strong>, con el pueblo de Quinua a 1 km. Según la ficha oficial, Quinua está considerada «Pueblo con Encanto» y figura entre los <em>Best Tourism Villages</em> de ONU Turismo.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida de Quinua</caption>
+        <tbody>
+          <tr><th>Nombre en el inventario</th><td>Cerámica Tradicional de Quinua · Santuario Histórico de la Pampa de Ayacucho</td></tr>
+          <tr><th>Ubicación</th><td>Distrito de Quinua, provincia de Huamanga, {site.cityName}</td></tr>
+          <tr><th>Distancia</th><td>A unos <strong>37 km al noroeste</strong> de la ciudad; la Pampa de Ayacucho, a 1 km del pueblo.</td></tr>
+          <tr><th>Altitud</th><td>Pueblo: aprox. <strong>3.275 m s. n. m.</strong> La Pampa: entre <strong>3.400 y 4.050 m s. n. m.</strong></td></tr>
+          <tr><th>Cerámica</th><td>Patrimonio Cultural de la Nación, RVM N°037-2019-VMPCIC-MC del 15/03/2019.</td></tr>
+          <tr><th>Santuario Histórico</th><td>Establecido el 14/08/1980 (DS N°119-80-AA); 300 hectáreas administradas por el SERNANP.</td></tr>
+          <tr><th>Reconocimientos</th><td>Reserva de Biosfera del Bicentenario – Ayacucho (UNESCO, 2023); campo de batalla en la Lista Indicativa del Patrimonio Mundial (2019).</td></tr>
+          <tr><th>Ingreso</th><td><strong>Por confirmar</strong>: esta guía no verifica la tarifa ni el horario vigentes.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo ir</h3>
+          <p>Esta guía <strong>no verifica</strong> los horarios. El Santuario es un área natural protegida y el pueblo mantiene actividad durante todo el año; confirma la apertura del museo de sitio y de la casa de la Capitulación antes de ir.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>La tarifa <strong>no está verificada</strong> aquí. El acceso al Santuario y a los espacios del pueblo puede tener condiciones distintas: confírmalo en el momento o en un canal oficial.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>A unos <strong>37 km al noroeste</strong> de la ciudad. Lo habitual es llegar en vehículo o en tour; combinarlo con el Complejo Arqueológico Wari en un mismo circuito.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre Quinua</p>
+        <h2>Cerámica, historia y paisaje</h2>
+      </div>
+      <div class="page-copy">
+        <p><strong>Quinua</strong> reúne en un mismo lugar la artesanía viva de un pueblo alfarero y la memoria de uno de los hechos decisivos de la independencia sudamericana. Sus dos grandes atractivos —la cerámica y la Pampa de Ayacucho— se visitan juntos, porque están a un kilómetro de distancia.</p>
+
+        <h2>La cerámica de Quinua</h2>
+        <p>La cerámica de Quinua es una de las artes tradicionales con más reconocimiento del país. Según la ficha oficial, su estilo —diseños, personajes, composiciones, símbolos y técnica— procede de orígenes prehispánicos y coloniales, y tiene un <strong>legado significativo de la cultura Wari</strong>. Se clasifica en tres tipos: la <strong>decorativa</strong>, con figuras de animales como toros, llamas y músicos, e iglesias en miniatura; la <strong>utilitaria</strong>, con vasijas domésticas como cántaros, platos y ollas; y la <strong>ceremonial</strong>, con iglesias en miniatura y figuras para la protección de viviendas y ganado.</p>
+        <p>Las piezas se elaboran con arcillas naturales denominadas <em>llinco</em> y <em>acco</em>, de color ocre, y se cuecen en hornos de adobe alimentados con leña de eucalipto, en un proceso de dos a tres horas. Muchas conservan un profundo simbolismo: los toros que se colocan en los techos para proteger contra los rayos y las iglesias en miniatura que, según la tradición, protegen del mal.</p>
+
+        <h2>El Santuario Histórico de la Pampa de Ayacucho</h2>
+        <p>El Santuario es un área natural protegida establecida el <strong>14 de agosto de 1980</strong> mediante Decreto Supremo N° 119-80-AA, con la finalidad de mantener intangible el teatro escénico de la batalla de Ayacucho. Ocupa una extensa llanura elevada de <strong>300 hectáreas</strong>, con un clima frío y seco, brillo solar todo el año y una temperatura media anual cercana a los 12 °C; la época lluviosa va de enero a marzo. Los cerros <strong>Condorcunca y Andrespata</strong> forman su entorno natural y, por su ubicación, el lugar funciona también como un mirador de la campiña ayacuchana.</p>
+
+        <h2>El obelisco y la batalla</h2>
+        <p>En la llanura se alza el <strong>obelisco de la pampa de Quinua</strong>, un monumento conmemorativo de mármol, con forma de pirámide de base cuadrangular, que alcanza los <strong>44 metros</strong> de altura. En su base lleva la inscripción «Homenaje de la Nación a los vencedores de Ayacucho» y sobre ella se dispone un conjunto escultórico de bronce con los próceres que encabezaron la batalla —Sucre, Gamarra, Córdoba, La Mar, Lara y Miller—, el rostro de Bolívar en un medallón y dos ángeles de la Fama.</p>
+        <p>Según la ficha oficial, fue tal la magnitud de la victoria que Bolívar decidió cambiar el nombre de la ciudad de Huamanga por el de <strong>Ayacucho</strong>, en honor a la pampa histórica. Cada <strong>9 de diciembre</strong> se realiza en la llanura la escenificación de la batalla y el acto de la capitulación, que atraen a miles de visitantes.</p>
+
+        <h2>Reconocimientos y entorno</h2>
+        <p>El campo de batalla fue inscrito en 2019 en la Lista Indicativa del Patrimonio Mundial de la UNESCO, y en 2023 el Santuario quedó integrado como área núcleo de la <strong>Reserva de Biosfera del Bicentenario – Ayacucho</strong>. El sitio forma parte del circuito turístico más visitado de la región, que une la ciudad con el Complejo Arqueológico Wari y Quinua, y en el pueblo se encuentran un museo de sitio y la casa de la Capitulación.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> los datos sobre la cerámica, el Santuario y el obelisco provienen del inventario de MINCETUR. Esta guía no verifica los horarios, las tarifas ni la operación actual del museo de sitio y de la casa de la Capitulación: confírmalos con el SERNANP, el Ministerio de Cultura o la municipalidad antes de organizar la visita.</p>
+        </div>
+
+        <p class="verify-note">Descripción basada en el inventario de recursos turísticos de MINCETUR (fichas de la Cerámica Tradicional de Quinua y del Santuario Histórico de la Pampa de Ayacucho). El estado actual del sitio no ha sido comprobado en el terreno por esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la visita en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Confirma antes de salir.</strong> Verifica horarios y tarifas del Santuario, del museo de sitio y de la casa de la Capitulación, porque esta guía no los da por confirmados.</li>
+        <li><strong>Organiza el transporte.</strong> Está a unos 37 km al noroeste de la ciudad: lo habitual es ir en vehículo o en tour, y combinarlo con Wari.</li>
+        <li><strong>Recorre el pueblo y su cerámica.</strong> Dedica tiempo a los talleres y a la venta de artesanía para entender los tres tipos de piezas y su simbolismo.</li>
+        <li><strong>Cierra en la Pampa de Ayacucho.</strong> A 1 km del pueblo, recorre la llanura, llega al obelisco y mira el paisaje desde los cerros Condorcunca y Andrespata.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>El pueblo está a unos <strong>3.275 m s. n. m.</strong> y la Pampa llega hasta los <strong>4.050 m</strong>: camina sin prisa y deja tiempo para aclimatarte.</li>
+        <li>El clima de la Pampa es <strong>frío y seco</strong>, con brillo solar todo el año y lluvias entre enero y marzo: lleva abrigo, agua y protección solar.</li>
+        <li>Confirma horarios y tarifas antes de viajar: son datos que esta guía no verifica.</li>
+        <li>Si vas el <strong>9 de diciembre</strong>, hay escenificación de la batalla y actos conmemorativos: espera mayor afluencia.</li>
+        <li>Combínalo con el Complejo Arqueológico Wari para aprovechar el desplazamiento.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Paisaje</span>
+          <h3>La campiña desde la Pampa</h3>
+          <p>Un encuadre amplio desde la llanura permite mostrar la extensión del paisaje y los cerros Condorcunca y Andrespata.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Monumento</span>
+          <h3>El obelisco de la Pampa</h3>
+          <p>La pirámide de mármol de 44 metros, con sus relieves y el conjunto escultórico de bronce, admite planos frontales y laterales.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>La cerámica de Quinua</h3>
+          <p>Un plano cerrado permite apreciar los diseños, los personajes y el simbolismo de las piezas en los talleres del pueblo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail
+    place="el Pueblo de Quinua"
+    mapNote="Quinua está fuera de la ciudad, a unos 37 km al noroeste, con el Santuario Histórico de la Pampa de Ayacucho a 1 km del pueblo. No es un paseo a pie desde el centro histórico: organiza el transporte (vehículo o tour) y confirma horarios y tarifas antes de salir. Lo habitual es combinar la visita con el Complejo Arqueológico Wari en un mismo circuito."
+    locationLine={`Pueblo de Quinua · Distrito de Quinua, provincia de Huamanga, ${site.cityName}, ${site.countryName}. Santuario Histórico de la Pampa de Ayacucho a 1 km.`}
+    mapUrl={mapUrl}
+    mapTitle={`Mapa del Pueblo de Quinua en ${site.cityName}`}
+    mapSrc={mapSrc}
+  />
+</BaseLayout>

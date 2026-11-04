@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
 import { site, images } from '../data/site.mjs';
 
-const title = 'Mirador de Acuchimay desde la Plaza Mayor de Ayacucho';
-const description = 'Cómo plantear una visita al mirador de Acuchimay desde la Plaza Mayor de Ayacucho: para qué sirve, cómo llegar y qué confirmar antes de subir.';
+const title = 'Mirador de Acuchimay (Mirador de Ayacucho): guía de visita';
+const description = 'El Mirador de Acuchimay, también llamado Mirador de Ayacucho: qué es, sus cuatro niveles, cómo llegar desde la plaza (2,5 km), acceso libre y qué confirmar antes de subir.';
 
 const articleLd = {
   '@context': 'https://schema.org',
@@ -16,6 +17,9 @@ const articleLd = {
   isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
   publisher: { "@type": 'Organization', name: site.domain }
 };
+
+const mapUrl = 'https://www.google.com/maps/search/?api=1&query=Mirador+Acuchimay,+Carmen+Alto,+Ayacucho&hl=es';
+const mapSrc = 'https://maps.google.com/maps?q=Mirador+Acuchimay,+Carmen+Alto,+Ayacucho&amp;z=14&amp;output=embed&amp;hl=es';
 ---
 
 <BaseLayout
@@ -23,7 +27,15 @@ const articleLd = {
   description={description}
   kicker="Miradores"
   heading="Mirador de Acuchimay"
-  lead="El mirador de Acuchimay es un punto panorámico por encima de la ciudad de Ayacucho. Esta guía explica para qué sirve un mirador así, cómo plantear la visita y qué se debe confirmar antes de subir, porque este proyecto no verifica su altitud, acceso, horarios ni condiciones de seguridad."
+  lead="El Mirador de Acuchimay —conocido también como Mirador de Ayacucho— es el balcón panorámico de la ciudad, en el distrito de Carmen Alto. Esta guía reúne los datos de referencia del inventario turístico de MINCETUR, consejos prácticos, un recorrido sugerido y puntos de fotografía."
+  tagline="El balcón de Ayacucho: la ciudad entera, sus cerros y su valle desde una vista de 360°"
+  heroMeta={[
+    { text: 'A unos 2,5 km de la plaza · MINCETUR' },
+    { text: 'Acceso libre · MINCETUR' },
+    { text: 'Altitud aprox. 2.865 m s. n. m. · MINCETUR' },
+    { text: 'Visita posible todo el año · MINCETUR' },
+    { text: 'Ver la plaza en el mapa ↗', href: site.mapsUrl }
+  ]}
   breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Mirador Acuchimay' }]}
   jsonLd={[articleLd]}
   heroImage={images.plaza}
@@ -33,13 +45,14 @@ const articleLd = {
     <div class="shell">
       <div class="quick-answer">
         <p class="quick-answer-label">Respuesta directa</p>
-        <p>El mirador de Acuchimay es un punto panorámico por encima de Ayacucho que complementa la visita a la plaza. Este proyecto no verifica su altitud, distancia desde la plaza, acceso, horarios ni condiciones de seguridad: todo eso debe confirmarse antes de subir. La plaza misma, a unos 2.750 m s. n. m., tiene acceso libre y franja recomendada de 06:00 a 21:00 según MINCETUR.</p>
+        <p>El <strong>Mirador de Acuchimay</strong> —también llamado <strong>Mirador de Ayacucho</strong>— es el principal mirador turístico de la ciudad, en el distrito de Carmen Alto. El inventario turístico de MINCETUR lo sitúa a unos <strong>2,5 km de la plaza</strong>, con una referencia de <strong>10 minutos en taxi</strong>, a una altitud aproximada de <strong>2.865 m s. n. m.</strong>, con <strong>ingreso libre</strong> y visita posible <strong>todo el año</strong>. Su infraestructura se organiza en cuatro niveles y ofrece una vista de 360° sobre la ciudad.</p>
       </div>
       <div class="page-copy">
-        <p>El <strong>mirador de Acuchimay</strong> es un punto elevado desde el cual se domina una vista panorámica de {site.cityName}. Se encuentra por encima del casco urbano y permite leer la ciudad en su conjunto: el centro histórico, los cerros que la rodean y la topografía del valle andino. Desde la <strong>{site.attractionFullName}</strong>, la visita al mirador es una salida distinta del recorrido urbano: requiere transporte, planificación y confirmación previa.</p>
+        <p>El <strong>mirador de Acuchimay</strong> es un punto elevado desde el cual se domina una vista panorámica de {site.cityName}. Se encuentra por encima del casco urbano y permite leer la ciudad en su conjunto: el centro histórico, los cerros que la rodean y la topografía del valle andino. Desde la <strong>{site.attractionFullName}</strong>, la visita al mirador es una salida distinta del recorrido urbano: requiere transporte y una mínima planificación, pero no una confirmación previa del acceso, porque MINCETUR lo registra como de ingreso libre.</p>
+        <p>El nombre viene del quechua: según la ficha oficial, <em>acuchi</em> se refiere a masticar o chacchar coca y <em>may</em> equivale a la pregunta «¿dónde está?», de modo que el topónimo se ha traducido como «dónde está, para chacchar coca». El cerro divide los distritos de Carmen Alto y Ayacucho y es uno de los puntos más altos de la zona.</p>
 
         <div class="callout">
-          <p><strong>Lo que no está verificado:</strong> este proyecto no confirma la altitud exacta del mirador, la distancia desde la plaza, el tiempo de acceso, las condiciones del camino, los horarios de apertura ni las condiciones de seguridad. Todo eso debe verificarse antes de subir. Lo que sigue es una guía de planificación, no una descripción de condiciones comprobadas.</p>
+          <p><strong>Qué está verificado y qué no:</strong> MINCETUR registra el acceso como <strong>libre</strong>, la visita como posible <strong>todo el año</strong>, la altitud en <strong>2.865 m s. n. m.</strong> y la distancia desde la plaza en <strong>2,5 km</strong> (unos 10 minutos en taxi). Esta guía no verifica las condiciones del camino el día de tu visita, la disponibilidad de los servicios internos ni el pronóstico del tiempo: confírmalos antes de subir.</p>
         </div>
 
         <h2>Para qué sirve un mirador</h2>
@@ -55,10 +68,10 @@ const articleLd = {
         <p>La visita al mirador no se improvisa. Conviene planificarla con tres variables:</p>
 
         <h3>Transporte</h3>
-        <p>El mirador está por encima de la ciudad, no es un recorrido a pie desde la plaza. Necesitas resolver cómo subir: taxi, vehículo propio o un tour que lo incluya. Este proyecto no verifica operadores de transporte ni tarifas. Acuerda el traslado y el costo antes de salir.</p>
+        <p>El mirador está por encima de la ciudad. La ficha de MINCETUR describe dos formas de llegar: en <strong>taxi desde la Plaza Mayor</strong> (2,5 km, unos 10 minutos) o en <strong>bus público hasta el Arco de Carmen Alto</strong> (2 km, unos 15 minutos) y desde allí <strong>0,5 km a pie</strong> (unos 5 minutos). Acuerda el traslado y el costo antes de salir.</p>
 
         <h3>Momento del día</h3>
-        <p>El momento del día cambia completamente la experiencia. Una visita matutina ofrece luz clara sobre la ciudad y el valle; una visita vespertina o al atardecer permite ver cómo cambia la luz sobre los techos y los cerros. La elección depende del tipo de fotografía que busques y de tu tolerancia al frío: la temperatura baja con rapidez al caer la tarde en una ciudad andina a ~2.750 m s. n. m.</p>
+        <p>El momento del día cambia completamente la experiencia. Una visita matutina ofrece luz clara sobre la ciudad y el valle; una visita vespertina o al atardecer permite ver cómo cambia la luz sobre los techos y los cerros. La elección depende del tipo de fotografía que busques y de tu tolerancia al frío: la ficha oficial describe un clima templado, cálido durante el día y frío por la noche.</p>
 
         <h3>Clima</h3>
         <p>El clima es el factor menos controlable y el más decisivo. Un mirador cubierto de nubes o con lluvia pierde su razón de ser. Conviene revisar el pronóstico antes de planificar la subida y tener un plan alternativo si el cielo no acompaña.</p>
@@ -66,19 +79,195 @@ const articleLd = {
         <h2>Qué confirmar antes de subir</h2>
         <p>Estos son los datos que conviene verificar antes de desplazarse al mirador:</p>
         <ul>
-          <li><strong>Acceso:</strong> ¿hay camino vehicular hasta el mirador o se camina un tramo? ¿Cuál es el estado del acceso?</li>
-          <li><strong>Horario:</strong> ¿el mirador tiene horario de apertura o es un espacio libre?</li>
-          <li><strong>Seguridad:</strong> ¿el lugar cuenta con barandas, iluminación o vigilancia? ¿Es seguro al atardecer?</li>
-          <li><strong>Tiempo de permanencia:</strong> ¿cuánto tiempo conviene reservar para la visita completa, incluyendo el traslado?</li>
-          <li><strong>Costo:</strong> ¿tiene entrada o es de acceso libre?</li>
+          <li><strong>Acceso:</strong> el ingreso está registrado como libre, pero conviene confirmar el estado del camino y si hay obras o cierres temporales.</li>
+          <li><strong>Servicios:</strong> el conjunto incluye un espacio con vista usado como restaurante y puestos de artesanía; su funcionamiento puede variar.</li>
+          <li><strong>Seguridad:</strong> la ficha menciona resguardo de la Policía Nacional y serenazgo municipal; aplica igualmente el sentido común al atardecer.</li>
+          <li><strong>Tiempo de permanencia:</strong> reserva tiempo suficiente para el traslado y para recorrer los cuatro niveles con calma.</li>
+          <li><strong>Costo:</strong> el acceso es libre según MINCETUR; los consumos y compras dentro del conjunto se pagan aparte.</li>
         </ul>
 
         <h2>Cómo combinarlo con la visita a la plaza</h2>
         <p>El mirador y la plaza cumplen funciones distintas y se complementan bien. Un plan razonable es visitar el centro histórico y la plaza por la mañana, hacer una pausa al mediodía y subir al mirador por la tarde, cuando la luz sobre la ciudad cambia. Si el cielo está despejado, el atardecer desde un punto elevado sobre {site.cityName} puede ser uno de los momentos más memorables del viaje.</p>
-        <p>Ahora bien, si el clima no acompaña o no se ha podido confirmar el acceso, lo sensato es posponer la salida y quedarse en el centro histórico, donde el recorrido urbano sigue siendo viable.</p>
+        <p>Ahora bien, si el clima no acompaña, lo sensato es posponer la salida y quedarse en el centro histórico, donde el recorrido urbano sigue siendo viable.</p>
 
-        <p class="verify-note">Esta página no verifica la altitud, distancia, acceso, horarios, condiciones de seguridad ni tarifas del mirador de Acuchimay. Describe cómo planificar una visita y qué confirmar antes de subir. Para información actual, consulta a la Municipalidad Provincial de Huamanga y a MINCETUR a través de los canales oficiales enlazados al final de la página.</p>
+        <p class="verify-note">Los datos de altitud, distancia, tipo de ingreso y época de visita provienen del inventario turístico de MINCETUR (ficha del Mirador Turístico Acuchimay), enlazado al final de la página. Esta guía no verifica las condiciones diarias de acceso, la operación de los servicios internos ni el estado del tiempo.</p>
       </div>
     </div>
   </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo aprovechar la subida</h2>
+      </div>
+      <ul class="checklist">
+        <li>Sube con luz de día y cielo despejado: el mirador se disfruta sobre todo por la vista.</li>
+        <li>Resuelve el transporte antes de salir: taxi desde la plaza (2,5 km, 10 min) o bus público al Arco de Carmen Alto y 0,5 km a pie.</li>
+        <li>Lleva una capa de abrigo: a 2.865 m s. n. m. el día puede ser cálido y la noche fría.</li>
+        <li>Combínalo con una pausa gastronómica: la ficha menciona restaurantes de comida típica ayacuchana en el entorno inmediato.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este mirador</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Vistas</span>
+          <h3>Una panorámica de 360°</h3>
+          <p>El cerro separa los distritos de Carmen Alto y Ayacucho y permite ver los cuatro distritos más poblados de la provincia de Huamanga.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Infraestructura</span>
+          <h3>Un conjunto de cuatro niveles</h3>
+          <p>Desde una alameda con pileta hasta el nivel más alto, con una cúpula-mirador, arquerías con pinturas andinas y una feria de artesanía.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Emblema</span>
+          <h3>El Cristo Blanco y la cruz</h3>
+          <p>La figura con los brazos extendidos hacia la ciudad, la torre de tres pisos y la cruz blanca de unos 8 metros son las referencias visuales del lugar.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el mirador</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Mirador Turístico Acuchimay</strong> es un cerro acondicionado como espacio de visita en el distrito de Carmen Alto. Su ubicación elevada lo convierte en un <strong>mirador de 360°</strong> desde el cual se observan los distritos más poblados de la provincia de Huamanga, además de la campiña y los cerros del entorno.</p>
+        <p>Según el inventario de MINCETUR, es el principal mirador turístico de la ciudad, forma parte del recorrido que ofrecen las agencias de la zona y cuenta con resguardo permanente de la Policía Nacional y del serenazgo municipal.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del mirador</caption>
+        <tbody>
+          <tr><th>Nombre en el inventario</th><td><strong>Mirador Turístico Acuchimay</strong></td></tr>
+          <tr><th>Otro nombre</th><td>Mirador de Ayacucho</td></tr>
+          <tr><th>Ubicación</th><td>Distrito de Carmen Alto, provincia de Huamanga, {site.cityName}</td></tr>
+          <tr><th>Altitud</th><td>Aprox. <strong>2.865 m s. n. m.</strong> (MINCETUR).</td></tr>
+          <tr><th>Distancia desde la plaza</th><td>Aprox. <strong>2,5 km</strong>, con referencia de <strong>10 minutos en taxi</strong> (MINCETUR).</td></tr>
+          <tr><th>Tipo de ingreso</th><td><strong>Libre</strong> (MINCETUR).</td></tr>
+          <tr><th>Época de visita</th><td><strong>Todo el año</strong> (MINCETUR).</td></tr>
+          <tr><th>Reconocimiento</th><td>Monumento Nacional, Resolución Suprema N° 2900 del 28/12/1972 (INC).</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo subir</h3>
+          <p>La ficha registra la visita como posible <strong>todo el año</strong>. Al ser un espacio abierto, lo que decide la experiencia es el clima: elige un día despejado.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>El <strong>ingreso es libre</strong> según MINCETUR. Los servicios internos —restaurante, venta de artesanía y textilería— tienen sus propias condiciones.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p><strong>2,5 km</strong> desde la plaza en taxi (10 min) o <strong>bus público</strong> hasta el Arco de Carmen Alto (2 km) y <strong>0,5 km a pie</strong>.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el mirador</p>
+        <h2>Historia, arquitectura y experiencia en Acuchimay</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Mirador de Acuchimay</strong> no es solo un punto de observación: es un conjunto acondicionado por niveles que combina paisaje, arte y vida cotidiana. La ficha oficial describe su infraestructura como un recorrido ascendente de cuatro niveles.</p>
+
+        <h2>Un conjunto de cuatro niveles</h2>
+        <p>En la parte más baja hay una <strong>alameda con descansos</strong>, pensada para quienes suben por las graderías desde el distrito de San Juan Bautista; sus paredes están pintadas con tradiciones de la región y una pileta octogonal de un solo nivel. En el <strong>segundo nivel</strong> se ubica una cúpula usada como restaurante con vista a la ciudad, una glorieta exterior y una sucesión de <strong>13 arquerías blancas</strong> con pinturas típicas de la artesanía ayacuchana y murales con escenas cotidianas y religiosas, cubiertas con tejas de arcilla roja. Allí se encuentran también el <strong>Cristo Blanco</strong> con los brazos extendidos hacia la ciudad y una torre de tres pisos con vista panorámica.</p>
+        <p>El <strong>tercer nivel</strong>, la parte más alta, alberga una <strong>cruz blanca de unos 8 metros</strong>, una zona de venta de artesanía y textilería, un pequeño anfiteatro y <strong>9 arquerías</strong> alrededor con las mismas características que las del nivel inferior. En este nivel comienza el recorrido de quienes ingresan desde Carmen Alto, recibidos por una figura de águila con las alas extendidas en el óvalo de entrada.</p>
+
+        <h2>Historia y reconocimiento</h2>
+        <p>El cerro fue reconocido por el Instituto Nacional de Cultura como <strong>Monumento Nacional</strong> mediante Resolución Suprema N° 2900, del 28 de diciembre de 1972. La toponimia quechua —«dónde está, para chacchar coca»— da cuenta de un uso tradicional del lugar anterior a su acondicionamiento turístico.</p>
+        <p>En el marco del <strong>Bicentenario de la Batalla de Ayacucho</strong>, la ficha oficial menciona el mirador como escenario de un proyecto emblemático orientado a servicios culturales, gastronómicos y de difusión, enfocado en la sostenibilidad y la diversidad local.</p>
+
+        <h2>Cultura y vida local</h2>
+        <p>El mirador funciona también como espacio de encuentro para las familias ayacuchanas: según la ficha, allí se practica el vuelo de cometas, se pasea, se compra artesanía y se usan sus áreas verdes y juegos infantiles. En <strong>Semana Santa</strong>, el cerro es escenario de la escenificación del viacrucis y, el Sábado de Gloria, de una feria tradicional muy concurrida.</p>
+
+        <h2>Cómo vivir la experiencia</h2>
+        <p>La visita se organiza de abajo hacia arriba. Recorrer la alameda, las arquerías del segundo nivel y el mirador superior permite ver cómo cambia el encuadre de la ciudad a medida que se gana altura. Al final, el conjunto invita a quedarse: la vista, los murales y la oferta gastronómica del entorno convierten la subida en una actividad completa más que en una simple parada.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> los elementos descritos —niveles, arquerías, Cristo Blanco, cruz, torre y feria— provienen de la ficha de MINCETUR. Su estado y disponibilidad pueden variar por mantenimiento o por las mejoras anunciadas para el Bicentenario, así que conviene confirmarlo en el momento de la visita.</p>
+        </div>
+
+        <p class="verify-note">Descripción basada en el inventario de recursos turísticos de MINCETUR (ficha del Mirador Turístico Acuchimay). Los detalles de la infraestructura son los registrados en esa ficha y no han sido comprobados en el terreno por esta guía.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la subida en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Elige el día.</strong> Revisa el pronóstico: el mirador se disfruta con cielo despejado, de día o al atardecer.</li>
+        <li><strong>Resuelve el transporte.</strong> Taxi desde la plaza (2,5 km, 10 min) o bus público hasta el Arco de Carmen Alto y 0,5 km a pie.</li>
+        <li><strong>Recorre los niveles.</strong> Sube desde la alameda hasta la cruz del nivel más alto, parando en las arquerías y el mirador superior.</li>
+        <li><strong>Cierra con la vista y una pausa.</strong> Disfruta la panorámica y aprovecha los restaurantes de comida típica del entorno.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos 2.750 m y el mirador a unos <strong>2.865 m s. n. m.</strong>: camina sin prisa, sobre todo si subes a pie.</li>
+        <li>El clima es templado, cálido de día y frío por la noche; lleva agua y una capa ligera de abrigo.</li>
+        <li>Es un espacio abierto con resguardo de la Policía Nacional y serenazgo según la ficha; aplica el sentido común al atardecer.</li>
+        <li>La luz más favorable para fotografiar la ciudad es a primera hora y al final de la tarde.</li>
+        <li>En Semana Santa espera mayor afluencia: hay escenificación del viacrucis y feria el Sábado de Gloria.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Vista de 360°</span>
+          <h3>La ciudad desde lo alto</h3>
+          <p>Un encuadre amplio desde cualquiera de los niveles permite mostrar la ciudad, la campiña y los cerros que la rodean.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Arquitectura</span>
+          <h3>Arquerías y murales</h3>
+          <p>Las 13 arquerías del segundo nivel y las 9 del tercero, con pinturas andinas y murales, funcionan como marco del paisaje urbano.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Luz</span>
+          <h3>Mañana y atardecer</h3>
+          <p>La luz lateral de la primera hora y del final de la tarde da volumen al Cristo Blanco, la torre y la cruz del nivel superior.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail
+    place="el Mirador de Acuchimay"
+    mapNote="El mirador está fuera del casco histórico. La ficha de MINCETUR describe el acceso en taxi desde la Plaza Mayor (2,5 km, unos 10 minutos) o en bus público hasta el Arco de Carmen Alto (2 km, unos 15 minutos) y desde allí 0,5 km a pie. No es un paseo a pie urbano completo desde la plaza: resuelve el transporte antes de salir."
+    locationLine={`Mirador Turístico Acuchimay · Distrito de Carmen Alto, provincia de Huamanga, ${site.cityName}, ${site.countryName}. Acceso de referencia: Arco de Carmen Alto.`}
+    mapUrl={mapUrl}
+    mapTitle={`Mapa del Mirador de Acuchimay en ${site.cityName}`}
+    mapSrc={mapSrc}
+  />
 </BaseLayout>
