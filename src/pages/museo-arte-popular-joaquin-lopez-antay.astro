@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AttractionTail from '../components/AttractionTail.astro';
+import { site, images } from '../data/site.mjs';
+
+const title = 'Museo de Arte Popular Joaquín López Antay en Ayacucho';
+const description = 'El Museo de Arte Popular Joaquín López Antay en el centro de Ayacucho: qué es, su relación con el arte popular y el retablo ayacuchano, y qué datos conviene confirmar antes de la visita.';
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  "@type": 'Article',
+  headline: title,
+  description,
+  inLanguage: site.lang,
+  mainEntityOfPage: { "@type": 'WebPage', "@id": `${site.origin}/museo-arte-popular-joaquin-lopez-antay/` },
+  about: { "@type": 'TouristAttraction', "@id": `${site.origin}/#attraction`, name: site.attractionFullName },
+  isPartOf: { "@type": 'WebSite', "@id": `${site.origin}/#website`, name: site.domain },
+  publisher: { "@type": 'Organization', name: site.domain }
+};
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  kicker="Museo en el centro histórico"
+  heading="Museo de Arte Popular Joaquín López Antay"
+  lead="Una referencia patrimonial del centro de Ayacucho dedicada al arte popular y, en particular, al retablo ayacuchano. Esta guía explica qué es y cómo acercarse a él, y señala con claridad qué datos deben confirmarse antes de ir."
+  tagline="El museo del arte popular ayacuchano, la mejor puerta de entrada al retablo"
+  heroMeta={[
+    { text: 'Visita cultural dentro del centro histórico' },
+    { text: 'Sede, horarios y tarifa: por confirmar' },
+    { text: 'Ver la plaza en el mapa ↗', href: site.mapsUrl }
+  ]}
+  breadcrumbs={[{ label: 'Guías', href: '/guias/' }, { label: 'Museo Joaquín López Antay' }]}
+  jsonLd={[articleLd]}
+  heroImage={images.plaza}
+  related={['artesanias-huamanga', 'centro-historico-huamanga', 'casonas-coloniales', 'templo-santo-domingo']}
+>
+  <section class="section">
+    <div class="shell">
+      <div class="quick-answer">
+        <p class="quick-answer-label">Respuesta directa</p>
+        <p>El <strong>Museo de Arte Popular Joaquín López Antay</strong> es una referencia patrimonial del centro histórico de Ayacucho dedicada al <strong>arte popular</strong> y, en particular, al <strong>retablo ayacuchano</strong>. Esta guía <strong>no verifica su sede exacta, sus horarios ni su tarifa</strong>: son datos que conviene confirmar en canales oficiales antes de organizar la visita.</p>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Museo de Arte Popular Joaquín López Antay</strong> es una de las referencias culturales que se citan al hablar del centro histórico de Ayacucho y del arte popular peruano. Esta página reúne lo esencial para situarlo: qué es, por qué se asocia al retablo ayacuchano, consejos prácticos, una ficha con lo que se puede y no se puede afirmar, un recorrido sugerido y puntos de fotografía.</p>
+        <p>Conviene decirlo desde el principio: se trata de una visita cultural <strong>independiente del espacio público de la plaza</strong>, con condiciones propias, y esta guía no da por confirmados los detalles de su funcionamiento actual.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Consejos de visita</p>
+        <h2>Cómo aprovechar la visita al museo</h2>
+      </div>
+      <ul class="checklist">
+        <li>Confirma antes de ir la sede, el horario y el precio: esta guía no los verifica.</li>
+        <li>Resérvalo como una visita cultural separada del paseo por la plaza, con su propio tiempo.</li>
+        <li>Si te interesa el retablo, fíjate en cómo está construido: caja, personajes y escenas en capas.</li>
+        <li>Combínalo con las calles del centro histórico y con la artesanía de Huamanga para entender el contexto.</li>
+      </ul>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Lo más destacado</p>
+        <h2>Qué define a este museo</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Temática</span>
+          <h3>Arte popular ayacuchano</h3>
+          <p>Un espacio dedicado a la expresión popular de la región, de la que el retablo es la pieza más reconocida.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Pieza clave</span>
+          <h3>El retablo ayacuchano</h3>
+          <p>Una caja con personajes y escenas dispuestas en capas, que resume siglos de tradición artesanal local.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Contexto</span>
+          <h3>Referencia patrimonial</h3>
+          <p>El museo aparece citado entre las referencias patrimoniales del centro; conviene confirmar su operación actual.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Sobre el museo</p>
+        <h2>Qué es y qué se puede afirmar</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>Museo de Arte Popular Joaquín López Antay</strong> toma su nombre de una figura central del arte popular ayacuchano, y su temática se centra en esa tradición artesanal. Se cita entre las referencias patrimoniales y culturales del centro histórico de {site.cityName}.</p>
+        <p>Este proyecto <strong>no verifica</strong> su sede exacta, sus horarios de atención, su tarifa ni el detalle de su colección. Solo damos por confirmada su existencia como referencia cultural del centro y su vínculo temático con el arte popular y el retablo.</p>
+      </div>
+
+      <table class="fact-table">
+        <caption>Ficha rápida del museo</caption>
+        <tbody>
+          <tr><th>Tipo</th><td>Museo de arte popular, dentro del centro histórico.</td></tr>
+          <tr><th>Temática</th><td>Arte popular ayacuchano y retablo.</td></tr>
+          <tr><th>Sede</th><td><strong>No verificada</strong> en esta guía; confírmala antes de ir.</td></tr>
+          <tr><th>Horario</th><td><strong>No verificado</strong>; consulta canales oficiales.</td></tr>
+          <tr><th>Tarifa</th><td><strong>No verificada</strong>; puede variar o ser gratuita según el recinto.</td></tr>
+          <tr><th>Cómo llegar</th><td>A pie dentro del centro histórico; toma la plaza como punto de partida.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="practical-grid">
+        <article class="practical-card">
+          <span class="info-tag">Horario</span>
+          <h3>Cuándo ir</h3>
+          <p>Esta guía <strong>no verifica</strong> los horarios del museo. Los recintos culturales del centro suelen tener horarios diurnos y cierres determinados, pero confírmalos antes de desplazarte.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Entrada</span>
+          <h3>Precio</h3>
+          <p>La tarifa <strong>no está verificada</strong> aquí. Algunos museos del centro cobran entrada y otros son gratuitos: consulta el precio en el momento o en un canal oficial.</p>
+        </article>
+        <article class="practical-card">
+          <span class="info-tag">Acceso</span>
+          <h3>Cómo llegar</h3>
+          <p>Se ubica dentro del centro histórico, a distancia caminable desde la plaza. Como esta guía no confirma su sede, pregunta en el centro o consulta un mapa actualizado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-paper">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Descubre el museo</p>
+        <h2>Arte popular y retablo en Ayacucho</h2>
+      </div>
+      <div class="page-copy">
+        <p>El <strong>arte popular</strong> de Ayacucho es una de las expresiones culturales más reconocidas de la región, y el <strong>retablo</strong> es su pieza más emblemática. Un retablo es una caja —tradicionalmente de madera, con puertas— que guarda personajes y escenas dispuestas en capas y planos sucesivos, como un pequeño teatro portátil.</p>
+        <p>Esa estructura es lo que hace del retablo una obra singular: no se mira de una sola vez, sino por niveles. Los artesanos de Huamanga han mantenido y renovado esta tradición, y el museo es el espacio donde esa herencia se presenta al visitante.</p>
+
+        <h2>Por qué el retablo es la pieza clave</h2>
+        <p>En el retablo se combinan varias técnicas: el tallado, la pintura, el modelado de las figuras y, en las versiones más conocidas, el uso de la pasta de papa y yeso para dar forma a los personajes. El resultado es una obra que puede ser religiosa, costumbrista o narrativa, según la escena que represente.</p>
+        <p>Fijarse en esos detalles —cómo están colocadas las figuras, qué historia cuentan, cómo se ilumina el interior de la caja— es la mejor forma de aprovechar la visita a un museo de arte popular.</p>
+
+        <h2>Cómo visitarlo con criterio</h2>
+        <ul class="checklist">
+          <li>Antes de ir, confirma la sede y el horario vigente: son los datos que esta guía no verifica.</li>
+          <li>Dedica tiempo a observar cada retablo por capas, no solo de un vistazo.</li>
+          <li>Pregunta al personal del museo por las piezas destacadas; suele ser la mejor orientación.</li>
+          <li>Si el museo está cerrado, la artesanía del centro permite acercarse igualmente al retablo.</li>
+        </ul>
+
+        <h2>Qué no se puede afirmar aquí</h2>
+        <p>Este proyecto no reproduce fechas, nombres de autores, número de piezas ni datos biográficos que no haya podido confirmar. La información sobre el museo, su colección y su historia debe tomarse de fuentes oficiales antes de citarla por escrito.</p>
+
+        <div class="callout">
+          <p><strong>Importante:</strong> el único dato que damos por confirmado es que el museo se cita entre las referencias culturales del centro histórico de Ayacucho y que su temática es el arte popular y el retablo. La sede, el horario, el precio y la colección deben confirmarse con fuentes oficiales.</p>
+        </div>
+
+        <h2>Un comentario práctico</h2>
+        <p>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>, así que conviene caminar sin prisa entre el museo y los demás puntos del centro. El sol del mediodía es intenso: lleva agua y una capa ligera de abrigo, sobre todo si sales por la tarde.</p>
+
+        <p class="verify-note">Esta página solo confirma que el museo es una referencia cultural del centro histórico y su vínculo con el arte popular y el retablo. Sede, horarios, tarifas y colección no están verificados aquí y deben confirmarse en canales oficiales antes de citarlos por escrito.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Recorrido sugerido</p>
+        <h2>Cómo organizar la visita en cuatro pasos</h2>
+      </div>
+      <ol class="steps">
+        <li><strong>Confirma antes de salir.</strong> Verifica la sede, el horario y el precio del museo, porque esta guía no los da por confirmados.</li>
+        <li><strong>Empieza en la plaza.</strong> Toma la {site.attractionFullName} como punto de orientación del centro histórico.</li>
+        <li><strong>Dedica tiempo a los retablos.</strong> Observa cada pieza por capas y fíjate en cómo se organizan los personajes y las escenas.</li>
+        <li><strong>Cierra con la artesanía.</strong> Completa la visita con las calles del centro, donde el arte popular sigue presente.</li>
+      </ol>
+
+      <div class="section-heading" style="margin-top:64px">
+        <p class="section-kicker">Antes de ir</p>
+        <h2>Qué conviene tener en cuenta</h2>
+      </div>
+      <ul class="checklist">
+        <li>La ciudad está a unos <strong>2.750 m sobre el nivel del mar</strong>: camina sin prisa entre los puntos del centro.</li>
+        <li>El sol del mediodía es fuerte y la temperatura baja rápido por la tarde; lleva agua y una capa ligera.</li>
+        <li>Los recintos culturales pueden cerrar por mantenimiento o temporada; confirma antes de desplazarte.</li>
+        <li>Si vas a citar datos por escrito, verifícalos: esta guía no confirma sede, horarios ni colección.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-stone">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="section-kicker">Fotografía</p>
+        <h2>Puntos de fotografía</h2>
+      </div>
+      <div class="info-grid">
+        <article class="info-card">
+          <span class="info-tag">Interior</span>
+          <h3>Los retablos, por capas</h3>
+          <p>Un encuadre frontal y una luz suave ayudan a mostrar la profundidad de la caja y la disposición de las figuras.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Detalle</span>
+          <h3>Personajes y escenas</h3>
+          <p>Un plano más cerrado permite observar el modelado de las figuras y los colores de cada escena.</p>
+        </article>
+        <article class="info-card">
+          <span class="info-tag">Contexto</span>
+          <h3>El centro histórico</h3>
+          <p>Las calles del entorno, con sus casonas y portadas, completan el relato de una visita cultural en Huamanga.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <AttractionTail place="el Museo de Arte Popular Joaquín López Antay" />
+</BaseLayout>

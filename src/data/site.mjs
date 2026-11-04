@@ -315,6 +315,14 @@ export const guides = [
     summary: 'El hito urbano a unos minutos a pie de la plaza.'
   },
   {
+    slug: 'museo-arte-popular-joaquin-lopez-antay',
+    group: 'patrimonio',
+    h1: 'Museo de Arte Popular Joaquín López Antay',
+    title: 'Museo de Arte Popular Joaquín López Antay en Ayacucho',
+    description: 'El Museo de Arte Popular Joaquín López Antay en el centro de Ayacucho: qué es, su relación con el arte popular y el retablo ayacuchano, y qué datos conviene confirmar antes de la visita.',
+    summary: 'La referencia del arte popular ayacuchano y el retablo, dentro del centro histórico.'
+  },
+  {
     slug: 'semana-santa-ayacucho',
     group: 'patrimonio',
     h1: 'Semana Santa de Ayacucho',

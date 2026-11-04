@@ -229,6 +229,7 @@ const breadcrumbLd = {
               <span>Ayacucho · Perú</span>
               <span>2.752 m s. n. m.</span>
               <span>Maps {mapsRating} · {mapsReviews}</span>
+              <span>Visita recomendada 06:00–21:00</span>
               <span>Centro histórico de Huamanga</span>
             </div>
             <p class="hero-kicker">{attractionFullName}</p>
@@ -237,6 +238,7 @@ const breadcrumbLd = {
             <p class="hero-lead">Bienvenido a <strong>{attractionFullName}</strong>, también identificada históricamente como <strong>{attractionLocalName}</strong>. Situada en el corazón de <strong>{cityName}</strong>, <strong>Región de {stateProvince}</strong>, <strong>{countryName}</strong>, esta plaza es el punto de partida principal para explorar la ciudad y su centro histórico.</p>
             <div class="hero-actions">
               <a class="button button-gold" href="#planifica">Planificar visita</a>
+              <a class="button button-ghost" href={mapUrl} target="_blank" rel="noreferrer">Ver ubicación en el mapa ↗</a>
               <a class="button button-ghost" href="#fuentes">Ver fuentes de la guía</a>
             </div>
           </div>
@@ -260,6 +262,43 @@ const breadcrumbLd = {
           <div class="intro-number"><span>111</span><small>columnas y arcos según MINCETUR</small></div>
           <p>Los cuatro frentes —Unión, Constitución, Independencia y Municipal— forman una secuencia de piedra que define la imagen del centro histórico. En el centro, el monumento ecuestre a Antonio José de Sucre articula jardines y fuentes simétricas.</p>
           <a href={minceturUrl} target="_blank" rel="noreferrer">Ver ficha de MINCETUR ↗</a>
+        </div>
+      </section>
+
+      <section id="consejos" class="section section-stone">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-kicker">Consejos de visita</p>
+            <h2>Cómo aprovechar la Plaza Mayor</h2>
+          </div>
+          <ul class="checklist">
+            <li>Camina los cuatro portales —Unión, Constitución, Independencia y Municipal— en lugar de mirar la plaza desde un solo lado.</li>
+            <li>Elige la primera hora de la mañana o el final de la tarde: la luz lateral realza la piedra y los balcones de madera.</li>
+            <li>Toma el monumento a Sucre como referencia central para orientarte y describir el recorrido.</li>
+            <li>Trata templos y museos como visitas aparte: el espacio público de la plaza es libre, los recintos tienen condiciones propias.</li>
+          </ul>
+
+          <div class="section-heading" style="margin-top:64px">
+            <p class="section-kicker">Lo más destacado</p>
+            <h2>Qué define a este conjunto</h2>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="info-tag">Arquitectura</span>
+              <h3>Cuatro portales de piedra</h3>
+              <p>Una secuencia de arcos, balcones de madera y teja de arcilla que enmarca el conjunto y define la imagen del centro histórico. MINCETUR cuenta alrededor de 111 arcos y columnas.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Pieza central</span>
+              <h3>Monumento a Sucre</h3>
+              <p>La escultura ecuestre a Antonio José de Sucre ocupa el cruce de los ejes que unen los portales y funciona como referencia y punto de encuentro.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Entorno</span>
+              <h3>Centro cívico y religioso</h3>
+              <p>La fachada de la Catedral, la Municipalidad y otros edificios institucionales refuerzan el papel de la plaza como corazón de la ciudad.</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -288,6 +327,29 @@ const breadcrumbLd = {
             <img src={photos.plaza} alt={`${attractionFullName} (${attractionLocalName}) — vista amplia con portales en ${cityName}, ${countryName}`} loading="lazy" />
             <figcaption><a href="https://commons.wikimedia.org/wiki/File:Plaza_Mayor_de_Huamanga_(25646832758).jpg">Plaza y portales · EduardoZambrano</a> · <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a> · 2017-12-26. Encuadre adaptado.</figcaption>
           </figure>
+        </div>
+      </section>
+
+      <section id="ficha" class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-kicker">Ficha rápida</p>
+            <h2>Datos básicos de la {attractionFullName}</h2>
+          </div>
+          <table class="fact-table">
+            <caption>Ficha rápida de la plaza</caption>
+            <tbody>
+              <tr><th>Nombre según MINCETUR</th><td><strong>{attractionFullName}</strong></td></tr>
+              <tr><th>Otros nombres</th><td>Plaza de Armas de Ayacucho · {attractionLocalName}</td></tr>
+              <tr><th>Ubicación</th><td>Centro histórico de {cityName}, Región de {stateProvince}, {countryName} · {postalCode}</td></tr>
+              <tr><th>Entrada</th><td><strong>Libre</strong> al espacio público de la plaza (MINCETUR).</td></tr>
+              <tr><th>Visita recomendada</th><td><strong>06:00–21:00</strong> durante todo el año (franja orientativa de MINCETUR).</td></tr>
+              <tr><th>Duración sugerida</th><td>45–90 minutos para la plaza; 2–3 horas si sumas templos y museos.</td></tr>
+              <tr><th>Portales</th><td>Unión, Constitución, Independencia y Municipal.</td></tr>
+              <tr><th>Monumento central</th><td>Escultura ecuestre a Antonio José de Sucre, con inauguración en 1924.</td></tr>
+            </tbody>
+          </table>
+          <p class="verify-note">Datos atribuidos al inventario de recursos turísticos de MINCETUR, enlazado al final de la página. Los horarios y condiciones de templos y museos son independientes y deben confirmarse con cada recinto.</p>
         </div>
       </section>
 
@@ -397,10 +459,10 @@ const breadcrumbLd = {
             <p>Qué ver sin alejarse de la plaza: arquitectura religiosa, arte popular y calles históricas caben en una ruta a pie desde la {attractionShortName}.</p>
           </div>
           <div class="nearby-grid">
-            <article><span>En la plaza</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Observe su relación con los portales y la escala abierta de la plaza.</p></article>
-            <article><span>Recorrido urbano separado</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles del centro, asociado al paisaje religioso de Huamanga.</p></article>
-            <article><span>Recorrido urbano separado</span><h3>Arco del Triunfo</h3><p>Hito del recorrido urbano de Ayacucho; comprueba la ruta y las condiciones de paso antes de continuar.</p></article>
-            <article><span>Visita cultural separada</span><h3>Museo de Arte Popular Joaquín López Antay</h3><p>Sunarp lo menciona entre las referencias patrimoniales de Ayacucho; confirme su sede y operación actuales antes de organizar la visita.</p></article>
+            <article><a class="nearby-link" href="/catedral-ayacucho/"><span>En la plaza</span><h3>Basílica Catedral de Ayacucho</h3><p>La gran fachada religiosa del conjunto. Observe su relación con los portales y la escala abierta de la plaza.</p><b class="nearby-more">Leer guía →</b></a></article>
+            <article><a class="nearby-link" href="/templo-santo-domingo/"><span>Recorrido urbano separado</span><h3>Templo de Santo Domingo</h3><p>Uno de los templos históricos más reconocibles del centro, asociado al paisaje religioso de Huamanga.</p><b class="nearby-more">Leer guía →</b></a></article>
+            <article><a class="nearby-link" href="/arco-del-triunfo/"><span>Recorrido urbano separado</span><h3>Arco del Triunfo</h3><p>Hito del recorrido urbano de Ayacucho; comprueba la ruta y las condiciones de paso antes de continuar.</p><b class="nearby-more">Leer guía →</b></a></article>
+            <article><a class="nearby-link" href="/museo-arte-popular-joaquin-lopez-antay/"><span>Visita cultural separada</span><h3>Museo de Arte Popular Joaquín López Antay</h3><p>Sunarp lo menciona entre las referencias patrimoniales de Ayacucho; confirme su sede y operación actuales antes de organizar la visita.</p><b class="nearby-more">Leer guía →</b></a></article>
           </div>
 
           <div class="food-heading">
@@ -464,6 +526,33 @@ const breadcrumbLd = {
         </div>
       </section>
 
+      <section id="recorrido" class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-kicker">Recorrido sugerido</p>
+            <h2>Cómo recorrer la plaza en cuatro pasos</h2>
+          </div>
+          <ol class="steps">
+            <li><strong>Llega por un portal.</strong> Entra por cualquiera de los cuatro frentes y ubica el monumento a Sucre en el centro para orientarte.</li>
+            <li><strong>Da la vuelta al perímetro.</strong> Camina bajo los portales y observa cómo cambian las fachadas, los balcones y la escala del conjunto.</li>
+            <li><strong>Párate en el centro.</strong> Rodea los jardines y mira la escultura desde los cuatro lados: cada perspectiva recorta un fondo distinto.</li>
+            <li><strong>Suma una visita vecina.</strong> Si tienes tiempo, añade la Catedral, el Templo de Santo Domingo o el museo de arte popular como recorridos aparte.</li>
+          </ol>
+
+          <div class="section-heading" style="margin-top:64px">
+            <p class="section-kicker">Antes de ir</p>
+            <h2>Qué conviene tener en cuenta</h2>
+          </div>
+          <ul class="checklist">
+            <li>La ciudad está a unos <strong>2.752 m sobre el nivel del mar</strong>: camina sin prisa, incluso en un recorrido corto.</li>
+            <li>El sol puede ser fuerte al mediodía y la temperatura baja rápido por la tarde; lleva agua, protección solar y una capa ligera.</li>
+            <li>Respeta el uso cotidiano del espacio y no interfieras con actos cívicos, religiosos o culturales.</li>
+            <li>Durante la Semana Santa y otras celebraciones hay mayor afluencia, controles de tránsito y horarios especiales.</li>
+            <li>Confirma horarios y condiciones de templos y museos antes de citarlos por escrito: son recintos independientes.</li>
+          </ul>
+        </div>
+      </section>
+
       <section class="section photo-section">
         <div class="shell photo-layout">
           <figure class="cathedral-photo">
@@ -476,6 +565,74 @@ const breadcrumbLd = {
             <p>La plaza se entiende mejor cuando no se mira solo el jardín. Recorra los portales, observe el encuentro entre piedra y madera y use la Catedral como referencia para leer la composición urbana.</p>
             <blockquote>“La visita funciona mejor como una caminata lenta: cuatro lados, cuatro perspectivas y muchas capas de historia.”</blockquote>
           </div>
+        </div>
+        <div class="shell">
+          <div class="section-heading" style="margin-top:64px">
+            <p class="section-kicker">Fotografía</p>
+            <h2>Puntos de fotografía</h2>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="info-tag">Plano general</span>
+              <h3>Desde cada portal</h3>
+              <p>Cada uno de los cuatro frentes ofrece un encuadre distinto: los arcos de piedra como marco y el monumento a Sucre en el centro.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Luz</span>
+              <h3>Primera hora y atardecer</h3>
+              <p>La luz lateral de la mañana temprano y del final de la tarde realza los balcones de madera y la fachada de la Catedral.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Detalle</span>
+              <h3>Arcos, balcones y teja</h3>
+              <p>Un plano cerrado permite captar el encuentro entre piedra y madera y la continuidad de las cubiertas de teja roja.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="alojamiento" class="section section-stone">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-kicker">Alojamiento</p>
+            <h2>Dónde alojarse cerca de la {attractionShortName}</h2>
+            <p class="section-lead">Esta guía describe zonas y tipos de alojamiento; no recomienda establecimientos concretos ni verifica precios o disponibilidad.</p>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="info-tag">Junto a la plaza</span>
+              <h3>Hospedaje en el centro histórico</h3>
+              <p>Las manzanas que rodean los portales concentran hoteles y hostales a pocos minutos a pie. Es la opción más cómoda si quieres recorrer la plaza y el resto del centro histórico sin depender del transporte.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Calles aledañas</span>
+              <h3>Opciones más tranquilas</h3>
+              <p>A una o dos manzanas de la plaza suele haber alojamientos de menor tamaño, con menos movimiento nocturno. Conviene confirmar en el momento la ubicación exacta, el horario de recepción y las condiciones de la habitación.</p>
+            </article>
+            <article class="info-card">
+              <span class="info-tag">Fuera del centro</span>
+              <h3>Si prefieres más espacio</h3>
+              <p>Los alojamientos alejados del casco antiguo suelen ofrecer más amplitud, pero requieren taxi o una caminata. Ten en cuenta que el centro histórico se recorre a pie: valora el tiempo de desplazamiento antes de decidir.</p>
+            </article>
+          </div>
+          <p class="verify-note">Criterio editorial: por ser una guía independiente y sin fines de lucro, esta página no nombra ni ordena alojamientos concretos. Consulta la disponibilidad, las tarifas y las condiciones en los canales oficiales de cada establecimiento.</p>
+        </div>
+      </section>
+
+      <section id="valoraciones" class="section">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="section-kicker">Valoraciones</p>
+            <h2>Qué dicen los visitantes</h2>
+          </div>
+          <div class="review-panel">
+            <div class="review-score">
+              <b>{mapsRating}</b>
+              <span>sobre 5 · Google Maps</span>
+            </div>
+            <p>Este proyecto no recopila valoraciones propias. La ficha compartida de Google Maps de la <strong>{attractionFullName}</strong> muestra <strong>{mapsRating}/5</strong> con <strong>{mapsReviews} reseñas de terceros</strong>. Esa valoración corresponde al conjunto monumental de la plaza. Las opiniones de terceros resumen experiencias diversas y pueden referirse a servicios, accesos o momentos concretos: conviene leerlas con criterio y contrastarlas con las fuentes oficiales citadas al final de la página.</p>
+          </div>
+          <p class="verify-note">La puntuación y el número de reseñas provienen de la ficha de Google Maps enlazada al final de esta página y pueden cambiar con el tiempo. No son datos oficiales ni han sido verificados por esta guía.</p>
         </div>
       </section>
 

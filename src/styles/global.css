@@ -478,3 +478,8 @@ a.guide-card h3 { margin: 0; }
 /* Acción dentro de las páginas legales (abrir el aviso de analítica). */
 .legal-action { display: inline-flex; align-items: center; gap: 8px; margin: 10px 0 0; padding: 13px 22px; border: 0; border-radius: 999px; background: var(--terracotta); color: #fff; font-weight: 800; font-size: 15px; cursor: pointer; }
 .legal-action:hover { background: #5a241d; }
+
+/* Tarjetas de atractivos del inicio: toda la tarjeta es un enlace a su guía. */
+.nearby-link { display: block; height: 100%; color: inherit; text-decoration: none; }
+.nearby-link:hover h3 { color: #f1cd8f; }
+.nearby-more { display: inline-block; margin-top: 14px; color: #f1cd8f; font-size: 13px; font-weight: 900; }
